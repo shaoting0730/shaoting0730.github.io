@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="">
     
-    <meta name="description" content="技术宅改变世界">
+    <meta name="description" content="愿天堂没有bug">
     
     
     
@@ -268,6 +268,15 @@
 </article>
 
 
+<div id="comments-template"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script>
+	if(!window.commentConfig) {
+      window.commentConfig = {}
+      window.commentConfig.title = 'redux和react-navigation的结合使用'
+    }
+</script>
+
                 </div>
                 <aside class="col-md-4 gal-left" id="sidebar">
     <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
@@ -292,7 +301,7 @@
         <div class="author-panel text-center">
             <img src="/imgs/headImg.jpg" width="140" height="140"
                  alt="个人头像" class="author-image">
-            <p class="author-description"><p>技术宅改变世界</p>
+            <p class="author-description"><p>愿天堂没有bug</p>
 </p>
         </div>
     </div>
@@ -377,13 +386,13 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/03/18/React Native/redux和react-navigation的结合使用/">redux和react-navigation的结合使用</a>
+                    <a href="/2018/03/18/React Native/react-navigation的基本使用/">react-navigation的基本使用</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/03/18/React Native/react-navigation的基本使用/">react-navigation的基本使用</a>
+                    <a href="/2018/03/18/React Native/redux和react-navigation的结合使用/">redux和react-navigation的结合使用</a>
                 </span>
             </li>
             
@@ -408,7 +417,7 @@
             <div class="tab-content">
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/React-Native/" style="font-size: 15.153836566106209px;" class="tag-cloud-link">React Native</a>
+    <a href="/tags/React-Native/" style="font-size: 15.950665725448001px;" class="tag-cloud-link">React Native</a>
     
 </div>
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
@@ -511,5 +520,25 @@
 </script>
 <script src="/js/comment/leancloud.js"></script>
 
+
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    if(window.commentConfig) {
+      window.commentConfig.owner = 'pheromone'
+      window.commentConfig.repo = 'https://github.com/pheromone/blog_-comment-'
+      window.commentConfig.client_id = 'b350013e44c1bdfd0e7a'
+      window.commentConfig.client_secret = '5643ad987e67c4a29e12093a7b72d01fbd347b2c'
+      window.commentConfig.redirect_uri = ''
+    } else {
+      window.commentConfig = {
+        owner: 'pheromone',
+        repo: 'https://github.com/pheromone/blog_-comment-',
+        client_id: 'b350013e44c1bdfd0e7a',
+        client_secret: '5643ad987e67c4a29e12093a7b72d01fbd347b2c',
+        redirect_uri: ''
+      }
+    }
+</script>
+<script src="/js/comment/gitment.js"></script>
 
 </html>
