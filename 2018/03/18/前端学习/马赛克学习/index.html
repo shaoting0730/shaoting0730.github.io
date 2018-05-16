@@ -142,15 +142,15 @@
                         
                         
                         <li>
-                            <a href="/categories/其他学习/">其他学习</a>
-                        </li>
-                        
-                        <li>
                             <a href="/categories/前端学习/">前端学习</a>
                         </li>
                         
                         <li>
                             <a href="/categories/后端学习/">后端学习</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/其他学习/">其他学习</a>
                         </li>
                         
                         
@@ -172,15 +172,15 @@
                         
                         
                         <li>
-                            <a href="/tags/其他学习/">其他学习</a>
-                        </li>
-                        
-                        <li>
                             <a href="/tags/前端学习/">前端学习</a>
                         </li>
                         
                         <li>
                             <a href="/tags/后端学习/">后端学习</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/其他学习/">其他学习</a>
                         </li>
                         
                         
@@ -273,8 +273,128 @@
         </center>
     </div>
     <div class="content-article">
-        <p>加紧施工中…<br><a id="more"></a></p>
+        <p>上周去菜市场买菜,看到路边一个二维码,于是想起阿里巴巴,接着想起之前上班都会路过阿里巴巴,接着想起马云,然后想到马赛克!!!于是我回家了,想学习下前端中的马赛克.<br><a id="more"></a><br>完成的功能 <br></p>
+<ul>
+<li>选择当地一张图片 <br></li>
+<li>点击绘制马赛克 <br></li>
+<li>拖动绘制马赛克 <br></li>
+</ul>
+<p>为了方便,相关js代码直接写在了index.html中,大致分为<code>加载图片</code>,<code>添加监听</code>,<code>方法触发</code>,<code>绘制小方块(马赛克)</code>,<code>计算颜色</code>,<code>数组升维</code>这几个方法,UI部分通过<code>canvas</code>    标签和<code>input</code>    标签绘制.<br>下面是完整的<code>index.html</code>代码</p>
+<pre><code>&lt;!doctype html&gt;
+&lt;html&gt;
 
+&lt;head&gt;
+    &lt;title&gt;&lt;/title&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;Keywords&quot; content=&quot;马赛克 canvas&quot;&gt;
+    &lt;meta name=&quot;Description&quot; content=&quot;学习前端马赛克&quot;&gt;
+&lt;/head&gt;
+&lt;style&gt;
+    canvas {
+        border: 1px black solid;
+
+    }
+&lt;/style&gt;
+
+&lt;body&gt;
+    &lt;div id=&quot;mask&quot;&gt;
+        &lt;canvas width=&quot;600&quot; height=&quot;600&quot;&gt;
+        &lt;/canvas&gt;
+        &lt;input type=&quot;file&quot; class=&apos;input&apos;&gt;
+    &lt;/div&gt;
+    &lt;script&gt;
+        var canvas = document.querySelector(&apos;canvas&apos;);
+        var input = document.querySelector(&apos;#mask .input&apos;);
+        var ctx = canvas.getContext(&apos;2d&apos;);
+        var mousedown = false;
+        var t = 15;
+        input.onchange = function () {
+            loadimg();
+        }
+        /**
+         *加载图片
+         */
+        function loadimg() {
+            var img = new Image();
+            img.src = window.URL.createObjectURL(input.files[0]);
+            img.onload = function () {
+                ctx.drawImage(img, 0, 0, 600, 600);
+            }
+            register();
+        }
+        /**
+         *添加监听
+         */
+        function register() {
+            canvas.addEventListener(&apos;mousedown&apos;, action)
+            canvas.addEventListener(&apos;mousemove&apos;, action)
+            canvas.addEventListener(&apos;mouseup&apos;, action)
+        }
+         /**
+         *方法触发
+         */   
+        function action(e) {
+            var dx = parseInt(((e.offsetX - t / 2) / t) * t)
+            var dy = parseInt(((e.offsetY - t / 2) / t) * t)
+            if (e.type == &quot;mousedown&quot;) {
+                mousedown = true;
+                computeColor(dx, dy);
+            }
+            if (mousedown &amp;&amp; e.type == &quot;mousemove&quot;) {
+                computeColor(dx, dy);
+            }
+            if (e.type == &quot;mouseup&quot;) {
+                mousedown = false;
+            }
+        }
+
+        /*
+         * 画小方块
+         */
+         function rect(x, y, c) {
+            ctx.beginPath();
+            ctx.fillStyle = c;
+            var dx = parseInt(x / t)*t,dy = parseInt(y / t)*t
+            ctx.rect(dx, dy, t, t);
+            ctx.fill();
+        }
+        /**
+        计算颜色
+        */
+        function computeColor(x, y) {
+            var arrList = restore(ctx.getImageData(x,y,t,t).data,4); //一维数组
+            var vr = 0, vg = 0, vb = 0,al = arrList.length;
+            for(var i = 0; i &lt; al; i++){
+                vr += arrList[i][0];
+                vg += arrList[i][1];
+                vb += arrList[i][2];
+                var color = &apos;rgb(&apos; + Math.floor(vr/al) + &apos;,&apos; + Math.floor(vg/al) + &apos;,&apos; +  Math.floor(vb/al) + &apos;)&apos;;
+                rect(x,y,color);
+            }
+        }
+        /**
+         *数组升维 [1,2,3,4] =&gt; [[1,2],[3,4]]
+         */
+        function restore(arr, step) {
+              var list = [];
+              var index = 0;
+              var n = Math.floor(arr.length/step);
+              for(var i = 0; i &lt; n ;i++){
+                list.push(arr.slice(index,index+step));
+                index += step;
+              }  
+              return list;
+        }        
+    &lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre><p>效果图:</p>
+<p><img src="/2018/03/18/前端学习/马赛克学习/../../../../../images/userImg.png" alt="原图"></p>
+<p><img src="/2018/03/18/前端学习/马赛克学习/../../../../../images/result.gif" alt="打马赛克gif"></p>
+<p></p><h1>是不是特别棒,再也不为女朋友照片的隐私犯愁了.ps:现在就差个女朋友了<p></p>
+<p><a href="https://github.com/pheromone/web-mosaic" target="_blank" rel="noopener">源码</a></p>
+</h1>
     </div>
 </article>
 
@@ -357,12 +477,6 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/03/18/其他学习/其他学习/">其他学习</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
                     <a href="/2018/03/18/前端学习/马赛克学习/">前端马赛克学习</a>
                 </span>
             </li>
@@ -370,6 +484,12 @@
             <li class="list-group-item">
                 <span class="post-title">
                     <a href="/2018/03/18/后端学习/后端学习/">后端学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/03/18/其他学习/其他学习/">其他学习</a>
                 </span>
             </li>
             
@@ -409,12 +529,6 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/03/18/其他学习/其他学习/">其他学习</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
                     <a href="/2018/03/18/前端学习/马赛克学习/">前端马赛克学习</a>
                 </span>
             </li>
@@ -427,7 +541,13 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/03/18/移动端学习/Android和React Native的简单交互/">Android和React Native的简单交互</a>
+                    <a href="/2018/03/18/其他学习/其他学习/">其他学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/03/18/移动端学习/redux和react-navigation的结合使用/">redux和react-navigation的结合使用</a>
                 </span>
             </li>
             
@@ -439,7 +559,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/03/18/移动端学习/redux和react-navigation的结合使用/">redux和react-navigation的结合使用</a>
+                    <a href="/2018/03/18/移动端学习/Android和React Native的简单交互/">Android和React Native的简单交互</a>
                 </span>
             </li>
             
@@ -464,13 +584,13 @@
             <div class="tab-content">
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/其他学习/" style="font-size: 17.762668448728263px;" class="tag-cloud-link">其他学习</a>
+    <a href="/tags/前端学习/" style="font-size: 15.187437397425445px;" class="tag-cloud-link">前端学习</a>
     
-    <a href="/tags/前端学习/" style="font-size: 10.155293092695679px;" class="tag-cloud-link">前端学习</a>
+    <a href="/tags/后端学习/" style="font-size: 8.311860649518593px;" class="tag-cloud-link">后端学习</a>
     
-    <a href="/tags/后端学习/" style="font-size: 14.766985451852072px;" class="tag-cloud-link">后端学习</a>
+    <a href="/tags/其他学习/" style="font-size: 16.169509063385348px;" class="tag-cloud-link">其他学习</a>
     
-    <a href="/tags/移动端学习/" style="font-size: 11.65855914837826px;" class="tag-cloud-link">移动端学习</a>
+    <a href="/tags/移动端学习/" style="font-size: 15.15693891295063px;" class="tag-cloud-link">移动端学习</a>
     
 </div>
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
