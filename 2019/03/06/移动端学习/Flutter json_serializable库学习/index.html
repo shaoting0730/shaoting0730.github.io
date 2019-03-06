@@ -289,7 +289,7 @@
 <h3 id="Dic-dart"><a href="#Dic-dart" class="headerlink" title="Dic.dart"></a>Dic.dart</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">import &apos;package:json_annotation/json_annotation.dart&apos;;</span><br><span class="line">part &apos;Dic.g.dart&apos;;</span><br><span class="line"></span><br><span class="line">@JsonSerializable()</span><br><span class="line">class Dic&#123;</span><br><span class="line">  final String createdAt;</span><br><span class="line">  final String desc;</span><br><span class="line">  final String publishedAt;</span><br><span class="line">  final String source;</span><br><span class="line">  final String type;</span><br><span class="line">  final String url;</span><br><span class="line">  final bool used;</span><br><span class="line">  final String who;</span><br><span class="line"></span><br><span class="line">  Dic(&#123;this.createdAt, this.desc, this.publishedAt, this.source, this.type,</span><br><span class="line">    this.url, this.used, this.who&#125;);</span><br><span class="line"></span><br><span class="line">  //反序列化</span><br><span class="line">  factory Dic.fromJson(Map&lt;String, dynamic&gt; json) =&gt; _$DicFromJson(json);</span><br><span class="line">  //序列化</span><br><span class="line">  Map&lt;String, dynamic&gt; toJson() =&gt; _$DicToJson(this);  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>然后,ide会报几个错误,这个不用管,那是尚未生成解析文件的原因.<br><img src="/2019/03/06/移动端学习/Flutter json_serializable库学习/../../../../../images/json_serializable_开始.png" alt="json_serializable_开始"></p>
 <p>4、然后,终端 cd 到项目根目录,回车,执行命令<code>flutter packages pub run build_runner build</code>,会生成对应的解析文件.</p>
-<p><img src="/2019/03/06/移动端学习/Flutter json_serializable库学习/../../../../../images/json_serializable_命令后输出.png.png" alt="json_serializable_命令后输出.png"><br><img src="/2019/03/06/移动端学习/Flutter json_serializable库学习/../../../../../images/json_serializable_生成文件.png" alt="json_serializable_生成文件"><br>5、ok,撸好之后,输出看一下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Data dd = Data.fromJson(val);</span><br><span class="line">       print(dd.error);</span><br><span class="line">       // 数组</span><br><span class="line">       print(dd.results);</span><br><span class="line">       // 数组第一个元素:map</span><br><span class="line">       print(dd.results[0].createdAt);</span><br><span class="line">       print(dd.results[0].desc);</span><br><span class="line">       print(dd.results[0].publishedAt);</span><br><span class="line">       print(dd.results[0].source);</span><br><span class="line">       print(dd.results[0].type);</span><br><span class="line">       print(dd.results[0].url);</span><br><span class="line">       print(dd.results[0].used);</span><br><span class="line">       print(dd.results[0].who);</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2019/03/06/移动端学习/Flutter json_serializable库学习/../../../../../images/json_serializable_命令后输出.png" alt="json_serializable_命令后输出.png"><br><img src="/2019/03/06/移动端学习/Flutter json_serializable库学习/../../../../../images/json_serializable_生成文件.png" alt="json_serializable_生成文件"><br>5、ok,撸好之后,输出看一下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Data dd = Data.fromJson(val);</span><br><span class="line">       print(dd.error);</span><br><span class="line">       // 数组</span><br><span class="line">       print(dd.results);</span><br><span class="line">       // 数组第一个元素:map</span><br><span class="line">       print(dd.results[0].createdAt);</span><br><span class="line">       print(dd.results[0].desc);</span><br><span class="line">       print(dd.results[0].publishedAt);</span><br><span class="line">       print(dd.results[0].source);</span><br><span class="line">       print(dd.results[0].type);</span><br><span class="line">       print(dd.results[0].url);</span><br><span class="line">       print(dd.results[0].used);</span><br><span class="line">       print(dd.results[0].who);</span><br></pre></td></tr></table></figure></p>
 <p><img src="/2019/03/06/移动端学习/Flutter json_serializable库学习/../../../../../images/json_serializable_result.png" alt="json_serializable_result"></p>
 <p>总结:以上就是对flutter中实体类库json_serializable的简单学习,身边大佬有的说很有必要,因为规范点,无规矩不成三角形,有了实体类方便维护,本来原生就是该有model的,这样不容易出现取值错误和其他问题;有的大佬说没啥必要,有点繁琐了.<br>我也不知道谁缩的对,但是学下总没错,就像鲁迅说的那样”人活着什么最重要,肯定是开心辣”.</p>
 <p><a href="https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E4%B8%8E%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/json_demo" target="_blank" rel="noopener">源码</a></p>
@@ -452,7 +452,19 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/03/18/前端学习/精灵图学习/">前端精灵图学习</a>
+                    <a href="/2018/03/18/前端学习/马赛克学习/">前端马赛克学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/06/29/前端学习/React学习-简单个人消费记账系统/">React学习:简单个人消费记账系统</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/03/18/其他学习/其他学习/">其他学习</a>
                 </span>
             </li>
             
@@ -464,13 +476,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/03/18/移动端学习/Android和React Native的简单交互/">Android和React Native的简单交互</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2018/08/11/移动端学习/React Native <收起-展开>功能实现/">React Native &#34;收起-展开&#34;功能实现</a>
+                    <a href="/2018/09/08/移动端学习/React Native 推送通知至RN且显示推送内容/">React Native 推送通知至RN且显示推送内容</a>
                 </span>
             </li>
             
@@ -488,13 +494,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/06/16/移动端学习/react-navigation前置登录/">react-navigation前置登录</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2018/03/18/移动端学习/redux和react-navigation的结合使用/">redux和react-navigation的结合使用</a>
+                    <a href="/2018/07/29/移动端学习/react-navigation和dva的结合使用/">react-navigation 和 dva的结合使用</a>
                 </span>
             </li>
             
@@ -531,13 +531,13 @@
             <div class="tab-content">
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/前端学习/" style="font-size: 11.129089327240102px;" class="tag-cloud-link">前端学习</a>
+    <a href="/tags/前端学习/" style="font-size: 9.678122718440243px;" class="tag-cloud-link">前端学习</a>
     
-    <a href="/tags/其他学习/" style="font-size: 10.68054523834228px;" class="tag-cloud-link">其他学习</a>
+    <a href="/tags/其他学习/" style="font-size: 12.869477408546933px;" class="tag-cloud-link">其他学习</a>
     
-    <a href="/tags/后端学习/" style="font-size: 19.736303814689133px;" class="tag-cloud-link">后端学习</a>
+    <a href="/tags/后端学习/" style="font-size: 11.11711740705951px;" class="tag-cloud-link">后端学习</a>
     
-    <a href="/tags/移动端学习/" style="font-size: 10.163838250184778px;" class="tag-cloud-link">移动端学习</a>
+    <a href="/tags/移动端学习/" style="font-size: 19.921983270964716px;" class="tag-cloud-link">移动端学习</a>
     
 </div>
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
