@@ -292,6 +292,7 @@
 <p><img src="/2019/03/06/移动端学习/Flutter json_serializable库学习/../../../../../images/json_serializable_命令后输出.png" alt="json_serializable_命令后输出.png"><br><img src="/2019/03/06/移动端学习/Flutter json_serializable库学习/../../../../../images/json_serializable_生成文件.png" alt="json_serializable_生成文件"><br>5、ok,撸好之后,输出看一下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Data dd = Data.fromJson(val);</span><br><span class="line">       print(dd.error);</span><br><span class="line">       // 数组</span><br><span class="line">       print(dd.results);</span><br><span class="line">       // 数组第一个元素:map</span><br><span class="line">       print(dd.results[0].createdAt);</span><br><span class="line">       print(dd.results[0].desc);</span><br><span class="line">       print(dd.results[0].publishedAt);</span><br><span class="line">       print(dd.results[0].source);</span><br><span class="line">       print(dd.results[0].type);</span><br><span class="line">       print(dd.results[0].url);</span><br><span class="line">       print(dd.results[0].used);</span><br><span class="line">       print(dd.results[0].who);</span><br></pre></td></tr></table></figure></p>
 <p><img src="/2019/03/06/移动端学习/Flutter json_serializable库学习/../../../../../images/json_serializable_result.png" alt="json_serializable_result"></p>
 <p>总结:以上就是对flutter中实体类库json_serializable的简单学习,身边大佬有的说很有必要,因为规范点,无规矩不成三角形,有了实体类方便维护,本来原生就是该有model的,这样不容易出现取值错误和其他问题;有的大佬说没啥必要,有点繁琐了.<br>我也不知道谁缩的对,但是学下总没错,就像鲁迅说的那样”人活着什么最重要,肯定是开心辣”.</p>
+<p>网上还有其他的方案:<br>a. android studio 安装插件 dart_json_format<br>b. <a href="https://github.com/debuggerx01/JSONFormat4Flutter" target="_blank" rel="noopener">https://github.com/debuggerx01/JSONFormat4Flutter</a><br>c. 一个在线转换工具:  <a href="https://javiercbk.github.io/json_to_dart/" target="_blank" rel="noopener">https://javiercbk.github.io/json_to_dart/</a>   </p>
 <p><a href="https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E4%B8%8E%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/json_demo" target="_blank" rel="noopener">源码</a></p>
 
     </div>
@@ -470,13 +471,19 @@
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/2018/03/18/后端学习/后端学习/">后端学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2019/02/16/移动端学习/Flutter scoped_model学习/">Flutter scoped_model学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/09/08/移动端学习/React Native 推送通知至RN且显示推送内容/">React Native 推送通知至RN且显示推送内容</a>
+                    <a href="/2018/08/17/移动端学习/React Native类似支付宝的应用增删模块的简单实现/">React Native类似支付宝的应用增删模块的简单实现</a>
                 </span>
             </li>
             
@@ -488,13 +495,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/06/26/移动端学习/react-native七牛上传图片/">react-native七牛上传图片</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2018/07/29/移动端学习/react-navigation和dva的结合使用/">react-navigation 和 dva的结合使用</a>
+                    <a href="/2018/03/18/移动端学习/react-navigation的基本使用/">react-navigation的基本使用</a>
                 </span>
             </li>
             
@@ -531,13 +532,13 @@
             <div class="tab-content">
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/前端学习/" style="font-size: 9.678122718440243px;" class="tag-cloud-link">前端学习</a>
+    <a href="/tags/前端学习/" style="font-size: 18.93118280826328px;" class="tag-cloud-link">前端学习</a>
     
-    <a href="/tags/其他学习/" style="font-size: 12.869477408546933px;" class="tag-cloud-link">其他学习</a>
+    <a href="/tags/其他学习/" style="font-size: 12.949845797070898px;" class="tag-cloud-link">其他学习</a>
     
-    <a href="/tags/后端学习/" style="font-size: 11.11711740705951px;" class="tag-cloud-link">后端学习</a>
+    <a href="/tags/后端学习/" style="font-size: 9.058404931738728px;" class="tag-cloud-link">后端学习</a>
     
-    <a href="/tags/移动端学习/" style="font-size: 19.921983270964716px;" class="tag-cloud-link">移动端学习</a>
+    <a href="/tags/移动端学习/" style="font-size: 10.763045158230895px;" class="tag-cloud-link">移动端学习</a>
     
 </div>
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
