@@ -230,7 +230,7 @@
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/2018/09/08/移动端学习/React Native 推送通知至RN且显示推送内容/">React Native 推送通知至RN且显示推送内容</a>
+                <a href="/2018/09/08/移动端学习/React-Native推送通知至RN且显示推送内容/">React Native 推送通知至RN且显示推送内容</a>
             </h1>
         </div>
         <div class="tag-article">
@@ -257,7 +257,7 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/2018/09/08/移动端学习/React Native 推送通知至RN且显示推送内容/">React Native 推送通知至RN且显示推送内容</a>
+                    <a href="/2018/09/08/移动端学习/React-Native推送通知至RN且显示推送内容/">React Native 推送通知至RN且显示推送内容</a>
                 </h4>
             </div>
             <p>
@@ -277,7 +277,7 @@
         </center>
     </div>
     <div class="content-article">
-        <p>APP推送是基本的要求,今天记录一下,大致是iOS原生收到推送后直接发通知给RN,RN这边监听着iOS原生的这个通知,以此获取到推送的消息.<br><a id="more"></a><br>效果图:<br><img src="/2018/09/08/移动端学习/React Native 推送通知至RN且显示推送内容/../../../../../images/pushRN.gif" alt="pushRN.gif"> <br><br>实现思路 ==&gt;<br>这次采用的友盟推送,至于采用什么推送都是一样的.<br><br>准备工作:iOS 集成推送,编写中间类,用于传值给RN.<br><br>        RN 界面实现监听iOS原生的通知,通过以上获取到推送的内容.<br></p>
+        <p>APP推送是基本的要求,今天记录一下,大致是iOS原生收到推送后直接发通知给RN,RN这边监听着iOS原生的这个通知,以此获取到推送的消息.<br><a id="more"></a><br>效果图:<br><img src="/2018/09/08/移动端学习/React-Native推送通知至RN且显示推送内容/../../../../../images/pushRN.gif" alt="pushRN.gif"> <br><br>实现思路 ==&gt;<br>这次采用的友盟推送,至于采用什么推送都是一样的.<br><br>准备工作:iOS 集成推送,编写中间类,用于传值给RN.<br><br>        RN 界面实现监听iOS原生的通知,通过以上获取到推送的内容.<br></p>
 <p>iOS原生准备集成推送: <br><br>…<br><br>iOS写一个中间类传输通知给RN:<br><br><code>CheckInvoice.h</code></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">//</span><br><span class="line">//  CheckInvoice.h</span><br><span class="line">//  aitepiao</span><br><span class="line">//</span><br><span class="line">//  Created by tc on 2018/8/28.</span><br><span class="line">//  Copyright © 2018年 Facebook. All rights reserved.</span><br><span class="line">//</span><br><span class="line"></span><br><span class="line">#import &lt;Foundation/Foundation.h&gt;</span><br><span class="line">#import &lt;React/RCTBridgeModule.h&gt;</span><br><span class="line">#import &lt;React/RCTEventEmitter.h&gt;</span><br><span class="line"></span><br><span class="line">@interface CheckInvoice : RCTEventEmitter&lt;RCTBridgeModule&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
 <p><code>CheckInvoice.m</code></p>
@@ -376,25 +376,25 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/04/22/移动端学习/React Native 与 Web的基本交互/">React Native 与 Web的基本交互</a>
+                    <a href="/2019/04/22/移动端学习/React-Native与Web的基本交互/">React Native 与 Web的基本交互</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/03/30/移动端学习/Flutter 路由管理库fluro学习/">Flutter 路由管理库fluro学习</a>
+                    <a href="/2019/03/30/移动端学习/Flutter路由管理库fluro学习/">Flutter 路由管理库fluro学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/03/07/移动端学习/Flutter flutter_bloc库学习/">Flutter flutter_bloc库学习</a>
+                    <a href="/2019/03/07/移动端学习/Flutter-flutter_bloc库学习/">Flutter flutter_bloc库学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/03/06/移动端学习/Flutter json_serializable库学习/">Flutter json_serializable库学习</a>
+                    <a href="/2019/03/06/移动端学习/Flutter-json_serializable库学习/">Flutter json_serializable库学习</a>
                 </span>
             </li>
             
@@ -406,31 +406,31 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/03/03/移动端学习/Flutter provide学习/">Flutter provide学习</a>
+                    <a href="/2019/03/03/移动端学习/Flutter-provide学习/">Flutter provide学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/02/17/移动端学习/Flutter redux学习/">Flutter redux学习</a>
+                    <a href="/2019/02/17/移动端学习/Flutter-redux学习/">Flutter redux学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/02/16/移动端学习/Flutter scoped_model学习/">Flutter scoped_model学习</a>
+                    <a href="/2019/02/16/移动端学习/Flutter-scoped_model学习/">Flutter scoped_model学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/09/08/移动端学习/React Native 推送通知至RN且显示推送内容/">React Native 推送通知至RN且显示推送内容</a>
+                    <a href="/2018/09/08/移动端学习/React-Native推送通知至RN且显示推送内容/">React Native 推送通知至RN且显示推送内容</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/08/17/移动端学习/React Native类似支付宝的应用增删模块的简单实现/">React Native类似支付宝的应用增删模块的简单实现</a>
+                    <a href="/2018/08/17/移动端学习/React-Native类似支付宝的应用增删模块的简单实现/">React Native类似支付宝的应用增删模块的简单实现</a>
                 </span>
             </li>
             
@@ -458,19 +458,25 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/03/18/前端学习/马赛克学习/">前端马赛克学习</a>
+                    <a href="/2018/03/18/后端学习/后端学习/">后端学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/02/16/移动端学习/Flutter scoped_model学习/">Flutter scoped_model学习</a>
+                    <a href="/2019/02/17/移动端学习/Flutter-redux学习/">Flutter redux学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/03/30/移动端学习/Flutter 路由管理库fluro学习/">Flutter 路由管理库fluro学习</a>
+                    <a href="/2019/03/04/移动端学习/Flutter中的sqflite库学习/">Flutter中的sqflite库学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/03/30/移动端学习/Flutter路由管理库fluro学习/">Flutter 路由管理库fluro学习</a>
                 </span>
             </li>
             
@@ -482,31 +488,25 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/03/18/移动端学习/react-navigation的基本使用/">react-navigation的基本使用</a>
+                    <a href="/2018/06/16/移动端学习/react-navigation前置登录/">react-navigation前置登录</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/05/27/移动端学习/Mobx-react-navigation的使用/">Mobx + react-navigation的使用</a>
+                    <a href="/2018/06/29/前端学习/React学习-简单个人消费记账系统/">React学习:简单个人消费记账系统</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/06/26/移动端学习/react-native七牛上传图片/">react-native七牛上传图片</a>
+                    <a href="/2018/09/08/移动端学习/React-Native推送通知至RN且显示推送内容/">React Native 推送通知至RN且显示推送内容</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
                     <a href="/2018/07/29/移动端学习/react-navigation和dva的结合使用/">react-navigation 和 dva的结合使用</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2018/08/11/移动端学习/React Native <收起-展开>功能实现/">React Native &#34;收起-展开&#34;功能实现</a>
                 </span>
             </li>
             
@@ -519,25 +519,25 @@
         <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
             <ul class="nav nav-pills pills-gal">
                 <li class>
-                    <a href="/2018/09/08/移动端学习/React Native 推送通知至RN且显示推送内容/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2018/09/08/移动端学习/React-Native推送通知至RN且显示推送内容/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 <li class>
-                    <a href="/2018/09/08/移动端学习/React Native 推送通知至RN且显示推送内容/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2018/09/08/移动端学习/React-Native推送通知至RN且显示推送内容/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 <li class>
-                    <a href="/2018/09/08/移动端学习/React Native 推送通知至RN且显示推送内容/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2018/09/08/移动端学习/React-Native推送通知至RN且显示推送内容/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
             </ul>
             <div class="tab-content">
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/其他学习/" style="font-size: 17.910073301830078px;" class="tag-cloud-link">其他学习</a>
+    <a href="/tags/其他学习/" style="font-size: 15.902362487939799px;" class="tag-cloud-link">其他学习</a>
     
-    <a href="/tags/前端学习/" style="font-size: 15.909733092434495px;" class="tag-cloud-link">前端学习</a>
+    <a href="/tags/前端学习/" style="font-size: 15.497530969711143px;" class="tag-cloud-link">前端学习</a>
     
-    <a href="/tags/后端学习/" style="font-size: 13.366150226979872px;" class="tag-cloud-link">后端学习</a>
+    <a href="/tags/后端学习/" style="font-size: 14.165663863631933px;" class="tag-cloud-link">后端学习</a>
     
-    <a href="/tags/移动端学习/" style="font-size: 19.385557876353744px;" class="tag-cloud-link">移动端学习</a>
+    <a href="/tags/移动端学习/" style="font-size: 19.3666066529164px;" class="tag-cloud-link">移动端学习</a>
     
 </div>
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">

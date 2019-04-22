@@ -230,7 +230,7 @@
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/2019/03/30/移动端学习/Flutter 路由管理库fluro学习/">Flutter 路由管理库fluro学习</a>
+                <a href="/2019/03/30/移动端学习/Flutter路由管理库fluro学习/">Flutter 路由管理库fluro学习</a>
             </h1>
         </div>
         <div class="tag-article">
@@ -257,7 +257,7 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/2019/03/30/移动端学习/Flutter 路由管理库fluro学习/">Flutter 路由管理库fluro学习</a>
+                    <a href="/2019/03/30/移动端学习/Flutter路由管理库fluro学习/">Flutter 路由管理库fluro学习</a>
                 </h4>
             </div>
             <p>
@@ -278,7 +278,7 @@
     </div>
     <div class="content-article">
         <p>今天学习下<code>Flutter</code>中路由管理库 fluro<br>使用版本是:<code>fluro: &quot;^1.4.0&quot;</code>. <br><br><a id="more"></a><br><a href="https://github.com/theyakka/fluro" target="_blank" rel="noopener">fluro</a></p>
-<p>代码结构:<br><img src="/2019/03/30/移动端学习/Flutter 路由管理库fluro学习/../../../../../images/fluro_demo_代码结构.png" alt="fluro_demo代码结构"><br>首先,新建文件夹存放fluro的关键代码:</p>
+<p>代码结构:<br><img src="/2019/03/30/移动端学习/Flutter路由管理库fluro学习/../../../../../images/fluro_demo_代码结构.png" alt="fluro_demo代码结构"><br>首先,新建文件夹存放fluro的关键代码:</p>
 <h3 id="application-dart"><a href="#application-dart" class="headerlink" title="application.dart"></a>application.dart</h3><p>application.dart,该文件主要是生成一个静态文件,方便后面直接调用初始化的Router对象<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import &apos;package:fluro/fluro.dart&apos;;</span><br><span class="line">class Application &#123;</span><br><span class="line">  static Router router;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h3 id="router-handler-dart"><a href="#router-handler-dart" class="headerlink" title="router_handler.dart"></a>router_handler.dart</h3><p>router_handler.dart文件,主要负责路由跳转,从代码可以看出,有两个handler,其中一个需要带一个参数paramsId</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import &apos;package:flutter/material.dart&apos;;</span><br><span class="line">import &apos;package:fluro/fluro.dart&apos;;</span><br><span class="line">import &apos;../pages/detailspage.dart&apos;;</span><br><span class="line">import &apos;../pages/otherpaage.dart&apos;;</span><br><span class="line"></span><br><span class="line">Handler detailsHandle = Handler(</span><br><span class="line">    handlerFunc: (BuildContext context, Map&lt;String, List&lt;String&gt;&gt; params) &#123;</span><br><span class="line">  String paramsId = params[&apos;id&apos;].first;</span><br><span class="line">  return DetailsPage(paramsId);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">Handler otherHandle = Handler(</span><br><span class="line">    handlerFunc: (BuildContext context, Map&lt;String, List&lt;String&gt;&gt; params) &#123;</span><br><span class="line">  return OtherPage();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
@@ -291,7 +291,7 @@
 <h3 id="homepage-dart"><a href="#homepage-dart" class="headerlink" title="homepage.dart"></a>homepage.dart</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import &apos;package:flutter/material.dart&apos;;</span><br><span class="line">import &apos;package:fluro/fluro.dart&apos;;</span><br><span class="line">import &apos;../routers/application.dart&apos;;</span><br><span class="line"></span><br><span class="line">class Homepage extends StatelessWidget &#123;</span><br><span class="line">  @override</span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    return Scaffold(</span><br><span class="line">      appBar: AppBar(title: Text(&apos;HomePage&apos;)),</span><br><span class="line">      body: HomeContainer(),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class HomeContainer extends StatefulWidget &#123;</span><br><span class="line">  @override</span><br><span class="line">  _HomeContainerState createState() =&gt; _HomeContainerState();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class _HomeContainerState extends State&lt;HomeContainer&gt; &#123;</span><br><span class="line">  List&lt;String&gt; dataList = [];</span><br><span class="line">  @override</span><br><span class="line">  void initState() &#123;</span><br><span class="line">    super.initState();</span><br><span class="line">    for (var i = 0; i &lt; 100; i++) &#123;</span><br><span class="line">      dataList.add(i.toString());</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  @override</span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    return ListView.builder(</span><br><span class="line">      itemCount: dataList.length,</span><br><span class="line">      itemBuilder: (context, index) &#123;</span><br><span class="line">        return ListTile(</span><br><span class="line">          onTap: ()&#123;</span><br><span class="line">              Application.router.navigateTo(context, &quot;./detail?id=$&#123;dataList[index]&#125;&quot;, transition: TransitionType.inFromLeft);</span><br><span class="line">          &#125;,</span><br><span class="line">          title: Text(dataList[index] + &apos;👌&apos;),</span><br><span class="line">        );</span><br><span class="line">      &#125;,</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="Showpage-dart"><a href="#Showpage-dart" class="headerlink" title="Showpage.dart"></a>Showpage.dart</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">import &apos;package:flutter/material.dart&apos;;</span><br><span class="line">import &apos;package:fluro/fluro.dart&apos;;</span><br><span class="line">import &apos;../routers/application.dart&apos;;</span><br><span class="line"></span><br><span class="line">class Showpage extends StatelessWidget &#123;</span><br><span class="line">  @override</span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    return Scaffold(</span><br><span class="line">      appBar: AppBar(title: Text(&apos;SHOW&apos;)),</span><br><span class="line">      body: Center(</span><br><span class="line">        child: RaisedButton(</span><br><span class="line">          onPressed: ()&#123;</span><br><span class="line">              Application.router.navigateTo(context, &quot;./other&quot;, transition: TransitionType.nativeModal);</span><br><span class="line">          &#125;,</span><br><span class="line">          child: Text(&apos;跳转&apos;),</span><br><span class="line">        ),</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="minepage-dart"><a href="#minepage-dart" class="headerlink" title="minepage.dart"></a>minepage.dart</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">import &apos;package:flutter/material.dart&apos;;</span><br><span class="line"></span><br><span class="line">class Minepage extends StatelessWidget &#123;</span><br><span class="line">  @override</span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    return Scaffold(</span><br><span class="line">      appBar: AppBar(title: Text(&apos;Minepage&apos;)),</span><br><span class="line">      body: Center(</span><br><span class="line">        child: Text(&apos;Minepage&apos;),</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>效果如图:<br><img src="/2019/03/30/移动端学习/Flutter 路由管理库fluro学习/../../../../../images/fluro_demo_result.gif" alt="fluro_demo_result"></p>
+<p>效果如图:<br><img src="/2019/03/30/移动端学习/Flutter路由管理库fluro学习/../../../../../images/fluro_demo_result.gif" alt="fluro_demo_result"></p>
 <p><a href="https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/TabBar/fluro_demo" target="_blank" rel="noopener">源码</a></p>
 
     </div>
@@ -374,25 +374,25 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/04/22/移动端学习/React Native 与 Web的基本交互/">React Native 与 Web的基本交互</a>
+                    <a href="/2019/04/22/移动端学习/React-Native与Web的基本交互/">React Native 与 Web的基本交互</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/03/30/移动端学习/Flutter 路由管理库fluro学习/">Flutter 路由管理库fluro学习</a>
+                    <a href="/2019/03/30/移动端学习/Flutter路由管理库fluro学习/">Flutter 路由管理库fluro学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/03/07/移动端学习/Flutter flutter_bloc库学习/">Flutter flutter_bloc库学习</a>
+                    <a href="/2019/03/07/移动端学习/Flutter-flutter_bloc库学习/">Flutter flutter_bloc库学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/03/06/移动端学习/Flutter json_serializable库学习/">Flutter json_serializable库学习</a>
+                    <a href="/2019/03/06/移动端学习/Flutter-json_serializable库学习/">Flutter json_serializable库学习</a>
                 </span>
             </li>
             
@@ -404,31 +404,31 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/03/03/移动端学习/Flutter provide学习/">Flutter provide学习</a>
+                    <a href="/2019/03/03/移动端学习/Flutter-provide学习/">Flutter provide学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/02/17/移动端学习/Flutter redux学习/">Flutter redux学习</a>
+                    <a href="/2019/02/17/移动端学习/Flutter-redux学习/">Flutter redux学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/02/16/移动端学习/Flutter scoped_model学习/">Flutter scoped_model学习</a>
+                    <a href="/2019/02/16/移动端学习/Flutter-scoped_model学习/">Flutter scoped_model学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/09/08/移动端学习/React Native 推送通知至RN且显示推送内容/">React Native 推送通知至RN且显示推送内容</a>
+                    <a href="/2018/09/08/移动端学习/React-Native推送通知至RN且显示推送内容/">React Native 推送通知至RN且显示推送内容</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/08/17/移动端学习/React Native类似支付宝的应用增删模块的简单实现/">React Native类似支付宝的应用增删模块的简单实现</a>
+                    <a href="/2018/08/17/移动端学习/React-Native类似支付宝的应用增删模块的简单实现/">React Native类似支付宝的应用增删模块的简单实现</a>
                 </span>
             </li>
             
@@ -456,7 +456,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/03/18/前端学习/马赛克学习/">前端马赛克学习</a>
+                    <a href="/2018/03/18/前端学习/精灵图学习/">前端精灵图学习</a>
                 </span>
             </li>
             
@@ -468,7 +468,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/03/03/移动端学习/Flutter provide学习/">Flutter provide学习</a>
+                    <a href="/2019/03/06/移动端学习/Flutter-json_serializable库学习/">Flutter json_serializable库学习</a>
                 </span>
             </li>
             
@@ -480,31 +480,31 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/04/22/移动端学习/React Native 与 Web的基本交互/">React Native 与 Web的基本交互</a>
+                    <a href="/2019/03/30/移动端学习/Flutter路由管理库fluro学习/">Flutter 路由管理库fluro学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/03/18/移动端学习/Android和React Native的简单交互/">Android和React Native的简单交互</a>
+                    <a href="/2018/03/18/移动端学习/Android和React-Native的简单交互/">Android和React Native的简单交互</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/09/08/移动端学习/React Native 推送通知至RN且显示推送内容/">React Native 推送通知至RN且显示推送内容</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2018/06/26/移动端学习/react-native七牛上传图片/">react-native七牛上传图片</a>
+                    <a href="/2019/03/07/移动端学习/Flutter-flutter_bloc库学习/">Flutter flutter_bloc库学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
                     <a href="/2018/07/29/移动端学习/react-navigation和dva的结合使用/">react-navigation 和 dva的结合使用</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/03/18/移动端学习/redux和react-navigation的结合使用/">redux和react-navigation的结合使用</a>
                 </span>
             </li>
             
@@ -517,25 +517,25 @@
         <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
             <ul class="nav nav-pills pills-gal">
                 <li class>
-                    <a href="/2019/03/30/移动端学习/Flutter 路由管理库fluro学习/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2019/03/30/移动端学习/Flutter路由管理库fluro学习/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 <li class>
-                    <a href="/2019/03/30/移动端学习/Flutter 路由管理库fluro学习/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2019/03/30/移动端学习/Flutter路由管理库fluro学习/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 <li class>
-                    <a href="/2019/03/30/移动端学习/Flutter 路由管理库fluro学习/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2019/03/30/移动端学习/Flutter路由管理库fluro学习/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
             </ul>
             <div class="tab-content">
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/其他学习/" style="font-size: 10.652868598171082px;" class="tag-cloud-link">其他学习</a>
+    <a href="/tags/其他学习/" style="font-size: 13.510227716332151px;" class="tag-cloud-link">其他学习</a>
     
-    <a href="/tags/前端学习/" style="font-size: 11.706423277576258px;" class="tag-cloud-link">前端学习</a>
+    <a href="/tags/前端学习/" style="font-size: 11.632291242311485px;" class="tag-cloud-link">前端学习</a>
     
-    <a href="/tags/后端学习/" style="font-size: 17.275236728278394px;" class="tag-cloud-link">后端学习</a>
+    <a href="/tags/后端学习/" style="font-size: 16.419410289875454px;" class="tag-cloud-link">后端学习</a>
     
-    <a href="/tags/移动端学习/" style="font-size: 10.30124445380517px;" class="tag-cloud-link">移动端学习</a>
+    <a href="/tags/移动端学习/" style="font-size: 16.876448974155732px;" class="tag-cloud-link">移动端学习</a>
     
 </div>
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
