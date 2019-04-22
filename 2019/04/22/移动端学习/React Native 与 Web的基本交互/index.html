@@ -12,7 +12,7 @@
     
     
     
-    <title>tags: 前端学习 | 少停</title>
+    <title>React Native 与 Web的基本交互 | 少停</title>
     <link href=”https://pheromone.github.io“ rel=”prefetch” />
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -222,19 +222,38 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 gal-right" id="mainstay">
-                    <article class="article well article-body" id="article-tag">
+                    
+<article class="article well article-body" id="article">
     <div class="breadcrumb">
         <i class="fa fa-home"></i>
         <a href="https://pheromone.github.io">少停</a>
         >
-        <span>标签</span>
+        <span>React Native 与 Web的基本交互</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/tags/前端学习/index.html">前端学习</a>
+                <a href="/2019/04/22/移动端学习/React Native 与 Web的基本交互/">React Native 与 Web的基本交互</a>
             </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/移动端学习/">移动端学习</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2019-04-22
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-eye"></i>
+            </span>
+            
         </div>
     </div>
     <!-- 小型设备详细文章 -->
@@ -242,27 +261,51 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/tags/前端学习/index.html">前端学习</a>
+                    <a href="/2019/04/22/移动端学习/React Native 与 Web的基本交互/">React Native 与 Web的基本交互</a>
                 </h4>
             </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2019-04-22
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/移动端学习/">移动端学习</a>
+                
+                
+                
+                <i class="fa fa-eye"></i>
+                
+            </p>
         </center>
     </div>
-    <div class="content-article" style="margin-top: 30px;">
-        <div class="alert alert-info" style="font-size: 14px; line-height: 2; font-weight: bold;">
-            
-            <a href="/2018/06/29/前端学习/React学习-简单个人消费记账系统/">React学习:简单个人消费记账系统</a>
-            <br>
-            
-            <a href="/2018/03/18/前端学习/精灵图学习/">前端精灵图学习</a>
-            <br>
-            
-            <a href="/2018/03/18/前端学习/马赛克学习/">前端马赛克学习</a>
-            <br>
-            
-            
-        </div>
+    <div class="content-article">
+        <p>今天学习下<code>React Native</code>与<code>Web</code>端的基本交互,暂时涉及到RN向Web端传值,Web向RN端传值,因为现在转为Flutter开发,所以这一块暂时只能涉及到这里.其中的Web端采用本地html页面.<br><a id="more"></a><br>本文设计的交互主要靠webView的onMessage和postMessage.<br>在RN端发送数据给Web,主要依靠调用webView的potsMessage方法实现,<br>如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.refs.webview.postMessage(this.data);</span><br></pre></td></tr></table></figure></p>
+<p>接收Web端的数据靠的是WebView的onMessage方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">onMessage=&#123;(e) =&gt; &#123;</span><br><span class="line">                        this.handleMessage(e)</span><br><span class="line">                    &#125;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>下面是完整代码:</p>
+<h3 id="App-js"><a href="#App-js" class="headerlink" title="App.js"></a>App.js</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line">import React from &apos;react&apos;;</span><br><span class="line">import &#123;</span><br><span class="line">    View,</span><br><span class="line">    Text,</span><br><span class="line">    StyleSheet,</span><br><span class="line">    WebView</span><br><span class="line">&#125; from &apos;react-native&apos;;</span><br><span class="line"></span><br><span class="line">export default class Web extends React.Component &#123;</span><br><span class="line">    constructor(props) &#123;</span><br><span class="line">        super(props);</span><br><span class="line">        this.state = &#123;</span><br><span class="line">            webViewData: &apos;&apos;</span><br><span class="line">        &#125;</span><br><span class="line">        this.data = &apos;我是RN传给web端的参数&apos;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    sendMessage() &#123;</span><br><span class="line">        this.refs.webview.postMessage(this.data);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    handleMessage(e) &#123;</span><br><span class="line">        this.setState(&#123;webViewData: e.nativeEvent.data&#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    render() &#123;</span><br><span class="line">        return (</span><br><span class="line">            &lt;View style=&#123;styles.container&#125;&gt;</span><br><span class="line">                &#123;/*web*/&#125;</span><br><span class="line">                &lt;View style=&#123;&#123;width: 375, height: 220&#125;&#125;&gt;</span><br><span class="line">                    &lt;WebView</span><br><span class="line">                        ref=&#123;&apos;webview&apos;&#125;</span><br><span class="line">                        source=&#123;require(&apos;./test.html&apos;)&#125;</span><br><span class="line">                        style=&#123;&#123;width: 375, height: 220&#125;&#125;</span><br><span class="line">                        onMessage=&#123;(e) =&gt; &#123;</span><br><span class="line">                            this.handleMessage(e)</span><br><span class="line">                        &#125;&#125;</span><br><span class="line">                    /&gt;</span><br><span class="line">                &lt;/View&gt;</span><br><span class="line">                &#123;/*RN*/&#125;</span><br><span class="line">                &lt;Text&gt;来自webview的数据 : &#123;this.state.webViewData&#125;&lt;/Text&gt;</span><br><span class="line">                &lt;Text onPress=&#123;() =&gt; &#123;</span><br><span class="line">                    this.sendMessage()</span><br><span class="line">                &#125;&#125;&gt;</span><br><span class="line">                    发送数据到WebView</span><br><span class="line">                &lt;/Text&gt;</span><br><span class="line">            &lt;/View&gt;</span><br><span class="line"></span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">const styles = StyleSheet.create(&#123;</span><br><span class="line"></span><br><span class="line">    container: &#123;</span><br><span class="line"></span><br><span class="line">        flex: 1,</span><br><span class="line"></span><br><span class="line">        marginTop: 22,</span><br><span class="line"></span><br><span class="line">        backgroundColor: &apos;#F5FCFF&apos;,</span><br><span class="line"></span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>而在html里面,需要监听数据,通过:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">document.addEventListener(&apos;message&apos;, function (e) &#123;</span><br><span class="line">            document.getElementById(&apos;data&apos;).textContent = e.data;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure></p>
+<p>发送数据通过:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">window.postMessage(data);</span><br></pre></td></tr></table></figure></p>
+<p>完整代码如下:</p>
+<h3 id="test-html"><a href="#test-html" class="headerlink" title="test.html"></a>test.html</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;title&gt;&lt;/title&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;p style=&quot;text-align: center&quot;&gt;</span><br><span class="line">    &lt;button id=&quot;button&quot;&gt;发送数据到react native&lt;/button&gt;</span><br><span class="line">&lt;p style=&quot;text-align: center&quot;&gt;收到react native发送的数据: &lt;span id=&quot;data&quot;&gt;&lt;/span&gt;&lt;/p&gt;</span><br><span class="line">&lt;/p&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    var data = 0;</span><br><span class="line">    function sendData(data) &#123;</span><br><span class="line">        if (window.originalPostMessage) &#123;</span><br><span class="line">            window.postMessage(data);</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            throw Error(&apos;postMessage接口还未注入&apos;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    window.onload = function () &#123;</span><br><span class="line">        document.addEventListener(&apos;message&apos;, function (e) &#123;</span><br><span class="line">            document.getElementById(&apos;data&apos;).textContent = e.data;</span><br><span class="line">        &#125;);</span><br><span class="line">        document.getElementById(&apos;button&apos;).onclick = function () &#123;</span><br><span class="line">            data += 11;</span><br><span class="line">            sendData(data);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>效果图:<br><img src="/2019/04/22/移动端学习/React Native 与 Web的基本交互/../../../../../images/webRN-result.png" alt="webRN-result.png"></p>
+<p><a href="https://github.com/pheromone/webRN/tree/master" target="_blank" rel="noopener">源码</a></p>
+<p>另外:在未来的版本中,可能会移除自带的webView,改用在外部库里引用的方式.同时,在三方库中,也有webView-bridge库使用,cookie库使用.<br><a href="https://github.com/react-native-community/react-native-webview" target="_blank" rel="noopener">react-native-webview</a><br><a href="https://github.com/alinz/react-native-webview-bridge" target="_blank" rel="noopener">webView-bridge</a><br><a href="https://github.com/beefe/react-native-cookiemanager" target="_blank" rel="noopener">cookie</a></p>
+
     </div>
 </article>
+
+
+<div id="comments-template"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script>
+	if(!window.commentConfig) {
+      window.commentConfig = {}
+      window.commentConfig.title = 'React Native 与 Web的基本交互'
+    }
+</script>
+
                 </div>
                 <aside class="col-md-4 gal-left" id="sidebar">
     <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
@@ -408,31 +451,31 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/03/18/前端学习/精灵图学习/">前端精灵图学习</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
                     <a href="/2018/03/18/前端学习/马赛克学习/">前端马赛克学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/02/16/移动端学习/Flutter scoped_model学习/">Flutter scoped_model学习</a>
+                    <a href="/2018/06/29/前端学习/React学习-简单个人消费记账系统/">React学习:简单个人消费记账系统</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/03/18/移动端学习/Android和React Native的简单交互/">Android和React Native的简单交互</a>
+                    <a href="/2018/03/18/其他学习/其他学习/">其他学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/09/08/移动端学习/React Native 推送通知至RN且显示推送内容/">React Native 推送通知至RN且显示推送内容</a>
+                    <a href="/2018/08/11/移动端学习/React Native <收起-展开>功能实现/">React Native &#34;收起-展开&#34;功能实现</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/03/18/移动端学习/react-native-router-flux初步认识/">react-native-router-flux初步认识</a>
                 </span>
             </li>
             
@@ -444,25 +487,25 @@
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/2018/06/16/移动端学习/react-navigation前置登录/">react-navigation前置登录</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2018/07/29/移动端学习/react-navigation和dva的结合使用/">react-navigation 和 dva的结合使用</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/2018/03/18/移动端学习/redux和react-navigation的结合使用/">redux和react-navigation的结合使用</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2019/03/03/移动端学习/Flutter provide学习/">Flutter provide学习</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/03/06/移动端学习/Flutter json_serializable库学习/">Flutter json_serializable库学习</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/04/22/移动端学习/React Native 与 Web的基本交互/">React Native 与 Web的基本交互</a>
                 </span>
             </li>
             
@@ -475,25 +518,25 @@
         <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
             <ul class="nav nav-pills pills-gal">
                 <li class="">
-                    <a href="/tags/前端学习/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2019/04/22/移动端学习/React Native 与 Web的基本交互/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 <li class="">
-                    <a href="/tags/前端学习/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2019/04/22/移动端学习/React Native 与 Web的基本交互/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 <li class="">
-                    <a href="/tags/前端学习/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2019/04/22/移动端学习/React Native 与 Web的基本交互/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
             </ul>
             <div class="tab-content">
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/前端学习/" style="font-size: 14.946234822974024px;" class="tag-cloud-link">前端学习</a>
+    <a href="/tags/前端学习/" style="font-size: 13.345241821241451px;" class="tag-cloud-link">前端学习</a>
     
-    <a href="/tags/其他学习/" style="font-size: 19.311370276409548px;" class="tag-cloud-link">其他学习</a>
+    <a href="/tags/其他学习/" style="font-size: 18.053140340111995px;" class="tag-cloud-link">其他学习</a>
     
-    <a href="/tags/后端学习/" style="font-size: 18.24040282155836px;" class="tag-cloud-link">后端学习</a>
+    <a href="/tags/后端学习/" style="font-size: 17.72329293327856px;" class="tag-cloud-link">后端学习</a>
     
-    <a href="/tags/移动端学习/" style="font-size: 17.231907154126354px;" class="tag-cloud-link">移动端学习</a>
+    <a href="/tags/移动端学习/" style="font-size: 11.606524472739899px;" class="tag-cloud-link">移动端学习</a>
     
 </div>
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
@@ -586,7 +629,7 @@
 </script>
 <script>
     if(window.commentConfig) {
-      window.commentConfig.id = '',
+      window.commentConfig.id = 'Mon Apr 22 2019 00:00:00 GMT+0800',
       window.commentConfig.owner = 'pheromone'
       window.commentConfig.repo = 'pheromone.github.io'
       window.commentConfig.client_id = '3ce73da9fde666a12f54'
@@ -594,7 +637,7 @@
       window.commentConfig.redirect_uri = ''
     } else {
       window.commentConfig = {
-        id: '',
+        id: 'Mon Apr 22 2019 00:00:00 GMT+0800',
         owner: 'pheromone',
         repo: 'pheromone.github.io',
         client_id: '3ce73da9fde666a12f54',
@@ -620,7 +663,7 @@
 <script src="https://myau.moe/js/comment/gitment.browser.js"></script>
 <script>
     if(window.commentConfig) {
-      window.commentConfig.id = ''
+      window.commentConfig.id = 'Mon Apr 22 2019 00:00:00 GMT+0800'
       window.commentConfig.owner = 'pheromone'
       window.commentConfig.repo = 'pheromone.github.io'
       window.commentConfig.client_id = '3ce73da9fde666a12f54'
@@ -628,7 +671,7 @@
       window.commentConfig.redirect_uri = ''
     } else {
       window.commentConfig = {
-      	id: '',
+      	id: 'Mon Apr 22 2019 00:00:00 GMT+0800',
         owner: 'pheromone',
         repo: 'pheromone.github.io',
         client_id: '3ce73da9fde666a12f54',
