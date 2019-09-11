@@ -286,7 +286,7 @@
 <h3 id="two-dart"><a href="#two-dart" class="headerlink" title="two.dart"></a>two.dart</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">import &apos;package:flutter/material.dart&apos;;</span><br><span class="line">import &apos;package:scoped_model_demo/model/main_model.dart&apos;;</span><br><span class="line">import &apos;package:scoped_model/scoped_model.dart&apos;;</span><br><span class="line"></span><br><span class="line">class Two extends StatefulWidget &#123;</span><br><span class="line">  @override</span><br><span class="line">  _TwoState createState() =&gt; _TwoState();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class _TwoState extends State&lt;Two&gt; &#123;</span><br><span class="line">   //静态获取model用法实例</span><br><span class="line">  Model getModel(BuildContext context)&#123;</span><br><span class="line">    //直接使用of</span><br><span class="line">    final countModel = ScopedModel.of&lt;MainModel&gt;(context);</span><br><span class="line">    //使用CountModel中重写的of</span><br><span class="line">    final countModel2 = MainModel().of(context);</span><br><span class="line"></span><br><span class="line">    countModel.increment();</span><br><span class="line">    countModel2.increment();</span><br><span class="line">    return countModel;</span><br><span class="line">    //    return countMode2;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  @override</span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    return ScopedModelDescendant&lt;MainModel&gt;(</span><br><span class="line">      builder: (context,child,model)&#123;</span><br><span class="line">        return Scaffold(</span><br><span class="line">          appBar: AppBar(</span><br><span class="line">            title: Text(&apos;Two Screen&apos;),</span><br><span class="line">          ),</span><br><span class="line">          body: Center(</span><br><span class="line">            child: Text(</span><br><span class="line">              model.count.toString(),</span><br><span class="line">              style: TextStyle(fontSize: 48.0),</span><br><span class="line">            ),</span><br><span class="line">          )</span><br><span class="line">        );</span><br><span class="line">      &#125;,</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>效果图:<br><img src="/2019/02/16/移动端学习/Flutter~scoped_model学习/../../../../../images/scoped_model_demo_result.gif" alt="scoped_model_demo_result"></p>
 <p><a href="https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/state%E7%AE%A1%E7%90%86/scoped_model_demo" target="_blank" rel="noopener">源码</a></p>
-<p><a href="https://pheromone.github.io/categories/移动端学习/">另外:其他管理库学习</a></p>
+<p><a href="http://zhoushaoting.com/archives/">另外:其他管理库学习</a></p>
 <p><a href="https://github.com/pheromone/Flutter_learn_demo" target="_blank" rel="noopener">另外:Flutter学习demo</a></p>
 
     </div>
@@ -369,6 +369,12 @@
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/2019/09/11/移动端学习/Flutter~provider学习/">Flutter~provider学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2019/09/07/移动端学习/Flutter~Flare动画学习/">Flutter~Flare动画学习</a>
                 </span>
             </li>
@@ -421,12 +427,6 @@
                 </span>
             </li>
             
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/03/07/移动端学习/Flutter~flutter_bloc库学习/">Flutter~flutter_bloc库学习</a>
-                </span>
-            </li>
-            
         </ul>
     </div>
 </aside>
@@ -445,19 +445,25 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/03/18/前端学习/精灵图学习/">前端精灵图学习</a>
+                    <a href="/2019/03/06/移动端学习/Flutter~json_serializable库学习/">Flutter~json_serializable库学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/03/30/移动端学习/Flutter路由管理库fluro学习/">Flutter路由管理库fluro学习</a>
+                    <a href="/2019/03/04/移动端学习/Flutter中的sqflite库学习/">Flutter中的sqflite库学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/03/18/移动端学习/react-navigation的基本使用/">react-navigation的基本使用</a>
+                    <a href="/2019/05/14/移动端学习/React-Native使用自定义字体/">React-Native使用自定义字体</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/03/18/移动端学习/react-native-router-flux初步认识/">react-native-router-flux初步认识</a>
                 </span>
             </li>
             
@@ -469,19 +475,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/05/27/移动端学习/Mobx与react-navigation的使用/">Mobx与react-navigation的结合使用</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2018/09/08/移动端学习/React-Native推送通知至RN且显示推送内容/">React-Native推送通知至RN且显示推送内容</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2018/07/29/移动端学习/dva和react-navigation的结合使用/">dva和react-navigation的结合使用</a>
+                    <a href="/2019/03/07/移动端学习/Flutter~flutter_bloc库学习/">Flutter~flutter_bloc库学习</a>
                 </span>
             </li>
             
@@ -493,13 +487,19 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/08/11/移动端学习/React-Native<收起-展开>功能实现/">React-Native&#34;收起-展开&#34;功能实现</a>
+                    <a href="/2019/05/31/移动端学习/Flutter~Android原生工程中添加Flutter模块/">Flutter~Android原生工程中添加Flutter模块</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/05/31/移动端学习/Flutter~Android原生工程中添加Flutter模块/">Flutter~Android原生工程中添加Flutter模块</a>
+                    <a href="/2018/03/18/后端学习/后端学习/">后端学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/09/11/移动端学习/Flutter~provider学习/">Flutter~provider学习</a>
                 </span>
             </li>
             
@@ -524,13 +524,13 @@
             <div class="tab-content">
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/其他学习/" style="font-size: 13.131697184887837px;" class="tag-cloud-link">其他学习</a>
+    <a href="/tags/其他学习/" style="font-size: 16.78831949772968px;" class="tag-cloud-link">其他学习</a>
     
-    <a href="/tags/前端学习/" style="font-size: 15.455498020647813px;" class="tag-cloud-link">前端学习</a>
+    <a href="/tags/前端学习/" style="font-size: 13.854785792362549px;" class="tag-cloud-link">前端学习</a>
     
-    <a href="/tags/后端学习/" style="font-size: 16.525512903770203px;" class="tag-cloud-link">后端学习</a>
+    <a href="/tags/后端学习/" style="font-size: 17.630084421673722px;" class="tag-cloud-link">后端学习</a>
     
-    <a href="/tags/移动端学习/" style="font-size: 16.379740011289087px;" class="tag-cloud-link">移动端学习</a>
+    <a href="/tags/移动端学习/" style="font-size: 14.199349311277334px;" class="tag-cloud-link">移动端学习</a>
     
 </div>
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">

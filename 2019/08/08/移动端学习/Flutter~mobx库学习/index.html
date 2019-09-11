@@ -290,7 +290,7 @@
 <h3 id="tabbar-dart"><a href="#tabbar-dart" class="headerlink" title="tabbar.dart"></a>tabbar.dart</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br></pre></td><td class="code"><pre><span class="line">import &apos;package:flutter/material.dart&apos;;</span><br><span class="line">import &apos;./pages/one_page.dart&apos;;</span><br><span class="line">import &apos;./pages/two_page.dart&apos;;</span><br><span class="line"></span><br><span class="line">class Tabbar extends StatelessWidget &#123;</span><br><span class="line">  @override</span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    return new MaterialApp(</span><br><span class="line">        debugShowCheckedModeBanner: false, home: new MainPageWidget());</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class MainPageWidget extends StatefulWidget &#123;</span><br><span class="line">  @override</span><br><span class="line">  State&lt;StatefulWidget&gt; createState() &#123;</span><br><span class="line">    return new MainPageState();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class MainPageState extends State&lt;MainPageWidget&gt; &#123;</span><br><span class="line">  int _tabIndex = 0;</span><br><span class="line">  var tabImages;</span><br><span class="line">  var appBarTitles = [&apos;一&apos;, &apos;二&apos;];</span><br><span class="line">  /*</span><br><span class="line">   * 存放两个页面，跟fragmentList一样</span><br><span class="line">   */</span><br><span class="line">  var _pageList;</span><br><span class="line"></span><br><span class="line">  /*</span><br><span class="line">   * 根据选择获得对应的normal或是press的icon</span><br><span class="line">   */</span><br><span class="line">  Image getTabIcon(int curIndex) &#123;</span><br><span class="line">    if (curIndex == _tabIndex) &#123;</span><br><span class="line">      return tabImages[curIndex][1];</span><br><span class="line">    &#125;</span><br><span class="line">    return tabImages[curIndex][0];</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  /*</span><br><span class="line">   * 获取bottomTab的颜色和文字</span><br><span class="line">   */</span><br><span class="line">  Text getTabTitle(int curIndex) &#123;</span><br><span class="line">    if (curIndex == _tabIndex) &#123;</span><br><span class="line">      return new Text(appBarTitles[curIndex],</span><br><span class="line">          style: new TextStyle(fontSize: 14.0, color: const Color(0xff1296db)));</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      return new Text(appBarTitles[curIndex],</span><br><span class="line">          style: new TextStyle(fontSize: 14.0, color: const Color(0xff515151)));</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  /*</span><br><span class="line">   * 根据image路径获取图片</span><br><span class="line">   */</span><br><span class="line">  Image getTabImage(path) &#123;</span><br><span class="line">    return new Image.asset(path, width: 24.0, height: 24.0);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  void initData() &#123;</span><br><span class="line">    /*</span><br><span class="line">     * 初始化选中和未选中的icon</span><br><span class="line">     */</span><br><span class="line">    tabImages = [</span><br><span class="line">      [</span><br><span class="line">        getTabImage(&apos;images/tab/home.png&apos;),</span><br><span class="line">        getTabImage(&apos;images/tab//home_select.png&apos;)</span><br><span class="line">      ],</span><br><span class="line">      [</span><br><span class="line">        getTabImage(&apos;images/tab/show.png&apos;),</span><br><span class="line">        getTabImage(&apos;images/tab//show_select.png&apos;)</span><br><span class="line">      ]</span><br><span class="line">    ];</span><br><span class="line">    /*</span><br><span class="line">     * 三个子界面</span><br><span class="line">     */</span><br><span class="line">    _pageList = [</span><br><span class="line">      new OnePage(),</span><br><span class="line">      new TwoPage(),</span><br><span class="line">    ];</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  @override</span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    //初始化数据</span><br><span class="line">    initData();</span><br><span class="line">    return Scaffold(</span><br><span class="line">        body: _pageList[_tabIndex],</span><br><span class="line">        bottomNavigationBar: new BottomNavigationBar(</span><br><span class="line">          items: &lt;BottomNavigationBarItem&gt;[</span><br><span class="line">            new BottomNavigationBarItem(</span><br><span class="line">                icon: getTabIcon(0), title: getTabTitle(0)),</span><br><span class="line">            new BottomNavigationBarItem(</span><br><span class="line">                icon: getTabIcon(1), title: getTabTitle(1)),</span><br><span class="line">          ],</span><br><span class="line">          type: BottomNavigationBarType.fixed,</span><br><span class="line">          //默认选中首页</span><br><span class="line">          currentIndex: _tabIndex,</span><br><span class="line">          iconSize: 24.0,</span><br><span class="line">          //点击事件</span><br><span class="line">          onTap: (index) &#123;</span><br><span class="line">            setState(() &#123;</span><br><span class="line">              _tabIndex = index;</span><br><span class="line">            &#125;);</span><br><span class="line">          &#125;,</span><br><span class="line">        ));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>效果图:<br><img src="/2019/08/08/移动端学习/Flutter~mobx库学习/../../../../../images/mobx_result.gif" alt="mobx_result"></p>
 <p><a href="https://github.com/pheromone/Flutter_learn_demo/tree/master/其他/state管理/flutter_mobx_demo" target="_blank" rel="noopener">源码</a></p>
-<p><a href="https://pheromone.github.io/categories/移动端学习/">另外:其他管理库学习</a></p>
+<p><a href="http://zhoushaoting.com/archives/">另外:其他管理库学习</a></p>
 <p><a href="https://github.com/pheromone/Flutter_learn_demo" target="_blank" rel="noopener">另外:Flutter学习demo</a></p>
 
     </div>
@@ -373,6 +373,12 @@
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/2019/09/11/移动端学习/Flutter~provider学习/">Flutter~provider学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2019/09/07/移动端学习/Flutter~Flare动画学习/">Flutter~Flare动画学习</a>
                 </span>
             </li>
@@ -425,12 +431,6 @@
                 </span>
             </li>
             
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/03/07/移动端学习/Flutter~flutter_bloc库学习/">Flutter~flutter_bloc库学习</a>
-                </span>
-            </li>
-            
         </ul>
     </div>
 </aside>
@@ -461,19 +461,25 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/05/14/移动端学习/React-Native使用自定义字体/">React-Native使用自定义字体</a>
+                    <a href="/2019/03/30/移动端学习/Flutter路由管理库fluro学习/">Flutter路由管理库fluro学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/07/29/移动端学习/dva和react-navigation的结合使用/">dva和react-navigation的结合使用</a>
+                    <a href="/2018/03/18/移动端学习/react-native-router-flux初步认识/">react-native-router-flux初步认识</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/03/18/移动端学习/redux和react-navigation的结合使用/">redux和react-navigation的结合使用</a>
+                    <a href="/2018/03/18/移动端学习/react-navigation的基本使用/">react-navigation的基本使用</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/06/16/移动端学习/react-navigation前置登录/">react-navigation前置登录</a>
                 </span>
             </li>
             
@@ -491,19 +497,13 @@
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/2019/06/11/移动端学习/Flutter~国际化教程方案/">Flutter~国际化教程方案</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2019/06/23/其他学习/MAC下的cocos2d-x环境搭建/">MAC下的cocos2d-x环境搭建</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2018/03/18/后端学习/后端学习/">后端学习</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/08/08/移动端学习/Flutter~mobx库学习/">Flutter~mobx库学习</a>
                 </span>
             </li>
             
@@ -528,13 +528,13 @@
             <div class="tab-content">
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/其他学习/" style="font-size: 9.777756436704893px;" class="tag-cloud-link">其他学习</a>
+    <a href="/tags/其他学习/" style="font-size: 8.158575033597545px;" class="tag-cloud-link">其他学习</a>
     
-    <a href="/tags/前端学习/" style="font-size: 9.228812530048064px;" class="tag-cloud-link">前端学习</a>
+    <a href="/tags/前端学习/" style="font-size: 14.761801255110257px;" class="tag-cloud-link">前端学习</a>
     
-    <a href="/tags/后端学习/" style="font-size: 8.315020347079622px;" class="tag-cloud-link">后端学习</a>
+    <a href="/tags/后端学习/" style="font-size: 11.815386344478968px;" class="tag-cloud-link">后端学习</a>
     
-    <a href="/tags/移动端学习/" style="font-size: 8.635865039803642px;" class="tag-cloud-link">移动端学习</a>
+    <a href="/tags/移动端学习/" style="font-size: 9.968012552473207px;" class="tag-cloud-link">移动端学习</a>
     
 </div>
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
