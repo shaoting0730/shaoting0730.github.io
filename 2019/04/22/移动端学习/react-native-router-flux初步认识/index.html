@@ -230,7 +230,7 @@
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/2018/03/18/移动端学习/react-native-router-flux初步认识/">react-native-router-flux初步认识</a>
+                <a href="/2019/04/22/移动端学习/react-native-router-flux初步认识/">react-native-router-flux初步认识</a>
             </h1>
         </div>
         <div class="tag-article">
@@ -243,7 +243,7 @@
             </span>
             
             <span class="label label-gal">
-                <i class="fa fa-calendar"></i> 2018-03-18
+                <i class="fa fa-calendar"></i> 2019-04-22
             </span>
             
             <span class="label label-gal">
@@ -257,11 +257,11 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/2018/03/18/移动端学习/react-native-router-flux初步认识/">react-native-router-flux初步认识</a>
+                    <a href="/2019/04/22/移动端学习/react-native-router-flux初步认识/">react-native-router-flux初步认识</a>
                 </h4>
             </div>
             <p>
-                <i class="fa fa-calendar"></i> 2018-03-18
+                <i class="fa fa-calendar"></i> 2019-04-22
             </p>
             <p>
                 
@@ -277,7 +277,7 @@
         </center>
     </div>
     <div class="content-article">
-        <p>今天初步了解下 <code>react-native-router-flux</code> 这个三方导航库,基于<br><code>react-native</code>0.55.4,<code>react-native-router-flux</code>^4.0.0-beta.31<br><a id="more"></a><br>效果图:<br><img src="/2018/03/18/移动端学习/react-native-router-flux初步认识/../../../../../images/react-native-router-flux初步认识.png" alt="react-native-router-flux初步认识"><br>使用方法请参考:<br><a href="https://www.jianshu.com/p/37428d579cf6" target="_blank" rel="noopener">参考1</a><br><a href="https://www.cnblogs.com/lemonzwt/p/8182345.html" target="_blank" rel="noopener">参考2</a><br>我这里不详细说明了,贴出关键代码一看便知.<br>代码基本结构如下:<br><img src="/2018/03/18/移动端学习/react-native-router-flux初步认识/../../../../../images/react-native-router-flux代码结构.png" alt="react-native-router-flux代码结构"></p>
+        <p>今天初步了解下 <code>react-native-router-flux</code> 这个三方导航库,基于<br><code>react-native</code>0.55.4,<code>react-native-router-flux</code>^4.0.0-beta.31<br><a id="more"></a><br>效果图:<br><img src="/2019/04/22/移动端学习/react-native-router-flux初步认识/../../../../../images/react-native-router-flux初步认识.png" alt="react-native-router-flux初步认识"><br>使用方法请参考:<br><a href="https://www.jianshu.com/p/37428d579cf6" target="_blank" rel="noopener">参考1</a><br><a href="https://www.cnblogs.com/lemonzwt/p/8182345.html" target="_blank" rel="noopener">参考2</a><br>我这里不详细说明了,贴出关键代码一看便知.<br>代码基本结构如下:<br><img src="/2019/04/22/移动端学习/react-native-router-flux初步认识/../../../../../images/react-native-router-flux代码结构.png" alt="react-native-router-flux代码结构"></p>
 <p><code>App.js</code>:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Sample React Native App</span><br><span class="line"> * https://github.com/facebook/react-native</span><br><span class="line"> * @flow</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">import React, &#123;Component&#125; from &apos;react&apos;;</span><br><span class="line">import &#123;</span><br><span class="line">    Platform,</span><br><span class="line">    StyleSheet,</span><br><span class="line">    Text,</span><br><span class="line">    View,</span><br><span class="line">    Image</span><br><span class="line">&#125; from &apos;react-native&apos;;</span><br><span class="line">import &#123;</span><br><span class="line">    Navigation,</span><br><span class="line">    Scene,</span><br><span class="line">    Router,</span><br><span class="line">    Modal</span><br><span class="line">&#125; from &apos;react-native-router-flux&apos;;</span><br><span class="line">import IOS from &apos;./src/ios&apos;;</span><br><span class="line">import Android from &apos;./src/android&apos;</span><br><span class="line">import Web from &apos;./src/web&apos;</span><br><span class="line">import TabIcon from &apos;./src/TabIcon&apos;</span><br><span class="line"></span><br><span class="line">type Props = &#123;&#125;;</span><br><span class="line">export default class App extends Component&lt;Props&gt; &#123;</span><br><span class="line">    render() &#123;</span><br><span class="line">        return (</span><br><span class="line">            &lt;Router&gt;</span><br><span class="line">                &lt;Modal&gt;</span><br><span class="line">                    &lt;Scene key=&quot;root&quot; tabBarPosition=&quot;bottom&quot; tabs&gt;</span><br><span class="line">                        &lt;Scene hideBackImage</span><br><span class="line">                               key=&quot;IOS&quot;</span><br><span class="line">                               title=&quot;苹果&quot;</span><br><span class="line">                               component=&#123;IOS&#125;</span><br><span class="line">                               icon=&#123;TabIcon&#125;</span><br><span class="line">                               Image=&#123;require(&apos;./src/image/ios.png&apos;)&#125;</span><br><span class="line">                               selectedImage=&#123;require(&apos;./src/image/ios_active.png&apos;)&#125;</span><br><span class="line">                        /&gt;</span><br><span class="line"></span><br><span class="line">                        &lt;Scene hideBackImage</span><br><span class="line">                               key=&quot;Web&quot;</span><br><span class="line">                               component=&#123;Web&#125;</span><br><span class="line">                               title=&quot;web&quot;</span><br><span class="line">                               icon=&#123;TabIcon&#125;</span><br><span class="line">                               Image=&#123;require(&apos;./src/image/web.png&apos;)&#125;</span><br><span class="line">                               showLabel = &#123;false&#125;</span><br><span class="line">                               selectedImage=&#123;require(&apos;./src/image/web_active.png&apos;)&#125;</span><br><span class="line">                        /&gt;</span><br><span class="line"></span><br><span class="line">                        &lt;Scene hideBackImage</span><br><span class="line">                               key=&quot;Android&quot;</span><br><span class="line">                               component=&#123;Android&#125;</span><br><span class="line">                               title=&quot;安卓&quot;</span><br><span class="line">                               icon=&#123;TabIcon&#125;</span><br><span class="line">                               Image=&#123;require(&apos;./src/image/android.png&apos;)&#125;</span><br><span class="line">                               hideNavBar=&#123;true&#125;  //隐藏导航栏</span><br><span class="line">                               selectedImage=&#123;require(&apos;./src/image/android_active.png&apos;)&#125;</span><br><span class="line">                        /&gt;</span><br><span class="line">                    &lt;/Scene&gt;</span><br><span class="line">                &lt;/Modal&gt;</span><br><span class="line">            &lt;/Router&gt;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const styles = StyleSheet.create(&#123;</span><br><span class="line">    tabbarContainer: &#123;</span><br><span class="line">        flex: 1,</span><br><span class="line">        backgroundColor: &quot;#f6f6f6&quot;,</span><br><span class="line">        overflow: &apos;visible&apos;</span><br><span class="line"></span><br><span class="line">    &#125;,</span><br><span class="line">    tabIconItem: &#123;</span><br><span class="line">        flex: 1,</span><br><span class="line">        height: 56,</span><br><span class="line">        flexDirection: &apos;column&apos;,</span><br><span class="line">        alignItems: &apos;center&apos;,</span><br><span class="line">        justifyContent: &apos;center&apos;,</span><br><span class="line">        paddingLeft: 8,</span><br><span class="line">        paddingRight: 8,</span><br><span class="line">        backgroundColor: &apos;transparent&apos;,</span><br><span class="line">        overflow: &apos;visible&apos;</span><br><span class="line">    &#125;,</span><br><span class="line">    tabIconImage: &#123;</span><br><span class="line">        width: 60,</span><br><span class="line">        height: 60,</span><br><span class="line">        overflow: &apos;visible&apos;</span><br><span class="line"></span><br><span class="line">    &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p><code>TabIcon.js</code></p>
@@ -420,7 +420,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/04/22/移动端学习/React-Native与Web的基本交互/">React-Native与Web的基本交互</a>
+                    <a href="/2019/04/22/移动端学习/react-native-router-flux初步认识/">react-native-router-flux初步认识</a>
                 </span>
             </li>
             
@@ -442,6 +442,36 @@
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/2019/06/23/其他学习/MAC下的cocos2d-x环境搭建/">MAC下的cocos2d-x环境搭建</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/06/29/前端学习/React学习-简单个人消费记账系统/">React学习:简单个人消费记账系统</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/05/16/后端学习/后端学习/">后端学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/04/22/移动端学习/Android和React-Native的简单交互/">Android和React-Native的简单交互</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/05/29/移动端学习/Flutter~iOS原生工程中添加Flutter模块的副本/">Flutter~iOS原生工程中添加Flutter模块</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2019/02/16/移动端学习/Flutter~scoped_model学习/">Flutter~scoped_model学习</a>
                 </span>
             </li>
@@ -460,43 +490,13 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/03/18/移动端学习/Android和React-Native的简单交互/">Android和React-Native的简单交互</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2018/09/08/移动端学习/React-Native推送通知至RN且显示推送内容/">React-Native推送通知至RN且显示推送内容</a>
+                    <a href="/2018/08/11/移动端学习/React-Native<收起-展开>功能实现/">React-Native&#34;收起-展开&#34;功能实现</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
                     <a href="/2018/07/29/移动端学习/dva和react-navigation的结合使用/">dva和react-navigation的结合使用</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2018/08/17/移动端学习/React-Native类似支付宝的应用增删模块的简单实现/">React-Native类似支付宝的应用增删模块的简单实现</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/05/31/移动端学习/Flutter~Android原生工程中添加Flutter模块/">Flutter~Android原生工程中添加Flutter模块</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/09/07/移动端学习/Flutter~Flare动画学习/">Flutter~Flare动画学习</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/1991/07/30/其他学习/人生记录贴/">人生记录帖</a>
                 </span>
             </li>
             
@@ -509,25 +509,25 @@
         <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
             <ul class="nav nav-pills pills-gal">
                 <li class>
-                    <a href="/2018/03/18/移动端学习/react-native-router-flux初步认识/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2019/04/22/移动端学习/react-native-router-flux初步认识/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 <li class>
-                    <a href="/2018/03/18/移动端学习/react-native-router-flux初步认识/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2019/04/22/移动端学习/react-native-router-flux初步认识/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 <li class>
-                    <a href="/2018/03/18/移动端学习/react-native-router-flux初步认识/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2019/04/22/移动端学习/react-native-router-flux初步认识/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
             </ul>
             <div class="tab-content">
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/其他学习/" style="font-size: 10.546033737146043px;" class="tag-cloud-link">其他学习</a>
+    <a href="/tags/其他学习/" style="font-size: 18.47221126821235px;" class="tag-cloud-link">其他学习</a>
     
-    <a href="/tags/前端学习/" style="font-size: 9.965139703983304px;" class="tag-cloud-link">前端学习</a>
+    <a href="/tags/前端学习/" style="font-size: 9.37101130883142px;" class="tag-cloud-link">前端学习</a>
     
-    <a href="/tags/后端学习/" style="font-size: 17.591443287970876px;" class="tag-cloud-link">后端学习</a>
+    <a href="/tags/后端学习/" style="font-size: 8.39381092522125px;" class="tag-cloud-link">后端学习</a>
     
-    <a href="/tags/移动端学习/" style="font-size: 8.783784332452344px;" class="tag-cloud-link">移动端学习</a>
+    <a href="/tags/移动端学习/" style="font-size: 10.309672557447282px;" class="tag-cloud-link">移动端学习</a>
     
 </div>
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
@@ -620,7 +620,7 @@
 </script>
 <script>
     if(window.commentConfig) {
-      window.commentConfig.id = 'Sun Mar 18 2018 16:16:47 GMT+0800',
+      window.commentConfig.id = 'Mon Apr 22 2019 15:56:58 GMT+0800',
       window.commentConfig.owner = 'pheromone'
       window.commentConfig.repo = 'pheromone.github.io'
       window.commentConfig.client_id = '3ce73da9fde666a12f54'
@@ -628,7 +628,7 @@
       window.commentConfig.redirect_uri = ''
     } else {
       window.commentConfig = {
-        id: 'Sun Mar 18 2018 16:16:47 GMT+0800',
+        id: 'Mon Apr 22 2019 15:56:58 GMT+0800',
         owner: 'pheromone',
         repo: 'pheromone.github.io',
         client_id: '3ce73da9fde666a12f54',
@@ -654,7 +654,7 @@
 <script src="https://myau.moe/js/comment/gitment.browser.js"></script>
 <script>
     if(window.commentConfig) {
-      window.commentConfig.id = 'Sun Mar 18 2018 16:16:47 GMT+0800'
+      window.commentConfig.id = 'Mon Apr 22 2019 15:56:58 GMT+0800'
       window.commentConfig.owner = 'pheromone'
       window.commentConfig.repo = 'pheromone.github.io'
       window.commentConfig.client_id = '3ce73da9fde666a12f54'
@@ -662,7 +662,7 @@
       window.commentConfig.redirect_uri = ''
     } else {
       window.commentConfig = {
-      	id: 'Sun Mar 18 2018 16:16:47 GMT+0800',
+      	id: 'Mon Apr 22 2019 15:56:58 GMT+0800',
         owner: 'pheromone',
         repo: 'pheromone.github.io',
         client_id: '3ce73da9fde666a12f54',

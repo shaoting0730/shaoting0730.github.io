@@ -12,7 +12,7 @@
     
     
     
-    <title>前端精灵图学习 | 少停</title>
+    <title>前端马赛克学习 | 少停</title>
     <link href="”http://zhoushaoting.com“" rel="”prefetch”">
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -224,13 +224,13 @@
         <i class="fa fa-home"></i>
         <a href="http://zhoushaoting.com">少停</a>
         >
-        <span>前端精灵图学习</span>
+        <span>前端马赛克学习</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/2018/03/18/前端学习/精灵图学习/">前端精灵图学习</a>
+                <a href="/2018/05/17/前端学习/马赛克学习/">前端马赛克学习</a>
             </h1>
         </div>
         <div class="tag-article">
@@ -243,7 +243,7 @@
             </span>
             
             <span class="label label-gal">
-                <i class="fa fa-calendar"></i> 2018-03-18
+                <i class="fa fa-calendar"></i> 2018-05-17
             </span>
             
             <span class="label label-gal">
@@ -257,11 +257,11 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/2018/03/18/前端学习/精灵图学习/">前端精灵图学习</a>
+                    <a href="/2018/05/17/前端学习/马赛克学习/">前端马赛克学习</a>
                 </h4>
             </div>
             <p>
-                <i class="fa fa-calendar"></i> 2018-03-18
+                <i class="fa fa-calendar"></i> 2018-05-17
             </p>
             <p>
                 
@@ -277,10 +277,128 @@
         </center>
     </div>
     <div class="content-article">
-        <p>今天学习下前端中的 精灵图.<br>为何引入精灵图: 网页上面的每张图片都要经历一次请求才能展示给用户，小的图标频繁的请求服务器，降低页面的加载速度，为了有效地减少服务器接收和发送请求的次数，提高页面的加载速度，因此，产生了css精灵技术。<br><a id="more"></a><br>以本地图片为例:<br><img src="/2018/03/18/前端学习/精灵图学习/../../../../../images/精灵图原图.png" alt="精灵图原图"><br>精灵图使用其实就是对<code>background-position:x y</code>对图片进行偏移显示而已.<br>下面是代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;style&gt;</span><br><span class="line">        *&#123;</span><br><span class="line">            margin:0;</span><br><span class="line">            padding:0;</span><br><span class="line">        &#125;</span><br><span class="line">        .div0&#123;</span><br><span class="line">            margin:10px;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        .demo1,.demo2,.demo3,.demo4,.demo5,.demo6&#123;</span><br><span class="line">            display:inline-block;</span><br><span class="line">            width:17px;</span><br><span class="line">            height:17px;</span><br><span class="line">            background-color:transparent;</span><br><span class="line">            background-image:url(img/精灵图.png);</span><br><span class="line">            background-repeat:no-repeat;</span><br><span class="line">        &#125;</span><br><span class="line">        .demo1&#123; background-position:-38px -37px;&#125;</span><br><span class="line">        .demo2&#123; background-position:-62px -37px;&#125;</span><br><span class="line">        .demo3&#123; background-position:-86px -37px;&#125;</span><br><span class="line">        .demo4&#123; background-position:-110px -37px;&#125;</span><br><span class="line">        .demo5&#123; background-position:-134px -37px;&#125;</span><br><span class="line">        .demo6&#123; background-position:-159px -37px;&#125;</span><br><span class="line">        ul&#123;</span><br><span class="line">            list-style:none;</span><br><span class="line">        &#125;</span><br><span class="line">        ul li &#123;</span><br><span class="line">            margin:10px;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        &lt;/style&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line"></span><br><span class="line">    &lt;body&gt;</span><br><span class="line">    &lt;div class=&quot;div0&quot;&gt;</span><br><span class="line">        &lt;ul&gt;</span><br><span class="line">            &lt;li&gt;&lt;div class=&quot;demo1&quot;&gt;&lt;/div&gt; 图标1&lt;/li&gt;</span><br><span class="line">            &lt;li&gt;&lt;div class=&quot;demo2&quot;&gt;&lt;/div&gt; 图标2&lt;/li&gt;</span><br><span class="line">            &lt;li&gt;&lt;div class=&quot;demo3&quot;&gt;&lt;/div&gt; 图标3&lt;/li&gt;</span><br><span class="line">            &lt;li&gt;&lt;div class=&quot;demo4&quot;&gt;&lt;/div&gt; 图标4&lt;/li&gt;</span><br><span class="line">            &lt;li&gt;&lt;div class=&quot;demo5&quot;&gt;&lt;/div&gt; 图标5&lt;/li&gt;</span><br><span class="line">            &lt;li&gt;&lt;div class=&quot;demo6&quot;&gt;&lt;/div&gt; 图标6&lt;/li&gt;</span><br><span class="line">        &lt;/ul&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
-<p>效果图:<br><img src="/2018/03/18/前端学习/精灵图学习/../../../../../images/精灵图结果.png" alt="精灵图结果"></p>
-<p><a href="https://github.com/pheromone/sprite-sheet" target="_blank" rel="noopener">源码</a></p>
+        <p>上周去菜市场买菜,看到路边一个二维码,于是想起阿里巴巴,接着想起之前上班都会路过阿里巴巴,接着想起马云,然后想到马赛克!!!于是我回家了,想学习下前端中的马赛克.<br><a id="more"></a><br>完成的功能 <br></p>
+<ul>
+<li>选择当地一张图片 <br></li>
+<li>点击绘制马赛克 <br></li>
+<li>拖动绘制马赛克 <br></li>
+</ul>
+<p>为了方便,相关js代码直接写在了index.html中,大致分为<code>加载图片</code>,<code>添加监听</code>,<code>方法触发</code>,<code>绘制小方块(马赛克)</code>,<code>计算颜色</code>,<code>数组升维</code>这几个方法,UI部分通过<code>canvas</code>    标签和<code>input</code>    标签绘制.<br>下面是完整的<code>index.html</code>代码</p>
+<pre><code>&lt;!doctype html&gt;
+&lt;html&gt;
 
+&lt;head&gt;
+    &lt;title&gt;&lt;/title&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;Keywords&quot; content=&quot;马赛克 canvas&quot;&gt;
+    &lt;meta name=&quot;Description&quot; content=&quot;学习前端马赛克&quot;&gt;
+&lt;/head&gt;
+&lt;style&gt;
+    canvas {
+        border: 1px black solid;
+
+    }
+&lt;/style&gt;
+
+&lt;body&gt;
+    &lt;div id=&quot;mask&quot;&gt;
+        &lt;canvas width=&quot;600&quot; height=&quot;600&quot;&gt;
+        &lt;/canvas&gt;
+        &lt;input type=&quot;file&quot; class=&apos;input&apos;&gt;
+    &lt;/div&gt;
+    &lt;script&gt;
+        var canvas = document.querySelector(&apos;canvas&apos;);
+        var input = document.querySelector(&apos;#mask .input&apos;);
+        var ctx = canvas.getContext(&apos;2d&apos;);
+        var mousedown = false;
+        var t = 15;
+        input.onchange = function () {
+            loadimg();
+        }
+        /**
+         *加载图片
+         */
+        function loadimg() {
+            var img = new Image();
+            img.src = window.URL.createObjectURL(input.files[0]);
+            img.onload = function () {
+                ctx.drawImage(img, 0, 0, 600, 600);
+            }
+            register();
+        }
+        /**
+         *添加监听
+         */
+        function register() {
+            canvas.addEventListener(&apos;mousedown&apos;, action)
+            canvas.addEventListener(&apos;mousemove&apos;, action)
+            canvas.addEventListener(&apos;mouseup&apos;, action)
+        }
+         /**
+         *方法触发
+         */   
+        function action(e) {
+            var dx = parseInt(((e.offsetX - t / 2) / t) * t)
+            var dy = parseInt(((e.offsetY - t / 2) / t) * t)
+            if (e.type == &quot;mousedown&quot;) {
+                mousedown = true;
+                computeColor(dx, dy);
+            }
+            if (mousedown &amp;&amp; e.type == &quot;mousemove&quot;) {
+                computeColor(dx, dy);
+            }
+            if (e.type == &quot;mouseup&quot;) {
+                mousedown = false;
+            }
+        }
+
+        /*
+         * 画小方块
+         */
+         function rect(x, y, c) {
+            ctx.beginPath();
+            ctx.fillStyle = c;
+            var dx = parseInt(x / t)*t,dy = parseInt(y / t)*t
+            ctx.rect(dx, dy, t, t);
+            ctx.fill();
+        }
+        /**
+        计算颜色
+        */
+        function computeColor(x, y) {
+            var arrList = restore(ctx.getImageData(x,y,t,t).data,4); //一维数组
+            var vr = 0, vg = 0, vb = 0,al = arrList.length;
+            for(var i = 0; i &lt; al; i++){
+                vr += arrList[i][0];
+                vg += arrList[i][1];
+                vb += arrList[i][2];
+                var color = &apos;rgb(&apos; + Math.floor(vr/al) + &apos;,&apos; + Math.floor(vg/al) + &apos;,&apos; +  Math.floor(vb/al) + &apos;)&apos;;
+                rect(x,y,color);
+            }
+        }
+        /**
+         *数组升维 [1,2,3,4] =&gt; [[1,2],[3,4]]
+         */
+        function restore(arr, step) {
+              var list = [];
+              var index = 0;
+              var n = Math.floor(arr.length/step);
+              for(var i = 0; i &lt; n ;i++){
+                list.push(arr.slice(index,index+step));
+                index += step;
+              }  
+              return list;
+        }        
+    &lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre><p>效果图:</p>
+<p><img src="/2018/05/17/前端学习/马赛克学习/../../../../../images/马赛克原图.png" alt="马赛克原图"></p>
+<p><img src="/2018/05/17/前端学习/马赛克学习/../../../../../images/马赛克效果.gif" alt="马赛克效果"></p>
+<p></p><h1>是不是特别棒,再也不为女朋友照片的隐私犯愁了.ps:现在就差个女朋友了<p></p>
+<p><a href="https://github.com/pheromone/web-mosaic" target="_blank" rel="noopener">源码</a></p>
+</h1>
     </div>
 </article>
 
@@ -290,7 +408,7 @@
 <script>
 	if(!window.commentConfig) {
       window.commentConfig = {}
-      window.commentConfig.title = '前端精灵图学习'
+      window.commentConfig.title = '前端马赛克学习'
     }
 </script>
 
@@ -415,7 +533,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/04/22/移动端学习/React-Native与Web的基本交互/">React-Native与Web的基本交互</a>
+                    <a href="/2019/04/22/移动端学习/react-native-router-flux初步认识/">react-native-router-flux初步认识</a>
                 </span>
             </li>
             
@@ -437,25 +555,37 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/03/18/前端学习/马赛克学习/">前端马赛克学习</a>
+                    <a href="/2018/05/17/前端学习/精灵图学习/">前端精灵图学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/03/06/移动端学习/Flutter~json_serializable库学习/">Flutter~json_serializable库学习</a>
+                    <a href="/2018/05/17/前端学习/马赛克学习/">前端马赛克学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/03/30/移动端学习/Flutter路由管理库fluro学习/">Flutter路由管理库fluro学习</a>
+                    <a href="/2019/04/22/移动端学习/Android和React-Native的简单交互/">Android和React-Native的简单交互</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/05/27/移动端学习/Mobx与react-navigation的使用/">Mobx与react-navigation的结合使用</a>
+                    <a href="/2019/09/07/移动端学习/Flutter~Flare动画学习/">Flutter~Flare动画学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/08/移动端学习/Flutter~mobx库学习/">Flutter~mobx库学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/02/16/移动端学习/Flutter~scoped_model学习/">Flutter~scoped_model学习</a>
                 </span>
             </li>
             
@@ -467,31 +597,19 @@
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/2019/04/22/移动端学习/react-native-router-flux初步认识/">react-native-router-flux初步认识</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2018/06/26/移动端学习/react-native七牛上传图片/">react-native七牛上传图片</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/08/11/移动端学习/React-Native<收起-展开>功能实现/">React-Native&#34;收起-展开&#34;功能实现</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/05/29/移动端学习/Flutter~iOS原生工程中添加Flutter模块的副本/">Flutter~iOS原生工程中添加Flutter模块</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/06/23/其他学习/MAC下的cocos2d-x环境搭建/">MAC下的cocos2d-x环境搭建</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/08/08/移动端学习/Flutter~mobx库学习/">Flutter~mobx库学习</a>
+                    <a href="/2018/08/17/移动端学习/React-Native类似支付宝的应用增删模块的简单实现/">React-Native类似支付宝的应用增删模块的简单实现</a>
                 </span>
             </li>
             
@@ -504,25 +622,25 @@
         <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
             <ul class="nav nav-pills pills-gal">
                 <li class>
-                    <a href="/2018/03/18/前端学习/精灵图学习/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2018/05/17/前端学习/马赛克学习/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 <li class>
-                    <a href="/2018/03/18/前端学习/精灵图学习/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2018/05/17/前端学习/马赛克学习/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 <li class>
-                    <a href="/2018/03/18/前端学习/精灵图学习/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2018/05/17/前端学习/马赛克学习/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
             </ul>
             <div class="tab-content">
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/其他学习/" style="font-size: 16.61665322203789px;" class="tag-cloud-link">其他学习</a>
+    <a href="/tags/其他学习/" style="font-size: 12.533164399097721px;" class="tag-cloud-link">其他学习</a>
     
-    <a href="/tags/前端学习/" style="font-size: 16.09318458951528px;" class="tag-cloud-link">前端学习</a>
+    <a href="/tags/前端学习/" style="font-size: 11.49452525279795px;" class="tag-cloud-link">前端学习</a>
     
-    <a href="/tags/后端学习/" style="font-size: 16.407932267541696px;" class="tag-cloud-link">后端学习</a>
+    <a href="/tags/后端学习/" style="font-size: 12.82435889256801px;" class="tag-cloud-link">后端学习</a>
     
-    <a href="/tags/移动端学习/" style="font-size: 13.96626478850218px;" class="tag-cloud-link">移动端学习</a>
+    <a href="/tags/移动端学习/" style="font-size: 14.461868735448851px;" class="tag-cloud-link">移动端学习</a>
     
 </div>
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
@@ -615,7 +733,7 @@
 </script>
 <script>
     if(window.commentConfig) {
-      window.commentConfig.id = 'Sun Mar 18 2018 16:18:48 GMT+0800',
+      window.commentConfig.id = 'Thu May 17 2018 21:45:31 GMT+0800',
       window.commentConfig.owner = 'pheromone'
       window.commentConfig.repo = 'pheromone.github.io'
       window.commentConfig.client_id = '3ce73da9fde666a12f54'
@@ -623,7 +741,7 @@
       window.commentConfig.redirect_uri = ''
     } else {
       window.commentConfig = {
-        id: 'Sun Mar 18 2018 16:18:48 GMT+0800',
+        id: 'Thu May 17 2018 21:45:31 GMT+0800',
         owner: 'pheromone',
         repo: 'pheromone.github.io',
         client_id: '3ce73da9fde666a12f54',
@@ -649,7 +767,7 @@
 <script src="https://myau.moe/js/comment/gitment.browser.js"></script>
 <script>
     if(window.commentConfig) {
-      window.commentConfig.id = 'Sun Mar 18 2018 16:18:48 GMT+0800'
+      window.commentConfig.id = 'Thu May 17 2018 21:45:31 GMT+0800'
       window.commentConfig.owner = 'pheromone'
       window.commentConfig.repo = 'pheromone.github.io'
       window.commentConfig.client_id = '3ce73da9fde666a12f54'
@@ -657,7 +775,7 @@
       window.commentConfig.redirect_uri = ''
     } else {
       window.commentConfig = {
-      	id: 'Sun Mar 18 2018 16:18:48 GMT+0800',
+      	id: 'Thu May 17 2018 21:45:31 GMT+0800',
         owner: 'pheromone',
         repo: 'pheromone.github.io',
         client_id: '3ce73da9fde666a12f54',
