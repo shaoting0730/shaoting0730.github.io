@@ -12,7 +12,7 @@
     
     
     
-    <title>Flutter-自定义tabbar | 少停</title>
+    <title>Flutter~自定义tabbar模块 | 少停</title>
     <link href="”http://zhoushaoting.com“" rel="”prefetch”">
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -139,15 +139,15 @@
                         
                         
                         <li>
+                            <a href="/categories/其他学习/">其他学习</a>
+                        </li>
+                        
+                        <li>
                             <a href="/categories/前端学习/">前端学习</a>
                         </li>
                         
                         <li>
                             <a href="/categories/后端学习/">后端学习</a>
-                        </li>
-                        
-                        <li>
-                            <a href="/categories/其他学习/">其他学习</a>
                         </li>
                         
                         
@@ -172,15 +172,15 @@
                         
                         
                         <li>
+                            <a href="/tags/其他学习/">其他学习</a>
+                        </li>
+                        
+                        <li>
                             <a href="/tags/前端学习/">前端学习</a>
                         </li>
                         
                         <li>
                             <a href="/tags/后端学习/">后端学习</a>
-                        </li>
-                        
-                        <li>
-                            <a href="/tags/其他学习/">其他学习</a>
                         </li>
                         
                         
@@ -224,13 +224,13 @@
         <i class="fa fa-home"></i>
         <a href="http://zhoushaoting.com">少停</a>
         >
-        <span>Flutter-自定义tabbar</span>
+        <span>Flutter~自定义tabbar模块</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/2020/01/23/移动端学习/Flutter-自定义tabbar模块/">Flutter-自定义tabbar</a>
+                <a href="/2020/01/23/移动端学习/Flutter~自定义tabbar模块/">Flutter~自定义tabbar模块</a>
             </h1>
         </div>
         <div class="tag-article">
@@ -257,7 +257,7 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/2020/01/23/移动端学习/Flutter-自定义tabbar模块/">Flutter-自定义tabbar</a>
+                    <a href="/2020/01/23/移动端学习/Flutter~自定义tabbar模块/">Flutter~自定义tabbar模块</a>
                 </h4>
             </div>
             <p>
@@ -277,7 +277,7 @@
         </center>
     </div>
     <div class="content-article">
-        <p>项目中,遇到一个需求,需要自定义tabbar的高度,但是自带的tabbar组件都不支持修改高度.<br><a id="more"></a><br>所幸flutter的<code>万物皆组件</code>的概念,所以我们自己写一个tabbar即可.<br>需求:需要一个可以自行控制高度的tabbar. <br><br>大致效果如下: <img src="/2020/01/23/移动端学习/Flutter-自定义tabbar模块/../../../../../images/result_custom_tabbar.gif" alt="result_custom_tabbar"></p>
+        <p>项目中,遇到一个需求,需要自定义tabbar的高度,但是自带的tabbar组件都不支持修改高度.<br><a id="more"></a><br>所幸flutter的<code>万物皆组件</code>的概念,所以我们自己写一个tabbar即可.<br>需求:需要一个可以自行控制高度的tabbar. <br><br>大致效果如下: <img src="/2020/01/23/移动端学习/Flutter~自定义tabbar模块/../../../../../images/result_custom_tabbar.gif" alt="result_custom_tabbar"></p>
 <p>其中,自定义Tabbar组件如下</p>
 <h3 id="bottom-bar-dart"><a href="#bottom-bar-dart" class="headerlink" title="bottom_bar.dart"></a>bottom_bar.dart</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">* 自定义tabbar</span><br><span class="line">* */</span><br><span class="line">import &apos;package:flutter/material.dart&apos;;</span><br><span class="line"></span><br><span class="line">class BottomBarItem &#123;</span><br><span class="line">  BottomBarItem(&#123;this.imageIcon, this.imageSelectedIcon, this.text&#125;);</span><br><span class="line"></span><br><span class="line">  Image imageIcon;</span><br><span class="line">  Image imageSelectedIcon;</span><br><span class="line">  String text;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class BottomBar extends StatefulWidget &#123;</span><br><span class="line">  BottomBar(&#123;</span><br><span class="line">    this.items,</span><br><span class="line">    this.centerItemText,</span><br><span class="line">    this.height: 60.0,</span><br><span class="line">    this.iconSize: 24.0,</span><br><span class="line">    this.backgroundColor,</span><br><span class="line">    this.color,</span><br><span class="line">    this.selectedColor,</span><br><span class="line">    this.notchedShape,</span><br><span class="line">    this.onTabSelected,</span><br><span class="line">  &#125;) &#123;</span><br><span class="line">    assert(this.items.length == 2 || this.items.length == 4);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  final List&lt;BottomBarItem&gt; items;</span><br><span class="line">  final String centerItemText;</span><br><span class="line">  final double height;</span><br><span class="line">  final double iconSize;</span><br><span class="line">  final Color backgroundColor;</span><br><span class="line">  final Color color;</span><br><span class="line">  final Color selectedColor;</span><br><span class="line">  final NotchedShape notchedShape;</span><br><span class="line">  final ValueChanged&lt;int&gt; onTabSelected;</span><br><span class="line"></span><br><span class="line">  @override</span><br><span class="line">  State&lt;StatefulWidget&gt; createState() =&gt; BottomBarState();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class BottomBarState extends State&lt;BottomBar&gt; &#123;</span><br><span class="line">  int _selectedIndex = 0;</span><br><span class="line"></span><br><span class="line">  _updateIndex(int index) &#123;</span><br><span class="line">    widget.onTabSelected(index);</span><br><span class="line">    setState(() &#123;</span><br><span class="line">      _selectedIndex = index;</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  @override</span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    List&lt;Widget&gt; items = List.generate(widget.items.length, (int index) &#123;</span><br><span class="line">      return _buildTabItem(</span><br><span class="line">        item: widget.items[index],</span><br><span class="line">        index: index,</span><br><span class="line">        onPressed: _updateIndex,</span><br><span class="line">      );</span><br><span class="line">    &#125;);</span><br><span class="line">    items.insert(items.length &gt;&gt; 1, _buildMiddleTabItem());</span><br><span class="line"></span><br><span class="line">    return BottomAppBar(</span><br><span class="line">      shape: widget.notchedShape,</span><br><span class="line">      child: Row(</span><br><span class="line">        mainAxisSize: MainAxisSize.max,</span><br><span class="line">        mainAxisAlignment: MainAxisAlignment.spaceEvenly,</span><br><span class="line">        children: items,</span><br><span class="line">      ),</span><br><span class="line">      color: widget.backgroundColor,</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  Widget _buildMiddleTabItem() &#123;</span><br><span class="line">    return Expanded(</span><br><span class="line">      child: SizedBox(</span><br><span class="line">        height: widget.height,</span><br><span class="line">        child: Column(</span><br><span class="line">          mainAxisSize: MainAxisSize.min,</span><br><span class="line">          mainAxisAlignment: MainAxisAlignment.end,</span><br><span class="line">          children: &lt;Widget&gt;[</span><br><span class="line">            SizedBox(height: widget.iconSize),</span><br><span class="line">            Text(</span><br><span class="line">              widget.centerItemText ?? &apos;&apos;,</span><br><span class="line">              style: TextStyle(color: widget.color),</span><br><span class="line">            ),</span><br><span class="line">          ],</span><br><span class="line">        ),</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  Widget _buildTabItem(&#123;</span><br><span class="line">    BottomBarItem item,</span><br><span class="line">    int index,</span><br><span class="line">    ValueChanged&lt;int&gt; onPressed,</span><br><span class="line">  &#125;) &#123;</span><br><span class="line">    Image icon =</span><br><span class="line">        _selectedIndex == index ? item.imageSelectedIcon : item.imageIcon;</span><br><span class="line"></span><br><span class="line">    Color resultColor =</span><br><span class="line">        _selectedIndex == index ? widget.selectedColor : widget.color;</span><br><span class="line"></span><br><span class="line">    return Expanded(</span><br><span class="line">      child: SizedBox(</span><br><span class="line">        height: widget.height,</span><br><span class="line">        child: Material(</span><br><span class="line">          type: MaterialType.transparency,</span><br><span class="line">          child: InkWell(</span><br><span class="line">            onTap: () =&gt; onPressed(index),</span><br><span class="line">            child: Column(</span><br><span class="line">              mainAxisSize: MainAxisSize.min,</span><br><span class="line">              mainAxisAlignment: MainAxisAlignment.center,</span><br><span class="line">              children: &lt;Widget&gt;[</span><br><span class="line">                icon,</span><br><span class="line">                Text(</span><br><span class="line">                  item.text,</span><br><span class="line">                  style: TextStyle(color: resultColor),</span><br><span class="line">                )</span><br><span class="line">              ],</span><br><span class="line">            ),</span><br><span class="line">          ),</span><br><span class="line">        ),</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>以上就是自定义的tabbar组件.其中字段解释如下:<br>. <code>items</code> tabs数组,BottomBarItem类型<br>. <code>centerItemText</code> 中间Tab按钮文字<br>. <code>height</code> tab的高度<br>. <code>backgroundColor</code> 整体背景色<br>. <code>color</code> icon默认色<br>. <code>selectedColor</code> 选中icon色<br>. <code>notchedShape</code> icon的大小<br>. <code>onTabSelected</code> 选中tab事件,做的主要就是切换当前page<br>. <code>notchedShape</code> 设置notchedShape,和系统的NotchedShape一致</p>
@@ -297,7 +297,7 @@
 <script>
 	if(!window.commentConfig) {
       window.commentConfig = {}
-      window.commentConfig.title = 'Flutter-自定义tabbar'
+      window.commentConfig.title = 'Flutter~自定义tabbar模块'
     }
 </script>
 
@@ -368,7 +368,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/01/23/移动端学习/Flutter-自定义tabbar模块/">Flutter-自定义tabbar</a>
+                    <a href="/2020/01/23/移动端学习/Flutter~自定义tabbar模块/">Flutter~自定义tabbar模块</a>
                 </span>
             </li>
             
@@ -444,31 +444,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/05/17/前端学习/精灵图学习/">前端精灵图学习</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2018/06/29/前端学习/React学习-简单个人消费记账系统/">React学习:简单个人消费记账系统</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2018/05/16/后端学习/后端学习/">后端学习</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/06/23/其他学习/MAC下的cocos2d-x环境搭建/">MAC下的cocos2d-x环境搭建</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/05/31/移动端学习/Flutter~Android原生工程中添加Flutter模块/">Flutter~Android原生工程中添加Flutter模块</a>
+                    <a href="/2018/05/17/前端学习/马赛克学习/">前端马赛克学习</a>
                 </span>
             </li>
             
@@ -480,7 +456,25 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/08/08/移动端学习/Flutter~mobx库学习/">Flutter~mobx库学习</a>
+                    <a href="/2019/02/17/移动端学习/Flutter~redux学习/">Flutter~redux学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/06/11/移动端学习/Flutter~国际化教程方案/">Flutter~国际化教程方案</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/11/11/移动端学习/Flutter~自定义Dialog(基本的组件封装)/">Flutter~自定义Dialog(基本的组件封装)</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/03/30/移动端学习/Flutter路由管理库fluro学习/">Flutter路由管理库fluro学习</a>
                 </span>
             </li>
             
@@ -492,13 +486,19 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/04/22/移动端学习/react-native-router-flux初步认识/">react-native-router-flux初步认识</a>
+                    <a href="/2018/09/08/移动端学习/React-Native推送通知至RN且显示推送内容/">React-Native推送通知至RN且显示推送内容</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/05/16/移动端学习/react-navigation的基本使用/">react-navigation的基本使用</a>
+                    <a href="/2018/08/17/移动端学习/React-Native类似支付宝的应用增删模块的简单实现/">React-Native类似支付宝的应用增删模块的简单实现</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/07/29/移动端学习/redux和react-navigation的结合使用/">redux和react-navigation的结合使用</a>
                 </span>
             </li>
             
@@ -511,25 +511,25 @@
         <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
             <ul class="nav nav-pills pills-gal">
                 <li class>
-                    <a href="/2020/01/23/移动端学习/Flutter-自定义tabbar模块/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2020/01/23/移动端学习/Flutter~自定义tabbar模块/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 <li class>
-                    <a href="/2020/01/23/移动端学习/Flutter-自定义tabbar模块/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2020/01/23/移动端学习/Flutter~自定义tabbar模块/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 <li class>
-                    <a href="/2020/01/23/移动端学习/Flutter-自定义tabbar模块/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2020/01/23/移动端学习/Flutter~自定义tabbar模块/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
             </ul>
             <div class="tab-content">
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/前端学习/" style="font-size: 9.277300829757674px;" class="tag-cloud-link">前端学习</a>
+    <a href="/tags/其他学习/" style="font-size: 10.94234814226414px;" class="tag-cloud-link">其他学习</a>
     
-    <a href="/tags/后端学习/" style="font-size: 11.631584729423295px;" class="tag-cloud-link">后端学习</a>
+    <a href="/tags/前端学习/" style="font-size: 16.490275242315597px;" class="tag-cloud-link">前端学习</a>
     
-    <a href="/tags/其他学习/" style="font-size: 14.788614905881348px;" class="tag-cloud-link">其他学习</a>
+    <a href="/tags/后端学习/" style="font-size: 9.186172351254953px;" class="tag-cloud-link">后端学习</a>
     
-    <a href="/tags/移动端学习/" style="font-size: 16.646191878779934px;" class="tag-cloud-link">移动端学习</a>
+    <a href="/tags/移动端学习/" style="font-size: 14.972022270662455px;" class="tag-cloud-link">移动端学习</a>
     
 </div>
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
