@@ -12,7 +12,7 @@
     
     
     
-    <title>Flutter~Android原生工程中添加Flutter模块 | 少停</title>
+    <title>archive_a | 少停</title>
     <link href="”https://zhoushaoting.com“" rel="”prefetch”">
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -121,7 +121,7 @@
                 
                 
                 
-                <li class>
+                <li class="current">
                     <a href="/archives">
                         <i class="fa fa-archive"></i>归档
                     </a>
@@ -218,38 +218,19 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 gal-right" id="mainstay">
-                    
-<article class="article well article-body" id="article">
+                    <article class="article well article-body" id="article-archive">
     <div class="breadcrumb">
         <i class="fa fa-home"></i>
         <a href="https://zhoushaoting.com">少停</a>
         >
-        <span>Flutter~Android原生工程中添加Flutter模块</span>
+        <span>归档</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/2019/05/31/移动端学习/Flutter~Android原生工程中添加Flutter模块/">Flutter~Android原生工程中添加Flutter模块</a>
+                <a href="/archives">归档</a>
             </h1>
-        </div>
-        <div class="tag-article">
-            
-            <span class="label label-gal">
-                <i class="fa fa-tags"></i>
-                
-                <a href="/tags/移动端学习/">移动端学习</a>
-                
-            </span>
-            
-            <span class="label label-gal">
-                <i class="fa fa-calendar"></i> 2019-05-31
-            </span>
-            
-            <span class="label label-gal">
-                <i class="fa fa-eye"></i>
-            </span>
-            
         </div>
     </div>
     <!-- 小型设备详细文章 -->
@@ -257,63 +238,174 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/2019/05/31/移动端学习/Flutter~Android原生工程中添加Flutter模块/">Flutter~Android原生工程中添加Flutter模块</a>
+                    <a href="/archives">归档</a>
                 </h4>
             </div>
-            <p>
-                <i class="fa fa-calendar"></i> 2019-05-31
-            </p>
-            <p>
-                
-                <i class="fa fa-tags"></i>
-                
-                <a href="/tags/移动端学习/">移动端学习</a>
-                
-                
-                
-                <i class="fa fa-eye"></i>
-                
-            </p>
         </center>
     </div>
-    <div class="content-article">
-        <p>今天,学习下,如何在Android原生工程中集成Flutter模块<br><a id="more"></a></p>
-<ol>
-<li>ok,首先我们使用Android Studio新建一个Android原生工程,先放着.<br>然后通过<code>flutter create -t module flutter_module</code>新建一个flutter的模块,这里名字随意.以<code>flutter_module</code>为例.<br><img src="/2019/05/31/移动端学习/Flutter~Android原生工程中添加Flutter模块/../../../../../images/iosAddFlutter1.png" alt="iosAddFlutter1"></li>
-<li>使用Android Studio打开Android原生工程,在settings.gradle中添加如下代码:</li>
-</ol>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  setBinding(new Binding([gradle: this]))                                 // new</span><br><span class="line">evaluate(new File(                                                      // new</span><br><span class="line">        settingsDir.parentFile,                                               // new</span><br><span class="line">        &apos;flutter_module/.android/include_flutter.groovy&apos;                          // new</span><br><span class="line">))</span><br></pre></td></tr></table></figure>
-<p>注意路径的正确性.其中这个Binding会报红,可以无视,不影响运行.<br>如图所示:<br><img src="/2019/05/31/移动端学习/Flutter~Android原生工程中添加Flutter模块/../../../../../images/AndroidAddFlutter1.png" alt="AndroidAddFlutter1"></p>
-<ol start="3">
-<li><p>在项目下的build.grade中的dependencies中添加flutter模块的引入:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">implementation project(&apos;:flutter&apos;)</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>如图所示:<br><img src="/2019/05/31/移动端学习/Flutter~Android原生工程中添加Flutter模块/../../../../../images/AndroidAddFlutter2.png" alt="AndroidAddFlutter2"> </p>
-<ol start="4">
-<li>build下工程,如果出现报错信息:<code>Error:Invoke-customs are only supported starting with Android 0 (--min-api 26)</code>的话,需要添加:</li>
-</ol>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">compileOptions &#123;</span><br><span class="line">     sourceCompatibility JavaVersion.VERSION_1_8</span><br><span class="line">     targetCompatibility JavaVersion.VERSION_1_8</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-<p>  如图所示:<br>  <img src="/2019/05/31/移动端学习/Flutter~Android原生工程中添加Flutter模块/../../../../../images/AndroidAddFlutter3.png" alt="AndroidAddFlutter3"> </p>
-<p>  OK.Android原生工程集成flutter完毕.接下来就是演示代码了.<br>  首先在<code>activity_mian.xml</code>中添加<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;Button</span><br><span class="line">  android:id=&quot;@+id/jump&quot;</span><br><span class="line">  android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">  android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">  android:text=&quot;Go to&quot;</span><br><span class="line">  /&gt;</span><br></pre></td></tr></table></figure></p>
-<p>  然后在MainActivity.java中添加调用代码.文件代码如下:<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">  package com.example.androidaddflutter;</span><br><span class="line"></span><br><span class="line">import android.os.Bundle;</span><br><span class="line">import android.support.v7.app.AppCompatActivity;</span><br><span class="line">import android.view.View;</span><br><span class="line">import android.widget.FrameLayout;</span><br><span class="line">import io.flutter.facade.Flutter;</span><br><span class="line"></span><br><span class="line">public class MainActivity extends AppCompatActivity &#123;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    protected void onCreate(Bundle savedInstanceState) &#123;</span><br><span class="line">        super.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line">        findViewById(R.id.jump).setOnClickListener(new View.OnClickListener() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void onClick(View view) &#123;</span><br><span class="line">                View flutterView = Flutter.createView(</span><br><span class="line">                        MainActivity.this,</span><br><span class="line">                        getLifecycle(),</span><br><span class="line">                        &quot;android 传给Flutter的值&quot;</span><br><span class="line">                );</span><br><span class="line">                FrameLayout.LayoutParams layout = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT);</span><br><span class="line">                layout.leftMargin = 0;</span><br><span class="line">                layout.topMargin = 200;</span><br><span class="line">                addContentView(flutterView, layout);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>  其中,可以向flutter传一个参数过去.在<code>flutter_module</code>模块中,通过<code>window.defaultRouteName</code>的方式即可获取到Android原生传过去的值.其中需要引入<code>import &#39;dart:ui&#39;</code>;</p>
-<p><a href="https://github.com/pheromone/Flutter_learn_demo/tree/master/%E6%B7%B7%E5%90%88%E5%BC%80%E5%8F%91" target="_blank" rel="noopener">源码</a></p>
-<p>效果图:<br><img src="/2019/05/31/移动端学习/Flutter~Android原生工程中添加Flutter模块/../../../../../images/AndroidAddFlutter_result.png" alt="AndroidAddFlutter_result"></p>
-
+    <div class="content-article" style="margin-top: 30px;">
+        
+        
+            <h1 style="font-size: 24px; margin-top: 40px;">2021年</h1>
+            
+        <div class="alert alert-info" style="font-size: 14px; line-height: 2; font-weight: bold;">
+            
+             
+             
+                        <a href="/2021/01/06/移动端学习/Flutter~provider学习/">Flutter~provider学习</a>
+                        <br>
+            
+             
+                        </div>
+                    <h1 style="font-size: 24px; margin-top: 40px;">2020年</h1>
+                    <div class="alert alert-info" style="font-size: 14px; line-height: 2; font-weight: bold;">
+                 
+             
+                        <a href="/2020/04/11/移动端学习/Flutter~fish_redux学习/">Flutter~fish_redux学习</a>
+                        <br>
+            
+             
+                        <a href="/2020/01/23/移动端学习/Flutter~自定义tabbar模块/">Flutter~自定义tabbar模块</a>
+                        <br>
+            
+             
+                        </div>
+                    <h1 style="font-size: 24px; margin-top: 40px;">2019年</h1>
+                    <div class="alert alert-info" style="font-size: 14px; line-height: 2; font-weight: bold;">
+                 
+             
+                        <a href="/2019/11/11/移动端学习/Flutter~自定义Dialog(基本的组件封装)/">Flutter~自定义Dialog(基本的组件封装)</a>
+                        <br>
+            
+             
+                        <a href="/2019/09/07/移动端学习/Flutter~Flare动画学习/">Flutter~Flare动画学习</a>
+                        <br>
+            
+             
+                        <a href="/2019/08/08/移动端学习/Flutter~mobx库学习/">Flutter~mobx库学习</a>
+                        <br>
+            
+             
+                        <a href="/2019/06/23/其他学习/MAC下的cocos2d-x环境搭建/">MAC下的cocos2d-x环境搭建</a>
+                        <br>
+            
+             
+                        <a href="/2019/06/11/移动端学习/Flutter~国际化教程方案/">Flutter~国际化教程方案</a>
+                        <br>
+            
+             
+                        <a href="/2019/05/31/移动端学习/Flutter~Android原生工程中添加Flutter模块/">Flutter~Android原生工程中添加Flutter模块</a>
+                        <br>
+            
+             
+                        <a href="/2019/05/29/移动端学习/Flutter~iOS原生工程中添加Flutter模块/">Flutter~iOS原生工程中添加Flutter模块</a>
+                        <br>
+            
+             
+                        <a href="/2019/05/14/移动端学习/React-Native使用自定义字体/">React-Native使用自定义字体</a>
+                        <br>
+            
+             
+                        <a href="/2019/04/22/移动端学习/react-native-router-flux初步认识/">react-native-router-flux初步认识</a>
+                        <br>
+            
+             
+                        <a href="/2019/04/22/移动端学习/Android和React-Native的简单交互/">Android和React-Native的简单交互</a>
+                        <br>
+            
+             
+                        <a href="/2019/04/22/移动端学习/React-Native与Web的基本交互/">React-Native与Web的基本交互</a>
+                        <br>
+            
+             
+                        <a href="/2019/03/30/移动端学习/Flutter路由管理库fluro学习/">Flutter路由管理库fluro学习</a>
+                        <br>
+            
+             
+                        <a href="/2019/03/07/移动端学习/Flutter~flutter_bloc库学习/">Flutter~flutter_bloc库学习</a>
+                        <br>
+            
+             
+                        <a href="/2019/03/06/移动端学习/Flutter~json_serializable库学习/">Flutter~json_serializable库学习</a>
+                        <br>
+            
+             
+                        <a href="/2019/03/04/移动端学习/Flutter中的sqflite库学习/">Flutter中的sqflite库学习</a>
+                        <br>
+            
+             
+                        <a href="/2019/03/03/移动端学习/Flutter~provide学习/">Flutter~provide学习</a>
+                        <br>
+            
+             
+                        <a href="/2019/02/17/移动端学习/Flutter~redux学习/">Flutter~redux学习</a>
+                        <br>
+            
+             
+                        <a href="/2019/02/16/移动端学习/Flutter~scoped_model学习/">Flutter~scoped_model学习</a>
+                        <br>
+            
+             
+                        </div>
+                    <h1 style="font-size: 24px; margin-top: 40px;">2018年</h1>
+                    <div class="alert alert-info" style="font-size: 14px; line-height: 2; font-weight: bold;">
+                 
+             
+                        <a href="/2018/09/08/移动端学习/React-Native推送通知至RN且显示推送内容/">React-Native推送通知至RN且显示推送内容</a>
+                        <br>
+            
+             
+                        <a href="/2018/08/17/移动端学习/React-Native类似支付宝的应用增删模块的简单实现/">React-Native类似支付宝的应用增删模块的简单实现</a>
+                        <br>
+            
+             
+                        <a href="/2018/08/11/移动端学习/React-Native<收起-展开>功能实现/">React-Native&#34;收起-展开&#34;功能实现</a>
+                        <br>
+            
+             
+                        <a href="/2018/07/29/移动端学习/redux和react-navigation的结合使用/">redux和react-navigation的结合使用</a>
+                        <br>
+            
+             
+                        <a href="/2018/07/29/移动端学习/dva和react-navigation的结合使用/">dva和react-navigation的结合使用</a>
+                        <br>
+            
+             
+                        <a href="/2018/06/29/前端学习/React学习-简单个人消费记账系统/">React学习:简单个人消费记账系统</a>
+                        <br>
+            
+             
+                        <a href="/2018/06/26/移动端学习/react-native七牛上传图片/">react-native七牛上传图片</a>
+                        <br>
+            
+             
+                        <a href="/2018/06/16/移动端学习/react-navigation前置登录/">react-navigation前置登录</a>
+                        <br>
+            
+             
+                        <a href="/2018/05/27/移动端学习/Mobx与react-navigation的使用/">Mobx与react-navigation的结合使用</a>
+                        <br>
+            
+             
+                        <a href="/2018/05/17/前端学习/精灵图学习/">前端精灵图学习</a>
+                        <br>
+            
+             
+                        <a href="/2018/05/17/前端学习/马赛克学习/">前端马赛克学习</a>
+                        <br>
+            
+             
+                        <a href="/2018/05/16/后端学习/后端学习/">后端学习</a>
+                        <br>
+            
+             
+                        <a href="/2018/05/16/移动端学习/react-navigation的基本使用/">react-navigation的基本使用</a>
+                        <br>
+            
+                    </div>
+        
     </div>
 </article>
-
-
-<div id="comments-template"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script>
-	if(!window.commentConfig) {
-      window.commentConfig = {}
-      window.commentConfig.title = 'Flutter~Android原生工程中添加Flutter模块'
-    }
-</script>
-
                 </div>
                 <aside class="col-md-4 gal-left" id="sidebar">
     <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
@@ -457,7 +549,13 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/09/07/移动端学习/Flutter~Flare动画学习/">Flutter~Flare动画学习</a>
+                    <a href="/2018/06/29/前端学习/React学习-简单个人消费记账系统/">React学习:简单个人消费记账系统</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/05/17/前端学习/精灵图学习/">前端精灵图学习</a>
                 </span>
             </li>
             
@@ -469,19 +567,13 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/03/06/移动端学习/Flutter~json_serializable库学习/">Flutter~json_serializable库学习</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/02/17/移动端学习/Flutter~redux学习/">Flutter~redux学习</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
                     <a href="/2019/06/11/移动端学习/Flutter~国际化教程方案/">Flutter~国际化教程方案</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/02/16/移动端学习/Flutter~scoped_model学习/">Flutter~scoped_model学习</a>
                 </span>
             </li>
             
@@ -493,7 +585,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/01/23/移动端学习/Flutter~自定义tabbar模块/">Flutter~自定义tabbar模块</a>
+                    <a href="/2019/04/22/移动端学习/React-Native与Web的基本交互/">React-Native与Web的基本交互</a>
                 </span>
             </li>
             
@@ -505,13 +597,13 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/04/22/移动端学习/react-native-router-flux初步认识/">react-native-router-flux初步认识</a>
+                    <a href="/2018/07/29/移动端学习/dva和react-navigation的结合使用/">dva和react-navigation的结合使用</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/08/17/移动端学习/React-Native类似支付宝的应用增删模块的简单实现/">React-Native类似支付宝的应用增删模块的简单实现</a>
+                    <a href="/2018/06/26/移动端学习/react-native七牛上传图片/">react-native七牛上传图片</a>
                 </span>
             </li>
             
@@ -524,25 +616,25 @@
         <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
             <ul class="nav nav-pills pills-gal">
                 <li class>
-                    <a href="/2019/05/31/移动端学习/Flutter~Android原生工程中添加Flutter模块/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/archives/2021/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 <li class>
-                    <a href="/2019/05/31/移动端学习/Flutter~Android原生工程中添加Flutter模块/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/archives/2021/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 <li class>
-                    <a href="/2019/05/31/移动端学习/Flutter~Android原生工程中添加Flutter模块/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/archives/2021/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
             </ul>
             <div class="tab-content">
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/其他学习/" style="font-size: 18.72675083829234px;" class="tag-cloud-link">其他学习</a>
+    <a href="/tags/其他学习/" style="font-size: 19.23838811219154px;" class="tag-cloud-link">其他学习</a>
     
-    <a href="/tags/前端学习/" style="font-size: 13.27399368676614px;" class="tag-cloud-link">前端学习</a>
+    <a href="/tags/前端学习/" style="font-size: 14.13148067532429px;" class="tag-cloud-link">前端学习</a>
     
-    <a href="/tags/后端学习/" style="font-size: 17.846521293851552px;" class="tag-cloud-link">后端学习</a>
+    <a href="/tags/后端学习/" style="font-size: 8.344483492953685px;" class="tag-cloud-link">后端学习</a>
     
-    <a href="/tags/移动端学习/" style="font-size: 14.885093482742832px;" class="tag-cloud-link">移动端学习</a>
+    <a href="/tags/移动端学习/" style="font-size: 11.371552123561356px;" class="tag-cloud-link">移动端学习</a>
     
 </div>
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
@@ -635,7 +727,7 @@
 </script>
 <script>
     if(window.commentConfig) {
-      window.commentConfig.id = 'Fri May 31 2019 00:00:00 GMT+0800',
+      window.commentConfig.id = '',
       window.commentConfig.owner = 'pheromone'
       window.commentConfig.repo = 'pheromone.github.io'
       window.commentConfig.client_id = '3ce73da9fde666a12f54'
@@ -643,7 +735,7 @@
       window.commentConfig.redirect_uri = ''
     } else {
       window.commentConfig = {
-        id: 'Fri May 31 2019 00:00:00 GMT+0800',
+        id: '',
         owner: 'pheromone',
         repo: 'pheromone.github.io',
         client_id: '3ce73da9fde666a12f54',
@@ -669,7 +761,7 @@
 <script src="https://myau.moe/js/comment/gitment.browser.js"></script>
 <script>
     if(window.commentConfig) {
-      window.commentConfig.id = 'Fri May 31 2019 00:00:00 GMT+0800'
+      window.commentConfig.id = ''
       window.commentConfig.owner = 'pheromone'
       window.commentConfig.repo = 'pheromone.github.io'
       window.commentConfig.client_id = '3ce73da9fde666a12f54'
@@ -677,7 +769,7 @@
       window.commentConfig.redirect_uri = ''
     } else {
       window.commentConfig = {
-      	id: 'Fri May 31 2019 00:00:00 GMT+0800',
+      	id: '',
         owner: 'pheromone',
         repo: 'pheromone.github.io',
         client_id: '3ce73da9fde666a12f54',
