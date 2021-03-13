@@ -278,7 +278,9 @@
     </div>
     <div class="content-article">
         <p>今天学习下<code>Flutter</code>中state管理的第三方<code>getx</code>.<br>其中,<code>get: 3.26.0</code></p>
-<p><a href="https://github.com/jonataslaw/getx" target="_blank" rel="noopener">官方文档</a> <br><br><a id="more"></a><br>例子展示tabbar、state管理、国际化、跳转.<br><br>效果如图<br><br><img src="/2021/03/13/移动端学习/Flutter~getx学习/../../../../../images/getx_demo.gif" alt="getx例子"></p>
+<a id="more"></a>
+<p><a href="https://github.com/jonataslaw/getx" target="_blank" rel="noopener">官方文档</a> <br></p>
+<p>例子展示tabbar、state管理、国际化、跳转.<br><br>效果如图<br><br><img src="/2021/03/13/移动端学习/Flutter~getx学习/../../../../../images/getx_demo.gif" alt="getx例子"></p>
 <h2 id="各文件如下"><a href="#各文件如下" class="headerlink" title="各文件如下"></a>各文件如下</h2><h3 id="main-dart"><a href="#main-dart" class="headerlink" title="main.dart"></a>main.dart</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">import &apos;package:flutter/material.dart&apos;;</span><br><span class="line">import &apos;package:get/get.dart&apos;;</span><br><span class="line">import &apos;./languages.dart&apos;;</span><br><span class="line">import &apos;routes/app_pages.dart&apos;;</span><br><span class="line">import &apos;routes/app_routes.dart&apos;;</span><br><span class="line"></span><br><span class="line">void main() &#123;</span><br><span class="line">  runApp(MyApp());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class MyApp extends StatelessWidget &#123;</span><br><span class="line">  @override</span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    return GetMaterialApp(</span><br><span class="line">      translations: Languages(), // 你的翻译</span><br><span class="line">      locale: Locale(&apos;zh&apos;, &apos;CN&apos;), // 将会按照此处指定的语言翻译</span><br><span class="line">      fallbackLocale: Locale(&apos;en&apos;, &apos;US&apos;), // 添加一个回调语言选项，以备上面指定的语言翻译不存在</span><br><span class="line">      initialRoute: AppRoutes.DASHBOARD,</span><br><span class="line">      getPages: AppPages.list,</span><br><span class="line">      debugShowCheckedModeBanner: false,</span><br><span class="line">      themeMode: ThemeMode.system,</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>main.dart是入口文件.</p>
 <h3 id="languages-dart"><a href="#languages-dart" class="headerlink" title="languages.dart"></a>languages.dart</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">import &apos;package:get/get.dart&apos;;</span><br><span class="line"></span><br><span class="line">class Languages extends Translations &#123;</span><br><span class="line">  @override</span><br><span class="line">  Map&lt;String, Map&lt;String, String&gt;&gt; get keys =&gt; &#123;</span><br><span class="line">        &apos;zh_CN&apos;: &#123;</span><br><span class="line">          &apos;hello&apos;: &apos;你好 世界&apos;,</span><br><span class="line">          &apos;one&apos;: &apos;首页&apos;,</span><br><span class="line">          &apos;two&apos;: &apos;我的&apos;,</span><br><span class="line">        &#125;,</span><br><span class="line">        &apos;en_US&apos;: &#123;</span><br><span class="line">          &apos;hello&apos;: &apos;Hello World&apos;,</span><br><span class="line">          &apos;one&apos;: &apos;Home&apos;,</span><br><span class="line">          &apos;two&apos;: &apos;Mine&apos;,</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -464,55 +466,55 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/09/07/移动端学习/Flutter~Flare动画学习/">Flutter~Flare动画学习</a>
+                    <a href="/2018/05/17/前端学习/精灵图学习/">前端精灵图学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/02/16/移动端学习/Flutter~scoped_model学习/">Flutter~scoped_model学习</a>
+                    <a href="/2018/05/17/前端学习/马赛克学习/">前端马赛克学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/06/11/移动端学习/Flutter~国际化教程方案/">Flutter~国际化教程方案</a>
+                    <a href="/2019/04/22/移动端学习/Android和React-Native的简单交互/">Android和React-Native的简单交互</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/01/23/移动端学习/Flutter~自定义tabbar模块/">Flutter~自定义tabbar模块</a>
+                    <a href="/2019/05/31/移动端学习/Flutter~Android原生工程中添加Flutter模块/">Flutter~Android原生工程中添加Flutter模块</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/03/30/移动端学习/Flutter路由管理库fluro学习/">Flutter路由管理库fluro学习</a>
+                    <a href="/2019/03/03/移动端学习/Flutter~provide学习/">Flutter~provide学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/05/27/移动端学习/Mobx与react-navigation的使用/">Mobx与react-navigation的结合使用</a>
+                    <a href="/2019/11/11/移动端学习/Flutter~自定义Dialog(基本的组件封装)/">Flutter~自定义Dialog(基本的组件封装)</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/08/11/移动端学习/React-Native<收起-展开>功能实现/">React-Native&#34;收起-展开&#34;功能实现</a>
+                    <a href="/2019/03/04/移动端学习/Flutter中的sqflite库学习/">Flutter中的sqflite库学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/08/17/移动端学习/React-Native类似支付宝的应用增删模块的简单实现/">React-Native类似支付宝的应用增删模块的简单实现</a>
+                    <a href="/2018/09/08/移动端学习/React-Native推送通知至RN且显示推送内容/">React-Native推送通知至RN且显示推送内容</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/06/16/移动端学习/react-navigation前置登录/">react-navigation前置登录</a>
+                    <a href="/2018/06/26/移动端学习/react-native七牛上传图片/">react-native七牛上传图片</a>
                 </span>
             </li>
             
@@ -537,13 +539,13 @@
             <div class="tab-content">
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/其他学习/" style="font-size: 16.476712500358545px;" class="tag-cloud-link">其他学习</a>
+    <a href="/tags/其他学习/" style="font-size: 12.990118107734197px;" class="tag-cloud-link">其他学习</a>
     
-    <a href="/tags/前端学习/" style="font-size: 10.662165023513207px;" class="tag-cloud-link">前端学习</a>
+    <a href="/tags/前端学习/" style="font-size: 18.776728318959854px;" class="tag-cloud-link">前端学习</a>
     
-    <a href="/tags/后端学习/" style="font-size: 9.498455874164192px;" class="tag-cloud-link">后端学习</a>
+    <a href="/tags/后端学习/" style="font-size: 12.889519556591559px;" class="tag-cloud-link">后端学习</a>
     
-    <a href="/tags/移动端学习/" style="font-size: 14.55984450576991px;" class="tag-cloud-link">移动端学习</a>
+    <a href="/tags/移动端学习/" style="font-size: 12.36769739306439px;" class="tag-cloud-link">移动端学习</a>
     
 </div>
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
