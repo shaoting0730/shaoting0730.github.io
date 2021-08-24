@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="author" content>
+    <meta name="author" content="">
     
     <meta name="description" content="愿天堂没有bug">
     
@@ -13,16 +13,28 @@
     
     
     <title>dva和react-navigation的结合使用 | 少停</title>
-    <link href="”https://zhoushaoting.com“" rel="”prefetch”">
+    <link href=”https://zhoushaoting.com“ rel=”prefetch” />
 
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
 <link rel="stylesheet" href="/css/aos.css">
 <link rel="stylesheet" href="/css/style.css">
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/aos.js"></script>
-    <script src="/js/highslide/highslide-full.min.js"></script>
-    <link rel="stylesheet" href="/js/highslide/highslide.css">
+
+    
+<script src="/js/jquery.min.js"></script>
+
+    
+<script src="/js/bootstrap.min.js"></script>
+
+    
+<script src="/js/aos.js"></script>
+
+    
+<script src="/js/highslide/highslide-full.min.js"></script>
+
+    
+<link rel="stylesheet" href="/js/highslide/highslide.css">
+
     <style type="text/css">
         @media (max-width: 768px) {
             body {
@@ -53,7 +65,7 @@
         }
       }
     </script>-->
-</head></html>
+<meta name="generator" content="Hexo 5.4.0"></head>
 <body>
     <!-- 背景轮播图功能 -->
     <section class="hidden-xs">
@@ -89,7 +101,9 @@
     <header class="navbar navbar-inverse" id="gal-header">
     <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".bs-navbar-collapse" aria-expanded="false">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
                 <span class="fa fa-lg fa-reorder"></span>
             </button>
             <a href="https://zhoushaoting.com">
@@ -113,7 +127,7 @@
             <ul class="nav navbar-nav" id="menu-gal">
                 
                 
-                <li class>
+                <li class="">
                     <a href="/">
                         <i class="fa fa-home"></i>首页
                     </a>
@@ -121,7 +135,7 @@
                 
                 
                 
-                <li class>
+                <li class="">
                     <a href="/archives">
                         <i class="fa fa-archive"></i>归档
                     </a>
@@ -132,22 +146,23 @@
                 
                 <li class="dropdown">
                     <!-- TODO 添加hover dropdown效果 -->
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
                         <i class="fa fa-list"></i>分类
                     </a>
                     <ul class="dropdown-menu">
                         
                         
                         <li>
-                            <a href="/categories/其他学习/">其他学习</a>
+                            <a href="/categories/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/">其他学习</a>
                         </li>
                         
                         <li>
-                            <a href="/categories/前端学习/">前端学习</a>
+                            <a href="/categories/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/">后端学习</a>
                         </li>
                         
                         <li>
-                            <a href="/categories/后端学习/">后端学习</a>
+                            <a href="/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/">前端学习</a>
                         </li>
                         
                         
@@ -165,22 +180,23 @@
                 
                 <li class="dropdown">
                     <!-- TODO 添加hover dropdown效果 -->
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
                         <i class="fa fa-tags"></i>标签
                     </a>
                     <ul class="dropdown-menu">
                         
                         
                         <li>
-                            <a href="/tags/其他学习/">其他学习</a>
+                            <a href="/tags/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/">其他学习</a>
                         </li>
                         
                         <li>
-                            <a href="/tags/前端学习/">前端学习</a>
+                            <a href="/tags/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/">后端学习</a>
                         </li>
                         
                         <li>
-                            <a href="/tags/后端学习/">后端学习</a>
+                            <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/">前端学习</a>
                         </li>
                         
                         
@@ -195,7 +211,7 @@
                 
                 
                 
-                <li class>
+                <li class="">
                     <a href="/about">
                         <i class="fa fa-user"></i>关于我
                     </a>
@@ -203,7 +219,7 @@
                 
                 
                 
-                <li class>
+                <li class="">
                     <a href="/message">
                         <i class="fa fa-heart"></i>留言板
                     </a>
@@ -230,7 +246,7 @@
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/2018/07/29/移动端学习/dva和react-navigation的结合使用/">dva和react-navigation的结合使用</a>
+                <a href="/2018/07/29/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/dva%E5%92%8Creact-navigation%E7%9A%84%E7%BB%93%E5%90%88%E4%BD%BF%E7%94%A8/">dva和react-navigation的结合使用</a>
             </h1>
         </div>
         <div class="tag-article">
@@ -238,7 +254,7 @@
             <span class="label label-gal">
                 <i class="fa fa-tags"></i>
                 
-                <a href="/tags/移动端学习/">移动端学习</a>
+                <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/">移动端学习</a>
                 
             </span>
             
@@ -257,7 +273,7 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/2018/07/29/移动端学习/dva和react-navigation的结合使用/">dva和react-navigation的结合使用</a>
+                    <a href="/2018/07/29/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/dva%E5%92%8Creact-navigation%E7%9A%84%E7%BB%93%E5%90%88%E4%BD%BF%E7%94%A8/">dva和react-navigation的结合使用</a>
                 </h4>
             </div>
             <p>
@@ -267,7 +283,7 @@
                 
                 <i class="fa fa-tags"></i>
                 
-                <a href="/tags/移动端学习/">移动端学习</a>
+                <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/">移动端学习</a>
                 
                 
                 
@@ -277,22 +293,30 @@
         </center>
     </div>
     <div class="content-article">
-        <p>今天,学习下RN中的另外一个全家桶套餐架构:dva+React-Navigation,<br>本文基于<code>react-native</code>:<code>0.55.4</code>,<code>dva-core</code>:<code>^1.3.0</code>,<code>react-navigation</code>:<code>^2.5.1</code>,<code>react-navigation-redux-helpers</code>:<code>^2.0.4</code>,<code>react-redux</code>:<code>0^5.0.7</code>所撸.<br><a id="more"></a></p>
-<p><a href="https://github.com/nihgwu/react-native-dva-starter" target="_blank" rel="noopener">react-native的官方dva-demo</a><br><a href="https://github.com/dvajs/dva" target="_blank" rel="noopener">dva官方github</a> <br><br>废话不多缩,首先,新建一个项目,添加一堆相应库:<br><code>npm install mobx dva-core --save</code> 引入dva<br><code>npm install mobx react-navigation-redux-helpers --save</code> 引入react-navigation-redux-helpers<br><code>npm install mobx react-redux --save</code> 引入react-redux<br><code>npm install babel-plugin-transform-decorators-legacy babel-preset-react-native-stage-0 --save-dev</code> 能够使用@标签<br><code>npm install react-navigation --save</code> 引入导航库<br>然后修改一下工程里面的.babelrc:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;presets&quot;: [&quot;react-native&quot;],</span><br><span class="line">  &quot;plugins&quot;: [&quot;transform-decorators-legacy&quot;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>OK,基本的架子已经搭好.<br>然后新建一个src目录.这里存放基本代码和基本图片之类的.<br><img src="/2018/07/29/移动端学习/dva和react-navigation的结合使用/../../../../../images/dva代码结构.png" alt="mdva代码结构"></p>
-<p>然后,在入口文件<code>index.js</code>中,修改一下代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import &apos;./App&apos;;</span><br><span class="line"></span><br><span class="line">console.ignoredYellowBox = [</span><br><span class="line">    &apos;Warning: componentWillMount is deprecated&apos;,</span><br><span class="line">    &apos;Warning: componentWillReceiveProps is deprecated&apos;,</span><br><span class="line">    &apos;Warning: componentWillUpdate is deprecated&apos;,</span><br><span class="line">    &apos;Warning: isMounted(...) is deprecated&apos;,</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
-<p>在<code>App.js</code>中基础代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">import React from &apos;react&apos;</span><br><span class="line">import &#123; AppRegistry &#125; from &apos;react-native&apos;</span><br><span class="line"></span><br><span class="line">import dva from &apos;./src/Utils/dva&apos;</span><br><span class="line">import Router, &#123; routerMiddleware, routerReducer &#125; from &apos;./router&apos;</span><br><span class="line">import appModel from &apos;./src/models/app&apos;</span><br><span class="line"></span><br><span class="line">const app = dva(&#123;</span><br><span class="line">    initialState: &#123;&#125;,</span><br><span class="line">    models: [appModel],</span><br><span class="line">    extraReducers: &#123; router: routerReducer &#125;,</span><br><span class="line">    onAction: [routerMiddleware],</span><br><span class="line">    onError(e) &#123;</span><br><span class="line">        console.log(&apos;onError&apos;, e)</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">const App = app.start(&lt;Router /&gt;)</span><br><span class="line"></span><br><span class="line">AppRegistry.registerComponent(&apos;rn_dva&apos;, () =&gt; App)</span><br></pre></td></tr></table></figure></p>
-<p>ok,如上图所示,dva的代码相比redux来说少了很多,不在需要大量的赋值粘贴,基本的逻辑代码均可以放在models中,其中的Utils只是dva的一个工具组,其中的代码并不多.一如既往,对着IDE就是一堆疯狂输出.完成的功能和之前的redux和Mobx一样.<br><code>models</code>下的<code>app.js</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">import &#123; createAction, NavigationActions &#125; from &apos;../Utils&apos;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">    namespace: &apos;app&apos;,</span><br><span class="line">    state: &#123;</span><br><span class="line">        num: 0,</span><br><span class="line">        mineType: &apos;红&apos;,</span><br><span class="line">    &#125;,</span><br><span class="line">    reducers: &#123;</span><br><span class="line">        updateState(state, &#123; payload &#125;) &#123;</span><br><span class="line">            return &#123; ...state, ...payload &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">    effects: &#123;</span><br><span class="line">        *add(&#123; payload &#125;, &#123; call, put &#125;) &#123;</span><br><span class="line">            yield put(createAction(&apos;updateState&apos;)(&#123; num:payload ,mineType:&apos;红&apos;&#125;))</span><br><span class="line">        &#125;,</span><br><span class="line">        *sub(&#123; payload &#125;, &#123; call, put &#125;) &#123;</span><br><span class="line">            yield put(createAction(&apos;updateState&apos;)(&#123; num:payload ,mineType:&apos;蓝&apos; &#125;))</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    subscriptions: &#123;</span><br><span class="line"></span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <p>今天,学习下RN中的另外一个全家桶套餐架构:dva+React-Navigation,<br>本文基于<code>react-native</code>:<code>0.55.4</code>,<code>dva-core</code>:<code>^1.3.0</code>,<code>react-navigation</code>:<code>^2.5.1</code>,<code>react-navigation-redux-helpers</code>:<code>^2.0.4</code>,<code>react-redux</code>:<code>0^5.0.7</code>所撸.</p>
+<span id="more"></span>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/nihgwu/react-native-dva-starter">react-native的官方dva-demo</a><br><a target="_blank" rel="noopener" href="https://github.com/dvajs/dva">dva官方github</a> <br><br>废话不多缩,首先,新建一个项目,添加一堆相应库:<br><code>npm install mobx dva-core --save</code> 引入dva<br><code>npm install mobx react-navigation-redux-helpers --save</code> 引入react-navigation-redux-helpers<br><code>npm install mobx react-redux --save</code> 引入react-redux<br><code>npm install babel-plugin-transform-decorators-legacy babel-preset-react-native-stage-0 --save-dev</code> 能够使用@标签<br><code>npm install react-navigation --save</code> 引入导航库<br>然后修改一下工程里面的.babelrc:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;presets&quot;: [&quot;react-native&quot;],</span><br><span class="line">  &quot;plugins&quot;: [&quot;transform-decorators-legacy&quot;]</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>OK,基本的架子已经搭好.<br>然后新建一个src目录.这里存放基本代码和基本图片之类的.<br><img src="/2018/07/29/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/dva%E5%92%8Creact-navigation%E7%9A%84%E7%BB%93%E5%90%88%E4%BD%BF%E7%94%A8/../../../../../images/dva代码结构.png" alt="mdva代码结构"></p>
+<p>然后,在入口文件<code>index.js</code>中,修改一下代码:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import &#x27;./App&#x27;;</span><br><span class="line"></span><br><span class="line">console.ignoredYellowBox = [</span><br><span class="line">    &#x27;Warning: componentWillMount is deprecated&#x27;,</span><br><span class="line">    &#x27;Warning: componentWillReceiveProps is deprecated&#x27;,</span><br><span class="line">    &#x27;Warning: componentWillUpdate is deprecated&#x27;,</span><br><span class="line">    &#x27;Warning: isMounted(...) is deprecated&#x27;,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>在<code>App.js</code>中基础代码:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">import React from &#x27;react&#x27;</span><br><span class="line">import &#123; AppRegistry &#125; from &#x27;react-native&#x27;</span><br><span class="line"></span><br><span class="line">import dva from &#x27;./src/Utils/dva&#x27;</span><br><span class="line">import Router, &#123; routerMiddleware, routerReducer &#125; from &#x27;./router&#x27;</span><br><span class="line">import appModel from &#x27;./src/models/app&#x27;</span><br><span class="line"></span><br><span class="line">const app = dva(&#123;</span><br><span class="line">    initialState: &#123;&#125;,</span><br><span class="line">    models: [appModel],</span><br><span class="line">    extraReducers: &#123; router: routerReducer &#125;,</span><br><span class="line">    onAction: [routerMiddleware],</span><br><span class="line">    onError(e) &#123;</span><br><span class="line">        console.log(&#x27;onError&#x27;, e)</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">const App = app.start(&lt;Router /&gt;)</span><br><span class="line"></span><br><span class="line">AppRegistry.registerComponent(&#x27;rn_dva&#x27;, () =&gt; App)</span><br></pre></td></tr></table></figure>
+<p>ok,如上图所示,dva的代码相比redux来说少了很多,不在需要大量的赋值粘贴,基本的逻辑代码均可以放在models中,其中的Utils只是dva的一个工具组,其中的代码并不多.一如既往,对着IDE就是一堆疯狂输出.完成的功能和之前的redux和Mobx一样.<br><code>models</code>下的<code>app.js</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">import &#123; createAction, NavigationActions &#125; from &#x27;../Utils&#x27;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">    namespace: &#x27;app&#x27;,</span><br><span class="line">    state: &#123;</span><br><span class="line">        num: 0,</span><br><span class="line">        mineType: &#x27;红&#x27;,</span><br><span class="line">    &#125;,</span><br><span class="line">    reducers: &#123;</span><br><span class="line">        updateState(state, &#123; payload &#125;) &#123;</span><br><span class="line">            return &#123; ...state, ...payload &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">    effects: &#123;</span><br><span class="line">        *add(&#123; payload &#125;, &#123; call, put &#125;) &#123;</span><br><span class="line">            yield put(createAction(&#x27;updateState&#x27;)(&#123; num:payload ,mineType:&#x27;红&#x27;&#125;))</span><br><span class="line">        &#125;,</span><br><span class="line">        *sub(&#123; payload &#125;, &#123; call, put &#125;) &#123;</span><br><span class="line">            yield put(createAction(&#x27;updateState&#x27;)(&#123; num:payload ,mineType:&#x27;蓝&#x27; &#125;))</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    subscriptions: &#123;</span><br><span class="line"></span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p><code>Utils</code>下的<code>dva.js</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">import React from &apos;react&apos;</span><br><span class="line">import &#123; create &#125; from &apos;dva-core&apos;</span><br><span class="line">import &#123; Provider, connect &#125; from &apos;react-redux&apos;</span><br><span class="line"></span><br><span class="line">export &#123; connect &#125;</span><br><span class="line"></span><br><span class="line">export default function(options) &#123;</span><br><span class="line">    const app = create(options)</span><br><span class="line">    // HMR workaround</span><br><span class="line">    if (!global.registered) options.models.forEach(model =&gt; app.model(model))</span><br><span class="line">    global.registered = true</span><br><span class="line"></span><br><span class="line">    app.start()</span><br><span class="line">    // eslint-disable-next-line no-underscore-dangle</span><br><span class="line">    const store = app._store</span><br><span class="line"></span><br><span class="line">    app.start = container =&gt; () =&gt; &lt;Provider store=&#123;store&#125;&gt;&#123;container&#125;&lt;/Provider&gt;</span><br><span class="line">    app.getStore = () =&gt; store</span><br><span class="line"></span><br><span class="line">    return app</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">import React from &#x27;react&#x27;</span><br><span class="line">import &#123; create &#125; from &#x27;dva-core&#x27;</span><br><span class="line">import &#123; Provider, connect &#125; from &#x27;react-redux&#x27;</span><br><span class="line"></span><br><span class="line">export &#123; connect &#125;</span><br><span class="line"></span><br><span class="line">export default function(options) &#123;</span><br><span class="line">    const app = create(options)</span><br><span class="line">    // HMR workaround</span><br><span class="line">    if (!global.registered) options.models.forEach(model =&gt; app.model(model))</span><br><span class="line">    global.registered = true</span><br><span class="line"></span><br><span class="line">    app.start()</span><br><span class="line">    // eslint-disable-next-line no-underscore-dangle</span><br><span class="line">    const store = app._store</span><br><span class="line"></span><br><span class="line">    app.start = container =&gt; () =&gt; &lt;Provider store=&#123;store&#125;&gt;&#123;container&#125;&lt;/Provider&gt;</span><br><span class="line">    app.getStore = () =&gt; store</span><br><span class="line"></span><br><span class="line">    return app</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <p><code>Utils</code>下的<code>index.js</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export &#123; NavigationActions, StackActions &#125; from &apos;react-navigation&apos;</span><br><span class="line"></span><br><span class="line">export const createAction = type =&gt; payload =&gt; (&#123; type, payload &#125;)</span><br></pre></td></tr></table></figure>
-<p>剩下的就是两个UI界面了:<br><code>One.js</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Sample React Native App</span><br><span class="line"> * https://github.com/facebook/react-native</span><br><span class="line"> * @flow</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">import React, &#123; Component &#125; from &apos;react&apos;;</span><br><span class="line">import &#123;</span><br><span class="line">    Platform,</span><br><span class="line">    StyleSheet,</span><br><span class="line">    Text,</span><br><span class="line">    View,</span><br><span class="line">    Image</span><br><span class="line">&#125; from &apos;react-native&apos;;</span><br><span class="line">import &#123; connect &#125; from &apos;react-redux&apos;</span><br><span class="line">import &#123; createAction, NavigationActions &#125; from &apos;../Utils&apos;</span><br><span class="line">import  &#123;Images&#125; from &quot;../Image&quot;;</span><br><span class="line"></span><br><span class="line">const instructions = Platform.select(&#123;</span><br><span class="line">    ios: &apos;Press Cmd+R to reload,\n&apos; +</span><br><span class="line">    &apos;Cmd+D or shake for dev menu&apos;,</span><br><span class="line">    android: &apos;Double tap R on your keyboard to reload,\n&apos; +</span><br><span class="line">    &apos;Shake or press menu button for dev menu&apos;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">type Props = &#123;&#125;;</span><br><span class="line">@connect((&#123; app &#125;) =&gt; (&#123; ...app &#125;))</span><br><span class="line">export default class One extends Component&lt;Props&gt; &#123;</span><br><span class="line"></span><br><span class="line">    static navigationOptions = &#123;</span><br><span class="line">        tabBarLabel: &apos;苹果&apos;,</span><br><span class="line">        tabBarIcon: (&#123; focused, tintColor &#125;) =&gt; (</span><br><span class="line">            &lt;Image</span><br><span class="line">                source=&#123;focused ?  Images.Tab.OneActive : Images.Tab.One&#125;</span><br><span class="line">                style=&#123;&#123; width: 25, height: 25 &#125;&#125;</span><br><span class="line">            /&gt;</span><br><span class="line">        ),</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    render() &#123;</span><br><span class="line">        return (</span><br><span class="line">            &lt;View style=&#123;styles.container&#125;&gt;</span><br><span class="line">                    &lt;Text onPress=&#123;()=&gt;this.add()&#125;&gt;</span><br><span class="line">                        + 红</span><br><span class="line">                    &lt;/Text&gt;</span><br><span class="line">                    &lt;Text&gt;</span><br><span class="line">                        One &#123;this.props.num&#125;</span><br><span class="line">                    &lt;/Text&gt;</span><br><span class="line">                    &lt;Text onPress=&#123;()=&gt;this.sub()&#125;&gt;</span><br><span class="line">                        - 蓝</span><br><span class="line">                    &lt;/Text&gt;</span><br><span class="line">            &lt;/View&gt;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    add =() =&gt;&#123;</span><br><span class="line">        this.props.dispatch(createAction(&apos;app/add&apos;)(this.props.num + 1))</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    sub =() =&gt;&#123;</span><br><span class="line">        this.props.dispatch(createAction(&apos;app/sub&apos;)(this.props.num - 1))</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    componentDidMount() &#123;</span><br><span class="line">        console.log(this.props)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const styles = StyleSheet.create(&#123;</span><br><span class="line">    container: &#123;</span><br><span class="line">        flex: 1,</span><br><span class="line">        justifyContent: &apos;center&apos;,</span><br><span class="line">        alignItems: &apos;center&apos;,</span><br><span class="line">        backgroundColor: &apos;#F5FCFF&apos;,</span><br><span class="line">    &#125;,</span><br><span class="line">    welcome: &#123;</span><br><span class="line">        fontSize: 20,</span><br><span class="line">        textAlign: &apos;center&apos;,</span><br><span class="line">        margin: 10,</span><br><span class="line">    &#125;,</span><br><span class="line">    instructions: &#123;</span><br><span class="line">        textAlign: &apos;center&apos;,</span><br><span class="line">        color: &apos;#333333&apos;,</span><br><span class="line">        marginBottom: 5,</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p><code>Two.js</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Sample React Native App</span><br><span class="line"> * https://github.com/facebook/react-native</span><br><span class="line"> * @flow</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">import React, &#123; Component &#125; from &apos;react&apos;;</span><br><span class="line">import &#123;</span><br><span class="line">    Platform,</span><br><span class="line">    StyleSheet,</span><br><span class="line">    Text,</span><br><span class="line">    View,</span><br><span class="line">    Image</span><br><span class="line">&#125; from &apos;react-native&apos;;</span><br><span class="line">import &#123; connect &#125; from &apos;react-redux&apos;</span><br><span class="line">import &#123; createAction, NavigationActions &#125; from &apos;../Utils&apos;</span><br><span class="line">import  &#123;Images&#125; from &quot;../Image&quot;;</span><br><span class="line"></span><br><span class="line">const instructions = Platform.select(&#123;</span><br><span class="line">    ios: &apos;Press Cmd+R to reload,\n&apos; +</span><br><span class="line">    &apos;Cmd+D or shake for dev menu&apos;,</span><br><span class="line">    android: &apos;Double tap R on your keyboard to reload,\n&apos; +</span><br><span class="line">    &apos;Shake or press menu button for dev menu&apos;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">type Props = &#123;&#125;;</span><br><span class="line">@connect((&#123; app &#125;) =&gt; (&#123; ...app &#125;))</span><br><span class="line">export default class Two extends Component&lt;Props&gt; &#123;</span><br><span class="line"></span><br><span class="line">    static navigationOptions = &#123;</span><br><span class="line">        tabBarLabel: &apos;安卓&apos;,</span><br><span class="line">        tabBarIcon: (&#123; focused, tintColor &#125;) =&gt; (</span><br><span class="line">            &lt;Image</span><br><span class="line">                source=&#123;focused ?  Images.Tab.TwoActive : Images.Tab.Two&#125;</span><br><span class="line">                style=&#123;&#123; width: 25, height: 25 &#125;&#125;</span><br><span class="line">            /&gt;</span><br><span class="line">        ),</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    render() &#123;</span><br><span class="line">        return (</span><br><span class="line">            &lt;View style=&#123;[styles.container,&#123;backgroundColor:this.props.mineType == &apos;红&apos; ? &apos;red&apos; : &apos;blue&apos;&#125;]&#125;&gt;</span><br><span class="line">                &lt;Text style=&#123;styles.welcome&#125;&gt;</span><br><span class="line">                    TWO + &#123;this.props.mineType&#125;</span><br><span class="line">                &lt;/Text&gt;</span><br><span class="line">            &lt;/View&gt;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    componentDidMount() &#123;</span><br><span class="line">        console.log(this.props.mineType)</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const styles = StyleSheet.create(&#123;</span><br><span class="line">    container: &#123;</span><br><span class="line">        flex: 1,</span><br><span class="line">        justifyContent: &apos;center&apos;,</span><br><span class="line">        alignItems: &apos;center&apos;,</span><br><span class="line">        backgroundColor: &apos;#F5FCFF&apos;,</span><br><span class="line">    &#125;,</span><br><span class="line">    welcome: &#123;</span><br><span class="line">        fontSize: 20,</span><br><span class="line">        textAlign: &apos;center&apos;,</span><br><span class="line">        margin: 10,</span><br><span class="line">    &#125;,</span><br><span class="line">    instructions: &#123;</span><br><span class="line">        textAlign: &apos;center&apos;,</span><br><span class="line">        color: &apos;#333333&apos;,</span><br><span class="line">        marginBottom: 5,</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>OK,以上就是全部代码.<br>效果图:<br><img src="/2018/07/29/移动端学习/dva和react-navigation的结合使用/../../../../../images/dva-result.gif" alt="dva-result"></p>
-<p><a href="https://github.com/pheromone/rn_dva" target="_blank" rel="noopener">源码地址</a></p>
-<p><a href="https://pheromone.github.io/2018/03/18/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/redux%E5%92%8Creact-navigation%E7%9A%84%E7%BB%93%E5%90%88%E4%BD%BF%E7%94%A8/" target="_blank" rel="noopener">另外:redux+react-navigation</a><br><a href="https://pheromone.github.io/2018/05/27/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Mobx-react-navigation%E7%9A%84%E4%BD%BF%E7%94%A8/" target="_blank" rel="noopener">另外:Mbox+react-navigation</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export &#123; NavigationActions, StackActions &#125; from &#x27;react-navigation&#x27;</span><br><span class="line"></span><br><span class="line">export const createAction = type =&gt; payload =&gt; (&#123; type, payload &#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>剩下的就是两个UI界面了:<br><code>One.js</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Sample React Native App</span><br><span class="line"> * https://github.com/facebook/react-native</span><br><span class="line"> * @flow</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">import React, &#123; Component &#125; from &#x27;react&#x27;;</span><br><span class="line">import &#123;</span><br><span class="line">    Platform,</span><br><span class="line">    StyleSheet,</span><br><span class="line">    Text,</span><br><span class="line">    View,</span><br><span class="line">    Image</span><br><span class="line">&#125; from &#x27;react-native&#x27;;</span><br><span class="line">import &#123; connect &#125; from &#x27;react-redux&#x27;</span><br><span class="line">import &#123; createAction, NavigationActions &#125; from &#x27;../Utils&#x27;</span><br><span class="line">import  &#123;Images&#125; from &quot;../Image&quot;;</span><br><span class="line"></span><br><span class="line">const instructions = Platform.select(&#123;</span><br><span class="line">    ios: &#x27;Press Cmd+R to reload,\n&#x27; +</span><br><span class="line">    &#x27;Cmd+D or shake for dev menu&#x27;,</span><br><span class="line">    android: &#x27;Double tap R on your keyboard to reload,\n&#x27; +</span><br><span class="line">    &#x27;Shake or press menu button for dev menu&#x27;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">type Props = &#123;&#125;;</span><br><span class="line">@connect((&#123; app &#125;) =&gt; (&#123; ...app &#125;))</span><br><span class="line">export default class One extends Component&lt;Props&gt; &#123;</span><br><span class="line"></span><br><span class="line">    static navigationOptions = &#123;</span><br><span class="line">        tabBarLabel: &#x27;苹果&#x27;,</span><br><span class="line">        tabBarIcon: (&#123; focused, tintColor &#125;) =&gt; (</span><br><span class="line">            &lt;Image</span><br><span class="line">                source=&#123;focused ?  Images.Tab.OneActive : Images.Tab.One&#125;</span><br><span class="line">                style=&#123;&#123; width: 25, height: 25 &#125;&#125;</span><br><span class="line">            /&gt;</span><br><span class="line">        ),</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    render() &#123;</span><br><span class="line">        return (</span><br><span class="line">            &lt;View style=&#123;styles.container&#125;&gt;</span><br><span class="line">                    &lt;Text onPress=&#123;()=&gt;this.add()&#125;&gt;</span><br><span class="line">                        + 红</span><br><span class="line">                    &lt;/Text&gt;</span><br><span class="line">                    &lt;Text&gt;</span><br><span class="line">                        One &#123;this.props.num&#125;</span><br><span class="line">                    &lt;/Text&gt;</span><br><span class="line">                    &lt;Text onPress=&#123;()=&gt;this.sub()&#125;&gt;</span><br><span class="line">                        - 蓝</span><br><span class="line">                    &lt;/Text&gt;</span><br><span class="line">            &lt;/View&gt;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    add =() =&gt;&#123;</span><br><span class="line">        this.props.dispatch(createAction(&#x27;app/add&#x27;)(this.props.num + 1))</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    sub =() =&gt;&#123;</span><br><span class="line">        this.props.dispatch(createAction(&#x27;app/sub&#x27;)(this.props.num - 1))</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    componentDidMount() &#123;</span><br><span class="line">        console.log(this.props)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const styles = StyleSheet.create(&#123;</span><br><span class="line">    container: &#123;</span><br><span class="line">        flex: 1,</span><br><span class="line">        justifyContent: &#x27;center&#x27;,</span><br><span class="line">        alignItems: &#x27;center&#x27;,</span><br><span class="line">        backgroundColor: &#x27;#F5FCFF&#x27;,</span><br><span class="line">    &#125;,</span><br><span class="line">    welcome: &#123;</span><br><span class="line">        fontSize: 20,</span><br><span class="line">        textAlign: &#x27;center&#x27;,</span><br><span class="line">        margin: 10,</span><br><span class="line">    &#125;,</span><br><span class="line">    instructions: &#123;</span><br><span class="line">        textAlign: &#x27;center&#x27;,</span><br><span class="line">        color: &#x27;#333333&#x27;,</span><br><span class="line">        marginBottom: 5,</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><code>Two.js</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Sample React Native App</span><br><span class="line"> * https://github.com/facebook/react-native</span><br><span class="line"> * @flow</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">import React, &#123; Component &#125; from &#x27;react&#x27;;</span><br><span class="line">import &#123;</span><br><span class="line">    Platform,</span><br><span class="line">    StyleSheet,</span><br><span class="line">    Text,</span><br><span class="line">    View,</span><br><span class="line">    Image</span><br><span class="line">&#125; from &#x27;react-native&#x27;;</span><br><span class="line">import &#123; connect &#125; from &#x27;react-redux&#x27;</span><br><span class="line">import &#123; createAction, NavigationActions &#125; from &#x27;../Utils&#x27;</span><br><span class="line">import  &#123;Images&#125; from &quot;../Image&quot;;</span><br><span class="line"></span><br><span class="line">const instructions = Platform.select(&#123;</span><br><span class="line">    ios: &#x27;Press Cmd+R to reload,\n&#x27; +</span><br><span class="line">    &#x27;Cmd+D or shake for dev menu&#x27;,</span><br><span class="line">    android: &#x27;Double tap R on your keyboard to reload,\n&#x27; +</span><br><span class="line">    &#x27;Shake or press menu button for dev menu&#x27;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">type Props = &#123;&#125;;</span><br><span class="line">@connect((&#123; app &#125;) =&gt; (&#123; ...app &#125;))</span><br><span class="line">export default class Two extends Component&lt;Props&gt; &#123;</span><br><span class="line"></span><br><span class="line">    static navigationOptions = &#123;</span><br><span class="line">        tabBarLabel: &#x27;安卓&#x27;,</span><br><span class="line">        tabBarIcon: (&#123; focused, tintColor &#125;) =&gt; (</span><br><span class="line">            &lt;Image</span><br><span class="line">                source=&#123;focused ?  Images.Tab.TwoActive : Images.Tab.Two&#125;</span><br><span class="line">                style=&#123;&#123; width: 25, height: 25 &#125;&#125;</span><br><span class="line">            /&gt;</span><br><span class="line">        ),</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    render() &#123;</span><br><span class="line">        return (</span><br><span class="line">            &lt;View style=&#123;[styles.container,&#123;backgroundColor:this.props.mineType == &#x27;红&#x27; ? &#x27;red&#x27; : &#x27;blue&#x27;&#125;]&#125;&gt;</span><br><span class="line">                &lt;Text style=&#123;styles.welcome&#125;&gt;</span><br><span class="line">                    TWO + &#123;this.props.mineType&#125;</span><br><span class="line">                &lt;/Text&gt;</span><br><span class="line">            &lt;/View&gt;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    componentDidMount() &#123;</span><br><span class="line">        console.log(this.props.mineType)</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const styles = StyleSheet.create(&#123;</span><br><span class="line">    container: &#123;</span><br><span class="line">        flex: 1,</span><br><span class="line">        justifyContent: &#x27;center&#x27;,</span><br><span class="line">        alignItems: &#x27;center&#x27;,</span><br><span class="line">        backgroundColor: &#x27;#F5FCFF&#x27;,</span><br><span class="line">    &#125;,</span><br><span class="line">    welcome: &#123;</span><br><span class="line">        fontSize: 20,</span><br><span class="line">        textAlign: &#x27;center&#x27;,</span><br><span class="line">        margin: 10,</span><br><span class="line">    &#125;,</span><br><span class="line">    instructions: &#123;</span><br><span class="line">        textAlign: &#x27;center&#x27;,</span><br><span class="line">        color: &#x27;#333333&#x27;,</span><br><span class="line">        marginBottom: 5,</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>OK,以上就是全部代码.<br>效果图:<br><img src="/2018/07/29/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/dva%E5%92%8Creact-navigation%E7%9A%84%E7%BB%93%E5%90%88%E4%BD%BF%E7%94%A8/../../../../../images/dva-result.gif" alt="dva-result"></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/pheromone/rn_dva">源码地址</a></p>
+<p><a target="_blank" rel="noopener" href="https://pheromone.github.io/2018/03/18/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/redux%E5%92%8Creact-navigation%E7%9A%84%E7%BB%93%E5%90%88%E4%BD%BF%E7%94%A8/">另外:redux+react-navigation</a><br><a target="_blank" rel="noopener" href="https://pheromone.github.io/2018/05/27/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Mobx-react-navigation%E7%9A%84%E4%BD%BF%E7%94%A8/">另外:Mbox+react-navigation</a></p>
 
     </div>
 </article>
@@ -312,7 +336,8 @@
     <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
 <aside id="sidebar-search">
     <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
-        <form class="form-inline clearfix" id="search-form" method="get" action="/search/index.html">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
             <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~">
             <button class="btn btn-danger btn-gal" type="submit">
                 <i class="fa fa-search"></i>
@@ -328,9 +353,10 @@
             <i class="fa fa-quote-right"></i>
         </div>
         <div class="author-panel text-center">
-            <img src="/imgs/headImg.jpg" width="140" height="140" alt="个人头像" class="author-image">
-            <p class="author-description"></p><p>愿天堂没有bug</p>
-<p></p>
+            <img src="/imgs/headImg.jpg" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description"><p>愿天堂没有bug</p>
+</p>
         </div>
     </div>
 </aside>
@@ -374,61 +400,61 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/03/13/移动端学习/Flutter~getx学习/">Flutter~getx库学习</a>
+                    <a href="/2021/08/22/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/React%E5%AD%A6%E4%B9%A0~React-Hooks%E5%AD%A6%E4%B9%A0/">React学习:React-Hooks学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/01/06/移动端学习/Flutter~provider学习/">Flutter~provider学习</a>
+                    <a href="/2021/03/13/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~getx%E5%AD%A6%E4%B9%A0/">Flutter~getx库学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/04/11/移动端学习/Flutter~fish_redux学习/">Flutter~fish_redux学习</a>
+                    <a href="/2021/01/06/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~provider%E5%AD%A6%E4%B9%A0/">Flutter~provider学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/01/23/移动端学习/Flutter~自定义tabbar模块/">Flutter~自定义tabbar模块</a>
+                    <a href="/2020/04/11/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~fish_redux%E5%AD%A6%E4%B9%A0/">Flutter~fish_redux学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/11/11/移动端学习/Flutter~自定义Dialog(基本的组件封装)/">Flutter~自定义Dialog(基本的组件封装)</a>
+                    <a href="/2020/01/23/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E8%87%AA%E5%AE%9A%E4%B9%89tabbar%E6%A8%A1%E5%9D%97/">Flutter~自定义tabbar模块</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/09/07/移动端学习/Flutter~Flare动画学习/">Flutter~Flare动画学习</a>
+                    <a href="/2019/11/11/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E8%87%AA%E5%AE%9A%E4%B9%89Dialog(%E5%9F%BA%E6%9C%AC%E7%9A%84%E7%BB%84%E4%BB%B6%E5%B0%81%E8%A3%85)/">Flutter~自定义Dialog(基本的组件封装)</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/08/08/移动端学习/Flutter~mobx库学习/">Flutter~mobx库学习</a>
+                    <a href="/2019/09/07/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~Flare%E5%8A%A8%E7%94%BB%E5%AD%A6%E4%B9%A0/">Flutter~Flare动画学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/06/23/其他学习/MAC下的cocos2d-x环境搭建/">MAC下的cocos2d-x环境搭建</a>
+                    <a href="/2019/08/08/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~mobx%E5%BA%93%E5%AD%A6%E4%B9%A0/">Flutter~mobx库学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/06/11/移动端学习/Flutter~国际化教程方案/">Flutter~国际化教程方案</a>
+                    <a href="/2019/06/23/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/MAC%E4%B8%8B%E7%9A%84cocos2d-x%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">MAC下的cocos2d-x环境搭建</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/05/31/移动端学习/Flutter~Android原生工程中添加Flutter模块/">Flutter~Android原生工程中添加Flutter模块</a>
+                    <a href="/2019/06/11/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E5%9B%BD%E9%99%85%E5%8C%96%E6%95%99%E7%A8%8B%E6%96%B9%E6%A1%88/">Flutter~国际化教程方案</a>
                 </span>
             </li>
             
@@ -450,61 +476,61 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/06/29/前端学习/React学习-简单个人消费记账系统/">React学习:简单个人消费记账系统</a>
+                    <a href="/2018/05/16/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/">后端学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/05/17/前端学习/精灵图学习/">前端精灵图学习</a>
+                    <a href="/2018/06/29/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/React%E5%AD%A6%E4%B9%A0~%E7%AE%80%E5%8D%95%E4%B8%AA%E4%BA%BA%E6%B6%88%E8%B4%B9%E8%AE%B0%E8%B4%A6%E7%B3%BB%E7%BB%9F/">React学习:简单个人消费记账系统</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/05/31/移动端学习/Flutter~Android原生工程中添加Flutter模块/">Flutter~Android原生工程中添加Flutter模块</a>
+                    <a href="/2019/04/22/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Android%E5%92%8CReact-Native%E7%9A%84%E7%AE%80%E5%8D%95%E4%BA%A4%E4%BA%92/">Android和React-Native的简单交互</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/05/29/移动端学习/Flutter~iOS原生工程中添加Flutter模块/">Flutter~iOS原生工程中添加Flutter模块</a>
+                    <a href="/2019/03/06/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~json_serializable%E5%BA%93%E5%AD%A6%E4%B9%A0/">Flutter~json_serializable库学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/01/06/移动端学习/Flutter~provider学习/">Flutter~provider学习</a>
+                    <a href="/2019/02/16/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~scoped_model%E5%AD%A6%E4%B9%A0/">Flutter~scoped_model学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/06/11/移动端学习/Flutter~国际化教程方案/">Flutter~国际化教程方案</a>
+                    <a href="/2020/01/23/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E8%87%AA%E5%AE%9A%E4%B9%89tabbar%E6%A8%A1%E5%9D%97/">Flutter~自定义tabbar模块</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/01/23/移动端学习/Flutter~自定义tabbar模块/">Flutter~自定义tabbar模块</a>
+                    <a href="/2019/04/22/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/React-Native%E4%B8%8EWeb%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BA%A4%E4%BA%92/">React-Native与Web的基本交互</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/08/11/移动端学习/React-Native<收起-展开>功能实现/">React-Native&#34;收起-展开&#34;功能实现</a>
+                    <a href="/2018/07/29/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/dva%E5%92%8Creact-navigation%E7%9A%84%E7%BB%93%E5%90%88%E4%BD%BF%E7%94%A8/">dva和react-navigation的结合使用</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/06/26/移动端学习/react-native七牛上传图片/">react-native七牛上传图片</a>
+                    <a href="/2018/06/26/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/react-native%E4%B8%83%E7%89%9B%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87/">react-native七牛上传图片</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/06/16/移动端学习/react-navigation前置登录/">react-navigation前置登录</a>
+                    <a href="/2018/08/17/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/React-Native%E7%B1%BB%E4%BC%BC%E6%94%AF%E4%BB%98%E5%AE%9D%E7%9A%84%E5%BA%94%E7%94%A8%E5%A2%9E%E5%88%A0%E6%A8%A1%E5%9D%97%E7%9A%84%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/">React-Native类似支付宝的应用增删模块的简单实现</a>
                 </span>
             </li>
             
@@ -516,26 +542,26 @@
     <aside id="gal-sets">
         <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
             <ul class="nav nav-pills pills-gal">
-                <li class>
-                    <a href="/2018/07/29/移动端学习/dva和react-navigation的结合使用/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                <li class="">
+                    <a href="/2018/07/29/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/dva%E5%92%8Creact-navigation%E7%9A%84%E7%BB%93%E5%90%88%E4%BD%BF%E7%94%A8/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
-                <li class>
-                    <a href="/2018/07/29/移动端学习/dva和react-navigation的结合使用/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                <li class="">
+                    <a href="/2018/07/29/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/dva%E5%92%8Creact-navigation%E7%9A%84%E7%BB%93%E5%90%88%E4%BD%BF%E7%94%A8/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
-                <li class>
-                    <a href="/2018/07/29/移动端学习/dva和react-navigation的结合使用/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                <li class="">
+                    <a href="/2018/07/29/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/dva%E5%92%8Creact-navigation%E7%9A%84%E7%BB%93%E5%90%88%E4%BD%BF%E7%94%A8/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
             </ul>
             <div class="tab-content">
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/其他学习/" style="font-size: 8.226630744773285px;" class="tag-cloud-link">其他学习</a>
+    <a href="/tags/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/" style="font-size: 13.527120046328012px;" class="tag-cloud-link">其他学习</a>
     
-    <a href="/tags/前端学习/" style="font-size: 10.399419602847887px;" class="tag-cloud-link">前端学习</a>
+    <a href="/tags/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 12.836970929728468px;" class="tag-cloud-link">后端学习</a>
     
-    <a href="/tags/后端学习/" style="font-size: 11.288323084424299px;" class="tag-cloud-link">后端学习</a>
+    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 15.028313915508994px;" class="tag-cloud-link">前端学习</a>
     
-    <a href="/tags/移动端学习/" style="font-size: 19.78959973853013px;" class="tag-cloud-link">移动端学习</a>
+    <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 15.359966426323389px;" class="tag-cloud-link">移动端学习</a>
     
 </div>
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
@@ -579,7 +605,9 @@
     <i class="fa fa-angle-up"></i>
 </div>
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/koharu.model.json"},"display":{"position":"right","width":100,"height":200},"mobile":{"show":true},"log":false});</script></body>
+
 <script src="/js/activate-power-mode.js"></script>
+
 <script>
 
     // 配置highslide
@@ -646,17 +674,23 @@
     }
 </script>
 
+
 <script src="/js/hs.js"></script>
 <script src="/js/blog.js"></script>
 
+
+
 <script src="/js/oni.js"></script>
+
 
 
 <script>
     window.hot_posts_count = '10'
     // window.use_leancloud = 'true'
 </script>
+
 <script src="/js/comment/leancloud.js"></script>
+
 
 
 <script src="https://myau.moe/js/comment/gitment.browser.js"></script>
@@ -679,6 +713,8 @@
       }
     }
 </script>
+
 <script src="/js/comment/gitment.js"></script>
+
 
 </html>

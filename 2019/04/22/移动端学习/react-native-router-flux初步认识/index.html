@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="author" content>
+    <meta name="author" content="">
     
     <meta name="description" content="愿天堂没有bug">
     
@@ -13,16 +13,28 @@
     
     
     <title>react-native-router-flux初步认识 | 少停</title>
-    <link href="”https://zhoushaoting.com“" rel="”prefetch”">
+    <link href=”https://zhoushaoting.com“ rel=”prefetch” />
 
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
 <link rel="stylesheet" href="/css/aos.css">
 <link rel="stylesheet" href="/css/style.css">
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/aos.js"></script>
-    <script src="/js/highslide/highslide-full.min.js"></script>
-    <link rel="stylesheet" href="/js/highslide/highslide.css">
+
+    
+<script src="/js/jquery.min.js"></script>
+
+    
+<script src="/js/bootstrap.min.js"></script>
+
+    
+<script src="/js/aos.js"></script>
+
+    
+<script src="/js/highslide/highslide-full.min.js"></script>
+
+    
+<link rel="stylesheet" href="/js/highslide/highslide.css">
+
     <style type="text/css">
         @media (max-width: 768px) {
             body {
@@ -53,7 +65,7 @@
         }
       }
     </script>-->
-</head></html>
+<meta name="generator" content="Hexo 5.4.0"></head>
 <body>
     <!-- 背景轮播图功能 -->
     <section class="hidden-xs">
@@ -89,7 +101,9 @@
     <header class="navbar navbar-inverse" id="gal-header">
     <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".bs-navbar-collapse" aria-expanded="false">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
                 <span class="fa fa-lg fa-reorder"></span>
             </button>
             <a href="https://zhoushaoting.com">
@@ -113,7 +127,7 @@
             <ul class="nav navbar-nav" id="menu-gal">
                 
                 
-                <li class>
+                <li class="">
                     <a href="/">
                         <i class="fa fa-home"></i>首页
                     </a>
@@ -121,7 +135,7 @@
                 
                 
                 
-                <li class>
+                <li class="">
                     <a href="/archives">
                         <i class="fa fa-archive"></i>归档
                     </a>
@@ -132,22 +146,23 @@
                 
                 <li class="dropdown">
                     <!-- TODO 添加hover dropdown效果 -->
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
                         <i class="fa fa-list"></i>分类
                     </a>
                     <ul class="dropdown-menu">
                         
                         
                         <li>
-                            <a href="/categories/其他学习/">其他学习</a>
+                            <a href="/categories/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/">其他学习</a>
                         </li>
                         
                         <li>
-                            <a href="/categories/前端学习/">前端学习</a>
+                            <a href="/categories/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/">后端学习</a>
                         </li>
                         
                         <li>
-                            <a href="/categories/后端学习/">后端学习</a>
+                            <a href="/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/">前端学习</a>
                         </li>
                         
                         
@@ -165,22 +180,23 @@
                 
                 <li class="dropdown">
                     <!-- TODO 添加hover dropdown效果 -->
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
                         <i class="fa fa-tags"></i>标签
                     </a>
                     <ul class="dropdown-menu">
                         
                         
                         <li>
-                            <a href="/tags/其他学习/">其他学习</a>
+                            <a href="/tags/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/">其他学习</a>
                         </li>
                         
                         <li>
-                            <a href="/tags/前端学习/">前端学习</a>
+                            <a href="/tags/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/">后端学习</a>
                         </li>
                         
                         <li>
-                            <a href="/tags/后端学习/">后端学习</a>
+                            <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/">前端学习</a>
                         </li>
                         
                         
@@ -195,7 +211,7 @@
                 
                 
                 
-                <li class>
+                <li class="">
                     <a href="/about">
                         <i class="fa fa-user"></i>关于我
                     </a>
@@ -203,7 +219,7 @@
                 
                 
                 
-                <li class>
+                <li class="">
                     <a href="/message">
                         <i class="fa fa-heart"></i>留言板
                     </a>
@@ -230,7 +246,7 @@
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/2019/04/22/移动端学习/react-native-router-flux初步认识/">react-native-router-flux初步认识</a>
+                <a href="/2019/04/22/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/react-native-router-flux%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/">react-native-router-flux初步认识</a>
             </h1>
         </div>
         <div class="tag-article">
@@ -238,7 +254,7 @@
             <span class="label label-gal">
                 <i class="fa fa-tags"></i>
                 
-                <a href="/tags/移动端学习/">移动端学习</a>
+                <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/">移动端学习</a>
                 
             </span>
             
@@ -257,7 +273,7 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/2019/04/22/移动端学习/react-native-router-flux初步认识/">react-native-router-flux初步认识</a>
+                    <a href="/2019/04/22/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/react-native-router-flux%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/">react-native-router-flux初步认识</a>
                 </h4>
             </div>
             <p>
@@ -267,7 +283,7 @@
                 
                 <i class="fa fa-tags"></i>
                 
-                <a href="/tags/移动端学习/">移动端学习</a>
+                <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/">移动端学习</a>
                 
                 
                 
@@ -277,14 +293,19 @@
         </center>
     </div>
     <div class="content-article">
-        <p>今天初步了解下 <code>react-native-router-flux</code> 这个三方导航库,基于<br><code>react-native</code>0.55.4,<code>react-native-router-flux</code>^4.0.0-beta.31<br><a id="more"></a><br>效果图:<br><img src="/2019/04/22/移动端学习/react-native-router-flux初步认识/../../../../../images/react-native-router-flux初步认识.png" alt="react-native-router-flux初步认识"><br>使用方法请参考:<br><a href="https://www.jianshu.com/p/37428d579cf6" target="_blank" rel="noopener">参考1</a><br><a href="https://www.cnblogs.com/lemonzwt/p/8182345.html" target="_blank" rel="noopener">参考2</a><br>我这里不详细说明了,贴出关键代码一看便知.<br>代码基本结构如下:<br><img src="/2019/04/22/移动端学习/react-native-router-flux初步认识/../../../../../images/react-native-router-flux代码结构.png" alt="react-native-router-flux代码结构"></p>
+        <p>今天初步了解下 <code>react-native-router-flux</code> 这个三方导航库,基于<br><code>react-native</code>0.55.4,<code>react-native-router-flux</code>^4.0.0-beta.31</p>
+<span id="more"></span>
+<p>效果图:<br><img src="/2019/04/22/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/react-native-router-flux%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/../../../../../images/react-native-router-flux初步认识.png" alt="react-native-router-flux初步认识"><br>使用方法请参考:<br><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/37428d579cf6">参考1</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/lemonzwt/p/8182345.html">参考2</a><br>我这里不详细说明了,贴出关键代码一看便知.<br>代码基本结构如下:<br><img src="/2019/04/22/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/react-native-router-flux%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/../../../../../images/react-native-router-flux代码结构.png" alt="react-native-router-flux代码结构"></p>
 <p><code>App.js</code>:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Sample React Native App</span><br><span class="line"> * https://github.com/facebook/react-native</span><br><span class="line"> * @flow</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">import React, &#123;Component&#125; from &apos;react&apos;;</span><br><span class="line">import &#123;</span><br><span class="line">    Platform,</span><br><span class="line">    StyleSheet,</span><br><span class="line">    Text,</span><br><span class="line">    View,</span><br><span class="line">    Image</span><br><span class="line">&#125; from &apos;react-native&apos;;</span><br><span class="line">import &#123;</span><br><span class="line">    Navigation,</span><br><span class="line">    Scene,</span><br><span class="line">    Router,</span><br><span class="line">    Modal</span><br><span class="line">&#125; from &apos;react-native-router-flux&apos;;</span><br><span class="line">import IOS from &apos;./src/ios&apos;;</span><br><span class="line">import Android from &apos;./src/android&apos;</span><br><span class="line">import Web from &apos;./src/web&apos;</span><br><span class="line">import TabIcon from &apos;./src/TabIcon&apos;</span><br><span class="line"></span><br><span class="line">type Props = &#123;&#125;;</span><br><span class="line">export default class App extends Component&lt;Props&gt; &#123;</span><br><span class="line">    render() &#123;</span><br><span class="line">        return (</span><br><span class="line">            &lt;Router&gt;</span><br><span class="line">                &lt;Modal&gt;</span><br><span class="line">                    &lt;Scene key=&quot;root&quot; tabBarPosition=&quot;bottom&quot; tabs&gt;</span><br><span class="line">                        &lt;Scene hideBackImage</span><br><span class="line">                               key=&quot;IOS&quot;</span><br><span class="line">                               title=&quot;苹果&quot;</span><br><span class="line">                               component=&#123;IOS&#125;</span><br><span class="line">                               icon=&#123;TabIcon&#125;</span><br><span class="line">                               Image=&#123;require(&apos;./src/image/ios.png&apos;)&#125;</span><br><span class="line">                               selectedImage=&#123;require(&apos;./src/image/ios_active.png&apos;)&#125;</span><br><span class="line">                        /&gt;</span><br><span class="line"></span><br><span class="line">                        &lt;Scene hideBackImage</span><br><span class="line">                               key=&quot;Web&quot;</span><br><span class="line">                               component=&#123;Web&#125;</span><br><span class="line">                               title=&quot;web&quot;</span><br><span class="line">                               icon=&#123;TabIcon&#125;</span><br><span class="line">                               Image=&#123;require(&apos;./src/image/web.png&apos;)&#125;</span><br><span class="line">                               showLabel = &#123;false&#125;</span><br><span class="line">                               selectedImage=&#123;require(&apos;./src/image/web_active.png&apos;)&#125;</span><br><span class="line">                        /&gt;</span><br><span class="line"></span><br><span class="line">                        &lt;Scene hideBackImage</span><br><span class="line">                               key=&quot;Android&quot;</span><br><span class="line">                               component=&#123;Android&#125;</span><br><span class="line">                               title=&quot;安卓&quot;</span><br><span class="line">                               icon=&#123;TabIcon&#125;</span><br><span class="line">                               Image=&#123;require(&apos;./src/image/android.png&apos;)&#125;</span><br><span class="line">                               hideNavBar=&#123;true&#125;  //隐藏导航栏</span><br><span class="line">                               selectedImage=&#123;require(&apos;./src/image/android_active.png&apos;)&#125;</span><br><span class="line">                        /&gt;</span><br><span class="line">                    &lt;/Scene&gt;</span><br><span class="line">                &lt;/Modal&gt;</span><br><span class="line">            &lt;/Router&gt;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const styles = StyleSheet.create(&#123;</span><br><span class="line">    tabbarContainer: &#123;</span><br><span class="line">        flex: 1,</span><br><span class="line">        backgroundColor: &quot;#f6f6f6&quot;,</span><br><span class="line">        overflow: &apos;visible&apos;</span><br><span class="line"></span><br><span class="line">    &#125;,</span><br><span class="line">    tabIconItem: &#123;</span><br><span class="line">        flex: 1,</span><br><span class="line">        height: 56,</span><br><span class="line">        flexDirection: &apos;column&apos;,</span><br><span class="line">        alignItems: &apos;center&apos;,</span><br><span class="line">        justifyContent: &apos;center&apos;,</span><br><span class="line">        paddingLeft: 8,</span><br><span class="line">        paddingRight: 8,</span><br><span class="line">        backgroundColor: &apos;transparent&apos;,</span><br><span class="line">        overflow: &apos;visible&apos;</span><br><span class="line">    &#125;,</span><br><span class="line">    tabIconImage: &#123;</span><br><span class="line">        width: 60,</span><br><span class="line">        height: 60,</span><br><span class="line">        overflow: &apos;visible&apos;</span><br><span class="line"></span><br><span class="line">    &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Sample React Native App</span><br><span class="line"> * https://github.com/facebook/react-native</span><br><span class="line"> * @flow</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">import React, &#123;Component&#125; from &#x27;react&#x27;;</span><br><span class="line">import &#123;</span><br><span class="line">    Platform,</span><br><span class="line">    StyleSheet,</span><br><span class="line">    Text,</span><br><span class="line">    View,</span><br><span class="line">    Image</span><br><span class="line">&#125; from &#x27;react-native&#x27;;</span><br><span class="line">import &#123;</span><br><span class="line">    Navigation,</span><br><span class="line">    Scene,</span><br><span class="line">    Router,</span><br><span class="line">    Modal</span><br><span class="line">&#125; from &#x27;react-native-router-flux&#x27;;</span><br><span class="line">import IOS from &#x27;./src/ios&#x27;;</span><br><span class="line">import Android from &#x27;./src/android&#x27;</span><br><span class="line">import Web from &#x27;./src/web&#x27;</span><br><span class="line">import TabIcon from &#x27;./src/TabIcon&#x27;</span><br><span class="line"></span><br><span class="line">type Props = &#123;&#125;;</span><br><span class="line">export default class App extends Component&lt;Props&gt; &#123;</span><br><span class="line">    render() &#123;</span><br><span class="line">        return (</span><br><span class="line">            &lt;Router&gt;</span><br><span class="line">                &lt;Modal&gt;</span><br><span class="line">                    &lt;Scene key=&quot;root&quot; tabBarPosition=&quot;bottom&quot; tabs&gt;</span><br><span class="line">                        &lt;Scene hideBackImage</span><br><span class="line">                               key=&quot;IOS&quot;</span><br><span class="line">                               title=&quot;苹果&quot;</span><br><span class="line">                               component=&#123;IOS&#125;</span><br><span class="line">                               icon=&#123;TabIcon&#125;</span><br><span class="line">                               Image=&#123;require(&#x27;./src/image/ios.png&#x27;)&#125;</span><br><span class="line">                               selectedImage=&#123;require(&#x27;./src/image/ios_active.png&#x27;)&#125;</span><br><span class="line">                        /&gt;</span><br><span class="line"></span><br><span class="line">                        &lt;Scene hideBackImage</span><br><span class="line">                               key=&quot;Web&quot;</span><br><span class="line">                               component=&#123;Web&#125;</span><br><span class="line">                               title=&quot;web&quot;</span><br><span class="line">                               icon=&#123;TabIcon&#125;</span><br><span class="line">                               Image=&#123;require(&#x27;./src/image/web.png&#x27;)&#125;</span><br><span class="line">                               showLabel = &#123;false&#125;</span><br><span class="line">                               selectedImage=&#123;require(&#x27;./src/image/web_active.png&#x27;)&#125;</span><br><span class="line">                        /&gt;</span><br><span class="line"></span><br><span class="line">                        &lt;Scene hideBackImage</span><br><span class="line">                               key=&quot;Android&quot;</span><br><span class="line">                               component=&#123;Android&#125;</span><br><span class="line">                               title=&quot;安卓&quot;</span><br><span class="line">                               icon=&#123;TabIcon&#125;</span><br><span class="line">                               Image=&#123;require(&#x27;./src/image/android.png&#x27;)&#125;</span><br><span class="line">                               hideNavBar=&#123;true&#125;  //隐藏导航栏</span><br><span class="line">                               selectedImage=&#123;require(&#x27;./src/image/android_active.png&#x27;)&#125;</span><br><span class="line">                        /&gt;</span><br><span class="line">                    &lt;/Scene&gt;</span><br><span class="line">                &lt;/Modal&gt;</span><br><span class="line">            &lt;/Router&gt;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const styles = StyleSheet.create(&#123;</span><br><span class="line">    tabbarContainer: &#123;</span><br><span class="line">        flex: 1,</span><br><span class="line">        backgroundColor: &quot;#f6f6f6&quot;,</span><br><span class="line">        overflow: &#x27;visible&#x27;</span><br><span class="line"></span><br><span class="line">    &#125;,</span><br><span class="line">    tabIconItem: &#123;</span><br><span class="line">        flex: 1,</span><br><span class="line">        height: 56,</span><br><span class="line">        flexDirection: &#x27;column&#x27;,</span><br><span class="line">        alignItems: &#x27;center&#x27;,</span><br><span class="line">        justifyContent: &#x27;center&#x27;,</span><br><span class="line">        paddingLeft: 8,</span><br><span class="line">        paddingRight: 8,</span><br><span class="line">        backgroundColor: &#x27;transparent&#x27;,</span><br><span class="line">        overflow: &#x27;visible&#x27;</span><br><span class="line">    &#125;,</span><br><span class="line">    tabIconImage: &#123;</span><br><span class="line">        width: 60,</span><br><span class="line">        height: 60,</span><br><span class="line">        overflow: &#x27;visible&#x27;</span><br><span class="line"></span><br><span class="line">    &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <p><code>TabIcon.js</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import React, &#123;PropTypes, Component&#125;  from &apos;react&apos;</span><br><span class="line">import &#123;Text, View, Image, StyleSheet&#125; from &apos;react-native&apos;</span><br><span class="line">const tabIconStyles = StyleSheet.create(&#123;</span><br><span class="line">    tabIconItem: &#123;</span><br><span class="line">        flex: 1,</span><br><span class="line">        height: 56,</span><br><span class="line">        flexDirection: &apos;column&apos;,</span><br><span class="line">        alignItems: &apos;center&apos;,</span><br><span class="line">        justifyContent: &apos;center&apos;,</span><br><span class="line">        paddingLeft: 8,</span><br><span class="line">        paddingRight: 8,</span><br><span class="line">        backgroundColor: &apos;transparent&apos;,</span><br><span class="line">    &#125;,</span><br><span class="line">    tabIconImage: &#123;</span><br><span class="line">        width: 24,</span><br><span class="line">        height: 24</span><br><span class="line">    &#125;,</span><br><span class="line">    titleText: &#123;</span><br><span class="line">        marginTop: 5,</span><br><span class="line">        textAlign: &apos;center&apos;,</span><br><span class="line">        fontSize: 11</span><br><span class="line">    &#125;,</span><br><span class="line">    titleTextDefaultColor: &#123;</span><br><span class="line">        color: &apos;black&apos;</span><br><span class="line">    &#125;,</span><br><span class="line">    titleTextSelectColor: &#123;</span><br><span class="line">        color: &apos;red&apos;</span><br><span class="line">    &#125;,</span><br><span class="line">    tabItemRow: &#123;</span><br><span class="line">        flexDirection: &apos;row&apos;</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;);</span><br><span class="line">export default TabIcon=(props)=&gt;&#123;</span><br><span class="line">    return (</span><br><span class="line">        &lt;View style=&#123;tabIconStyles.tabIconItem&#125;&gt;</span><br><span class="line">            &lt;Image style=&#123;tabIconStyles.tabIconImage&#125;</span><br><span class="line">                   source=&#123;props.focused ? props.selectedImage : props.Image&#125;/&gt;</span><br><span class="line">            &lt;Text&gt;&#123;props.tabTitle&#125;&lt;/Text&gt;</span><br><span class="line">        &lt;/View&gt;</span><br><span class="line">    );</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import React, &#123;PropTypes, Component&#125;  from &#x27;react&#x27;</span><br><span class="line">import &#123;Text, View, Image, StyleSheet&#125; from &#x27;react-native&#x27;</span><br><span class="line">const tabIconStyles = StyleSheet.create(&#123;</span><br><span class="line">    tabIconItem: &#123;</span><br><span class="line">        flex: 1,</span><br><span class="line">        height: 56,</span><br><span class="line">        flexDirection: &#x27;column&#x27;,</span><br><span class="line">        alignItems: &#x27;center&#x27;,</span><br><span class="line">        justifyContent: &#x27;center&#x27;,</span><br><span class="line">        paddingLeft: 8,</span><br><span class="line">        paddingRight: 8,</span><br><span class="line">        backgroundColor: &#x27;transparent&#x27;,</span><br><span class="line">    &#125;,</span><br><span class="line">    tabIconImage: &#123;</span><br><span class="line">        width: 24,</span><br><span class="line">        height: 24</span><br><span class="line">    &#125;,</span><br><span class="line">    titleText: &#123;</span><br><span class="line">        marginTop: 5,</span><br><span class="line">        textAlign: &#x27;center&#x27;,</span><br><span class="line">        fontSize: 11</span><br><span class="line">    &#125;,</span><br><span class="line">    titleTextDefaultColor: &#123;</span><br><span class="line">        color: &#x27;black&#x27;</span><br><span class="line">    &#125;,</span><br><span class="line">    titleTextSelectColor: &#123;</span><br><span class="line">        color: &#x27;red&#x27;</span><br><span class="line">    &#125;,</span><br><span class="line">    tabItemRow: &#123;</span><br><span class="line">        flexDirection: &#x27;row&#x27;</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;);</span><br><span class="line">export default TabIcon=(props)=&gt;&#123;</span><br><span class="line">    return (</span><br><span class="line">        &lt;View style=&#123;tabIconStyles.tabIconItem&#125;&gt;</span><br><span class="line">            &lt;Image style=&#123;tabIconStyles.tabIconImage&#125;</span><br><span class="line">                   source=&#123;props.focused ? props.selectedImage : props.Image&#125;/&gt;</span><br><span class="line">            &lt;Text&gt;&#123;props.tabTitle&#125;&lt;/Text&gt;</span><br><span class="line">        &lt;/View&gt;</span><br><span class="line">    );</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <p>而至于<code>ios.js</code>,<code>web.js</code>,<code>android.js</code>只是基本的模板界面</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Sample React Native App</span><br><span class="line"> * https://github.com/facebook/react-native</span><br><span class="line"> * @flow</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">import React, &#123; Component &#125; from &apos;react&apos;;</span><br><span class="line">import &#123;</span><br><span class="line">  Platform,</span><br><span class="line">  StyleSheet,</span><br><span class="line">  Text,</span><br><span class="line">  View</span><br><span class="line">&#125; from &apos;react-native&apos;;</span><br><span class="line">type Props = &#123;&#125;;</span><br><span class="line">export default class IOS extends Component&lt;Props&gt; &#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    return (</span><br><span class="line">      &lt;View style=&#123;styles.container&#125;&gt;</span><br><span class="line">        &lt;Text style=&#123;styles.welcome&#125;&gt;</span><br><span class="line">        首页</span><br><span class="line">        &lt;/Text&gt;</span><br><span class="line">      &lt;/View&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const styles = StyleSheet.create(&#123;</span><br><span class="line">  container: &#123;</span><br><span class="line">    flex: 1,</span><br><span class="line">    justifyContent: &apos;center&apos;,</span><br><span class="line">    alignItems: &apos;center&apos;,</span><br><span class="line">    backgroundColor: &apos;#F5FCFF&apos;,</span><br><span class="line">  &#125;,</span><br><span class="line">  welcome: &#123;</span><br><span class="line">    fontSize: 20,</span><br><span class="line">    textAlign: &apos;center&apos;,</span><br><span class="line">    margin: 10,</span><br><span class="line">  &#125;,</span><br><span class="line">  instructions: &#123;</span><br><span class="line">    textAlign: &apos;center&apos;,</span><br><span class="line">    color: &apos;#333333&apos;,</span><br><span class="line">    marginBottom: 5,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p><a href="https://github.com/pheromone/react-native-router-flux-demo" target="_blank" rel="noopener">源码</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Sample React Native App</span><br><span class="line"> * https://github.com/facebook/react-native</span><br><span class="line"> * @flow</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">import React, &#123; Component &#125; from &#x27;react&#x27;;</span><br><span class="line">import &#123;</span><br><span class="line">  Platform,</span><br><span class="line">  StyleSheet,</span><br><span class="line">  Text,</span><br><span class="line">  View</span><br><span class="line">&#125; from &#x27;react-native&#x27;;</span><br><span class="line">type Props = &#123;&#125;;</span><br><span class="line">export default class IOS extends Component&lt;Props&gt; &#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    return (</span><br><span class="line">      &lt;View style=&#123;styles.container&#125;&gt;</span><br><span class="line">        &lt;Text style=&#123;styles.welcome&#125;&gt;</span><br><span class="line">        首页</span><br><span class="line">        &lt;/Text&gt;</span><br><span class="line">      &lt;/View&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const styles = StyleSheet.create(&#123;</span><br><span class="line">  container: &#123;</span><br><span class="line">    flex: 1,</span><br><span class="line">    justifyContent: &#x27;center&#x27;,</span><br><span class="line">    alignItems: &#x27;center&#x27;,</span><br><span class="line">    backgroundColor: &#x27;#F5FCFF&#x27;,</span><br><span class="line">  &#125;,</span><br><span class="line">  welcome: &#123;</span><br><span class="line">    fontSize: 20,</span><br><span class="line">    textAlign: &#x27;center&#x27;,</span><br><span class="line">    margin: 10,</span><br><span class="line">  &#125;,</span><br><span class="line">  instructions: &#123;</span><br><span class="line">    textAlign: &#x27;center&#x27;,</span><br><span class="line">    color: &#x27;#333333&#x27;,</span><br><span class="line">    marginBottom: 5,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/pheromone/react-native-router-flux-demo">源码</a></p>
 
     </div>
 </article>
@@ -304,7 +325,8 @@
     <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
 <aside id="sidebar-search">
     <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
-        <form class="form-inline clearfix" id="search-form" method="get" action="/search/index.html">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
             <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~">
             <button class="btn btn-danger btn-gal" type="submit">
                 <i class="fa fa-search"></i>
@@ -320,9 +342,10 @@
             <i class="fa fa-quote-right"></i>
         </div>
         <div class="author-panel text-center">
-            <img src="/imgs/headImg.jpg" width="140" height="140" alt="个人头像" class="author-image">
-            <p class="author-description"></p><p>愿天堂没有bug</p>
-<p></p>
+            <img src="/imgs/headImg.jpg" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description"><p>愿天堂没有bug</p>
+</p>
         </div>
     </div>
 </aside>
@@ -366,61 +389,61 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/03/13/移动端学习/Flutter~getx学习/">Flutter~getx库学习</a>
+                    <a href="/2021/08/22/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/React%E5%AD%A6%E4%B9%A0~React-Hooks%E5%AD%A6%E4%B9%A0/">React学习:React-Hooks学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/01/06/移动端学习/Flutter~provider学习/">Flutter~provider学习</a>
+                    <a href="/2021/03/13/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~getx%E5%AD%A6%E4%B9%A0/">Flutter~getx库学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/04/11/移动端学习/Flutter~fish_redux学习/">Flutter~fish_redux学习</a>
+                    <a href="/2021/01/06/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~provider%E5%AD%A6%E4%B9%A0/">Flutter~provider学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/01/23/移动端学习/Flutter~自定义tabbar模块/">Flutter~自定义tabbar模块</a>
+                    <a href="/2020/04/11/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~fish_redux%E5%AD%A6%E4%B9%A0/">Flutter~fish_redux学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/11/11/移动端学习/Flutter~自定义Dialog(基本的组件封装)/">Flutter~自定义Dialog(基本的组件封装)</a>
+                    <a href="/2020/01/23/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E8%87%AA%E5%AE%9A%E4%B9%89tabbar%E6%A8%A1%E5%9D%97/">Flutter~自定义tabbar模块</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/09/07/移动端学习/Flutter~Flare动画学习/">Flutter~Flare动画学习</a>
+                    <a href="/2019/11/11/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E8%87%AA%E5%AE%9A%E4%B9%89Dialog(%E5%9F%BA%E6%9C%AC%E7%9A%84%E7%BB%84%E4%BB%B6%E5%B0%81%E8%A3%85)/">Flutter~自定义Dialog(基本的组件封装)</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/08/08/移动端学习/Flutter~mobx库学习/">Flutter~mobx库学习</a>
+                    <a href="/2019/09/07/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~Flare%E5%8A%A8%E7%94%BB%E5%AD%A6%E4%B9%A0/">Flutter~Flare动画学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/06/23/其他学习/MAC下的cocos2d-x环境搭建/">MAC下的cocos2d-x环境搭建</a>
+                    <a href="/2019/08/08/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~mobx%E5%BA%93%E5%AD%A6%E4%B9%A0/">Flutter~mobx库学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/06/11/移动端学习/Flutter~国际化教程方案/">Flutter~国际化教程方案</a>
+                    <a href="/2019/06/23/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/MAC%E4%B8%8B%E7%9A%84cocos2d-x%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">MAC下的cocos2d-x环境搭建</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/05/31/移动端学习/Flutter~Android原生工程中添加Flutter模块/">Flutter~Android原生工程中添加Flutter模块</a>
+                    <a href="/2019/06/11/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E5%9B%BD%E9%99%85%E5%8C%96%E6%95%99%E7%A8%8B%E6%96%B9%E6%A1%88/">Flutter~国际化教程方案</a>
                 </span>
             </li>
             
@@ -442,61 +465,61 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/05/17/前端学习/精灵图学习/">前端精灵图学习</a>
+                    <a href="/2019/06/23/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/MAC%E4%B8%8B%E7%9A%84cocos2d-x%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">MAC下的cocos2d-x环境搭建</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/05/17/前端学习/马赛克学习/">前端马赛克学习</a>
+                    <a href="/2019/04/22/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Android%E5%92%8CReact-Native%E7%9A%84%E7%AE%80%E5%8D%95%E4%BA%A4%E4%BA%92/">Android和React-Native的简单交互</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/05/16/后端学习/后端学习/">后端学习</a>
+                    <a href="/2019/03/06/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~json_serializable%E5%BA%93%E5%AD%A6%E4%B9%A0/">Flutter~json_serializable库学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/04/22/移动端学习/Android和React-Native的简单交互/">Android和React-Native的简单交互</a>
+                    <a href="/2021/01/06/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~provider%E5%AD%A6%E4%B9%A0/">Flutter~provider学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/03/07/移动端学习/Flutter~flutter_bloc库学习/">Flutter~flutter_bloc库学习</a>
+                    <a href="/2019/03/03/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~provide%E5%AD%A6%E4%B9%A0/">Flutter~provide学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/08/08/移动端学习/Flutter~mobx库学习/">Flutter~mobx库学习</a>
+                    <a href="/2019/02/17/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~redux%E5%AD%A6%E4%B9%A0/">Flutter~redux学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/06/11/移动端学习/Flutter~国际化教程方案/">Flutter~国际化教程方案</a>
+                    <a href="/2020/01/23/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E8%87%AA%E5%AE%9A%E4%B9%89tabbar%E6%A8%A1%E5%9D%97/">Flutter~自定义tabbar模块</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/09/08/移动端学习/React-Native推送通知至RN且显示推送内容/">React-Native推送通知至RN且显示推送内容</a>
+                    <a href="/2018/09/08/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/React-Native%E6%8E%A8%E9%80%81%E9%80%9A%E7%9F%A5%E8%87%B3RN%E4%B8%94%E6%98%BE%E7%A4%BA%E6%8E%A8%E9%80%81%E5%86%85%E5%AE%B9/">React-Native推送通知至RN且显示推送内容</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/08/17/移动端学习/React-Native类似支付宝的应用增删模块的简单实现/">React-Native类似支付宝的应用增删模块的简单实现</a>
+                    <a href="/2018/07/29/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/dva%E5%92%8Creact-navigation%E7%9A%84%E7%BB%93%E5%90%88%E4%BD%BF%E7%94%A8/">dva和react-navigation的结合使用</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/07/29/移动端学习/redux和react-navigation的结合使用/">redux和react-navigation的结合使用</a>
+                    <a href="/2018/06/16/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/react-navigation%E5%89%8D%E7%BD%AE%E7%99%BB%E5%BD%95/">react-navigation前置登录</a>
                 </span>
             </li>
             
@@ -508,26 +531,26 @@
     <aside id="gal-sets">
         <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
             <ul class="nav nav-pills pills-gal">
-                <li class>
-                    <a href="/2019/04/22/移动端学习/react-native-router-flux初步认识/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                <li class="">
+                    <a href="/2019/04/22/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/react-native-router-flux%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
-                <li class>
-                    <a href="/2019/04/22/移动端学习/react-native-router-flux初步认识/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                <li class="">
+                    <a href="/2019/04/22/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/react-native-router-flux%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
-                <li class>
-                    <a href="/2019/04/22/移动端学习/react-native-router-flux初步认识/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                <li class="">
+                    <a href="/2019/04/22/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/react-native-router-flux%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
             </ul>
             <div class="tab-content">
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/其他学习/" style="font-size: 14.430142620789404px;" class="tag-cloud-link">其他学习</a>
+    <a href="/tags/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/" style="font-size: 13.099880238524264px;" class="tag-cloud-link">其他学习</a>
     
-    <a href="/tags/前端学习/" style="font-size: 16.777239152258318px;" class="tag-cloud-link">前端学习</a>
+    <a href="/tags/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 15.85337750949294px;" class="tag-cloud-link">后端学习</a>
     
-    <a href="/tags/后端学习/" style="font-size: 16.341609261364944px;" class="tag-cloud-link">后端学习</a>
+    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 14.221340297144382px;" class="tag-cloud-link">前端学习</a>
     
-    <a href="/tags/移动端学习/" style="font-size: 10.719682966204338px;" class="tag-cloud-link">移动端学习</a>
+    <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 11.195451994725914px;" class="tag-cloud-link">移动端学习</a>
     
 </div>
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
@@ -571,7 +594,9 @@
     <i class="fa fa-angle-up"></i>
 </div>
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/koharu.model.json"},"display":{"position":"right","width":100,"height":200},"mobile":{"show":true},"log":false});</script></body>
+
 <script src="/js/activate-power-mode.js"></script>
+
 <script>
 
     // 配置highslide
@@ -638,17 +663,23 @@
     }
 </script>
 
+
 <script src="/js/hs.js"></script>
 <script src="/js/blog.js"></script>
 
+
+
 <script src="/js/oni.js"></script>
+
 
 
 <script>
     window.hot_posts_count = '10'
     // window.use_leancloud = 'true'
 </script>
+
 <script src="/js/comment/leancloud.js"></script>
+
 
 
 <script src="https://myau.moe/js/comment/gitment.browser.js"></script>
@@ -671,6 +702,8 @@
       }
     }
 </script>
+
 <script src="/js/comment/gitment.js"></script>
+
 
 </html>

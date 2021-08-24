@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="author" content>
+    <meta name="author" content="">
     
     <meta name="description" content="愿天堂没有bug">
     
@@ -13,16 +13,28 @@
     
     
     <title>Android和React-Native的简单交互 | 少停</title>
-    <link href="”https://zhoushaoting.com“" rel="”prefetch”">
+    <link href=”https://zhoushaoting.com“ rel=”prefetch” />
 
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
 <link rel="stylesheet" href="/css/aos.css">
 <link rel="stylesheet" href="/css/style.css">
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/aos.js"></script>
-    <script src="/js/highslide/highslide-full.min.js"></script>
-    <link rel="stylesheet" href="/js/highslide/highslide.css">
+
+    
+<script src="/js/jquery.min.js"></script>
+
+    
+<script src="/js/bootstrap.min.js"></script>
+
+    
+<script src="/js/aos.js"></script>
+
+    
+<script src="/js/highslide/highslide-full.min.js"></script>
+
+    
+<link rel="stylesheet" href="/js/highslide/highslide.css">
+
     <style type="text/css">
         @media (max-width: 768px) {
             body {
@@ -53,7 +65,7 @@
         }
       }
     </script>-->
-</head></html>
+<meta name="generator" content="Hexo 5.4.0"></head>
 <body>
     <!-- 背景轮播图功能 -->
     <section class="hidden-xs">
@@ -89,7 +101,9 @@
     <header class="navbar navbar-inverse" id="gal-header">
     <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".bs-navbar-collapse" aria-expanded="false">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
                 <span class="fa fa-lg fa-reorder"></span>
             </button>
             <a href="https://zhoushaoting.com">
@@ -113,7 +127,7 @@
             <ul class="nav navbar-nav" id="menu-gal">
                 
                 
-                <li class>
+                <li class="">
                     <a href="/">
                         <i class="fa fa-home"></i>首页
                     </a>
@@ -121,7 +135,7 @@
                 
                 
                 
-                <li class>
+                <li class="">
                     <a href="/archives">
                         <i class="fa fa-archive"></i>归档
                     </a>
@@ -132,22 +146,23 @@
                 
                 <li class="dropdown">
                     <!-- TODO 添加hover dropdown效果 -->
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
                         <i class="fa fa-list"></i>分类
                     </a>
                     <ul class="dropdown-menu">
                         
                         
                         <li>
-                            <a href="/categories/其他学习/">其他学习</a>
+                            <a href="/categories/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/">其他学习</a>
                         </li>
                         
                         <li>
-                            <a href="/categories/前端学习/">前端学习</a>
+                            <a href="/categories/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/">后端学习</a>
                         </li>
                         
                         <li>
-                            <a href="/categories/后端学习/">后端学习</a>
+                            <a href="/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/">前端学习</a>
                         </li>
                         
                         
@@ -165,22 +180,23 @@
                 
                 <li class="dropdown">
                     <!-- TODO 添加hover dropdown效果 -->
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
                         <i class="fa fa-tags"></i>标签
                     </a>
                     <ul class="dropdown-menu">
                         
                         
                         <li>
-                            <a href="/tags/其他学习/">其他学习</a>
+                            <a href="/tags/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/">其他学习</a>
                         </li>
                         
                         <li>
-                            <a href="/tags/前端学习/">前端学习</a>
+                            <a href="/tags/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/">后端学习</a>
                         </li>
                         
                         <li>
-                            <a href="/tags/后端学习/">后端学习</a>
+                            <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/">前端学习</a>
                         </li>
                         
                         
@@ -195,7 +211,7 @@
                 
                 
                 
-                <li class>
+                <li class="">
                     <a href="/about">
                         <i class="fa fa-user"></i>关于我
                     </a>
@@ -203,7 +219,7 @@
                 
                 
                 
-                <li class>
+                <li class="">
                     <a href="/message">
                         <i class="fa fa-heart"></i>留言板
                     </a>
@@ -230,7 +246,7 @@
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/2019/04/22/移动端学习/Android和React-Native的简单交互/">Android和React-Native的简单交互</a>
+                <a href="/2019/04/22/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Android%E5%92%8CReact-Native%E7%9A%84%E7%AE%80%E5%8D%95%E4%BA%A4%E4%BA%92/">Android和React-Native的简单交互</a>
             </h1>
         </div>
         <div class="tag-article">
@@ -238,7 +254,7 @@
             <span class="label label-gal">
                 <i class="fa fa-tags"></i>
                 
-                <a href="/tags/移动端学习/">移动端学习</a>
+                <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/">移动端学习</a>
                 
             </span>
             
@@ -257,7 +273,7 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/2019/04/22/移动端学习/Android和React-Native的简单交互/">Android和React-Native的简单交互</a>
+                    <a href="/2019/04/22/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Android%E5%92%8CReact-Native%E7%9A%84%E7%AE%80%E5%8D%95%E4%BA%A4%E4%BA%92/">Android和React-Native的简单交互</a>
                 </h4>
             </div>
             <p>
@@ -267,7 +283,7 @@
                 
                 <i class="fa fa-tags"></i>
                 
-                <a href="/tags/移动端学习/">移动端学习</a>
+                <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/">移动端学习</a>
                 
                 
                 
@@ -277,15 +293,20 @@
         </center>
     </div>
     <div class="content-article">
-        <p>首先在Android原生中.新建class文件TransMissonMoudle:<br><a id="more"></a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Created by shaotingzhou on 2018/3/7.</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">package com.androidrn.RN;</span><br><span class="line">import com.facebook.react.bridge.Callback;</span><br><span class="line">import com.facebook.react.bridge.Promise;</span><br><span class="line">import com.facebook.react.bridge.ReactApplicationContext;</span><br><span class="line">import com.facebook.react.bridge.ReactContext;</span><br><span class="line">import com.facebook.react.bridge.ReactContextBaseJavaModule;</span><br><span class="line">import com.facebook.react.bridge.ReactMethod;</span><br><span class="line">import com.facebook.react.bridge.WritableMap;</span><br><span class="line">import com.facebook.react.bridge.WritableNativeMap;</span><br><span class="line">import com.facebook.react.modules.core.DeviceEventManagerModule;</span><br><span class="line"></span><br><span class="line">import java.text.SimpleDateFormat;</span><br><span class="line">import java.util.Date;</span><br><span class="line"></span><br><span class="line">import javax.annotation.Nullable;</span><br><span class="line"></span><br><span class="line">public class TransMissonMoudle extends ReactContextBaseJavaModule &#123;</span><br><span class="line"></span><br><span class="line">    private static final String REACT_CLASS = &quot;TransMissonMoudle&quot;;</span><br><span class="line">    private ReactContext mReactContext;</span><br><span class="line"></span><br><span class="line">    public TransMissonMoudle(ReactApplicationContext reactContext) &#123;</span><br><span class="line">        super(reactContext);</span><br><span class="line">        this.mReactContext = reactContext;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public String getName() &#123;</span><br><span class="line">        return REACT_CLASS;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    //延迟0.1秒获取时间。</span><br><span class="line">    @ReactMethod</span><br><span class="line">    public void getTime() &#123;</span><br><span class="line">        new Thread(new Runnable() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void run() &#123;</span><br><span class="line">                try &#123;</span><br><span class="line">                    Thread.sleep(100);</span><br><span class="line">                &#125; catch (InterruptedException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                String time = getTimeMillis();</span><br><span class="line"></span><br><span class="line">                WritableMap writableMap = new WritableNativeMap();</span><br><span class="line">                writableMap.putString(&quot;key&quot;, time);</span><br><span class="line">                sendTransMisson(mReactContext, &quot;EventName&quot;, writableMap);</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;).start();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private String getTimeMillis() &#123;</span><br><span class="line">        SimpleDateFormat formatDate = new SimpleDateFormat(&quot;yyyy年MM月dd日  HH:mm:ss&quot;);</span><br><span class="line">        Date date = new Date(System.currentTimeMillis());</span><br><span class="line">        String time = formatDate.format(date);</span><br><span class="line">        return time;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * RCTDeviceEventEmitter方式</span><br><span class="line">     *</span><br><span class="line">     * @param reactContext</span><br><span class="line">     * @param eventName    事件名</span><br><span class="line">     * @param params       传惨</span><br><span class="line">     */</span><br><span class="line">    public void sendTransMisson(ReactContext reactContext, String eventName, @Nullable WritableMap params) &#123;</span><br><span class="line">        reactContext</span><br><span class="line">                .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)</span><br><span class="line">                .emit(eventName, params);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * CallBack方式</span><br><span class="line">     *</span><br><span class="line">     * @param name</span><br><span class="line">     * @param callback</span><br><span class="line">     */</span><br><span class="line">    @ReactMethod</span><br><span class="line">    public void callBackTime(String name, Callback callback) &#123;</span><br><span class="line">        callback.invoke(getTimeMillis());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * Promise方式</span><br><span class="line">     * @param name</span><br><span class="line">     * @param promise</span><br><span class="line">     */</span><br><span class="line">    @ReactMethod</span><br><span class="line">    public void sendPromiseTime(String name, Promise promise) &#123;</span><br><span class="line">        WritableMap writableMap=new WritableNativeMap();</span><br><span class="line">        writableMap.putString(&quot;age&quot;,&quot;20&quot;);</span><br><span class="line">        writableMap.putString(&quot;time&quot;,getTimeMillis());</span><br><span class="line">        promise.resolve(writableMap);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p>首先在Android原生中.新建class文件TransMissonMoudle:</p>
+<span id="more"></span>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Created by shaotingzhou on 2018/3/7.</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">package com.androidrn.RN;</span><br><span class="line">import com.facebook.react.bridge.Callback;</span><br><span class="line">import com.facebook.react.bridge.Promise;</span><br><span class="line">import com.facebook.react.bridge.ReactApplicationContext;</span><br><span class="line">import com.facebook.react.bridge.ReactContext;</span><br><span class="line">import com.facebook.react.bridge.ReactContextBaseJavaModule;</span><br><span class="line">import com.facebook.react.bridge.ReactMethod;</span><br><span class="line">import com.facebook.react.bridge.WritableMap;</span><br><span class="line">import com.facebook.react.bridge.WritableNativeMap;</span><br><span class="line">import com.facebook.react.modules.core.DeviceEventManagerModule;</span><br><span class="line"></span><br><span class="line">import java.text.SimpleDateFormat;</span><br><span class="line">import java.util.Date;</span><br><span class="line"></span><br><span class="line">import javax.annotation.Nullable;</span><br><span class="line"></span><br><span class="line">public class TransMissonMoudle extends ReactContextBaseJavaModule &#123;</span><br><span class="line"></span><br><span class="line">    private static final String REACT_CLASS = &quot;TransMissonMoudle&quot;;</span><br><span class="line">    private ReactContext mReactContext;</span><br><span class="line"></span><br><span class="line">    public TransMissonMoudle(ReactApplicationContext reactContext) &#123;</span><br><span class="line">        super(reactContext);</span><br><span class="line">        this.mReactContext = reactContext;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public String getName() &#123;</span><br><span class="line">        return REACT_CLASS;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    //延迟0.1秒获取时间。</span><br><span class="line">    @ReactMethod</span><br><span class="line">    public void getTime() &#123;</span><br><span class="line">        new Thread(new Runnable() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void run() &#123;</span><br><span class="line">                try &#123;</span><br><span class="line">                    Thread.sleep(100);</span><br><span class="line">                &#125; catch (InterruptedException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                String time = getTimeMillis();</span><br><span class="line"></span><br><span class="line">                WritableMap writableMap = new WritableNativeMap();</span><br><span class="line">                writableMap.putString(&quot;key&quot;, time);</span><br><span class="line">                sendTransMisson(mReactContext, &quot;EventName&quot;, writableMap);</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;).start();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private String getTimeMillis() &#123;</span><br><span class="line">        SimpleDateFormat formatDate = new SimpleDateFormat(&quot;yyyy年MM月dd日  HH:mm:ss&quot;);</span><br><span class="line">        Date date = new Date(System.currentTimeMillis());</span><br><span class="line">        String time = formatDate.format(date);</span><br><span class="line">        return time;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * RCTDeviceEventEmitter方式</span><br><span class="line">     *</span><br><span class="line">     * @param reactContext</span><br><span class="line">     * @param eventName    事件名</span><br><span class="line">     * @param params       传惨</span><br><span class="line">     */</span><br><span class="line">    public void sendTransMisson(ReactContext reactContext, String eventName, @Nullable WritableMap params) &#123;</span><br><span class="line">        reactContext</span><br><span class="line">                .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)</span><br><span class="line">                .emit(eventName, params);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * CallBack方式</span><br><span class="line">     *</span><br><span class="line">     * @param name</span><br><span class="line">     * @param callback</span><br><span class="line">     */</span><br><span class="line">    @ReactMethod</span><br><span class="line">    public void callBackTime(String name, Callback callback) &#123;</span><br><span class="line">        callback.invoke(getTimeMillis());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * Promise方式</span><br><span class="line">     * @param name</span><br><span class="line">     * @param promise</span><br><span class="line">     */</span><br><span class="line">    @ReactMethod</span><br><span class="line">    public void sendPromiseTime(String name, Promise promise) &#123;</span><br><span class="line">        WritableMap writableMap=new WritableNativeMap();</span><br><span class="line">        writableMap.putString(&quot;age&quot;,&quot;20&quot;);</span><br><span class="line">        writableMap.putString(&quot;time&quot;,getTimeMillis());</span><br><span class="line">        promise.resolve(writableMap);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <p>再建class文件TransMissonPackage:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">package com.androidrn.RN;</span><br><span class="line"></span><br><span class="line">import com.facebook.react.ReactPackage;</span><br><span class="line">import com.facebook.react.bridge.JavaScriptModule;</span><br><span class="line">import com.facebook.react.bridge.NativeModule;</span><br><span class="line">import com.facebook.react.bridge.ReactApplicationContext;</span><br><span class="line">import com.facebook.react.uimanager.ViewManager;</span><br><span class="line"></span><br><span class="line">import java.util.ArrayList;</span><br><span class="line">import java.util.Collections;</span><br><span class="line">import java.util.List;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * Created by shaotingzhou on 2018/3/7.</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">public class TransMissonPackage implements ReactPackage &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public List&lt;NativeModule&gt; createNativeModules(ReactApplicationContext reactContext) &#123;</span><br><span class="line">        List&lt;NativeModule&gt; modules = new ArrayList&lt;&gt;();</span><br><span class="line">        modules.add(new TransMissonMoudle(reactContext));//摇一摇</span><br><span class="line"></span><br><span class="line">        return  modules;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">//    @Override</span><br><span class="line">//    public List&lt;Class&lt;? extends JavaScriptModule&gt;&gt; createJSModules() &#123;</span><br><span class="line">//        return Collections.emptyList();</span><br><span class="line">//    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public List&lt;ViewManager&gt; createViewManagers(ReactApplicationContext reactContext) &#123;</span><br><span class="line">        List&lt;ViewManager&gt; viewManagerList=new ArrayList&lt;&gt;();</span><br><span class="line">//        viewManagerList.add(new PTRRefreshManager());</span><br><span class="line">        return viewManagerList;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>接着在MainApplication里引入TransMissonPackage,加入包.<br>如 <code>import com.androidrn.RN.TransMissonPackage;</code> <code>new TransMissonPackage()</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">package com.androidrn;</span><br><span class="line"></span><br><span class="line">import android.app.Application;</span><br><span class="line"></span><br><span class="line">import com.androidrn.RN.TransMissonPackage;</span><br><span class="line">import com.facebook.react.ReactApplication;</span><br><span class="line">import com.facebook.react.ReactNativeHost;</span><br><span class="line">import com.facebook.react.ReactPackage;</span><br><span class="line">import com.facebook.react.shell.MainReactPackage;</span><br><span class="line">import com.facebook.soloader.SoLoader;</span><br><span class="line"></span><br><span class="line">import java.util.Arrays;</span><br><span class="line">import java.util.List;</span><br><span class="line"></span><br><span class="line">public class MainApplication extends Application implements ReactApplication &#123;</span><br><span class="line"></span><br><span class="line">  private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public boolean getUseDeveloperSupport() &#123;</span><br><span class="line">      return BuildConfig.DEBUG;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    protected List&lt;ReactPackage&gt; getPackages() &#123;</span><br><span class="line">      return Arrays.&lt;ReactPackage&gt;asList(</span><br><span class="line">          new MainReactPackage(),</span><br><span class="line">            new TransMissonPackage()</span><br><span class="line"></span><br><span class="line">      );</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    protected String getJSMainModuleName() &#123;</span><br><span class="line">      return &quot;index&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  @Override</span><br><span class="line">  public ReactNativeHost getReactNativeHost() &#123;</span><br><span class="line">    return mReactNativeHost;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  @Override</span><br><span class="line">  public void onCreate() &#123;</span><br><span class="line">    super.onCreate();</span><br><span class="line">    SoLoader.init(this, /* native exopackage */ false);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>我的文件放置情况如图:<br><img src="/2019/04/22/移动端学习/Android和React-Native的简单交互/../../../../../images/文件放置情况.jpg" alt="Android与RN交互示意图"></p>
-<p>然后只需要在RN这边:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Sample React Native App</span><br><span class="line"> * https://github.com/facebook/react-native</span><br><span class="line"> * @flow</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">import React, &#123;Component&#125; from &apos;react&apos;;</span><br><span class="line">import &#123;</span><br><span class="line">    AppRegistry,</span><br><span class="line">    StyleSheet,</span><br><span class="line">    Text,</span><br><span class="line">    View,</span><br><span class="line">    DeviceEventEmitter,</span><br><span class="line">    NativeModules,</span><br><span class="line">    ToastAndroid,</span><br><span class="line">    Platform</span><br><span class="line">&#125; from &apos;react-native&apos;;</span><br><span class="line"></span><br><span class="line">const instructions = Platform.select(&#123;</span><br><span class="line">  ios: &apos;Press Cmd+R to reload,\n&apos; +</span><br><span class="line">    &apos;Cmd+D or shake for dev menu&apos;,</span><br><span class="line">  android: &apos;Double tap R on your keyboard to reload,\n&apos; +</span><br><span class="line">    &apos;Shake or press menu button for dev menu&apos;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">type Props = &#123;&#125;;</span><br><span class="line">export default class App extends Component&lt;Props&gt; &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    componentWillMount() &#123;</span><br><span class="line">        DeviceEventEmitter.addListener(&apos;EventName&apos;, function (msg) &#123;</span><br><span class="line"></span><br><span class="line">            console.log(&apos;DeviceEventEmitter收到消息&apos;+msg);</span><br><span class="line"></span><br><span class="line">              alert(&apos;DeviceEventEmitter收到消息&apos;+ msg.key)</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    return (</span><br><span class="line">        &lt;View style=&#123;styles.container&#125;&gt;</span><br><span class="line">          &lt;Text style=&#123;styles.welcome&#125;</span><br><span class="line">                onPress=&#123;this.getDeviceEventEmitterTime.bind(this)&#125;</span><br><span class="line">          &gt;</span><br><span class="line">            RCTDeviceEventEmitter获取时间</span><br><span class="line">          &lt;/Text&gt;</span><br><span class="line">          &lt;Text style=&#123;styles.welcome&#125;</span><br><span class="line">                onPress=&#123;this.getCallBackTime.bind(this)&#125;</span><br><span class="line">          &gt;</span><br><span class="line">            CallBack获取时间</span><br><span class="line">          &lt;/Text&gt;</span><br><span class="line">          &lt;Text style=&#123;styles.welcome&#125;</span><br><span class="line">                onPress=&#123;this.getPromiseTime.bind(this)&#125;</span><br><span class="line">          &gt;</span><br><span class="line">            Promise获取时间</span><br><span class="line">          &lt;/Text&gt;</span><br><span class="line">        &lt;/View&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">    getDeviceEventEmitterTime() &#123;</span><br><span class="line">        NativeModules.TransMissonMoudle.getTime();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    getCallBackTime() &#123;</span><br><span class="line">        NativeModules.TransMissonMoudle.callBackTime(&quot;Allure&quot;,</span><br><span class="line">            (msg) =&gt; &#123;</span><br><span class="line">                console.log(&apos;callBack:---&apos; + msg);</span><br><span class="line">                alert(&apos;callBack:---&apos;+msg)</span><br><span class="line">            &#125;</span><br><span class="line">        );</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    getPromiseTime() &#123;</span><br><span class="line">        NativeModules.TransMissonMoudle.sendPromiseTime(&quot;Allure&quot;).then(msg=&gt; &#123;</span><br><span class="line">            console.log(&quot;年龄:&quot; + msg.age + &quot;/n&quot; + &quot;时间:&quot; + msg.time);</span><br><span class="line">            alert(&quot;年龄&quot; + msg.age + &quot;时间&quot; + msg.time)</span><br><span class="line">            this.setState(&#123;</span><br><span class="line">                age: msg.age,</span><br><span class="line">                time: msg.time,</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;).catch(error=&gt; &#123;</span><br><span class="line">            console.log(&apos;错误&apos; + error);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const styles = StyleSheet.create(&#123;</span><br><span class="line">  container: &#123;</span><br><span class="line">    flex: 1,</span><br><span class="line">    justifyContent: &apos;center&apos;,</span><br><span class="line">    alignItems: &apos;center&apos;,</span><br><span class="line">    backgroundColor: &apos;#F5FCFF&apos;,</span><br><span class="line">  &#125;,</span><br><span class="line">  welcome: &#123;</span><br><span class="line">    fontSize: 20,</span><br><span class="line">    textAlign: &apos;center&apos;,</span><br><span class="line">    margin: 10,</span><br><span class="line">  &#125;,</span><br><span class="line">  instructions: &#123;</span><br><span class="line">    textAlign: &apos;center&apos;,</span><br><span class="line">    color: &apos;#333333&apos;,</span><br><span class="line">    marginBottom: 5,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p><a href="https://github.com/pheromone/androidrn" target="_blank" rel="noopener">源码</a></p>
-<p>效果图:<br><img src="/2019/04/22/移动端学习/Android和React-Native的简单交互/../../../../../images/Android与RN交互示意图.gif" alt="Android与RN交互示意图"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">package com.androidrn.RN;</span><br><span class="line"></span><br><span class="line">import com.facebook.react.ReactPackage;</span><br><span class="line">import com.facebook.react.bridge.JavaScriptModule;</span><br><span class="line">import com.facebook.react.bridge.NativeModule;</span><br><span class="line">import com.facebook.react.bridge.ReactApplicationContext;</span><br><span class="line">import com.facebook.react.uimanager.ViewManager;</span><br><span class="line"></span><br><span class="line">import java.util.ArrayList;</span><br><span class="line">import java.util.Collections;</span><br><span class="line">import java.util.List;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * Created by shaotingzhou on 2018/3/7.</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">public class TransMissonPackage implements ReactPackage &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public List&lt;NativeModule&gt; createNativeModules(ReactApplicationContext reactContext) &#123;</span><br><span class="line">        List&lt;NativeModule&gt; modules = new ArrayList&lt;&gt;();</span><br><span class="line">        modules.add(new TransMissonMoudle(reactContext));//摇一摇</span><br><span class="line"></span><br><span class="line">        return  modules;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">//    @Override</span><br><span class="line">//    public List&lt;Class&lt;? extends JavaScriptModule&gt;&gt; createJSModules() &#123;</span><br><span class="line">//        return Collections.emptyList();</span><br><span class="line">//    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public List&lt;ViewManager&gt; createViewManagers(ReactApplicationContext reactContext) &#123;</span><br><span class="line">        List&lt;ViewManager&gt; viewManagerList=new ArrayList&lt;&gt;();</span><br><span class="line">//        viewManagerList.add(new PTRRefreshManager());</span><br><span class="line">        return viewManagerList;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>接着在MainApplication里引入TransMissonPackage,加入包.<br>如 <code>import com.androidrn.RN.TransMissonPackage;</code> <code>new TransMissonPackage()</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">package com.androidrn;</span><br><span class="line"></span><br><span class="line">import android.app.Application;</span><br><span class="line"></span><br><span class="line">import com.androidrn.RN.TransMissonPackage;</span><br><span class="line">import com.facebook.react.ReactApplication;</span><br><span class="line">import com.facebook.react.ReactNativeHost;</span><br><span class="line">import com.facebook.react.ReactPackage;</span><br><span class="line">import com.facebook.react.shell.MainReactPackage;</span><br><span class="line">import com.facebook.soloader.SoLoader;</span><br><span class="line"></span><br><span class="line">import java.util.Arrays;</span><br><span class="line">import java.util.List;</span><br><span class="line"></span><br><span class="line">public class MainApplication extends Application implements ReactApplication &#123;</span><br><span class="line"></span><br><span class="line">  private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public boolean getUseDeveloperSupport() &#123;</span><br><span class="line">      return BuildConfig.DEBUG;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    protected List&lt;ReactPackage&gt; getPackages() &#123;</span><br><span class="line">      return Arrays.&lt;ReactPackage&gt;asList(</span><br><span class="line">          new MainReactPackage(),</span><br><span class="line">            new TransMissonPackage()</span><br><span class="line"></span><br><span class="line">      );</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    protected String getJSMainModuleName() &#123;</span><br><span class="line">      return &quot;index&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  @Override</span><br><span class="line">  public ReactNativeHost getReactNativeHost() &#123;</span><br><span class="line">    return mReactNativeHost;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  @Override</span><br><span class="line">  public void onCreate() &#123;</span><br><span class="line">    super.onCreate();</span><br><span class="line">    SoLoader.init(this, /* native exopackage */ false);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>我的文件放置情况如图:<br><img src="/2019/04/22/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Android%E5%92%8CReact-Native%E7%9A%84%E7%AE%80%E5%8D%95%E4%BA%A4%E4%BA%92/../../../../../images/文件放置情况.jpg" alt="Android与RN交互示意图"></p>
+<p>然后只需要在RN这边:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Sample React Native App</span><br><span class="line"> * https://github.com/facebook/react-native</span><br><span class="line"> * @flow</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">import React, &#123;Component&#125; from &#x27;react&#x27;;</span><br><span class="line">import &#123;</span><br><span class="line">    AppRegistry,</span><br><span class="line">    StyleSheet,</span><br><span class="line">    Text,</span><br><span class="line">    View,</span><br><span class="line">    DeviceEventEmitter,</span><br><span class="line">    NativeModules,</span><br><span class="line">    ToastAndroid,</span><br><span class="line">    Platform</span><br><span class="line">&#125; from &#x27;react-native&#x27;;</span><br><span class="line"></span><br><span class="line">const instructions = Platform.select(&#123;</span><br><span class="line">  ios: &#x27;Press Cmd+R to reload,\n&#x27; +</span><br><span class="line">    &#x27;Cmd+D or shake for dev menu&#x27;,</span><br><span class="line">  android: &#x27;Double tap R on your keyboard to reload,\n&#x27; +</span><br><span class="line">    &#x27;Shake or press menu button for dev menu&#x27;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">type Props = &#123;&#125;;</span><br><span class="line">export default class App extends Component&lt;Props&gt; &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    componentWillMount() &#123;</span><br><span class="line">        DeviceEventEmitter.addListener(&#x27;EventName&#x27;, function (msg) &#123;</span><br><span class="line"></span><br><span class="line">            console.log(&#x27;DeviceEventEmitter收到消息&#x27;+msg);</span><br><span class="line"></span><br><span class="line">              alert(&#x27;DeviceEventEmitter收到消息&#x27;+ msg.key)</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    return (</span><br><span class="line">        &lt;View style=&#123;styles.container&#125;&gt;</span><br><span class="line">          &lt;Text style=&#123;styles.welcome&#125;</span><br><span class="line">                onPress=&#123;this.getDeviceEventEmitterTime.bind(this)&#125;</span><br><span class="line">          &gt;</span><br><span class="line">            RCTDeviceEventEmitter获取时间</span><br><span class="line">          &lt;/Text&gt;</span><br><span class="line">          &lt;Text style=&#123;styles.welcome&#125;</span><br><span class="line">                onPress=&#123;this.getCallBackTime.bind(this)&#125;</span><br><span class="line">          &gt;</span><br><span class="line">            CallBack获取时间</span><br><span class="line">          &lt;/Text&gt;</span><br><span class="line">          &lt;Text style=&#123;styles.welcome&#125;</span><br><span class="line">                onPress=&#123;this.getPromiseTime.bind(this)&#125;</span><br><span class="line">          &gt;</span><br><span class="line">            Promise获取时间</span><br><span class="line">          &lt;/Text&gt;</span><br><span class="line">        &lt;/View&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">    getDeviceEventEmitterTime() &#123;</span><br><span class="line">        NativeModules.TransMissonMoudle.getTime();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    getCallBackTime() &#123;</span><br><span class="line">        NativeModules.TransMissonMoudle.callBackTime(&quot;Allure&quot;,</span><br><span class="line">            (msg) =&gt; &#123;</span><br><span class="line">                console.log(&#x27;callBack:---&#x27; + msg);</span><br><span class="line">                alert(&#x27;callBack:---&#x27;+msg)</span><br><span class="line">            &#125;</span><br><span class="line">        );</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    getPromiseTime() &#123;</span><br><span class="line">        NativeModules.TransMissonMoudle.sendPromiseTime(&quot;Allure&quot;).then(msg=&gt; &#123;</span><br><span class="line">            console.log(&quot;年龄:&quot; + msg.age + &quot;/n&quot; + &quot;时间:&quot; + msg.time);</span><br><span class="line">            alert(&quot;年龄&quot; + msg.age + &quot;时间&quot; + msg.time)</span><br><span class="line">            this.setState(&#123;</span><br><span class="line">                age: msg.age,</span><br><span class="line">                time: msg.time,</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;).catch(error=&gt; &#123;</span><br><span class="line">            console.log(&#x27;错误&#x27; + error);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const styles = StyleSheet.create(&#123;</span><br><span class="line">  container: &#123;</span><br><span class="line">    flex: 1,</span><br><span class="line">    justifyContent: &#x27;center&#x27;,</span><br><span class="line">    alignItems: &#x27;center&#x27;,</span><br><span class="line">    backgroundColor: &#x27;#F5FCFF&#x27;,</span><br><span class="line">  &#125;,</span><br><span class="line">  welcome: &#123;</span><br><span class="line">    fontSize: 20,</span><br><span class="line">    textAlign: &#x27;center&#x27;,</span><br><span class="line">    margin: 10,</span><br><span class="line">  &#125;,</span><br><span class="line">  instructions: &#123;</span><br><span class="line">    textAlign: &#x27;center&#x27;,</span><br><span class="line">    color: &#x27;#333333&#x27;,</span><br><span class="line">    marginBottom: 5,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://github.com/pheromone/androidrn">源码</a></p>
+<p>效果图:<br><img src="/2019/04/22/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Android%E5%92%8CReact-Native%E7%9A%84%E7%AE%80%E5%8D%95%E4%BA%A4%E4%BA%92/../../../../../images/Android与RN交互示意图.gif" alt="Android与RN交互示意图"></p>
 
     </div>
 </article>
@@ -305,7 +326,8 @@
     <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
 <aside id="sidebar-search">
     <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
-        <form class="form-inline clearfix" id="search-form" method="get" action="/search/index.html">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
             <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~">
             <button class="btn btn-danger btn-gal" type="submit">
                 <i class="fa fa-search"></i>
@@ -321,9 +343,10 @@
             <i class="fa fa-quote-right"></i>
         </div>
         <div class="author-panel text-center">
-            <img src="/imgs/headImg.jpg" width="140" height="140" alt="个人头像" class="author-image">
-            <p class="author-description"></p><p>愿天堂没有bug</p>
-<p></p>
+            <img src="/imgs/headImg.jpg" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description"><p>愿天堂没有bug</p>
+</p>
         </div>
     </div>
 </aside>
@@ -367,61 +390,61 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/03/13/移动端学习/Flutter~getx学习/">Flutter~getx库学习</a>
+                    <a href="/2021/08/22/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/React%E5%AD%A6%E4%B9%A0~React-Hooks%E5%AD%A6%E4%B9%A0/">React学习:React-Hooks学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/01/06/移动端学习/Flutter~provider学习/">Flutter~provider学习</a>
+                    <a href="/2021/03/13/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~getx%E5%AD%A6%E4%B9%A0/">Flutter~getx库学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/04/11/移动端学习/Flutter~fish_redux学习/">Flutter~fish_redux学习</a>
+                    <a href="/2021/01/06/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~provider%E5%AD%A6%E4%B9%A0/">Flutter~provider学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/01/23/移动端学习/Flutter~自定义tabbar模块/">Flutter~自定义tabbar模块</a>
+                    <a href="/2020/04/11/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~fish_redux%E5%AD%A6%E4%B9%A0/">Flutter~fish_redux学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/11/11/移动端学习/Flutter~自定义Dialog(基本的组件封装)/">Flutter~自定义Dialog(基本的组件封装)</a>
+                    <a href="/2020/01/23/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E8%87%AA%E5%AE%9A%E4%B9%89tabbar%E6%A8%A1%E5%9D%97/">Flutter~自定义tabbar模块</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/09/07/移动端学习/Flutter~Flare动画学习/">Flutter~Flare动画学习</a>
+                    <a href="/2019/11/11/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E8%87%AA%E5%AE%9A%E4%B9%89Dialog(%E5%9F%BA%E6%9C%AC%E7%9A%84%E7%BB%84%E4%BB%B6%E5%B0%81%E8%A3%85)/">Flutter~自定义Dialog(基本的组件封装)</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/08/08/移动端学习/Flutter~mobx库学习/">Flutter~mobx库学习</a>
+                    <a href="/2019/09/07/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~Flare%E5%8A%A8%E7%94%BB%E5%AD%A6%E4%B9%A0/">Flutter~Flare动画学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/06/23/其他学习/MAC下的cocos2d-x环境搭建/">MAC下的cocos2d-x环境搭建</a>
+                    <a href="/2019/08/08/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~mobx%E5%BA%93%E5%AD%A6%E4%B9%A0/">Flutter~mobx库学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/06/11/移动端学习/Flutter~国际化教程方案/">Flutter~国际化教程方案</a>
+                    <a href="/2019/06/23/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/MAC%E4%B8%8B%E7%9A%84cocos2d-x%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">MAC下的cocos2d-x环境搭建</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/05/31/移动端学习/Flutter~Android原生工程中添加Flutter模块/">Flutter~Android原生工程中添加Flutter模块</a>
+                    <a href="/2019/06/11/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E5%9B%BD%E9%99%85%E5%8C%96%E6%95%99%E7%A8%8B%E6%96%B9%E6%A1%88/">Flutter~国际化教程方案</a>
                 </span>
             </li>
             
@@ -443,61 +466,61 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/06/29/前端学习/React学习-简单个人消费记账系统/">React学习:简单个人消费记账系统</a>
+                    <a href="/2019/04/22/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Android%E5%92%8CReact-Native%E7%9A%84%E7%AE%80%E5%8D%95%E4%BA%A4%E4%BA%92/">Android和React-Native的简单交互</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/09/07/移动端学习/Flutter~Flare动画学习/">Flutter~Flare动画学习</a>
+                    <a href="/2019/05/31/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~Android%E5%8E%9F%E7%94%9F%E5%B7%A5%E7%A8%8B%E4%B8%AD%E6%B7%BB%E5%8A%A0Flutter%E6%A8%A1%E5%9D%97/">Flutter~Android原生工程中添加Flutter模块</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/05/31/移动端学习/Flutter~Android原生工程中添加Flutter模块/">Flutter~Android原生工程中添加Flutter模块</a>
+                    <a href="/2021/03/13/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~getx%E5%AD%A6%E4%B9%A0/">Flutter~getx库学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/03/06/移动端学习/Flutter~json_serializable库学习/">Flutter~json_serializable库学习</a>
+                    <a href="/2021/01/06/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~provider%E5%AD%A6%E4%B9%A0/">Flutter~provider学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/02/16/移动端学习/Flutter~scoped_model学习/">Flutter~scoped_model学习</a>
+                    <a href="/2019/11/11/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E8%87%AA%E5%AE%9A%E4%B9%89Dialog(%E5%9F%BA%E6%9C%AC%E7%9A%84%E7%BB%84%E4%BB%B6%E5%B0%81%E8%A3%85)/">Flutter~自定义Dialog(基本的组件封装)</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/04/22/移动端学习/React-Native与Web的基本交互/">React-Native与Web的基本交互</a>
+                    <a href="/2019/03/04/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter%E4%B8%AD%E7%9A%84sqflite%E5%BA%93%E5%AD%A6%E4%B9%A0/">Flutter中的sqflite库学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/08/17/移动端学习/React-Native类似支付宝的应用增删模块的简单实现/">React-Native类似支付宝的应用增删模块的简单实现</a>
+                    <a href="/2018/05/27/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Mobx%E4%B8%8Ereact-navigation%E7%9A%84%E4%BD%BF%E7%94%A8/">Mobx与react-navigation的结合使用</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/07/29/移动端学习/dva和react-navigation的结合使用/">dva和react-navigation的结合使用</a>
+                    <a href="/2019/04/22/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/React-Native%E4%B8%8EWeb%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BA%A4%E4%BA%92/">React-Native与Web的基本交互</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/06/16/移动端学习/react-navigation前置登录/">react-navigation前置登录</a>
+                    <a href="/2018/05/16/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/react-navigation%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/">react-navigation的基本使用</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/07/29/移动端学习/redux和react-navigation的结合使用/">redux和react-navigation的结合使用</a>
+                    <a href="/2018/08/11/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/React-Native%3C%E6%94%B6%E8%B5%B7-%E5%B1%95%E5%BC%80%3E%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/">React-Native&#34;收起-展开&#34;功能实现</a>
                 </span>
             </li>
             
@@ -509,26 +532,26 @@
     <aside id="gal-sets">
         <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
             <ul class="nav nav-pills pills-gal">
-                <li class>
-                    <a href="/2019/04/22/移动端学习/Android和React-Native的简单交互/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                <li class="">
+                    <a href="/2019/04/22/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Android%E5%92%8CReact-Native%E7%9A%84%E7%AE%80%E5%8D%95%E4%BA%A4%E4%BA%92/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
-                <li class>
-                    <a href="/2019/04/22/移动端学习/Android和React-Native的简单交互/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                <li class="">
+                    <a href="/2019/04/22/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Android%E5%92%8CReact-Native%E7%9A%84%E7%AE%80%E5%8D%95%E4%BA%A4%E4%BA%92/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
-                <li class>
-                    <a href="/2019/04/22/移动端学习/Android和React-Native的简单交互/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                <li class="">
+                    <a href="/2019/04/22/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Android%E5%92%8CReact-Native%E7%9A%84%E7%AE%80%E5%8D%95%E4%BA%A4%E4%BA%92/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
             </ul>
             <div class="tab-content">
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/其他学习/" style="font-size: 11.0632485674997px;" class="tag-cloud-link">其他学习</a>
+    <a href="/tags/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/" style="font-size: 14.293375987075084px;" class="tag-cloud-link">其他学习</a>
     
-    <a href="/tags/前端学习/" style="font-size: 11.513416116118858px;" class="tag-cloud-link">前端学习</a>
+    <a href="/tags/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 15.360293283842612px;" class="tag-cloud-link">后端学习</a>
     
-    <a href="/tags/后端学习/" style="font-size: 13.18123158702512px;" class="tag-cloud-link">后端学习</a>
+    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 11.96092077655063px;" class="tag-cloud-link">前端学习</a>
     
-    <a href="/tags/移动端学习/" style="font-size: 8.073648664612907px;" class="tag-cloud-link">移动端学习</a>
+    <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 15.968411508118024px;" class="tag-cloud-link">移动端学习</a>
     
 </div>
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
@@ -572,7 +595,9 @@
     <i class="fa fa-angle-up"></i>
 </div>
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/koharu.model.json"},"display":{"position":"right","width":100,"height":200},"mobile":{"show":true},"log":false});</script></body>
+
 <script src="/js/activate-power-mode.js"></script>
+
 <script>
 
     // 配置highslide
@@ -639,17 +664,23 @@
     }
 </script>
 
+
 <script src="/js/hs.js"></script>
 <script src="/js/blog.js"></script>
 
+
+
 <script src="/js/oni.js"></script>
+
 
 
 <script>
     window.hot_posts_count = '10'
     // window.use_leancloud = 'true'
 </script>
+
 <script src="/js/comment/leancloud.js"></script>
+
 
 
 <script src="https://myau.moe/js/comment/gitment.browser.js"></script>
@@ -672,6 +703,8 @@
       }
     }
 </script>
+
 <script src="/js/comment/gitment.js"></script>
+
 
 </html>

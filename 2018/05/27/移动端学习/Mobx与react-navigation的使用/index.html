@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="author" content>
+    <meta name="author" content="">
     
     <meta name="description" content="愿天堂没有bug">
     
@@ -13,16 +13,28 @@
     
     
     <title>Mobx与react-navigation的结合使用 | 少停</title>
-    <link href="”https://zhoushaoting.com“" rel="”prefetch”">
+    <link href=”https://zhoushaoting.com“ rel=”prefetch” />
 
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
 <link rel="stylesheet" href="/css/aos.css">
 <link rel="stylesheet" href="/css/style.css">
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/aos.js"></script>
-    <script src="/js/highslide/highslide-full.min.js"></script>
-    <link rel="stylesheet" href="/js/highslide/highslide.css">
+
+    
+<script src="/js/jquery.min.js"></script>
+
+    
+<script src="/js/bootstrap.min.js"></script>
+
+    
+<script src="/js/aos.js"></script>
+
+    
+<script src="/js/highslide/highslide-full.min.js"></script>
+
+    
+<link rel="stylesheet" href="/js/highslide/highslide.css">
+
     <style type="text/css">
         @media (max-width: 768px) {
             body {
@@ -53,7 +65,7 @@
         }
       }
     </script>-->
-</head></html>
+<meta name="generator" content="Hexo 5.4.0"></head>
 <body>
     <!-- 背景轮播图功能 -->
     <section class="hidden-xs">
@@ -89,7 +101,9 @@
     <header class="navbar navbar-inverse" id="gal-header">
     <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".bs-navbar-collapse" aria-expanded="false">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
                 <span class="fa fa-lg fa-reorder"></span>
             </button>
             <a href="https://zhoushaoting.com">
@@ -113,7 +127,7 @@
             <ul class="nav navbar-nav" id="menu-gal">
                 
                 
-                <li class>
+                <li class="">
                     <a href="/">
                         <i class="fa fa-home"></i>首页
                     </a>
@@ -121,7 +135,7 @@
                 
                 
                 
-                <li class>
+                <li class="">
                     <a href="/archives">
                         <i class="fa fa-archive"></i>归档
                     </a>
@@ -132,22 +146,23 @@
                 
                 <li class="dropdown">
                     <!-- TODO 添加hover dropdown效果 -->
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
                         <i class="fa fa-list"></i>分类
                     </a>
                     <ul class="dropdown-menu">
                         
                         
                         <li>
-                            <a href="/categories/其他学习/">其他学习</a>
+                            <a href="/categories/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/">其他学习</a>
                         </li>
                         
                         <li>
-                            <a href="/categories/前端学习/">前端学习</a>
+                            <a href="/categories/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/">后端学习</a>
                         </li>
                         
                         <li>
-                            <a href="/categories/后端学习/">后端学习</a>
+                            <a href="/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/">前端学习</a>
                         </li>
                         
                         
@@ -165,22 +180,23 @@
                 
                 <li class="dropdown">
                     <!-- TODO 添加hover dropdown效果 -->
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
                         <i class="fa fa-tags"></i>标签
                     </a>
                     <ul class="dropdown-menu">
                         
                         
                         <li>
-                            <a href="/tags/其他学习/">其他学习</a>
+                            <a href="/tags/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/">其他学习</a>
                         </li>
                         
                         <li>
-                            <a href="/tags/前端学习/">前端学习</a>
+                            <a href="/tags/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/">后端学习</a>
                         </li>
                         
                         <li>
-                            <a href="/tags/后端学习/">后端学习</a>
+                            <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/">前端学习</a>
                         </li>
                         
                         
@@ -195,7 +211,7 @@
                 
                 
                 
-                <li class>
+                <li class="">
                     <a href="/about">
                         <i class="fa fa-user"></i>关于我
                     </a>
@@ -203,7 +219,7 @@
                 
                 
                 
-                <li class>
+                <li class="">
                     <a href="/message">
                         <i class="fa fa-heart"></i>留言板
                     </a>
@@ -230,7 +246,7 @@
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/2018/05/27/移动端学习/Mobx与react-navigation的使用/">Mobx与react-navigation的结合使用</a>
+                <a href="/2018/05/27/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Mobx%E4%B8%8Ereact-navigation%E7%9A%84%E4%BD%BF%E7%94%A8/">Mobx与react-navigation的结合使用</a>
             </h1>
         </div>
         <div class="tag-article">
@@ -238,7 +254,7 @@
             <span class="label label-gal">
                 <i class="fa fa-tags"></i>
                 
-                <a href="/tags/移动端学习/">移动端学习</a>
+                <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/">移动端学习</a>
                 
             </span>
             
@@ -257,7 +273,7 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/2018/05/27/移动端学习/Mobx与react-navigation的使用/">Mobx与react-navigation的结合使用</a>
+                    <a href="/2018/05/27/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Mobx%E4%B8%8Ereact-navigation%E7%9A%84%E4%BD%BF%E7%94%A8/">Mobx与react-navigation的结合使用</a>
                 </h4>
             </div>
             <p>
@@ -267,7 +283,7 @@
                 
                 <i class="fa fa-tags"></i>
                 
-                <a href="/tags/移动端学习/">移动端学习</a>
+                <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/">移动端学习</a>
                 
                 
                 
@@ -277,24 +293,30 @@
         </center>
     </div>
     <div class="content-article">
-        <p>今天,学习下RN中的另外一个全家桶套餐架构:Mobx+React-Navigation,<br>本文基于<code>react-native</code>:<code>0.55.4</code>,<code>Mbox</code>:<code>^4.3.0</code>,<code>react-navigation</code>:<code>^2.0.1</code>所撸.<br><a id="more"></a><br><a href="https://github.com/SangKa/MobX-Docs-CN" target="_blank" rel="noopener">Mbox中文文档</a><br><a href="https://github.com/shooterRao/react-native-fruitStore" target="_blank" rel="noopener">另外一个基于Mbox和react-navigation的不错项目</a> <br><br>废话不多缩,首先,新建一个项目,添加相应库:<br><code>npm i mobx mobx-react --save</code> 引入Mbox </p>
+        <p>今天,学习下RN中的另外一个全家桶套餐架构:Mobx+React-Navigation,<br>本文基于<code>react-native</code>:<code>0.55.4</code>,<code>Mbox</code>:<code>^4.3.0</code>,<code>react-navigation</code>:<code>^2.0.1</code>所撸.</p>
+<span id="more"></span>
+<p><a target="_blank" rel="noopener" href="https://github.com/SangKa/MobX-Docs-CN">Mbox中文文档</a><br><a target="_blank" rel="noopener" href="https://github.com/shooterRao/react-native-fruitStore">另外一个基于Mbox和react-navigation的不错项目</a> <br><br>废话不多缩,首先,新建一个项目,添加相应库:<br><code>npm i mobx mobx-react --save</code> 引入Mbox </p>
 <p><code>npm i babel-plugin-transform-decorators-legacy babel-preset-react-native-stage-0 --save-dev</code> 能够使用@标签</p>
 <p><code>npm i react-navigation --save</code> 引入导航库<br>然后修改一下工程里面的.babelrc:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;presets&quot;: [&quot;react-native&quot;],</span><br><span class="line">  &quot;plugins&quot;: [&quot;transform-decorators-legacy&quot;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>OK,基本的架子已经搭好.<br>然后新建一个src目录.这里存放基本代码和基本图片之类的.<br><img src="/2018/05/27/移动端学习/Mobx与react-navigation的使用/../../../../../images/mobx项目demo结构.png" alt="mobx项目demo结构"></p>
-<p>然后,在入口文件<code>App.js</code>中,先搭建tabBar和导航条.使用<code>react-navigation</code><br>这里,我使用全局注册并注入mobx，其他地方都可以使用store.<br><code>import {Provider} from &#39;mobx-react&#39;;</code><br>然后在src-&gt;Mobx这里新建一个根store的Store.js文件.<br><code>Store.js</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">import &#123; observable, computed, action &#125; from &apos;mobx&apos;</span><br><span class="line">import oneInfo from &apos;./OneInfo&apos;</span><br><span class="line">import twoInfo from &apos;./TwoInfo&apos;</span><br><span class="line"></span><br><span class="line">/** </span><br><span class="line"> * 根store</span><br><span class="line"> * OneInfo OneInfo数据</span><br><span class="line"> * TwoInfo TwoInfo数据</span><br><span class="line">*/</span><br><span class="line">class RootStore &#123;</span><br><span class="line"></span><br><span class="line">    constructor() &#123;</span><br><span class="line">        this.OneInfo = new OneInfo(oneInfo,this)</span><br><span class="line">        this.TwoInfo = new TwoInfo(twoInfo,this)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">// One</span><br><span class="line">class OneInfo &#123;</span><br><span class="line">    @observable</span><br><span class="line">    allDatas = []</span><br><span class="line">    constructor(data,rootStore) &#123;</span><br><span class="line">        this.allDatas = data</span><br><span class="line">        this.rootStore = rootStore</span><br><span class="line">    &#125;</span><br><span class="line">    //加</span><br><span class="line">    @action</span><br><span class="line">    add(num) &#123;</span><br><span class="line">        this.allDatas.oneNum = num + 1</span><br><span class="line">        this.rootStore.TwoInfo.allDatas.twoColor = &apos;red&apos;</span><br><span class="line">    &#125;</span><br><span class="line">    //减</span><br><span class="line">    @action</span><br><span class="line">    sub(num) &#123;</span><br><span class="line">        this.allDatas.oneNum = num - 1</span><br><span class="line">        this.rootStore.TwoInfo.allDatas.twoColor = &apos;blue&apos;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// Two</span><br><span class="line">class TwoInfo &#123;</span><br><span class="line">    @observable</span><br><span class="line">     allDatas = &#123;&#125;</span><br><span class="line">    constructor(data,rootStore) &#123;</span><br><span class="line">        this.allDatas = data</span><br><span class="line">        this.rootStore = rootStore</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">export default new RootStore()</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;presets&quot;: [&quot;react-native&quot;],</span><br><span class="line">  &quot;plugins&quot;: [&quot;transform-decorators-legacy&quot;]</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>OK,基本的架子已经搭好.<br>然后新建一个src目录.这里存放基本代码和基本图片之类的.<br><img src="/2018/05/27/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Mobx%E4%B8%8Ereact-navigation%E7%9A%84%E4%BD%BF%E7%94%A8/../../../../../images/mobx项目demo结构.png" alt="mobx项目demo结构"></p>
+<p>然后,在入口文件<code>App.js</code>中,先搭建tabBar和导航条.使用<code>react-navigation</code><br>这里,我使用全局注册并注入mobx，其他地方都可以使用store.<br><code>import &#123;Provider&#125; from &#39;mobx-react&#39;;</code><br>然后在src-&gt;Mobx这里新建一个根store的Store.js文件.<br><code>Store.js</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">import &#123; observable, computed, action &#125; from &#x27;mobx&#x27;</span><br><span class="line">import oneInfo from &#x27;./OneInfo&#x27;</span><br><span class="line">import twoInfo from &#x27;./TwoInfo&#x27;</span><br><span class="line"></span><br><span class="line">/** </span><br><span class="line"> * 根store</span><br><span class="line"> * OneInfo OneInfo数据</span><br><span class="line"> * TwoInfo TwoInfo数据</span><br><span class="line">*/</span><br><span class="line">class RootStore &#123;</span><br><span class="line"></span><br><span class="line">    constructor() &#123;</span><br><span class="line">        this.OneInfo = new OneInfo(oneInfo,this)</span><br><span class="line">        this.TwoInfo = new TwoInfo(twoInfo,this)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">// One</span><br><span class="line">class OneInfo &#123;</span><br><span class="line">    @observable</span><br><span class="line">    allDatas = []</span><br><span class="line">    constructor(data,rootStore) &#123;</span><br><span class="line">        this.allDatas = data</span><br><span class="line">        this.rootStore = rootStore</span><br><span class="line">    &#125;</span><br><span class="line">    //加</span><br><span class="line">    @action</span><br><span class="line">    add(num) &#123;</span><br><span class="line">        this.allDatas.oneNum = num + 1</span><br><span class="line">        this.rootStore.TwoInfo.allDatas.twoColor = &#x27;red&#x27;</span><br><span class="line">    &#125;</span><br><span class="line">    //减</span><br><span class="line">    @action</span><br><span class="line">    sub(num) &#123;</span><br><span class="line">        this.allDatas.oneNum = num - 1</span><br><span class="line">        this.rootStore.TwoInfo.allDatas.twoColor = &#x27;blue&#x27;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// Two</span><br><span class="line">class TwoInfo &#123;</span><br><span class="line">    @observable</span><br><span class="line">     allDatas = &#123;&#125;</span><br><span class="line">    constructor(data,rootStore) &#123;</span><br><span class="line">        this.allDatas = data</span><br><span class="line">        this.rootStore = rootStore</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">export default new RootStore()</span><br></pre></td></tr></table></figure>
 <p>另外:<br><br><code>OneInfo.js</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">const OneInfo =  &#123;</span><br><span class="line">    &quot;data&quot;: [</span><br><span class="line">        </span><br><span class="line">    ],</span><br><span class="line">    &quot;isOne&quot; : true,</span><br><span class="line">    &quot;oneNum&quot; : 0</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export default OneInfo;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">const OneInfo =  &#123;</span><br><span class="line">    &quot;data&quot;: [</span><br><span class="line">        </span><br><span class="line">    ],</span><br><span class="line">    &quot;isOne&quot; : true,</span><br><span class="line">    &quot;oneNum&quot; : 0</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export default OneInfo;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <p><code>TwoInfo.js</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">const TwoInfo =  &#123;</span><br><span class="line">    &quot;data&quot;: [</span><br><span class="line">        </span><br><span class="line">    ],</span><br><span class="line">    &quot;isTwo&quot; : false,</span><br><span class="line">    &quot;twoColor&quot;:&apos;white&apos;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export default TwoInfo;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">const TwoInfo =  &#123;</span><br><span class="line">    &quot;data&quot;: [</span><br><span class="line">        </span><br><span class="line">    ],</span><br><span class="line">    &quot;isTwo&quot; : false,</span><br><span class="line">    &quot;twoColor&quot;:&#x27;white&#x27;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export default TwoInfo;</span><br></pre></td></tr></table></figure>
+
 <p>ok,回到App.js中:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123;Component&#125; from &apos;react&apos;;</span><br><span class="line">import &#123;Platform, StyleSheet, Text, View, Image&#125; from &apos;react-native&apos;;</span><br><span class="line">import &#123;StackNavigator, TabNavigator, TabBarBottom&#125; from &apos;react-navigation&apos;;</span><br><span class="line">// 全局注册并注入mobx，其他地方都可以使用store</span><br><span class="line">import &#123;Provider&#125; from &apos;mobx-react&apos;;</span><br><span class="line">// 获取store实例</span><br><span class="line">import store from &apos;./src/Mobx/Store&apos;;</span><br><span class="line"></span><br><span class="line">import One from &apos;./src/One/One&apos;;</span><br><span class="line">import Two from &apos;./src/Two/Two&apos;;</span><br><span class="line"></span><br><span class="line">export default class TwoDetails extends Component&lt;Props&gt; &#123;</span><br><span class="line">  render () &#123;</span><br><span class="line">    return (</span><br><span class="line">      &lt;Provider rootStore=&#123;store&#125;&gt;</span><br><span class="line"></span><br><span class="line">        &lt;Navigator</span><br><span class="line">          onNavigationStateChange=&#123;(prevState, currentState) =&gt; &#123;</span><br><span class="line">            // 只要切换tab,push,pop,这里一定走</span><br><span class="line">            console.log (prevState);</span><br><span class="line">            console.log (currentState);</span><br><span class="line">          &#125;&#125;</span><br><span class="line">        /&gt;</span><br><span class="line">      &lt;/Provider&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  componentDidMount = () =&gt; &#123;</span><br><span class="line">    console.disableYellowBox = true; //去除黄色弹框警告</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const Tab = TabNavigator (</span><br><span class="line">  &#123;</span><br><span class="line">    One: &#123;</span><br><span class="line">      screen: One,</span><br><span class="line">      navigationOptions: (&#123;navigation&#125;) =&gt; (&#123;</span><br><span class="line">        tabBarLabel: &apos;男孩&apos;,</span><br><span class="line">        tabBarIcon: (&#123;focused, tintColor&#125;) =&gt; (</span><br><span class="line">          &lt;Image</span><br><span class="line">            source=&#123;</span><br><span class="line">              focused</span><br><span class="line">                ? require (&apos;./src/Image/boy_active.png&apos;)</span><br><span class="line">                : require (&apos;./src/Image/boy.png&apos;)</span><br><span class="line">            &#125;</span><br><span class="line">            style=&#123;&#123;width: 25, height: 25&#125;&#125;</span><br><span class="line">          /&gt;</span><br><span class="line">        ),</span><br><span class="line">      &#125;),</span><br><span class="line">    &#125;,</span><br><span class="line">    Two: &#123;</span><br><span class="line">      screen: Two,</span><br><span class="line">      navigationOptions: (&#123;navigation&#125;) =&gt; (&#123;</span><br><span class="line">        tabBarLabel: &apos;女孩&apos;,</span><br><span class="line">        tabBarIcon: (&#123;focused, tintColor&#125;) =&gt; (</span><br><span class="line">          &lt;Image</span><br><span class="line">            source=&#123;</span><br><span class="line">              focused</span><br><span class="line">                ? require (&apos;./src/Image/girl_active.png&apos;)</span><br><span class="line">                : require (&apos;./src/Image/girl.png&apos;)</span><br><span class="line">            &#125;</span><br><span class="line">            style=&#123;&#123;width: 25, height: 25&#125;&#125;</span><br><span class="line">          /&gt;</span><br><span class="line">        ),</span><br><span class="line">      &#125;),</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    tabBarComponent: TabBarBottom,</span><br><span class="line">    tabBarPosition: &apos;bottom&apos;,</span><br><span class="line">    swipeEnabled: true,</span><br><span class="line">    animationEnabled: true,</span><br><span class="line">    lazy: true,</span><br><span class="line">    tabBarOptions: &#123;</span><br><span class="line">      activeTintColor: &apos;#979797&apos;,</span><br><span class="line">      inactiveTintColor: &apos;#979797&apos;,</span><br><span class="line">      style: &#123;backgroundColor: &apos;#ffffff&apos;&#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">const Navigator = StackNavigator (&#123;</span><br><span class="line">  Tab: &#123;</span><br><span class="line">    screen: Tab,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">const styles = StyleSheet.create (&#123;</span><br><span class="line">  container: &#123;</span><br><span class="line">    flex: 1,</span><br><span class="line">    justifyContent: &apos;center&apos;,</span><br><span class="line">    alignItems: &apos;center&apos;,</span><br><span class="line">    backgroundColor: &apos;#F5FCFF&apos;,</span><br><span class="line">  &#125;,</span><br><span class="line">  welcome: &#123;</span><br><span class="line">    fontSize: 20,</span><br><span class="line">    textAlign: &apos;center&apos;,</span><br><span class="line">    margin: 10,</span><br><span class="line">  &#125;,</span><br><span class="line">  instructions: &#123;</span><br><span class="line">    textAlign: &apos;center&apos;,</span><br><span class="line">    color: &apos;#333333&apos;,</span><br><span class="line">    marginBottom: 5,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123;Component&#125; from &#x27;react&#x27;;</span><br><span class="line">import &#123;Platform, StyleSheet, Text, View, Image&#125; from &#x27;react-native&#x27;;</span><br><span class="line">import &#123;StackNavigator, TabNavigator, TabBarBottom&#125; from &#x27;react-navigation&#x27;;</span><br><span class="line">// 全局注册并注入mobx，其他地方都可以使用store</span><br><span class="line">import &#123;Provider&#125; from &#x27;mobx-react&#x27;;</span><br><span class="line">// 获取store实例</span><br><span class="line">import store from &#x27;./src/Mobx/Store&#x27;;</span><br><span class="line"></span><br><span class="line">import One from &#x27;./src/One/One&#x27;;</span><br><span class="line">import Two from &#x27;./src/Two/Two&#x27;;</span><br><span class="line"></span><br><span class="line">export default class TwoDetails extends Component&lt;Props&gt; &#123;</span><br><span class="line">  render () &#123;</span><br><span class="line">    return (</span><br><span class="line">      &lt;Provider rootStore=&#123;store&#125;&gt;</span><br><span class="line"></span><br><span class="line">        &lt;Navigator</span><br><span class="line">          onNavigationStateChange=&#123;(prevState, currentState) =&gt; &#123;</span><br><span class="line">            // 只要切换tab,push,pop,这里一定走</span><br><span class="line">            console.log (prevState);</span><br><span class="line">            console.log (currentState);</span><br><span class="line">          &#125;&#125;</span><br><span class="line">        /&gt;</span><br><span class="line">      &lt;/Provider&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  componentDidMount = () =&gt; &#123;</span><br><span class="line">    console.disableYellowBox = true; //去除黄色弹框警告</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const Tab = TabNavigator (</span><br><span class="line">  &#123;</span><br><span class="line">    One: &#123;</span><br><span class="line">      screen: One,</span><br><span class="line">      navigationOptions: (&#123;navigation&#125;) =&gt; (&#123;</span><br><span class="line">        tabBarLabel: &#x27;男孩&#x27;,</span><br><span class="line">        tabBarIcon: (&#123;focused, tintColor&#125;) =&gt; (</span><br><span class="line">          &lt;Image</span><br><span class="line">            source=&#123;</span><br><span class="line">              focused</span><br><span class="line">                ? require (&#x27;./src/Image/boy_active.png&#x27;)</span><br><span class="line">                : require (&#x27;./src/Image/boy.png&#x27;)</span><br><span class="line">            &#125;</span><br><span class="line">            style=&#123;&#123;width: 25, height: 25&#125;&#125;</span><br><span class="line">          /&gt;</span><br><span class="line">        ),</span><br><span class="line">      &#125;),</span><br><span class="line">    &#125;,</span><br><span class="line">    Two: &#123;</span><br><span class="line">      screen: Two,</span><br><span class="line">      navigationOptions: (&#123;navigation&#125;) =&gt; (&#123;</span><br><span class="line">        tabBarLabel: &#x27;女孩&#x27;,</span><br><span class="line">        tabBarIcon: (&#123;focused, tintColor&#125;) =&gt; (</span><br><span class="line">          &lt;Image</span><br><span class="line">            source=&#123;</span><br><span class="line">              focused</span><br><span class="line">                ? require (&#x27;./src/Image/girl_active.png&#x27;)</span><br><span class="line">                : require (&#x27;./src/Image/girl.png&#x27;)</span><br><span class="line">            &#125;</span><br><span class="line">            style=&#123;&#123;width: 25, height: 25&#125;&#125;</span><br><span class="line">          /&gt;</span><br><span class="line">        ),</span><br><span class="line">      &#125;),</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    tabBarComponent: TabBarBottom,</span><br><span class="line">    tabBarPosition: &#x27;bottom&#x27;,</span><br><span class="line">    swipeEnabled: true,</span><br><span class="line">    animationEnabled: true,</span><br><span class="line">    lazy: true,</span><br><span class="line">    tabBarOptions: &#123;</span><br><span class="line">      activeTintColor: &#x27;#979797&#x27;,</span><br><span class="line">      inactiveTintColor: &#x27;#979797&#x27;,</span><br><span class="line">      style: &#123;backgroundColor: &#x27;#ffffff&#x27;&#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">const Navigator = StackNavigator (&#123;</span><br><span class="line">  Tab: &#123;</span><br><span class="line">    screen: Tab,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">const styles = StyleSheet.create (&#123;</span><br><span class="line">  container: &#123;</span><br><span class="line">    flex: 1,</span><br><span class="line">    justifyContent: &#x27;center&#x27;,</span><br><span class="line">    alignItems: &#x27;center&#x27;,</span><br><span class="line">    backgroundColor: &#x27;#F5FCFF&#x27;,</span><br><span class="line">  &#125;,</span><br><span class="line">  welcome: &#123;</span><br><span class="line">    fontSize: 20,</span><br><span class="line">    textAlign: &#x27;center&#x27;,</span><br><span class="line">    margin: 10,</span><br><span class="line">  &#125;,</span><br><span class="line">  instructions: &#123;</span><br><span class="line">    textAlign: &#x27;center&#x27;,</span><br><span class="line">    color: &#x27;#333333&#x27;,</span><br><span class="line">    marginBottom: 5,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <p>然后就是基本的UI界面了:<br><code>One.js</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Sample React Native App</span><br><span class="line"> * https://github.com/facebook/react-native</span><br><span class="line"> * @flow</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">import React, &#123; Component &#125; from &apos;react&apos;;</span><br><span class="line">import &#123;</span><br><span class="line">    Platform,</span><br><span class="line">    StyleSheet,</span><br><span class="line">    Text,</span><br><span class="line">    View</span><br><span class="line">&#125; from &apos;react-native&apos;;</span><br><span class="line">import &#123; observer, inject &#125; from &apos;mobx-react&apos;</span><br><span class="line">import &#123; action, autorun, computed &#125; from &apos;mobx&apos;</span><br><span class="line"></span><br><span class="line">@inject(&apos;rootStore&apos;)</span><br><span class="line">@observer</span><br><span class="line">export default class One extends Component&lt;Props&gt; &#123;</span><br><span class="line">  // 构造</span><br><span class="line">    constructor(props) &#123;</span><br><span class="line">      super(props);</span><br><span class="line">        // 初始状态</span><br><span class="line">      this.state = &#123;&#125;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    render() &#123;</span><br><span class="line">        return (</span><br><span class="line">            &lt;View style=&#123;styles.container&#125;&gt;</span><br><span class="line">                &lt;Text onPress=&#123;()=&gt;this.add()&#125;&gt;</span><br><span class="line">                    + 红</span><br><span class="line">                &lt;/Text&gt;</span><br><span class="line">                &lt;Text&gt;</span><br><span class="line">                    One &#123;this.dataSource&#125;</span><br><span class="line">                &lt;/Text&gt;</span><br><span class="line">                &lt;Text onPress=&#123;()=&gt;this.sub()&#125;&gt;</span><br><span class="line">                    - 蓝</span><br><span class="line">                &lt;/Text&gt;</span><br><span class="line">            &lt;/View&gt;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @computed get dataSource() &#123;</span><br><span class="line">        return this.props.rootStore.OneInfo.allDatas.oneNum;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * +</span><br><span class="line">     * */</span><br><span class="line">    @action</span><br><span class="line">    add() &#123;</span><br><span class="line">        this.props.rootStore.OneInfo.add(this.dataSource)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * -</span><br><span class="line">     * */</span><br><span class="line">    @action</span><br><span class="line">    sub() &#123;</span><br><span class="line">        this.props.rootStore.OneInfo.sub(this.dataSource)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const styles = StyleSheet.create(&#123;</span><br><span class="line">    container: &#123;</span><br><span class="line">        flex: 1,</span><br><span class="line">        justifyContent: &apos;center&apos;,</span><br><span class="line">        alignItems: &apos;center&apos;,</span><br><span class="line">        backgroundColor: &apos;#F5FCFF&apos;,</span><br><span class="line">    &#125;,</span><br><span class="line">    welcome: &#123;</span><br><span class="line">        fontSize: 20,</span><br><span class="line">        textAlign: &apos;center&apos;,</span><br><span class="line">        margin: 10,</span><br><span class="line">    &#125;,</span><br><span class="line">    instructions: &#123;</span><br><span class="line">        textAlign: &apos;center&apos;,</span><br><span class="line">        color: &apos;#333333&apos;,</span><br><span class="line">        marginBottom: 5,</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Sample React Native App</span><br><span class="line"> * https://github.com/facebook/react-native</span><br><span class="line"> * @flow</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">import React, &#123; Component &#125; from &#x27;react&#x27;;</span><br><span class="line">import &#123;</span><br><span class="line">    Platform,</span><br><span class="line">    StyleSheet,</span><br><span class="line">    Text,</span><br><span class="line">    View</span><br><span class="line">&#125; from &#x27;react-native&#x27;;</span><br><span class="line">import &#123; observer, inject &#125; from &#x27;mobx-react&#x27;</span><br><span class="line">import &#123; action, autorun, computed &#125; from &#x27;mobx&#x27;</span><br><span class="line"></span><br><span class="line">@inject(&#x27;rootStore&#x27;)</span><br><span class="line">@observer</span><br><span class="line">export default class One extends Component&lt;Props&gt; &#123;</span><br><span class="line">  // 构造</span><br><span class="line">    constructor(props) &#123;</span><br><span class="line">      super(props);</span><br><span class="line">        // 初始状态</span><br><span class="line">      this.state = &#123;&#125;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    render() &#123;</span><br><span class="line">        return (</span><br><span class="line">            &lt;View style=&#123;styles.container&#125;&gt;</span><br><span class="line">                &lt;Text onPress=&#123;()=&gt;this.add()&#125;&gt;</span><br><span class="line">                    + 红</span><br><span class="line">                &lt;/Text&gt;</span><br><span class="line">                &lt;Text&gt;</span><br><span class="line">                    One &#123;this.dataSource&#125;</span><br><span class="line">                &lt;/Text&gt;</span><br><span class="line">                &lt;Text onPress=&#123;()=&gt;this.sub()&#125;&gt;</span><br><span class="line">                    - 蓝</span><br><span class="line">                &lt;/Text&gt;</span><br><span class="line">            &lt;/View&gt;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @computed get dataSource() &#123;</span><br><span class="line">        return this.props.rootStore.OneInfo.allDatas.oneNum;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * +</span><br><span class="line">     * */</span><br><span class="line">    @action</span><br><span class="line">    add() &#123;</span><br><span class="line">        this.props.rootStore.OneInfo.add(this.dataSource)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * -</span><br><span class="line">     * */</span><br><span class="line">    @action</span><br><span class="line">    sub() &#123;</span><br><span class="line">        this.props.rootStore.OneInfo.sub(this.dataSource)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const styles = StyleSheet.create(&#123;</span><br><span class="line">    container: &#123;</span><br><span class="line">        flex: 1,</span><br><span class="line">        justifyContent: &#x27;center&#x27;,</span><br><span class="line">        alignItems: &#x27;center&#x27;,</span><br><span class="line">        backgroundColor: &#x27;#F5FCFF&#x27;,</span><br><span class="line">    &#125;,</span><br><span class="line">    welcome: &#123;</span><br><span class="line">        fontSize: 20,</span><br><span class="line">        textAlign: &#x27;center&#x27;,</span><br><span class="line">        margin: 10,</span><br><span class="line">    &#125;,</span><br><span class="line">    instructions: &#123;</span><br><span class="line">        textAlign: &#x27;center&#x27;,</span><br><span class="line">        color: &#x27;#333333&#x27;,</span><br><span class="line">        marginBottom: 5,</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <p><code>Two.js</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Sample React Native App</span><br><span class="line"> * https://github.com/facebook/react-native</span><br><span class="line"> * @flow</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">import React, &#123; Component &#125; from &apos;react&apos;;</span><br><span class="line">import &#123;</span><br><span class="line">  Platform,</span><br><span class="line">  StyleSheet,</span><br><span class="line">  Text,</span><br><span class="line">  View</span><br><span class="line">&#125; from &apos;react-native&apos;;</span><br><span class="line">import &#123; observer, inject &#125; from &apos;mobx-react&apos;</span><br><span class="line">import &#123; action, autorun, computed &#125; from &apos;mobx&apos;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">@inject(&apos;rootStore&apos;)</span><br><span class="line">@observer</span><br><span class="line">export default class Two extends Component&lt;Props&gt; &#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    return (</span><br><span class="line">      &lt;View style=&#123;[styles.container,&#123;backgroundColor:this.bgColor&#125;]&#125;&gt;</span><br><span class="line">       &lt;Text&gt;</span><br><span class="line">           TWO</span><br><span class="line">       &lt;/Text&gt;</span><br><span class="line">      &lt;/View&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">    @computed get bgColor() &#123;</span><br><span class="line">        return this.props.rootStore.TwoInfo.allDatas.twoColor;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const styles = StyleSheet.create(&#123;</span><br><span class="line">  container: &#123;</span><br><span class="line">    flex: 1,</span><br><span class="line">    justifyContent: &apos;center&apos;,</span><br><span class="line">    alignItems: &apos;center&apos;,</span><br><span class="line">    backgroundColor: &apos;#F5FCFF&apos;,</span><br><span class="line">  &#125;,</span><br><span class="line">  welcome: &#123;</span><br><span class="line">    fontSize: 20,</span><br><span class="line">    textAlign: &apos;center&apos;,</span><br><span class="line">    margin: 10,</span><br><span class="line">  &#125;,</span><br><span class="line">  instructions: &#123;</span><br><span class="line">    textAlign: &apos;center&apos;,</span><br><span class="line">    color: &apos;#333333&apos;,</span><br><span class="line">    marginBottom: 5,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>ok,以上就是Mbox+react-navigation的Demo的基本代码了.<br>效果图:<br><img src="/2018/05/27/移动端学习/Mobx与react-navigation的使用/../../../../../images/mobx项目result.gif" alt="效果图"> <br><br><a href="https://github.com/pheromone/mobx_reactNavigation_demo" target="_blank" rel="noopener">源码</a> <br><br><a href="https://pheromone.github.io/2018/03/18/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/redux%E5%92%8Creact-navigation%E7%9A%84%E7%BB%93%E5%90%88%E4%BD%BF%E7%94%A8/" target="_blank" rel="noopener">另外:redux+react-navigation</a><br><a href="https://pheromone.github.io/2018/07/29/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/react-navigation%E5%92%8Cdva%E7%9A%84%E7%BB%93%E5%90%88%E4%BD%BF%E7%94%A8/" target="_blank" rel="noopener">另外:dva+react-navigation</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Sample React Native App</span><br><span class="line"> * https://github.com/facebook/react-native</span><br><span class="line"> * @flow</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">import React, &#123; Component &#125; from &#x27;react&#x27;;</span><br><span class="line">import &#123;</span><br><span class="line">  Platform,</span><br><span class="line">  StyleSheet,</span><br><span class="line">  Text,</span><br><span class="line">  View</span><br><span class="line">&#125; from &#x27;react-native&#x27;;</span><br><span class="line">import &#123; observer, inject &#125; from &#x27;mobx-react&#x27;</span><br><span class="line">import &#123; action, autorun, computed &#125; from &#x27;mobx&#x27;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">@inject(&#x27;rootStore&#x27;)</span><br><span class="line">@observer</span><br><span class="line">export default class Two extends Component&lt;Props&gt; &#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    return (</span><br><span class="line">      &lt;View style=&#123;[styles.container,&#123;backgroundColor:this.bgColor&#125;]&#125;&gt;</span><br><span class="line">       &lt;Text&gt;</span><br><span class="line">           TWO</span><br><span class="line">       &lt;/Text&gt;</span><br><span class="line">      &lt;/View&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">    @computed get bgColor() &#123;</span><br><span class="line">        return this.props.rootStore.TwoInfo.allDatas.twoColor;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const styles = StyleSheet.create(&#123;</span><br><span class="line">  container: &#123;</span><br><span class="line">    flex: 1,</span><br><span class="line">    justifyContent: &#x27;center&#x27;,</span><br><span class="line">    alignItems: &#x27;center&#x27;,</span><br><span class="line">    backgroundColor: &#x27;#F5FCFF&#x27;,</span><br><span class="line">  &#125;,</span><br><span class="line">  welcome: &#123;</span><br><span class="line">    fontSize: 20,</span><br><span class="line">    textAlign: &#x27;center&#x27;,</span><br><span class="line">    margin: 10,</span><br><span class="line">  &#125;,</span><br><span class="line">  instructions: &#123;</span><br><span class="line">    textAlign: &#x27;center&#x27;,</span><br><span class="line">    color: &#x27;#333333&#x27;,</span><br><span class="line">    marginBottom: 5,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>ok,以上就是Mbox+react-navigation的Demo的基本代码了.<br>效果图:<br><img src="/2018/05/27/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Mobx%E4%B8%8Ereact-navigation%E7%9A%84%E4%BD%BF%E7%94%A8/../../../../../images/mobx项目result.gif" alt="效果图"> <br><br><a target="_blank" rel="noopener" href="https://github.com/pheromone/mobx_reactNavigation_demo">源码</a> <br><br><a target="_blank" rel="noopener" href="https://pheromone.github.io/2018/03/18/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/redux%E5%92%8Creact-navigation%E7%9A%84%E7%BB%93%E5%90%88%E4%BD%BF%E7%94%A8/">另外:redux+react-navigation</a><br><a target="_blank" rel="noopener" href="https://pheromone.github.io/2018/07/29/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/react-navigation%E5%92%8Cdva%E7%9A%84%E7%BB%93%E5%90%88%E4%BD%BF%E7%94%A8/">另外:dva+react-navigation</a></p>
 
     </div>
 </article>
@@ -314,7 +336,8 @@
     <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
 <aside id="sidebar-search">
     <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
-        <form class="form-inline clearfix" id="search-form" method="get" action="/search/index.html">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
             <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~">
             <button class="btn btn-danger btn-gal" type="submit">
                 <i class="fa fa-search"></i>
@@ -330,9 +353,10 @@
             <i class="fa fa-quote-right"></i>
         </div>
         <div class="author-panel text-center">
-            <img src="/imgs/headImg.jpg" width="140" height="140" alt="个人头像" class="author-image">
-            <p class="author-description"></p><p>愿天堂没有bug</p>
-<p></p>
+            <img src="/imgs/headImg.jpg" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description"><p>愿天堂没有bug</p>
+</p>
         </div>
     </div>
 </aside>
@@ -376,61 +400,61 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/03/13/移动端学习/Flutter~getx学习/">Flutter~getx库学习</a>
+                    <a href="/2021/08/22/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/React%E5%AD%A6%E4%B9%A0~React-Hooks%E5%AD%A6%E4%B9%A0/">React学习:React-Hooks学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/01/06/移动端学习/Flutter~provider学习/">Flutter~provider学习</a>
+                    <a href="/2021/03/13/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~getx%E5%AD%A6%E4%B9%A0/">Flutter~getx库学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/04/11/移动端学习/Flutter~fish_redux学习/">Flutter~fish_redux学习</a>
+                    <a href="/2021/01/06/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~provider%E5%AD%A6%E4%B9%A0/">Flutter~provider学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/01/23/移动端学习/Flutter~自定义tabbar模块/">Flutter~自定义tabbar模块</a>
+                    <a href="/2020/04/11/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~fish_redux%E5%AD%A6%E4%B9%A0/">Flutter~fish_redux学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/11/11/移动端学习/Flutter~自定义Dialog(基本的组件封装)/">Flutter~自定义Dialog(基本的组件封装)</a>
+                    <a href="/2020/01/23/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E8%87%AA%E5%AE%9A%E4%B9%89tabbar%E6%A8%A1%E5%9D%97/">Flutter~自定义tabbar模块</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/09/07/移动端学习/Flutter~Flare动画学习/">Flutter~Flare动画学习</a>
+                    <a href="/2019/11/11/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E8%87%AA%E5%AE%9A%E4%B9%89Dialog(%E5%9F%BA%E6%9C%AC%E7%9A%84%E7%BB%84%E4%BB%B6%E5%B0%81%E8%A3%85)/">Flutter~自定义Dialog(基本的组件封装)</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/08/08/移动端学习/Flutter~mobx库学习/">Flutter~mobx库学习</a>
+                    <a href="/2019/09/07/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~Flare%E5%8A%A8%E7%94%BB%E5%AD%A6%E4%B9%A0/">Flutter~Flare动画学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/06/23/其他学习/MAC下的cocos2d-x环境搭建/">MAC下的cocos2d-x环境搭建</a>
+                    <a href="/2019/08/08/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~mobx%E5%BA%93%E5%AD%A6%E4%B9%A0/">Flutter~mobx库学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/06/11/移动端学习/Flutter~国际化教程方案/">Flutter~国际化教程方案</a>
+                    <a href="/2019/06/23/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/MAC%E4%B8%8B%E7%9A%84cocos2d-x%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">MAC下的cocos2d-x环境搭建</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/05/31/移动端学习/Flutter~Android原生工程中添加Flutter模块/">Flutter~Android原生工程中添加Flutter模块</a>
+                    <a href="/2019/06/11/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E5%9B%BD%E9%99%85%E5%8C%96%E6%95%99%E7%A8%8B%E6%96%B9%E6%A1%88/">Flutter~国际化教程方案</a>
                 </span>
             </li>
             
@@ -452,61 +476,61 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/06/29/前端学习/React学习-简单个人消费记账系统/">React学习:简单个人消费记账系统</a>
+                    <a href="/2018/05/17/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/%E9%A9%AC%E8%B5%9B%E5%85%8B%E5%AD%A6%E4%B9%A0/">前端马赛克学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/09/07/移动端学习/Flutter~Flare动画学习/">Flutter~Flare动画学习</a>
+                    <a href="/2019/09/07/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~Flare%E5%8A%A8%E7%94%BB%E5%AD%A6%E4%B9%A0/">Flutter~Flare动画学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/05/31/移动端学习/Flutter~Android原生工程中添加Flutter模块/">Flutter~Android原生工程中添加Flutter模块</a>
+                    <a href="/2019/03/07/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~flutter_bloc%E5%BA%93%E5%AD%A6%E4%B9%A0/">Flutter~flutter_bloc库学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/03/13/移动端学习/Flutter~getx学习/">Flutter~getx库学习</a>
+                    <a href="/2019/03/03/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~provide%E5%AD%A6%E4%B9%A0/">Flutter~provide学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/03/06/移动端学习/Flutter~json_serializable库学习/">Flutter~json_serializable库学习</a>
+                    <a href="/2019/02/16/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~scoped_model%E5%AD%A6%E4%B9%A0/">Flutter~scoped_model学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/03/30/移动端学习/Flutter路由管理库fluro学习/">Flutter路由管理库fluro学习</a>
+                    <a href="/2019/11/11/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E8%87%AA%E5%AE%9A%E4%B9%89Dialog(%E5%9F%BA%E6%9C%AC%E7%9A%84%E7%BB%84%E4%BB%B6%E5%B0%81%E8%A3%85)/">Flutter~自定义Dialog(基本的组件封装)</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/05/27/移动端学习/Mobx与react-navigation的使用/">Mobx与react-navigation的结合使用</a>
+                    <a href="/2019/03/04/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter%E4%B8%AD%E7%9A%84sqflite%E5%BA%93%E5%AD%A6%E4%B9%A0/">Flutter中的sqflite库学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/09/08/移动端学习/React-Native推送通知至RN且显示推送内容/">React-Native推送通知至RN且显示推送内容</a>
+                    <a href="/2018/05/27/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Mobx%E4%B8%8Ereact-navigation%E7%9A%84%E4%BD%BF%E7%94%A8/">Mobx与react-navigation的结合使用</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/04/22/移动端学习/React-Native与Web的基本交互/">React-Native与Web的基本交互</a>
+                    <a href="/2018/07/29/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/redux%E5%92%8Creact-navigation%E7%9A%84%E7%BB%93%E5%90%88%E4%BD%BF%E7%94%A8/">redux和react-navigation的结合使用</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/04/22/移动端学习/react-native-router-flux初步认识/">react-native-router-flux初步认识</a>
+                    <a href="/2020/04/11/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~fish_redux%E5%AD%A6%E4%B9%A0/">Flutter~fish_redux学习</a>
                 </span>
             </li>
             
@@ -518,26 +542,26 @@
     <aside id="gal-sets">
         <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
             <ul class="nav nav-pills pills-gal">
-                <li class>
-                    <a href="/2018/05/27/移动端学习/Mobx与react-navigation的使用/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                <li class="">
+                    <a href="/2018/05/27/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Mobx%E4%B8%8Ereact-navigation%E7%9A%84%E4%BD%BF%E7%94%A8/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
-                <li class>
-                    <a href="/2018/05/27/移动端学习/Mobx与react-navigation的使用/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                <li class="">
+                    <a href="/2018/05/27/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Mobx%E4%B8%8Ereact-navigation%E7%9A%84%E4%BD%BF%E7%94%A8/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
-                <li class>
-                    <a href="/2018/05/27/移动端学习/Mobx与react-navigation的使用/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                <li class="">
+                    <a href="/2018/05/27/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Mobx%E4%B8%8Ereact-navigation%E7%9A%84%E4%BD%BF%E7%94%A8/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
             </ul>
             <div class="tab-content">
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/其他学习/" style="font-size: 16.2282793243018px;" class="tag-cloud-link">其他学习</a>
+    <a href="/tags/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/" style="font-size: 19.447220414349985px;" class="tag-cloud-link">其他学习</a>
     
-    <a href="/tags/前端学习/" style="font-size: 12.913139421553748px;" class="tag-cloud-link">前端学习</a>
+    <a href="/tags/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 9.61849589173056px;" class="tag-cloud-link">后端学习</a>
     
-    <a href="/tags/后端学习/" style="font-size: 9.645670258966186px;" class="tag-cloud-link">后端学习</a>
+    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 13.643112682636284px;" class="tag-cloud-link">前端学习</a>
     
-    <a href="/tags/移动端学习/" style="font-size: 8.120014600089897px;" class="tag-cloud-link">移动端学习</a>
+    <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 8.692389481484312px;" class="tag-cloud-link">移动端学习</a>
     
 </div>
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
@@ -581,7 +605,9 @@
     <i class="fa fa-angle-up"></i>
 </div>
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/koharu.model.json"},"display":{"position":"right","width":100,"height":200},"mobile":{"show":true},"log":false});</script></body>
+
 <script src="/js/activate-power-mode.js"></script>
+
 <script>
 
     // 配置highslide
@@ -648,17 +674,23 @@
     }
 </script>
 
+
 <script src="/js/hs.js"></script>
 <script src="/js/blog.js"></script>
 
+
+
 <script src="/js/oni.js"></script>
+
 
 
 <script>
     window.hot_posts_count = '10'
     // window.use_leancloud = 'true'
 </script>
+
 <script src="/js/comment/leancloud.js"></script>
+
 
 
 <script src="https://myau.moe/js/comment/gitment.browser.js"></script>
@@ -681,6 +713,8 @@
       }
     }
 </script>
+
 <script src="/js/comment/gitment.js"></script>
+
 
 </html>
