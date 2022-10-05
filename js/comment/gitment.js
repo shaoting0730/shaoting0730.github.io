@@ -302,17 +302,17 @@ var galTheme = {
 if ($('#comments-template')) {
 
 	var gitment = new Gitment({
-        id: window.commentConfig.id,
-	owner: window.commentConfig.owner,
-	repo: window.commentConfig.repo,
-	oauth: {
-		client_id: window.commentConfig.client_id,
-		client_secret: window.commentConfig.client_secret
-	},
-	perPage: 10,
-	title: window.commentConfig.title,
-	theme: galTheme
-})
+		id: window.commentConfig.id,
+		owner: window.commentConfig.owner,
+		repo: window.commentConfig.repo,
+		oauth: {
+			client_id: window.commentConfig.client_id,
+			client_secret: window.commentConfig.client_secret
+		},
+		perPage: 10,
+		title: window.commentConfig.title,
+		theme: galTheme
+	})
 
 	gitment.render('comments-template')
 }
