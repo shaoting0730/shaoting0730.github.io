@@ -155,11 +155,11 @@
                         
                         
                         <li>
-                            <a href="/categories/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/">其他学习</a>
+                            <a href="/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/">前端学习</a>
                         </li>
                         
                         <li>
-                            <a href="/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/">前端学习</a>
+                            <a href="/categories/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/">其他学习</a>
                         </li>
                         
                         <li>
@@ -189,11 +189,11 @@
                         
                         
                         <li>
-                            <a href="/tags/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/">其他学习</a>
+                            <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/">前端学习</a>
                         </li>
                         
                         <li>
-                            <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/">前端学习</a>
+                            <a href="/tags/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/">其他学习</a>
                         </li>
                         
                         <li>
@@ -306,7 +306,7 @@
 
 <p>ok,改完之后,你就可以愉快的撸自己的业务代码了.至于业务代码我就简单写个例子:<br>其中,Conf.ACCESS_KEY和Conf.SECRET_KEY从七牛账号里面获取,Conf.UP_HOST  从<a target="_blank" rel="noopener" href="https://developer.qiniu.com/kodo/manual/1671/region-endpoint">https://developer.qiniu.com/kodo/manual/1671/region-endpoint</a>   里面获取,其中,<code>scope</code>就是七牛里面你自己建立的存储空间名</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">* Sample React Native App</span><br><span class="line">* https://github.com/facebook/react-native</span><br><span class="line">* @flow</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">import React, &#123; Component &#125; from &#x27;react&#x27;;</span><br><span class="line">import &#123;</span><br><span class="line">    Platform,</span><br><span class="line">    StyleSheet,</span><br><span class="line">    Text,</span><br><span class="line">    View,</span><br><span class="line">    Image</span><br><span class="line">&#125; from &#x27;react-native&#x27;;</span><br><span class="line">import Qiniu, &#123; Auth, ImgOps, Conf, Rs, Rpc &#125; from &#x27;react-native-qiniu&#x27;;</span><br><span class="line">//对于七牛修改文件参考: https://blog.csdn.net/qq_33935895/article/details/78775819</span><br><span class="line">Conf.ACCESS_KEY = &quot;从七牛账号里面获取&quot;;</span><br><span class="line">Conf.SECRET_KEY = &quot;从七牛账号里面获取&quot;;</span><br><span class="line">Conf.UP_HOST = &#x27;从七牛账号里面获取&#x27;;  // https://developer.qiniu.com/kodo/manual/1671/region-endpoint</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">type Props = &#123;&#125;;</span><br><span class="line">export default class App extends Component&lt;Props&gt; &#123;</span><br><span class="line">    // 构造</span><br><span class="line">    constructor(props) &#123;</span><br><span class="line">        super(props);</span><br><span class="line">        // 初始状态</span><br><span class="line">        this.state = &#123;</span><br><span class="line">            img: &#x27;图片url&#x27;</span><br><span class="line"></span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    render() &#123;</span><br><span class="line">        return (</span><br><span class="line">            &lt;View style=&#123;styles.container&#125;&gt;</span><br><span class="line">                &lt;Text style=&#123;styles.instructions&#125; onPress=&#123;() =&gt; this.upload()&#125;&gt;</span><br><span class="line">                    上传</span><br><span class="line">&lt;/Text&gt;</span><br><span class="line">                &lt;Text&gt;&#123;this.state.img&#125;&lt;/Text&gt;</span><br><span class="line">                &lt;Image</span><br><span class="line">                    source=&#123;&#123; uri: this.state.img &#125;&#125;</span><br><span class="line">                    style=&#123;&#123; width: 200, height: 400 &#125;&#125;</span><br><span class="line">                /&gt;</span><br><span class="line">            &lt;/View&gt;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">    * 先上传七牛 获取url</span><br><span class="line">    * */</span><br><span class="line">    upload = () =&gt; &#123;</span><br><span class="line">        var img = &#x27;/Users/shaotingzhou/Desktop/qiniuDemo/uploadImg.jpg&#x27;   //图片路径 如果是从相册获取图片的话,其相册会返回</span><br><span class="line">        var myDate = new Date();</span><br><span class="line">        const key = myDate.getTime() + &#x27;.jpg&#x27;;  //上传成功后该key就是图片的url路径</span><br><span class="line">        //上传参数</span><br><span class="line">        let params = &#123;</span><br><span class="line">            uri: img,//图片路径  可以通过第三方工具 如:ImageCropPicker等获取本地图片路径</span><br><span class="line">            key: key,//要上传的key</span><br><span class="line">        &#125;</span><br><span class="line">        //构建上传策略</span><br><span class="line">        let policy = &#123;</span><br><span class="line">            scope: &quot;demo&quot;,//记得这里如果格式为&lt;bucket&gt;:&lt;key&gt;形式的话,key要与params里的key保持一致,详见七牛上传策略</span><br><span class="line">            returnBody://returnBody 详见上传策略</span><br><span class="line">            &#123;</span><br><span class="line">                name: &quot;$(fname)&quot;,//获取文件名</span><br><span class="line">                size: &quot;$(fsize)&quot;,//获取文件大小</span><br><span class="line">                w: &quot;$(imageInfo.width)&quot;,//...</span><br><span class="line">                h: &quot;$(imageInfo.height)&quot;,//...</span><br><span class="line">                hash: &quot;$(etag)&quot;,//...</span><br><span class="line">            &#125;,</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        //进行文件上传</span><br><span class="line">        Rpc.uploadFile(params, policy).then((data) =&gt; &#123;</span><br><span class="line">            console.log(&#x27;上传成功&#x27;)</span><br><span class="line">            var imgUrl = key   //七牛上的图片URL 就是之前的key + 你公司域名</span><br><span class="line">            this.setState(&#123;</span><br><span class="line">                img: &#x27;http://pax8cso07.bkt.clouddn.com/&#x27; + key</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;).catch((err) =&gt; &#123;</span><br><span class="line">            console.log(err)</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const styles = StyleSheet.create(&#123;</span><br><span class="line">    container: &#123;</span><br><span class="line">        flex: 1,</span><br><span class="line">        justifyContent: &#x27;center&#x27;,</span><br><span class="line">        alignItems: &#x27;center&#x27;,</span><br><span class="line">        backgroundColor: &#x27;#F5FCFF&#x27;,</span><br><span class="line">    &#125;,</span><br><span class="line">    welcome: &#123;</span><br><span class="line">        fontSize: 20,</span><br><span class="line">        textAlign: &#x27;center&#x27;,</span><br><span class="line">        margin: 10,</span><br><span class="line">    &#125;,</span><br><span class="line">    instructions: &#123;</span><br><span class="line">        textAlign: &#x27;center&#x27;,</span><br><span class="line">        color: &#x27;#333333&#x27;,</span><br><span class="line">        marginBottom: 5,</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>ok.下面是七牛里面的key对应图,修改后的输出图,最后的例子展示图:<br><img src="/2018/06/26/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/react-native%E4%B8%83%E7%89%9B%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87/../../../../../images/qiniuDemoKey.png" alt="七牛key对应图"><br><img src="/2018/06/26/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/react-native%E4%B8%83%E7%89%9B%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87/../../../../../images/qiniuDemoLog.png" alt="七牛输出"><br><img src="/2018/06/26/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/react-native%E4%B8%83%E7%89%9B%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87/../../../../../images/qiniu_demo_result.gif" alt="Android与RN交互示意图"><br>下面是源码.其中七牛的修改文件在0.3.0中.<br><a target="_blank" rel="noopener" href="https://github.com/pheromone/qiniuDemo">源码</a></p>
+<p>ok.下面是七牛里面的key对应图,修改后的输出图,最后的例子展示图:<br><img src="/2018/06/26/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/react-native%E4%B8%83%E7%89%9B%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87/../../../../../images/qiniuDemoKey.png" alt="七牛key对应图"><br><img src="/2018/06/26/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/react-native%E4%B8%83%E7%89%9B%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87/../../../../../images/qiniuDemoLog.png" alt="七牛输出"><br><img src="/2018/06/26/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/react-native%E4%B8%83%E7%89%9B%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87/../../../../../images/qiniu_demo_result.gif" alt="Android与RN交互示意图"><br>下面是源码.其中七牛的修改文件在0.3.0中.<br><a target="_blank" rel="noopener" href="https://github.com/shaoting0730/qiniuDemo">源码</a></p>
 
     </div>
 </article>
@@ -466,25 +466,13 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/03/07/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~flutter_bloc%E5%BA%93%E5%AD%A6%E4%B9%A0/">Flutter~flutter_bloc库学习</a>
+                    <a href="/2021/08/22/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/React%E5%AD%A6%E4%B9%A0~React-Hooks%E5%AD%A6%E4%B9%A0/">React学习:React_Hooks学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/03/13/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~getx%E5%AD%A6%E4%B9%A0/">Flutter~getx库学习</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/05/29/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~iOS%E5%8E%9F%E7%94%9F%E5%B7%A5%E7%A8%8B%E4%B8%AD%E6%B7%BB%E5%8A%A0Flutter%E6%A8%A1%E5%9D%97/">Flutter~iOS原生工程中添加Flutter模块</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/03/06/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~json_serializable%E5%BA%93%E5%AD%A6%E4%B9%A0/">Flutter~json_serializable库学习</a>
+                    <a href="/2018/05/17/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/%E7%B2%BE%E7%81%B5%E5%9B%BE%E5%AD%A6%E4%B9%A0/">前端精灵图学习</a>
                 </span>
             </li>
             
@@ -496,7 +484,13 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/03/30/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter%E8%B7%AF%E7%94%B1%E7%AE%A1%E7%90%86%E5%BA%93fluro%E5%AD%A6%E4%B9%A0/">Flutter路由管理库fluro学习</a>
+                    <a href="/2020/01/23/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E8%87%AA%E5%AE%9A%E4%B9%89tabbar%E6%A8%A1%E5%9D%97/">Flutter~自定义tabbar模块</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/03/04/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter%E4%B8%AD%E7%9A%84sqflite%E5%BA%93%E5%AD%A6%E4%B9%A0/">Flutter中的sqflite库学习</a>
                 </span>
             </li>
             
@@ -514,13 +508,19 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/06/16/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/react-navigation%E5%89%8D%E7%BD%AE%E7%99%BB%E5%BD%95/">react-navigation前置登录</a>
+                    <a href="/2018/07/29/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/dva%E5%92%8Creact-navigation%E7%9A%84%E7%BB%93%E5%90%88%E4%BD%BF%E7%94%A8/">dva和react-navigation的结合使用</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/05/16/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/react-navigation%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/">react-navigation的基本使用</a>
+                    <a href="/2019/04/22/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/react-native-router-flux%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/">react-native-router-flux初步认识</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/08/17/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/React-Native%E7%B1%BB%E4%BC%BC%E6%94%AF%E4%BB%98%E5%AE%9D%E7%9A%84%E5%BA%94%E7%94%A8%E5%A2%9E%E5%88%A0%E6%A8%A1%E5%9D%97%E7%9A%84%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/">React-Native类似支付宝的应用增删模块的简单实现</a>
                 </span>
             </li>
             
@@ -553,13 +553,13 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/" style="font-size: 8.9949029930055px;" class="tag-cloud-link">其他学习</a>
+    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 14.817349933956406px;" class="tag-cloud-link">前端学习</a>
     
-    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 16.908897852336086px;" class="tag-cloud-link">前端学习</a>
+    <a href="/tags/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/" style="font-size: 14.074988191131169px;" class="tag-cloud-link">其他学习</a>
     
-    <a href="/tags/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 9.661735819276064px;" class="tag-cloud-link">后端学习</a>
+    <a href="/tags/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 14.383284946105201px;" class="tag-cloud-link">后端学习</a>
     
-    <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 18.361177804632305px;" class="tag-cloud-link">移动端学习</a>
+    <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 10.394613593616214px;" class="tag-cloud-link">移动端学习</a>
     
 </div>
                 
@@ -580,7 +580,7 @@
                 <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
     
     <li>
-        <a href="https://github.com/pheromone" target="_blank">Github</a>
+        <a href="https://github.com/shaoting0730" target="_blank">Github</a>
     </li>
     
     <li>
@@ -680,8 +680,8 @@
 <script>
     if(window.commentConfig) {
       window.commentConfig.id = 'Tue Jun 26 2018 00:00:00 GMT+0800'
-      window.commentConfig.owner = 'pheromone'
-      window.commentConfig.repo = 'pheromone.github.io'
+      window.commentConfig.owner = 'shaoting0730'
+      window.commentConfig.repo = 'shaoting0730.github.io'
       window.commentConfig.client_id = 'd8eb3636d568669139ef'
       window.commentConfig.client_secret = 'a39a08870520a45942c9c28771e091a6d3f147d8'
       window.commentConfig.redirect_uri = ''
@@ -689,8 +689,8 @@
     } else {
       window.commentConfig = {
       	id: 'Tue Jun 26 2018 00:00:00 GMT+0800',
-        owner: 'pheromone',
-        repo: 'pheromone.github.io',
+        owner: 'shaoting0730',
+        repo: 'shaoting0730.github.io',
         client_id: 'd8eb3636d568669139ef',
         client_secret: 'a39a08870520a45942c9c28771e091a6d3f147d8',
         redirect_uri: '',

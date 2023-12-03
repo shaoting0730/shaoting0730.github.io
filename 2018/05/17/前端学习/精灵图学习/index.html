@@ -155,11 +155,11 @@
                         
                         
                         <li>
-                            <a href="/categories/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/">其他学习</a>
+                            <a href="/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/">前端学习</a>
                         </li>
                         
                         <li>
-                            <a href="/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/">前端学习</a>
+                            <a href="/categories/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/">其他学习</a>
                         </li>
                         
                         <li>
@@ -189,11 +189,11 @@
                         
                         
                         <li>
-                            <a href="/tags/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/">其他学习</a>
+                            <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/">前端学习</a>
                         </li>
                         
                         <li>
-                            <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/">前端学习</a>
+                            <a href="/tags/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/">其他学习</a>
                         </li>
                         
                         <li>
@@ -299,7 +299,7 @@
 <p>以本地图片为例:<br><img src="/2018/05/17/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/%E7%B2%BE%E7%81%B5%E5%9B%BE%E5%AD%A6%E4%B9%A0/../../../../../images/精灵图原图.png" alt="精灵图原图"><br>精灵图使用其实就是对<code>background-position:x y</code>对图片进行偏移显示而已.<br>下面是代码:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;style&gt;</span><br><span class="line">        *&#123;</span><br><span class="line">            margin:0;</span><br><span class="line">            padding:0;</span><br><span class="line">        &#125;</span><br><span class="line">        .div0&#123;</span><br><span class="line">            margin:10px;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        .demo1,.demo2,.demo3,.demo4,.demo5,.demo6&#123;</span><br><span class="line">            display:inline-block;</span><br><span class="line">            width:17px;</span><br><span class="line">            height:17px;</span><br><span class="line">            background-color:transparent;</span><br><span class="line">            background-image:url(img/精灵图.png);</span><br><span class="line">            background-repeat:no-repeat;</span><br><span class="line">        &#125;</span><br><span class="line">        .demo1&#123; background-position:-38px -37px;&#125;</span><br><span class="line">        .demo2&#123; background-position:-62px -37px;&#125;</span><br><span class="line">        .demo3&#123; background-position:-86px -37px;&#125;</span><br><span class="line">        .demo4&#123; background-position:-110px -37px;&#125;</span><br><span class="line">        .demo5&#123; background-position:-134px -37px;&#125;</span><br><span class="line">        .demo6&#123; background-position:-159px -37px;&#125;</span><br><span class="line">        ul&#123;</span><br><span class="line">            list-style:none;</span><br><span class="line">        &#125;</span><br><span class="line">        ul li &#123;</span><br><span class="line">            margin:10px;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        &lt;/style&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line"></span><br><span class="line">    &lt;body&gt;</span><br><span class="line">    &lt;div class=&quot;div0&quot;&gt;</span><br><span class="line">        &lt;ul&gt;</span><br><span class="line">            &lt;li&gt;&lt;div class=&quot;demo1&quot;&gt;&lt;/div&gt; 图标1&lt;/li&gt;</span><br><span class="line">            &lt;li&gt;&lt;div class=&quot;demo2&quot;&gt;&lt;/div&gt; 图标2&lt;/li&gt;</span><br><span class="line">            &lt;li&gt;&lt;div class=&quot;demo3&quot;&gt;&lt;/div&gt; 图标3&lt;/li&gt;</span><br><span class="line">            &lt;li&gt;&lt;div class=&quot;demo4&quot;&gt;&lt;/div&gt; 图标4&lt;/li&gt;</span><br><span class="line">            &lt;li&gt;&lt;div class=&quot;demo5&quot;&gt;&lt;/div&gt; 图标5&lt;/li&gt;</span><br><span class="line">            &lt;li&gt;&lt;div class=&quot;demo6&quot;&gt;&lt;/div&gt; 图标6&lt;/li&gt;</span><br><span class="line">        &lt;/ul&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
 <p>效果图:<br><img src="/2018/05/17/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/%E7%B2%BE%E7%81%B5%E5%9B%BE%E5%AD%A6%E4%B9%A0/../../../../../images/精灵图结果.png" alt="精灵图结果"></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/pheromone/sprite-sheet">源码</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/shaoting0730/sprite-sheet">源码</a></p>
 
     </div>
 </article>
@@ -459,25 +459,19 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/05/17/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/%E9%A9%AC%E8%B5%9B%E5%85%8B%E5%AD%A6%E4%B9%A0/">前端马赛克学习</a>
+                    <a href="/2021/08/22/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/React%E5%AD%A6%E4%B9%A0~React-Hooks%E5%AD%A6%E4%B9%A0/">React学习:React_Hooks学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/04/22/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Android%E5%92%8CReact-Native%E7%9A%84%E7%AE%80%E5%8D%95%E4%BA%A4%E4%BA%92/">Android和React-Native的简单交互</a>
+                    <a href="/2019/06/23/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/MAC%E4%B8%8B%E7%9A%84cocos2d-x%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">MAC下的cocos2d-x环境搭建</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/03/13/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~getx%E5%AD%A6%E4%B9%A0/">Flutter~getx库学习</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/06/11/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E5%9B%BD%E9%99%85%E5%8C%96%E6%95%99%E7%A8%8B%E6%96%B9%E6%A1%88/">Flutter~国际化教程方案</a>
+                    <a href="/2021/01/06/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~provider%E5%AD%A6%E4%B9%A0/">Flutter~provider学习</a>
                 </span>
             </li>
             
@@ -489,7 +483,13 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/11/11/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E8%87%AA%E5%AE%9A%E4%B9%89Dialog(%E5%9F%BA%E6%9C%AC%E7%9A%84%E7%BB%84%E4%BB%B6%E5%B0%81%E8%A3%85)/">Flutter~自定义Dialog(基本的组件封装)</a>
+                    <a href="/2018/05/27/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Mobx%E4%B8%8Ereact-navigation%E7%9A%84%E4%BD%BF%E7%94%A8/">Mobx与react-navigation的结合使用</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/04/22/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/React-Native%E4%B8%8EWeb%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BA%A4%E4%BA%92/">React-Native与Web的基本交互</a>
                 </span>
             </li>
             
@@ -513,7 +513,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/08/17/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/React-Native%E7%B1%BB%E4%BC%BC%E6%94%AF%E4%BB%98%E5%AE%9D%E7%9A%84%E5%BA%94%E7%94%A8%E5%A2%9E%E5%88%A0%E6%A8%A1%E5%9D%97%E7%9A%84%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/">React-Native类似支付宝的应用增删模块的简单实现</a>
+                    <a href="/2018/08/11/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/React-Native%3C%E6%94%B6%E8%B5%B7-%E5%B1%95%E5%BC%80%3E%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/">React-Native&#34;收起-展开&#34;功能实现</a>
                 </span>
             </li>
             
@@ -546,13 +546,13 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/" style="font-size: 14.347517298468759px;" class="tag-cloud-link">其他学习</a>
+    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 16.873767081418773px;" class="tag-cloud-link">前端学习</a>
     
-    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 15.777191434894714px;" class="tag-cloud-link">前端学习</a>
+    <a href="/tags/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/" style="font-size: 9.845311865241726px;" class="tag-cloud-link">其他学习</a>
     
-    <a href="/tags/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 13.707994494240044px;" class="tag-cloud-link">后端学习</a>
+    <a href="/tags/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 15.89312200124414px;" class="tag-cloud-link">后端学习</a>
     
-    <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 8.233456392787279px;" class="tag-cloud-link">移动端学习</a>
+    <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 13.321049206324131px;" class="tag-cloud-link">移动端学习</a>
     
 </div>
                 
@@ -573,7 +573,7 @@
                 <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
     
     <li>
-        <a href="https://github.com/pheromone" target="_blank">Github</a>
+        <a href="https://github.com/shaoting0730" target="_blank">Github</a>
     </li>
     
     <li>
@@ -673,8 +673,8 @@
 <script>
     if(window.commentConfig) {
       window.commentConfig.id = 'Thu May 17 2018 21:54:44 GMT+0800'
-      window.commentConfig.owner = 'pheromone'
-      window.commentConfig.repo = 'pheromone.github.io'
+      window.commentConfig.owner = 'shaoting0730'
+      window.commentConfig.repo = 'shaoting0730.github.io'
       window.commentConfig.client_id = 'd8eb3636d568669139ef'
       window.commentConfig.client_secret = 'a39a08870520a45942c9c28771e091a6d3f147d8'
       window.commentConfig.redirect_uri = ''
@@ -682,8 +682,8 @@
     } else {
       window.commentConfig = {
       	id: 'Thu May 17 2018 21:54:44 GMT+0800',
-        owner: 'pheromone',
-        repo: 'pheromone.github.io',
+        owner: 'shaoting0730',
+        repo: 'shaoting0730.github.io',
         client_id: 'd8eb3636d568669139ef',
         client_secret: 'a39a08870520a45942c9c28771e091a6d3f147d8',
         redirect_uri: '',
