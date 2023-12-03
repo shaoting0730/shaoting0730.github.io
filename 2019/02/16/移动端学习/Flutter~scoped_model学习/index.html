@@ -155,11 +155,11 @@
                         
                         
                         <li>
-                            <a href="/categories/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/">其他学习</a>
+                            <a href="/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/">前端学习</a>
                         </li>
                         
                         <li>
-                            <a href="/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/">前端学习</a>
+                            <a href="/categories/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/">其他学习</a>
                         </li>
                         
                         <li>
@@ -189,11 +189,11 @@
                         
                         
                         <li>
-                            <a href="/tags/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/">其他学习</a>
+                            <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/">前端学习</a>
                         </li>
                         
                         <li>
-                            <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/">前端学习</a>
+                            <a href="/tags/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/">其他学习</a>
                         </li>
                         
                         <li>
@@ -304,9 +304,9 @@
 <h3 id="one-dart"><a href="#one-dart" class="headerlink" title="one.dart"></a>one.dart</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">import &#x27;package:flutter/material.dart&#x27;;</span><br><span class="line">import &#x27;package:scoped_model_demo/model/main_model.dart&#x27;;</span><br><span class="line">import &#x27;package:scoped_model/scoped_model.dart&#x27;;</span><br><span class="line"></span><br><span class="line">class One extends StatefulWidget &#123;</span><br><span class="line">  @override</span><br><span class="line">  _OneState createState() =&gt; _OneState();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class _OneState extends State&lt;One&gt; &#123;</span><br><span class="line">  //静态获取model用法实例</span><br><span class="line">  Model getModel(BuildContext context) &#123;</span><br><span class="line">    //直接使用of</span><br><span class="line">    final countModel = ScopedModel.of&lt;MainModel&gt;(context);</span><br><span class="line">    //使用CountModel中重写的of</span><br><span class="line">    final countModel2 = MainModel().of(context);</span><br><span class="line"></span><br><span class="line">    countModel.increment();</span><br><span class="line">    countModel2.increment();</span><br><span class="line">    return countModel;</span><br><span class="line">    //    return countMode2;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  @override</span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    return ScopedModelDescendant&lt;MainModel&gt;(</span><br><span class="line">      builder: (context, child, model) &#123;</span><br><span class="line">        return Scaffold(</span><br><span class="line">          appBar: AppBar(</span><br><span class="line">            title: Text(&#x27;One One&#x27;),</span><br><span class="line">          ),</span><br><span class="line">          body: Center(</span><br><span class="line">            child: Column(</span><br><span class="line">              children: &lt;Widget&gt;[</span><br><span class="line">                Text(</span><br><span class="line">                  model.count.toString(),</span><br><span class="line">                  style: TextStyle(fontSize: 22.0),</span><br><span class="line">                ),</span><br><span class="line">                RaisedButton(</span><br><span class="line">                  child: Text(&#x27;加1&#x27;),</span><br><span class="line">                  onPressed: () =&gt; model.increment(),</span><br><span class="line">                ),</span><br><span class="line">              ],</span><br><span class="line">            ),</span><br><span class="line">          ),</span><br><span class="line">        );</span><br><span class="line">      &#125;,</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h3 id="two-dart"><a href="#two-dart" class="headerlink" title="two.dart"></a>two.dart</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">import &#x27;package:flutter/material.dart&#x27;;</span><br><span class="line">import &#x27;package:scoped_model_demo/model/main_model.dart&#x27;;</span><br><span class="line">import &#x27;package:scoped_model/scoped_model.dart&#x27;;</span><br><span class="line"></span><br><span class="line">class Two extends StatefulWidget &#123;</span><br><span class="line">  @override</span><br><span class="line">  _TwoState createState() =&gt; _TwoState();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class _TwoState extends State&lt;Two&gt; &#123;</span><br><span class="line">   //静态获取model用法实例</span><br><span class="line">  Model getModel(BuildContext context)&#123;</span><br><span class="line">    //直接使用of</span><br><span class="line">    final countModel = ScopedModel.of&lt;MainModel&gt;(context);</span><br><span class="line">    //使用CountModel中重写的of</span><br><span class="line">    final countModel2 = MainModel().of(context);</span><br><span class="line"></span><br><span class="line">    countModel.increment();</span><br><span class="line">    countModel2.increment();</span><br><span class="line">    return countModel;</span><br><span class="line">    //    return countMode2;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  @override</span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    return ScopedModelDescendant&lt;MainModel&gt;(</span><br><span class="line">      builder: (context,child,model)&#123;</span><br><span class="line">        return Scaffold(</span><br><span class="line">          appBar: AppBar(</span><br><span class="line">            title: Text(&#x27;Two Screen&#x27;),</span><br><span class="line">          ),</span><br><span class="line">          body: Center(</span><br><span class="line">            child: Text(</span><br><span class="line">              model.count.toString(),</span><br><span class="line">              style: TextStyle(fontSize: 48.0),</span><br><span class="line">            ),</span><br><span class="line">          )</span><br><span class="line">        );</span><br><span class="line">      &#125;,</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>效果图:<br><img src="/2019/02/16/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~scoped_model%E5%AD%A6%E4%B9%A0/../../../../../images/scoped_model_demo_result.gif" alt="scoped_model_demo_result"></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/state%E7%AE%A1%E7%90%86/scoped_model_demo">源码</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/shaoting0730/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/state%E7%AE%A1%E7%90%86/scoped_model_demo">源码</a></p>
 <p><a href="http://zhoushaoting.com/archives/">另外:其他管理库学习</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/pheromone/Flutter_learn_demo">另外:Flutter学习demo</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/shaoting0730/Flutter_learn_demo">另外:Flutter学习demo</a></p>
 
     </div>
 </article>
@@ -472,43 +472,37 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/05/16/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/">后端学习</a>
+                    <a href="/2019/06/23/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/MAC%E4%B8%8B%E7%9A%84cocos2d-x%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">MAC下的cocos2d-x环境搭建</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/09/07/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~Flare%E5%8A%A8%E7%94%BB%E5%AD%A6%E4%B9%A0/">Flutter~Flare动画学习</a>
+                    <a href="/2022/08/01/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~riverpod%E5%BA%93%E5%AD%A6%E4%B9%A0/">Flutter~riverpod库学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2023/02/08/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~PlatformView%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/">Flutter~PlatformView的简单使用</a>
+                    <a href="/2022/09/29/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E5%8F%91%E5%B8%83package%E5%88%B0pub.dev%E5%9B%BE%E6%96%87%E8%AF%A6%E8%A7%A3/">Flutter~发布package到pub.dev图文详解</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/03/07/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~flutter_bloc%E5%BA%93%E5%AD%A6%E4%B9%A0/">Flutter~flutter_bloc库学习</a>
+                    <a href="/2020/01/23/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E8%87%AA%E5%AE%9A%E4%B9%89tabbar%E6%A8%A1%E5%9D%97/">Flutter~自定义tabbar模块</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/05/29/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~iOS%E5%8E%9F%E7%94%9F%E5%B7%A5%E7%A8%8B%E4%B8%AD%E6%B7%BB%E5%8A%A0Flutter%E6%A8%A1%E5%9D%97/">Flutter~iOS原生工程中添加Flutter模块</a>
+                    <a href="/2019/05/14/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/React-Native%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/">React-Native使用自定义字体</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/06/11/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E5%9B%BD%E9%99%85%E5%8C%96%E6%95%99%E7%A8%8B%E6%96%B9%E6%A1%88/">Flutter~国际化教程方案</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/03/04/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter%E4%B8%AD%E7%9A%84sqflite%E5%BA%93%E5%AD%A6%E4%B9%A0/">Flutter中的sqflite库学习</a>
+                    <a href="/2018/09/08/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/React-Native%E6%8E%A8%E9%80%81%E9%80%9A%E7%9F%A5%E8%87%B3RN%E4%B8%94%E6%98%BE%E7%A4%BA%E6%8E%A8%E9%80%81%E5%86%85%E5%AE%B9/">React-Native推送通知至RN且显示推送内容</a>
                 </span>
             </li>
             
@@ -520,7 +514,13 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/06/16/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/react-navigation%E5%89%8D%E7%BD%AE%E7%99%BB%E5%BD%95/">react-navigation前置登录</a>
+                    <a href="/2018/06/26/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/react-native%E4%B8%83%E7%89%9B%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87/">react-native七牛上传图片</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/08/11/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/React-Native%3C%E6%94%B6%E8%B5%B7-%E5%B1%95%E5%BC%80%3E%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/">React-Native&#34;收起-展开&#34;功能实现</a>
                 </span>
             </li>
             
@@ -553,13 +553,13 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/" style="font-size: 14.865042724388994px;" class="tag-cloud-link">其他学习</a>
+    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 14.511856434765033px;" class="tag-cloud-link">前端学习</a>
     
-    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 8.7051092700743px;" class="tag-cloud-link">前端学习</a>
+    <a href="/tags/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/" style="font-size: 11.98516192600924px;" class="tag-cloud-link">其他学习</a>
     
-    <a href="/tags/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 15.017585803544247px;" class="tag-cloud-link">后端学习</a>
+    <a href="/tags/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 13.042523915828914px;" class="tag-cloud-link">后端学习</a>
     
-    <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 17.218275119141186px;" class="tag-cloud-link">移动端学习</a>
+    <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 15.041512001394892px;" class="tag-cloud-link">移动端学习</a>
     
 </div>
                 
@@ -580,7 +580,7 @@
                 <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
     
     <li>
-        <a href="https://github.com/pheromone" target="_blank">Github</a>
+        <a href="https://github.com/shaoting0730" target="_blank">Github</a>
     </li>
     
     <li>
@@ -680,8 +680,8 @@
 <script>
     if(window.commentConfig) {
       window.commentConfig.id = 'Sat Feb 16 2019 00:00:00 GMT+0800'
-      window.commentConfig.owner = 'pheromone'
-      window.commentConfig.repo = 'pheromone.github.io'
+      window.commentConfig.owner = 'shaoting0730'
+      window.commentConfig.repo = 'shaoting0730.github.io'
       window.commentConfig.client_id = 'd8eb3636d568669139ef'
       window.commentConfig.client_secret = 'a39a08870520a45942c9c28771e091a6d3f147d8'
       window.commentConfig.redirect_uri = ''
@@ -689,8 +689,8 @@
     } else {
       window.commentConfig = {
       	id: 'Sat Feb 16 2019 00:00:00 GMT+0800',
-        owner: 'pheromone',
-        repo: 'pheromone.github.io',
+        owner: 'shaoting0730',
+        repo: 'shaoting0730.github.io',
         client_id: 'd8eb3636d568669139ef',
         client_secret: 'a39a08870520a45942c9c28771e091a6d3f147d8',
         redirect_uri: '',

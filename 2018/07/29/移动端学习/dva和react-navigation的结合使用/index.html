@@ -155,11 +155,11 @@
                         
                         
                         <li>
-                            <a href="/categories/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/">其他学习</a>
+                            <a href="/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/">前端学习</a>
                         </li>
                         
                         <li>
-                            <a href="/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/">前端学习</a>
+                            <a href="/categories/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/">其他学习</a>
                         </li>
                         
                         <li>
@@ -189,11 +189,11 @@
                         
                         
                         <li>
-                            <a href="/tags/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/">其他学习</a>
+                            <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/">前端学习</a>
                         </li>
                         
                         <li>
-                            <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/">前端学习</a>
+                            <a href="/tags/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/">其他学习</a>
                         </li>
                         
                         <li>
@@ -316,8 +316,8 @@
 <p><code>Two.js</code></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Sample React Native App</span><br><span class="line"> * https://github.com/facebook/react-native</span><br><span class="line"> * @flow</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">import React, &#123; Component &#125; from &#x27;react&#x27;;</span><br><span class="line">import &#123;</span><br><span class="line">    Platform,</span><br><span class="line">    StyleSheet,</span><br><span class="line">    Text,</span><br><span class="line">    View,</span><br><span class="line">    Image</span><br><span class="line">&#125; from &#x27;react-native&#x27;;</span><br><span class="line">import &#123; connect &#125; from &#x27;react-redux&#x27;</span><br><span class="line">import &#123; createAction, NavigationActions &#125; from &#x27;../Utils&#x27;</span><br><span class="line">import  &#123;Images&#125; from &quot;../Image&quot;;</span><br><span class="line"></span><br><span class="line">const instructions = Platform.select(&#123;</span><br><span class="line">    ios: &#x27;Press Cmd+R to reload,\n&#x27; +</span><br><span class="line">    &#x27;Cmd+D or shake for dev menu&#x27;,</span><br><span class="line">    android: &#x27;Double tap R on your keyboard to reload,\n&#x27; +</span><br><span class="line">    &#x27;Shake or press menu button for dev menu&#x27;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">type Props = &#123;&#125;;</span><br><span class="line">@connect((&#123; app &#125;) =&gt; (&#123; ...app &#125;))</span><br><span class="line">export default class Two extends Component&lt;Props&gt; &#123;</span><br><span class="line"></span><br><span class="line">    static navigationOptions = &#123;</span><br><span class="line">        tabBarLabel: &#x27;安卓&#x27;,</span><br><span class="line">        tabBarIcon: (&#123; focused, tintColor &#125;) =&gt; (</span><br><span class="line">            &lt;Image</span><br><span class="line">                source=&#123;focused ?  Images.Tab.TwoActive : Images.Tab.Two&#125;</span><br><span class="line">                style=&#123;&#123; width: 25, height: 25 &#125;&#125;</span><br><span class="line">            /&gt;</span><br><span class="line">        ),</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    render() &#123;</span><br><span class="line">        return (</span><br><span class="line">            &lt;View style=&#123;[styles.container,&#123;backgroundColor:this.props.mineType == &#x27;红&#x27; ? &#x27;red&#x27; : &#x27;blue&#x27;&#125;]&#125;&gt;</span><br><span class="line">                &lt;Text style=&#123;styles.welcome&#125;&gt;</span><br><span class="line">                    TWO + &#123;this.props.mineType&#125;</span><br><span class="line">                &lt;/Text&gt;</span><br><span class="line">            &lt;/View&gt;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    componentDidMount() &#123;</span><br><span class="line">        console.log(this.props.mineType)</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const styles = StyleSheet.create(&#123;</span><br><span class="line">    container: &#123;</span><br><span class="line">        flex: 1,</span><br><span class="line">        justifyContent: &#x27;center&#x27;,</span><br><span class="line">        alignItems: &#x27;center&#x27;,</span><br><span class="line">        backgroundColor: &#x27;#F5FCFF&#x27;,</span><br><span class="line">    &#125;,</span><br><span class="line">    welcome: &#123;</span><br><span class="line">        fontSize: 20,</span><br><span class="line">        textAlign: &#x27;center&#x27;,</span><br><span class="line">        margin: 10,</span><br><span class="line">    &#125;,</span><br><span class="line">    instructions: &#123;</span><br><span class="line">        textAlign: &#x27;center&#x27;,</span><br><span class="line">        color: &#x27;#333333&#x27;,</span><br><span class="line">        marginBottom: 5,</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>OK,以上就是全部代码.<br>效果图:<br><img src="/2018/07/29/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/dva%E5%92%8Creact-navigation%E7%9A%84%E7%BB%93%E5%90%88%E4%BD%BF%E7%94%A8/../../../../../images/dva-result.gif" alt="dva-result"></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/pheromone/rn_dva">源码地址</a></p>
-<p><a target="_blank" rel="noopener" href="https://pheromone.github.io/2018/03/18/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/redux%E5%92%8Creact-navigation%E7%9A%84%E7%BB%93%E5%90%88%E4%BD%BF%E7%94%A8/">另外:redux+react-navigation</a><br><a target="_blank" rel="noopener" href="https://pheromone.github.io/2018/05/27/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Mobx-react-navigation%E7%9A%84%E4%BD%BF%E7%94%A8/">另外:Mbox+react-navigation</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/shaoting0730/rn_dva">源码地址</a></p>
+<p><a target="_blank" rel="noopener" href="https://shaoting0730.github.io/2018/03/18/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/redux%E5%92%8Creact-navigation%E7%9A%84%E7%BB%93%E5%90%88%E4%BD%BF%E7%94%A8/">另外:redux+react-navigation</a><br><a target="_blank" rel="noopener" href="https://shaoting0730.github.io/2018/05/27/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Mobx-react-navigation%E7%9A%84%E4%BD%BF%E7%94%A8/">另外:Mbox+react-navigation</a></p>
 
     </div>
 </article>
@@ -477,13 +477,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/05/31/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~Android%E5%8E%9F%E7%94%9F%E5%B7%A5%E7%A8%8B%E4%B8%AD%E6%B7%BB%E5%8A%A0Flutter%E6%A8%A1%E5%9D%97/">Flutter~Android原生工程中添加Flutter模块</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/03/07/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~flutter_bloc%E5%BA%93%E5%AD%A6%E4%B9%A0/">Flutter~flutter_bloc库学习</a>
+                    <a href="/2018/05/17/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/%E9%A9%AC%E8%B5%9B%E5%85%8B%E5%AD%A6%E4%B9%A0/">前端马赛克学习</a>
                 </span>
             </li>
             
@@ -495,13 +489,13 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/08/08/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~mobx%E5%BA%93%E5%AD%A6%E4%B9%A0/">Flutter~mobx库学习</a>
+                    <a href="/2019/03/06/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~json_serializable%E5%BA%93%E5%AD%A6%E4%B9%A0/">Flutter~json_serializable库学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/01/06/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~provider%E5%AD%A6%E4%B9%A0/">Flutter~provider学习</a>
+                    <a href="/2019/03/03/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~provide%E5%AD%A6%E4%B9%A0/">Flutter~provide学习</a>
                 </span>
             </li>
             
@@ -513,25 +507,31 @@
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/2022/08/01/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~riverpod%E5%BA%93%E5%AD%A6%E4%B9%A0/">Flutter~riverpod库学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2022/09/01/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E5%B8%B8%E7%94%A8%E7%BB%84%E4%BB%B6%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90%E6%A6%82%E8%A7%88/">Flutter~常用组件源码分析概览</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/04/22/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/React-Native%E4%B8%8EWeb%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BA%A4%E4%BA%92/">React-Native与Web的基本交互</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/05/14/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/React-Native%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/">React-Native使用自定义字体</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2018/07/29/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/dva%E5%92%8Creact-navigation%E7%9A%84%E7%BB%93%E5%90%88%E4%BD%BF%E7%94%A8/">dva和react-navigation的结合使用</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2018/06/16/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/react-navigation%E5%89%8D%E7%BD%AE%E7%99%BB%E5%BD%95/">react-navigation前置登录</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2018/07/29/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/redux%E5%92%8Creact-navigation%E7%9A%84%E7%BB%93%E5%90%88%E4%BD%BF%E7%94%A8/">redux和react-navigation的结合使用</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2020/04/11/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~fish_redux%E5%AD%A6%E4%B9%A0/">Flutter~fish_redux学习</a>
                 </span>
             </li>
             
@@ -564,13 +564,13 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/" style="font-size: 14.32498442705521px;" class="tag-cloud-link">其他学习</a>
+    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 17.000846342505188px;" class="tag-cloud-link">前端学习</a>
     
-    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 12.006375718527966px;" class="tag-cloud-link">前端学习</a>
+    <a href="/tags/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/" style="font-size: 19.531313319683072px;" class="tag-cloud-link">其他学习</a>
     
-    <a href="/tags/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 9.797082843743748px;" class="tag-cloud-link">后端学习</a>
+    <a href="/tags/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 9.5215264620776px;" class="tag-cloud-link">后端学习</a>
     
-    <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 9.866783617005172px;" class="tag-cloud-link">移动端学习</a>
+    <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 9.58209128516186px;" class="tag-cloud-link">移动端学习</a>
     
 </div>
                 
@@ -591,7 +591,7 @@
                 <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
     
     <li>
-        <a href="https://github.com/pheromone" target="_blank">Github</a>
+        <a href="https://github.com/shaoting0730" target="_blank">Github</a>
     </li>
     
     <li>
@@ -691,8 +691,8 @@
 <script>
     if(window.commentConfig) {
       window.commentConfig.id = 'Sun Jul 29 2018 00:00:00 GMT+0800'
-      window.commentConfig.owner = 'pheromone'
-      window.commentConfig.repo = 'pheromone.github.io'
+      window.commentConfig.owner = 'shaoting0730'
+      window.commentConfig.repo = 'shaoting0730.github.io'
       window.commentConfig.client_id = 'd8eb3636d568669139ef'
       window.commentConfig.client_secret = 'a39a08870520a45942c9c28771e091a6d3f147d8'
       window.commentConfig.redirect_uri = ''
@@ -700,8 +700,8 @@
     } else {
       window.commentConfig = {
       	id: 'Sun Jul 29 2018 00:00:00 GMT+0800',
-        owner: 'pheromone',
-        repo: 'pheromone.github.io',
+        owner: 'shaoting0730',
+        repo: 'shaoting0730.github.io',
         client_id: 'd8eb3636d568669139ef',
         client_secret: 'a39a08870520a45942c9c28771e091a6d3f147d8',
         redirect_uri: '',
