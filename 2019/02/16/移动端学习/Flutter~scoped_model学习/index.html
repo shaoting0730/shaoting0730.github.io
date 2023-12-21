@@ -155,15 +155,15 @@
                         
                         
                         <li>
+                            <a href="/categories/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/">后端学习</a>
+                        </li>
+                        
+                        <li>
                             <a href="/categories/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/">其他学习</a>
                         </li>
                         
                         <li>
                             <a href="/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/">前端学习</a>
-                        </li>
-                        
-                        <li>
-                            <a href="/categories/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/">后端学习</a>
                         </li>
                         
                         
@@ -189,15 +189,15 @@
                         
                         
                         <li>
+                            <a href="/tags/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/">后端学习</a>
+                        </li>
+                        
+                        <li>
                             <a href="/tags/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/">其他学习</a>
                         </li>
                         
                         <li>
                             <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/">前端学习</a>
-                        </li>
-                        
-                        <li>
-                            <a href="/tags/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/">后端学习</a>
                         </li>
                         
                         
@@ -296,14 +296,14 @@
     <div class="content-article">
         <p>今天学习下<code>Flutter</code>中state管理的第三方<code>scoped_model</code>.<br>其中,<code>scoped_model: 1.0.1</code></p>
 <span id="more"></span>
-<p>代码结构如图所示:<br><img src="/2019/02/16/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~scoped_model%E5%AD%A6%E4%B9%A0/../../../../../images/scoped_model_demo_代码结构.png" alt="scoped_model_demo_代码结构"></p>
+<p>代码结构如图所示:<br><img src="/2019/02/16/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~scoped_model%E5%AD%A6%E4%B9%A0/../../../../../images/Flutter~scoped_model学习/scoped_model_demo_代码结构.png" alt="scoped_model_demo_代码结构"></p>
 <h2 id="下面是各文件的源码"><a href="#下面是各文件的源码" class="headerlink" title="下面是各文件的源码."></a>下面是各文件的源码.</h2><h3 id="main-dart"><a href="#main-dart" class="headerlink" title="main.dart"></a>main.dart</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import &#x27;package:flutter/material.dart&#x27;;</span><br><span class="line">import &#x27;package:scoped_model_demo/model/main_model.dart&#x27;;</span><br><span class="line">import &#x27;package:scoped_model/scoped_model.dart&#x27;;</span><br><span class="line">import &#x27;top_screen.dart&#x27;;</span><br><span class="line"></span><br><span class="line">void main() =&gt; runApp(MyApp());</span><br><span class="line"></span><br><span class="line">class MyApp extends StatelessWidget &#123;</span><br><span class="line">    //创建顶层状态</span><br><span class="line">  MainModel countModel = MainModel();</span><br><span class="line">  // This widget is the root of your application.</span><br><span class="line"></span><br><span class="line">  @override</span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    return ScopedModel&lt;MainModel&gt;(</span><br><span class="line">      model: countModel,</span><br><span class="line">      child: new MaterialApp(</span><br><span class="line">        title: &#x27;Flutter Demo&#x27;,</span><br><span class="line">        theme: new ThemeData(</span><br><span class="line">          primarySwatch: Colors.blue,</span><br><span class="line">        ),</span><br><span class="line">        home: TopScreen(),</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="tabbar-dart"><a href="#tabbar-dart" class="headerlink" title="tabbar.dart"></a>tabbar.dart</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br></pre></td><td class="code"><pre><span class="line">import &#x27;package:flutter/material.dart&#x27;;</span><br><span class="line">import &#x27;One/one.dart&#x27;;</span><br><span class="line">import &#x27;Two/two.dart&#x27;;</span><br><span class="line"> </span><br><span class="line">class Tabbar extends StatelessWidget &#123;</span><br><span class="line">  @override</span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    return new MaterialApp(</span><br><span class="line">        debugShowCheckedModeBanner: false, home: new MainPageWidget());</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">class MainPageWidget extends StatefulWidget &#123;</span><br><span class="line">  @override</span><br><span class="line">  State&lt;StatefulWidget&gt; createState() &#123;</span><br><span class="line">    return new MainPageState();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">class MainPageState extends State&lt;MainPageWidget&gt; &#123;</span><br><span class="line">  int _tabIndex = 0;</span><br><span class="line">  var tabImages;</span><br><span class="line">  var appBarTitles = [&#x27;One&#x27;, &#x27;Two&#x27;];</span><br><span class="line">  /*</span><br><span class="line">   * 存放二个页面，跟fragmentList一样</span><br><span class="line">   */</span><br><span class="line">  var _pageList;</span><br><span class="line"> </span><br><span class="line">  /*</span><br><span class="line">   * 根据选择获得对应的normal或是press的icon</span><br><span class="line">   */</span><br><span class="line">  Image getTabIcon(int curIndex) &#123;</span><br><span class="line">    if (curIndex == _tabIndex) &#123;</span><br><span class="line">      return tabImages[curIndex][1];</span><br><span class="line">    &#125;</span><br><span class="line">    return tabImages[curIndex][0];</span><br><span class="line">  &#125;</span><br><span class="line">  /*</span><br><span class="line">   * 获取bottomTab的颜色和文字</span><br><span class="line">   */</span><br><span class="line">  Text getTabTitle(int curIndex) &#123;</span><br><span class="line">    if (curIndex == _tabIndex) &#123;</span><br><span class="line">      return new Text(appBarTitles[curIndex],</span><br><span class="line">          style: new TextStyle(fontSize: 14.0, color: const Color(0xff1296db)));</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      return new Text(appBarTitles[curIndex],</span><br><span class="line">          style: new TextStyle(fontSize: 14.0, color: const Color(0xff515151)));</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  /*</span><br><span class="line">   * 根据image路径获取图片</span><br><span class="line">   */</span><br><span class="line">  Image getTabImage(path) &#123;</span><br><span class="line">    return new Image.asset(path, width: 24.0, height: 24.0);</span><br><span class="line">  &#125;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">  void initData() &#123;</span><br><span class="line">    /*</span><br><span class="line">     * 初始化选中和未选中的icon</span><br><span class="line">     */</span><br><span class="line">    tabImages = [</span><br><span class="line">      [getTabImage(&#x27;images/tab/one.png&#x27;), getTabImage(&#x27;images/tab/one_active.png&#x27;)],</span><br><span class="line">      [getTabImage(&#x27;images/tab/two.png&#x27;), getTabImage(&#x27;images/tab/two_active.png&#x27;)],</span><br><span class="line">    ];</span><br><span class="line">    /*</span><br><span class="line">     * 子界面</span><br><span class="line">     */</span><br><span class="line">    _pageList = [</span><br><span class="line">      new One(),</span><br><span class="line">      new Two(),</span><br><span class="line">    ];</span><br><span class="line">  &#125;</span><br><span class="line"> </span><br><span class="line">  @override</span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    //初始化数据</span><br><span class="line">    initData();</span><br><span class="line">    return Scaffold(</span><br><span class="line">        body: _pageList[_tabIndex],</span><br><span class="line">        bottomNavigationBar: new BottomNavigationBar(</span><br><span class="line">          items: &lt;BottomNavigationBarItem&gt;[</span><br><span class="line">            new BottomNavigationBarItem(</span><br><span class="line">                icon: getTabIcon(0), title: getTabTitle(0)),</span><br><span class="line">            new BottomNavigationBarItem(</span><br><span class="line">                icon: getTabIcon(1), title: getTabTitle(1)),</span><br><span class="line">          ],</span><br><span class="line">          type: BottomNavigationBarType.fixed,</span><br><span class="line">          //默认选中首页</span><br><span class="line">          currentIndex: _tabIndex,</span><br><span class="line">          iconSize: 24.0,</span><br><span class="line">          //点击事件</span><br><span class="line">          onTap: (index) &#123;</span><br><span class="line">            setState(() &#123;</span><br><span class="line">              _tabIndex = index;</span><br><span class="line">            &#125;);</span><br><span class="line">          &#125;,</span><br><span class="line">        ));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="top-screen-dart"><a href="#top-screen-dart" class="headerlink" title="top_screen.dart"></a>top_screen.dart</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">import &#x27;package:flutter/material.dart&#x27;;</span><br><span class="line">import &#x27;package:scoped_model_demo/model/main_model.dart&#x27;;</span><br><span class="line">import &#x27;package:scoped_model/scoped_model.dart&#x27;;</span><br><span class="line">import &#x27;tabbar.dart&#x27;;</span><br><span class="line"></span><br><span class="line">class TopScreen extends StatefulWidget &#123;</span><br><span class="line">  @override</span><br><span class="line">  _TopScreenState createState() =&gt; _TopScreenState();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class _TopScreenState extends State&lt;TopScreen&gt; &#123;</span><br><span class="line">  //静态获取model用法实例</span><br><span class="line">  Model getModel(BuildContext context) &#123;</span><br><span class="line">    //直接使用of</span><br><span class="line">    final countModel = ScopedModel.of&lt;MainModel&gt;(context);</span><br><span class="line">    //使用CountModel中重写的of</span><br><span class="line">    final countModel2 = MainModel().of(context);</span><br><span class="line"></span><br><span class="line">    countModel.increment();</span><br><span class="line">    countModel2.increment();</span><br><span class="line">    return countModel;</span><br><span class="line">    //    return countMode2;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  @override</span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    return ScopedModelDescendant&lt;MainModel&gt;(</span><br><span class="line">      builder: (context,child,model)&#123;</span><br><span class="line">        return Tabbar();</span><br><span class="line">      &#125;,</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="main-model-dart"><a href="#main-model-dart" class="headerlink" title="main_model.dart"></a>main_model.dart</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">import &#x27;package:scoped_model/scoped_model.dart&#x27;;</span><br><span class="line"></span><br><span class="line">class MainModel extends Model&#123;</span><br><span class="line">  int _count = 0;</span><br><span class="line">  get count =&gt; _count;</span><br><span class="line"></span><br><span class="line">  void increment()&#123;</span><br><span class="line">    _count++;</span><br><span class="line">    notifyListeners();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  MainModel of(context) =&gt;</span><br><span class="line">      ScopedModel.of&lt;MainModel&gt;(context);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h3 id="one-dart"><a href="#one-dart" class="headerlink" title="one.dart"></a>one.dart</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">import &#x27;package:flutter/material.dart&#x27;;</span><br><span class="line">import &#x27;package:scoped_model_demo/model/main_model.dart&#x27;;</span><br><span class="line">import &#x27;package:scoped_model/scoped_model.dart&#x27;;</span><br><span class="line"></span><br><span class="line">class One extends StatefulWidget &#123;</span><br><span class="line">  @override</span><br><span class="line">  _OneState createState() =&gt; _OneState();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class _OneState extends State&lt;One&gt; &#123;</span><br><span class="line">  //静态获取model用法实例</span><br><span class="line">  Model getModel(BuildContext context) &#123;</span><br><span class="line">    //直接使用of</span><br><span class="line">    final countModel = ScopedModel.of&lt;MainModel&gt;(context);</span><br><span class="line">    //使用CountModel中重写的of</span><br><span class="line">    final countModel2 = MainModel().of(context);</span><br><span class="line"></span><br><span class="line">    countModel.increment();</span><br><span class="line">    countModel2.increment();</span><br><span class="line">    return countModel;</span><br><span class="line">    //    return countMode2;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  @override</span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    return ScopedModelDescendant&lt;MainModel&gt;(</span><br><span class="line">      builder: (context, child, model) &#123;</span><br><span class="line">        return Scaffold(</span><br><span class="line">          appBar: AppBar(</span><br><span class="line">            title: Text(&#x27;One One&#x27;),</span><br><span class="line">          ),</span><br><span class="line">          body: Center(</span><br><span class="line">            child: Column(</span><br><span class="line">              children: &lt;Widget&gt;[</span><br><span class="line">                Text(</span><br><span class="line">                  model.count.toString(),</span><br><span class="line">                  style: TextStyle(fontSize: 22.0),</span><br><span class="line">                ),</span><br><span class="line">                RaisedButton(</span><br><span class="line">                  child: Text(&#x27;加1&#x27;),</span><br><span class="line">                  onPressed: () =&gt; model.increment(),</span><br><span class="line">                ),</span><br><span class="line">              ],</span><br><span class="line">            ),</span><br><span class="line">          ),</span><br><span class="line">        );</span><br><span class="line">      &#125;,</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h3 id="two-dart"><a href="#two-dart" class="headerlink" title="two.dart"></a>two.dart</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">import &#x27;package:flutter/material.dart&#x27;;</span><br><span class="line">import &#x27;package:scoped_model_demo/model/main_model.dart&#x27;;</span><br><span class="line">import &#x27;package:scoped_model/scoped_model.dart&#x27;;</span><br><span class="line"></span><br><span class="line">class Two extends StatefulWidget &#123;</span><br><span class="line">  @override</span><br><span class="line">  _TwoState createState() =&gt; _TwoState();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class _TwoState extends State&lt;Two&gt; &#123;</span><br><span class="line">   //静态获取model用法实例</span><br><span class="line">  Model getModel(BuildContext context)&#123;</span><br><span class="line">    //直接使用of</span><br><span class="line">    final countModel = ScopedModel.of&lt;MainModel&gt;(context);</span><br><span class="line">    //使用CountModel中重写的of</span><br><span class="line">    final countModel2 = MainModel().of(context);</span><br><span class="line"></span><br><span class="line">    countModel.increment();</span><br><span class="line">    countModel2.increment();</span><br><span class="line">    return countModel;</span><br><span class="line">    //    return countMode2;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  @override</span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    return ScopedModelDescendant&lt;MainModel&gt;(</span><br><span class="line">      builder: (context,child,model)&#123;</span><br><span class="line">        return Scaffold(</span><br><span class="line">          appBar: AppBar(</span><br><span class="line">            title: Text(&#x27;Two Screen&#x27;),</span><br><span class="line">          ),</span><br><span class="line">          body: Center(</span><br><span class="line">            child: Text(</span><br><span class="line">              model.count.toString(),</span><br><span class="line">              style: TextStyle(fontSize: 48.0),</span><br><span class="line">            ),</span><br><span class="line">          )</span><br><span class="line">        );</span><br><span class="line">      &#125;,</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>效果图:<br><img src="/2019/02/16/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~scoped_model%E5%AD%A6%E4%B9%A0/../../../../../images/scoped_model_demo_result.gif" alt="scoped_model_demo_result"></p>
+<p>效果图:<br><img src="/2019/02/16/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~scoped_model%E5%AD%A6%E4%B9%A0/../../../../../images/Flutter~scoped_model学习/scoped_model_demo_result.gif" alt="scoped_model_demo_result"></p>
 <p><a target="_blank" rel="noopener" href="https://github.com/shaoting0730/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/state%E7%AE%A1%E7%90%86/scoped_model_demo">源码</a></p>
 <p><a href="http://zhoushaoting.com/archives/">另外:其他管理库学习</a></p>
 <p><a target="_blank" rel="noopener" href="https://github.com/shaoting0730/Flutter_learn_demo">另外:Flutter学习demo</a></p>
@@ -390,6 +390,12 @@
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/2024/01/01/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E6%BB%91%E5%8A%A8%E7%BB%84%E4%BB%B6%E6%8E%A2%E7%B4%A2/">Flutter~滑动组件探索</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2023/02/08/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~PlatformView%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/">Flutter~PlatformView的简单使用</a>
                 </span>
             </li>
@@ -442,12 +448,6 @@
                 </span>
             </li>
             
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/11/11/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E8%87%AA%E5%AE%9A%E4%B9%89Dialog(%E5%9F%BA%E6%9C%AC%E7%9A%84%E7%BB%84%E4%BB%B6%E5%B0%81%E8%A3%85)/">Flutter~自定义Dialog(基本的组件封装)</a>
-                </span>
-            </li>
-            
         </ul>
     </div>
 </aside>
@@ -466,25 +466,13 @@
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/2018/05/16/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/">后端学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2019/06/23/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/MAC%E4%B8%8B%E7%9A%84cocos2d-x%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">MAC下的cocos2d-x环境搭建</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/05/31/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~Android%E5%8E%9F%E7%94%9F%E5%B7%A5%E7%A8%8B%E4%B8%AD%E6%B7%BB%E5%8A%A0Flutter%E6%A8%A1%E5%9D%97/">Flutter~Android原生工程中添加Flutter模块</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/09/07/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~Flare%E5%8A%A8%E7%94%BB%E5%AD%A6%E4%B9%A0/">Flutter~Flare动画学习</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/05/29/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~iOS%E5%8E%9F%E7%94%9F%E5%B7%A5%E7%A8%8B%E4%B8%AD%E6%B7%BB%E5%8A%A0Flutter%E6%A8%A1%E5%9D%97/">Flutter~iOS原生工程中添加Flutter模块</a>
                 </span>
             </li>
             
@@ -496,31 +484,43 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/01/06/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~provider%E5%AD%A6%E4%B9%A0/">Flutter~provider学习</a>
+                    <a href="/2019/08/08/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~mobx%E5%BA%93%E5%AD%A6%E4%B9%A0/">Flutter~mobx库学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2022/08/01/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~riverpod%E5%BA%93%E5%AD%A6%E4%B9%A0/">Flutter~riverpod库学习</a>
+                    <a href="/2019/02/17/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~redux%E5%AD%A6%E4%B9%A0/">Flutter~redux学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/01/23/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E8%87%AA%E5%AE%9A%E4%B9%89tabbar%E6%A8%A1%E5%9D%97/">Flutter~自定义tabbar模块</a>
+                    <a href="/2019/06/11/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E5%9B%BD%E9%99%85%E5%8C%96%E6%95%99%E7%A8%8B%E6%96%B9%E6%A1%88/">Flutter~国际化教程方案</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/04/22/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/React-Native%E4%B8%8EWeb%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BA%A4%E4%BA%92/">React-Native与Web的基本交互</a>
+                    <a href="/2019/11/11/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E8%87%AA%E5%AE%9A%E4%B9%89Dialog(%E5%9F%BA%E6%9C%AC%E7%9A%84%E7%BB%84%E4%BB%B6%E5%B0%81%E8%A3%85)/">Flutter~自定义Dialog(基本的组件封装)</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/04/22/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/react-native-router-flux%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/">react-native-router-flux初步认识</a>
+                    <a href="/2019/03/30/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E8%B7%AF%E7%94%B1%E7%AE%A1%E7%90%86%E5%BA%93fluro%E5%AD%A6%E4%B9%A0/">Flutter~路由管理库fluro学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/05/27/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/RN~Mobx%E4%B8%8Ereact-navigation%E7%9A%84%E4%BD%BF%E7%94%A8/">Mobx与react-navigation的结合使用</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/05/16/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/RN~react-navigation%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/">react-navigation的基本使用</a>
                 </span>
             </li>
             
@@ -553,13 +553,13 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/" style="font-size: 17.857420546386788px;" class="tag-cloud-link">其他学习</a>
+    <a href="/tags/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 13.85149420005802px;" class="tag-cloud-link">后端学习</a>
     
-    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 9.828333784090171px;" class="tag-cloud-link">前端学习</a>
+    <a href="/tags/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/" style="font-size: 11.094738001187963px;" class="tag-cloud-link">其他学习</a>
     
-    <a href="/tags/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 15.685466297416482px;" class="tag-cloud-link">后端学习</a>
+    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 8.904219405398774px;" class="tag-cloud-link">前端学习</a>
     
-    <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 14.923448215852362px;" class="tag-cloud-link">移动端学习</a>
+    <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 10.69530592964703px;" class="tag-cloud-link">移动端学习</a>
     
 </div>
                 

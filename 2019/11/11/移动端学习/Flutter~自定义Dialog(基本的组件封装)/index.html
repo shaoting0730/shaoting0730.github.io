@@ -155,15 +155,15 @@
                         
                         
                         <li>
+                            <a href="/categories/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/">后端学习</a>
+                        </li>
+                        
+                        <li>
                             <a href="/categories/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/">其他学习</a>
                         </li>
                         
                         <li>
                             <a href="/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/">前端学习</a>
-                        </li>
-                        
-                        <li>
-                            <a href="/categories/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/">后端学习</a>
                         </li>
                         
                         
@@ -189,15 +189,15 @@
                         
                         
                         <li>
+                            <a href="/tags/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/">后端学习</a>
+                        </li>
+                        
+                        <li>
                             <a href="/tags/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/">其他学习</a>
                         </li>
                         
                         <li>
                             <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/">前端学习</a>
-                        </li>
-                        
-                        <li>
-                            <a href="/tags/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/">后端学习</a>
                         </li>
                         
                         
@@ -297,7 +297,7 @@
         <p>光棍节就得写个bug庆祝下!!!</p>
 <span id="more"></span>
 <p>写个自定义的Dialog,可以随意控制UI,同时封装一下,传值控制UI,开个方法回调,控制交互. <br></p>
-<h3 id="先上效果图"><a href="#先上效果图" class="headerlink" title="先上效果图!!! "></a>先上效果图!!! <br></h3><img src="/2019/11/11/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E8%87%AA%E5%AE%9A%E4%B9%89Dialog(%E5%9F%BA%E6%9C%AC%E7%9A%84%E7%BB%84%E4%BB%B6%E5%B0%81%E8%A3%85)/../../../../../images/dialog封装.gif" alt="dialog封装.gif">
+<h3 id="先上效果图"><a href="#先上效果图" class="headerlink" title="先上效果图!!! "></a>先上效果图!!! <br></h3><img src="../../../../../images//Flutter~自定义Dialog(基本的组件封装)/dialog封装.gif" alt="dialog封装.gif">
 
 
 <h2 id="再上代码"><a href="#再上代码" class="headerlink" title="再上代码"></a>再上代码</h2><h3 id="CustomDialog-dart"><a href="#CustomDialog-dart" class="headerlink" title="CustomDialog.dart"></a>CustomDialog.dart</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">* 输入框</span><br><span class="line">* */</span><br><span class="line"></span><br><span class="line">import &#x27;package:flutter/material.dart&#x27;;</span><br><span class="line"></span><br><span class="line">class CustomDialog extends StatefulWidget &#123;</span><br><span class="line">  Function dismissCallback; // 取消回调</span><br><span class="line">  Function okCallback; // 确认回调</span><br><span class="line">  bool isNeedTag; // 外部传入的参数,控制显示slide还是input</span><br><span class="line"></span><br><span class="line">  CustomDialog(&#123;</span><br><span class="line">    Key key,</span><br><span class="line">    this.dismissCallback,</span><br><span class="line">    this.okCallback,</span><br><span class="line">    this.isNeedTag,</span><br><span class="line">  &#125;) : super(key: key);</span><br><span class="line">  @override</span><br><span class="line">  _CustomDialogState createState() =&gt; _CustomDialogState();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class _CustomDialogState extends State&lt;CustomDialog&gt; &#123;</span><br><span class="line">  String commitStr;</span><br><span class="line">  double slideValue = 0.0;</span><br><span class="line"></span><br><span class="line">  /*</span><br><span class="line">  * 取消按钮点击事件</span><br><span class="line">  * */</span><br><span class="line">  _dismissDialog() &#123;</span><br><span class="line">    if (widget.dismissCallback != null) &#123;</span><br><span class="line">      widget.dismissCallback();</span><br><span class="line">    &#125;</span><br><span class="line">    Navigator.of(context).pop();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  /*</span><br><span class="line">  * 确定按钮点击事件</span><br><span class="line">  * */</span><br><span class="line">  _okCallback(String txt) &#123;</span><br><span class="line">    if (widget.okCallback != null) &#123;</span><br><span class="line">      widget.okCallback(txt);</span><br><span class="line">    &#125;</span><br><span class="line">    Navigator.of(context).pop();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  @override</span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    return Material(</span><br><span class="line">      type: MaterialType.transparency,</span><br><span class="line">      child: Center(</span><br><span class="line">        child: SizedBox(</span><br><span class="line">          width: 240,</span><br><span class="line">          height: 240,</span><br><span class="line">          child: Container(</span><br><span class="line">            decoration: BoxDecoration(</span><br><span class="line">              color: Colors.cyanAccent,</span><br><span class="line">              borderRadius: BorderRadius.vertical(</span><br><span class="line">                top: Radius.circular(120.0),</span><br><span class="line">              ),</span><br><span class="line">            ),</span><br><span class="line">            child: Column(</span><br><span class="line">              children: &lt;Widget&gt;[</span><br><span class="line">                widget.isNeedTag == true ? _topWidget() : _topWidget1(),</span><br><span class="line">                Spacer(),</span><br><span class="line">                _bottomWidget(),</span><br><span class="line">              ],</span><br><span class="line">            ),</span><br><span class="line">          ),</span><br><span class="line">        ),</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  /*</span><br><span class="line">  * 上方输入UI</span><br><span class="line">  * */</span><br><span class="line">  Widget _topWidget() &#123;</span><br><span class="line">    return Container(</span><br><span class="line">      margin: EdgeInsets.only(top: 100),</span><br><span class="line">      child: Container(</span><br><span class="line">        child: TextField(</span><br><span class="line">          onSubmitted: (e) &#123;</span><br><span class="line">            setState(() &#123;</span><br><span class="line">              commitStr = e;</span><br><span class="line">            &#125;);</span><br><span class="line">          &#125;,</span><br><span class="line">          decoration: InputDecoration(</span><br><span class="line">            border: InputBorder.none,</span><br><span class="line">            hintText: &quot;请输入字符&quot;,</span><br><span class="line">          ),</span><br><span class="line">        ),</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  /*</span><br><span class="line">  * 上方输入UI-1</span><br><span class="line">  * */</span><br><span class="line">  Widget _topWidget1() &#123;</span><br><span class="line">    return Container(</span><br><span class="line">      margin: EdgeInsets.only(top: 100),</span><br><span class="line">      child: Slider(</span><br><span class="line">        value: slideValue,</span><br><span class="line">        max: 100.0,</span><br><span class="line">        min: 0.0,</span><br><span class="line">        activeColor: Colors.blue,</span><br><span class="line">        onChanged: (double val) &#123;</span><br><span class="line">          setState(() &#123;</span><br><span class="line">            slideValue = val;</span><br><span class="line">            commitStr = val.toString();</span><br><span class="line">          &#125;);</span><br><span class="line">        &#125;,</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  /*</span><br><span class="line">  * 底部选择widget</span><br><span class="line">  * */</span><br><span class="line">  Widget _bottomWidget() &#123;</span><br><span class="line">    return Row(</span><br><span class="line">      mainAxisAlignment: MainAxisAlignment.spaceAround,</span><br><span class="line">      children: &lt;Widget&gt;[</span><br><span class="line">        InkWell(</span><br><span class="line">          onTap: () &#123;</span><br><span class="line">            _okCallback(commitStr);</span><br><span class="line">          &#125;,</span><br><span class="line">          child: Container(</span><br><span class="line">            height: 50,</span><br><span class="line">            width: 120,</span><br><span class="line">            color: Colors.yellow[800],</span><br><span class="line">            child: Center(</span><br><span class="line">              child: Text(</span><br><span class="line">                &#x27;确定&#x27;,</span><br><span class="line">                style: TextStyle(color: Colors.white),</span><br><span class="line">              ),</span><br><span class="line">            ),</span><br><span class="line">          ),</span><br><span class="line">        ),</span><br><span class="line">        InkWell(</span><br><span class="line">          onTap: () &#123;</span><br><span class="line">            _dismissDialog();</span><br><span class="line">          &#125;,</span><br><span class="line">          child: Container(</span><br><span class="line">            height: 50,</span><br><span class="line">            width: 120,</span><br><span class="line">            color: Colors.red[800],</span><br><span class="line">            child: Center(</span><br><span class="line">              child: Text(</span><br><span class="line">                &#x27;取消&#x27;,</span><br><span class="line">                style: TextStyle(color: Colors.white),</span><br><span class="line">              ),</span><br><span class="line">            ),</span><br><span class="line">          ),</span><br><span class="line">        ),</span><br><span class="line">      ],</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -390,6 +390,12 @@
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/2024/01/01/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E6%BB%91%E5%8A%A8%E7%BB%84%E4%BB%B6%E6%8E%A2%E7%B4%A2/">Flutter~滑动组件探索</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2023/02/08/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~PlatformView%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/">Flutter~PlatformView的简单使用</a>
                 </span>
             </li>
@@ -442,12 +448,6 @@
                 </span>
             </li>
             
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/11/11/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E8%87%AA%E5%AE%9A%E4%B9%89Dialog(%E5%9F%BA%E6%9C%AC%E7%9A%84%E7%BB%84%E4%BB%B6%E5%B0%81%E8%A3%85)/">Flutter~自定义Dialog(基本的组件封装)</a>
-                </span>
-            </li>
-            
         </ul>
     </div>
 </aside>
@@ -466,31 +466,37 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/05/17/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/%E7%B2%BE%E7%81%B5%E5%9B%BE%E5%AD%A6%E4%B9%A0/">前端精灵图学习</a>
+                    <a href="/2021/08/22/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/React%E5%AD%A6%E4%B9%A0~React-Hooks%E5%AD%A6%E4%B9%A0/">React学习:React_Hooks学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/05/31/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~Android%E5%8E%9F%E7%94%9F%E5%B7%A5%E7%A8%8B%E4%B8%AD%E6%B7%BB%E5%8A%A0Flutter%E6%A8%A1%E5%9D%97/">Flutter~Android原生工程中添加Flutter模块</a>
+                    <a href="/2019/09/07/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~Flare%E5%8A%A8%E7%94%BB%E5%AD%A6%E4%B9%A0/">Flutter~Flare动画学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/03/06/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~json_serializable%E5%BA%93%E5%AD%A6%E4%B9%A0/">Flutter~json_serializable库学习</a>
+                    <a href="/2023/02/08/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~PlatformView%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/">Flutter~PlatformView的简单使用</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2022/08/01/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~riverpod%E5%BA%93%E5%AD%A6%E4%B9%A0/">Flutter~riverpod库学习</a>
+                    <a href="/2019/03/07/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~flutter_bloc%E5%BA%93%E5%AD%A6%E4%B9%A0/">Flutter~flutter_bloc库学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/02/16/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~scoped_model%E5%AD%A6%E4%B9%A0/">Flutter~scoped_model学习</a>
+                    <a href="/2019/05/29/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~iOS%E5%8E%9F%E7%94%9F%E5%B7%A5%E7%A8%8B%E4%B8%AD%E6%B7%BB%E5%8A%A0Flutter%E6%A8%A1%E5%9D%97/">Flutter~iOS原生工程中添加Flutter模块</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/06/11/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E5%9B%BD%E9%99%85%E5%8C%96%E6%95%99%E7%A8%8B%E6%96%B9%E6%A1%88/">Flutter~国际化教程方案</a>
                 </span>
             </li>
             
@@ -502,25 +508,19 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/05/14/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/React-Native%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/">React-Native使用自定义字体</a>
+                    <a href="/2019/11/11/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E8%87%AA%E5%AE%9A%E4%B9%89Dialog(%E5%9F%BA%E6%9C%AC%E7%9A%84%E7%BB%84%E4%BB%B6%E5%B0%81%E8%A3%85)/">Flutter~自定义Dialog(基本的组件封装)</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/07/29/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/dva%E5%92%8Creact-navigation%E7%9A%84%E7%BB%93%E5%90%88%E4%BD%BF%E7%94%A8/">dva和react-navigation的结合使用</a>
+                    <a href="/2019/05/14/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/RN~React-Native%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/">React-Native使用自定义字体</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/06/26/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/react-native%E4%B8%83%E7%89%9B%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87/">react-native七牛上传图片</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2020/04/11/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~fish_redux%E5%AD%A6%E4%B9%A0/">Flutter~fish_redux学习</a>
+                    <a href="/2018/08/17/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/RN~React-Native%E7%B1%BB%E4%BC%BC%E6%94%AF%E4%BB%98%E5%AE%9D%E7%9A%84%E5%BA%94%E7%94%A8%E5%A2%9E%E5%88%A0%E6%A8%A1%E5%9D%97%E7%9A%84%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/">React-Native类似支付宝的应用增删模块的简单实现</a>
                 </span>
             </li>
             
@@ -553,13 +553,13 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/" style="font-size: 13.05881687892389px;" class="tag-cloud-link">其他学习</a>
+    <a href="/tags/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 11.674036427521933px;" class="tag-cloud-link">后端学习</a>
     
-    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 10.386958609730542px;" class="tag-cloud-link">前端学习</a>
+    <a href="/tags/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/" style="font-size: 17.93920066518936px;" class="tag-cloud-link">其他学习</a>
     
-    <a href="/tags/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 9.992095162145256px;" class="tag-cloud-link">后端学习</a>
+    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 13.277129532683233px;" class="tag-cloud-link">前端学习</a>
     
-    <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 8.73081267819531px;" class="tag-cloud-link">移动端学习</a>
+    <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 11.515629199971265px;" class="tag-cloud-link">移动端学习</a>
     
 </div>
                 

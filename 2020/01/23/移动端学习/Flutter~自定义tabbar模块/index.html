@@ -155,15 +155,15 @@
                         
                         
                         <li>
+                            <a href="/categories/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/">后端学习</a>
+                        </li>
+                        
+                        <li>
                             <a href="/categories/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/">其他学习</a>
                         </li>
                         
                         <li>
                             <a href="/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/">前端学习</a>
-                        </li>
-                        
-                        <li>
-                            <a href="/categories/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/">后端学习</a>
                         </li>
                         
                         
@@ -189,15 +189,15 @@
                         
                         
                         <li>
+                            <a href="/tags/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/">后端学习</a>
+                        </li>
+                        
+                        <li>
                             <a href="/tags/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/">其他学习</a>
                         </li>
                         
                         <li>
                             <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/">前端学习</a>
-                        </li>
-                        
-                        <li>
-                            <a href="/tags/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/">后端学习</a>
                         </li>
                         
                         
@@ -296,7 +296,7 @@
     <div class="content-article">
         <p>项目中,遇到一个需求,需要自定义tabbar的高度,但是自带的tabbar组件都不支持修改高度.</p>
 <span id="more"></span>
-<p>所幸flutter的<code>万物皆组件</code>的概念,所以我们自己写一个tabbar即可.<br>需求:需要一个可以自行控制高度的tabbar. <br><br>大致效果如下: <img src="/2020/01/23/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E8%87%AA%E5%AE%9A%E4%B9%89tabbar%E6%A8%A1%E5%9D%97/../../../../../images/result_custom_tabbar.gif" alt="result_custom_tabbar"></p>
+<p>所幸flutter的<code>万物皆组件</code>的概念,所以我们自己写一个tabbar即可.<br>需求:需要一个可以自行控制高度的tabbar. <br><br>大致效果如下: <img src="/2020/01/23/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E8%87%AA%E5%AE%9A%E4%B9%89tabbar%E6%A8%A1%E5%9D%97/../../../../../images/Flutter~自定义tabbar模块/result_custom_tabbar.gif" alt="result_custom_tabbar"></p>
 <p>其中,自定义Tabbar组件如下</p>
 <h3 id="bottom-bar-dart"><a href="#bottom-bar-dart" class="headerlink" title="bottom_bar.dart"></a>bottom_bar.dart</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">* 自定义tabbar</span><br><span class="line">* */</span><br><span class="line">import &#x27;package:flutter/material.dart&#x27;;</span><br><span class="line"></span><br><span class="line">class BottomBarItem &#123;</span><br><span class="line">  BottomBarItem(&#123;this.imageIcon, this.imageSelectedIcon, this.text&#125;);</span><br><span class="line"></span><br><span class="line">  Image imageIcon;</span><br><span class="line">  Image imageSelectedIcon;</span><br><span class="line">  String text;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class BottomBar extends StatefulWidget &#123;</span><br><span class="line">  BottomBar(&#123;</span><br><span class="line">    this.items,</span><br><span class="line">    this.centerItemText,</span><br><span class="line">    this.height: 60.0,</span><br><span class="line">    this.iconSize: 24.0,</span><br><span class="line">    this.backgroundColor,</span><br><span class="line">    this.color,</span><br><span class="line">    this.selectedColor,</span><br><span class="line">    this.notchedShape,</span><br><span class="line">    this.onTabSelected,</span><br><span class="line">  &#125;) &#123;</span><br><span class="line">    assert(this.items.length == 2 || this.items.length == 4);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  final List&lt;BottomBarItem&gt; items;</span><br><span class="line">  final String centerItemText;</span><br><span class="line">  final double height;</span><br><span class="line">  final double iconSize;</span><br><span class="line">  final Color backgroundColor;</span><br><span class="line">  final Color color;</span><br><span class="line">  final Color selectedColor;</span><br><span class="line">  final NotchedShape notchedShape;</span><br><span class="line">  final ValueChanged&lt;int&gt; onTabSelected;</span><br><span class="line"></span><br><span class="line">  @override</span><br><span class="line">  State&lt;StatefulWidget&gt; createState() =&gt; BottomBarState();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class BottomBarState extends State&lt;BottomBar&gt; &#123;</span><br><span class="line">  int _selectedIndex = 0;</span><br><span class="line"></span><br><span class="line">  _updateIndex(int index) &#123;</span><br><span class="line">    widget.onTabSelected(index);</span><br><span class="line">    setState(() &#123;</span><br><span class="line">      _selectedIndex = index;</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  @override</span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    List&lt;Widget&gt; items = List.generate(widget.items.length, (int index) &#123;</span><br><span class="line">      return _buildTabItem(</span><br><span class="line">        item: widget.items[index],</span><br><span class="line">        index: index,</span><br><span class="line">        onPressed: _updateIndex,</span><br><span class="line">      );</span><br><span class="line">    &#125;);</span><br><span class="line">    items.insert(items.length &gt;&gt; 1, _buildMiddleTabItem());</span><br><span class="line"></span><br><span class="line">    return BottomAppBar(</span><br><span class="line">      shape: widget.notchedShape,</span><br><span class="line">      child: Row(</span><br><span class="line">        mainAxisSize: MainAxisSize.max,</span><br><span class="line">        mainAxisAlignment: MainAxisAlignment.spaceEvenly,</span><br><span class="line">        children: items,</span><br><span class="line">      ),</span><br><span class="line">      color: widget.backgroundColor,</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  Widget _buildMiddleTabItem() &#123;</span><br><span class="line">    return Expanded(</span><br><span class="line">      child: SizedBox(</span><br><span class="line">        height: widget.height,</span><br><span class="line">        child: Column(</span><br><span class="line">          mainAxisSize: MainAxisSize.min,</span><br><span class="line">          mainAxisAlignment: MainAxisAlignment.end,</span><br><span class="line">          children: &lt;Widget&gt;[</span><br><span class="line">            SizedBox(height: widget.iconSize),</span><br><span class="line">            Text(</span><br><span class="line">              widget.centerItemText ?? &#x27;&#x27;,</span><br><span class="line">              style: TextStyle(color: widget.color),</span><br><span class="line">            ),</span><br><span class="line">          ],</span><br><span class="line">        ),</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  Widget _buildTabItem(&#123;</span><br><span class="line">    BottomBarItem item,</span><br><span class="line">    int index,</span><br><span class="line">    ValueChanged&lt;int&gt; onPressed,</span><br><span class="line">  &#125;) &#123;</span><br><span class="line">    Image icon =</span><br><span class="line">        _selectedIndex == index ? item.imageSelectedIcon : item.imageIcon;</span><br><span class="line"></span><br><span class="line">    Color resultColor =</span><br><span class="line">        _selectedIndex == index ? widget.selectedColor : widget.color;</span><br><span class="line"></span><br><span class="line">    return Expanded(</span><br><span class="line">      child: SizedBox(</span><br><span class="line">        height: widget.height,</span><br><span class="line">        child: Material(</span><br><span class="line">          type: MaterialType.transparency,</span><br><span class="line">          child: InkWell(</span><br><span class="line">            onTap: () =&gt; onPressed(index),</span><br><span class="line">            child: Column(</span><br><span class="line">              mainAxisSize: MainAxisSize.min,</span><br><span class="line">              mainAxisAlignment: MainAxisAlignment.center,</span><br><span class="line">              children: &lt;Widget&gt;[</span><br><span class="line">                icon,</span><br><span class="line">                Text(</span><br><span class="line">                  item.text,</span><br><span class="line">                  style: TextStyle(color: resultColor),</span><br><span class="line">                )</span><br><span class="line">              ],</span><br><span class="line">            ),</span><br><span class="line">          ),</span><br><span class="line">        ),</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>以上就是自定义的tabbar组件.其中字段解释如下:<br>. <code>items</code> tabs数组,BottomBarItem类型<br>. <code>centerItemText</code> 中间Tab按钮文字<br>. <code>height</code> tab的高度<br>. <code>backgroundColor</code> 整体背景色<br>. <code>color</code> icon默认色<br>. <code>selectedColor</code> 选中icon色<br>. <code>notchedShape</code> icon的大小<br>. <code>onTabSelected</code> 选中tab事件,做的主要就是切换当前page<br>. <code>notchedShape</code> 设置notchedShape,和系统的NotchedShape一致</p>
@@ -390,6 +390,12 @@
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/2024/01/01/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E6%BB%91%E5%8A%A8%E7%BB%84%E4%BB%B6%E6%8E%A2%E7%B4%A2/">Flutter~滑动组件探索</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2023/02/08/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~PlatformView%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/">Flutter~PlatformView的简单使用</a>
                 </span>
             </li>
@@ -442,12 +448,6 @@
                 </span>
             </li>
             
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/11/11/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E8%87%AA%E5%AE%9A%E4%B9%89Dialog(%E5%9F%BA%E6%9C%AC%E7%9A%84%E7%BB%84%E4%BB%B6%E5%B0%81%E8%A3%85)/">Flutter~自定义Dialog(基本的组件封装)</a>
-                </span>
-            </li>
-            
         </ul>
     </div>
 </aside>
@@ -466,6 +466,12 @@
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/2018/05/16/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/">后端学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2019/06/23/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/MAC%E4%B8%8B%E7%9A%84cocos2d-x%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">MAC下的cocos2d-x环境搭建</a>
                 </span>
             </li>
@@ -478,13 +484,13 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/05/16/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/">后端学习</a>
+                    <a href="/2019/05/31/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~Android%E5%8E%9F%E7%94%9F%E5%B7%A5%E7%A8%8B%E4%B8%AD%E6%B7%BB%E5%8A%A0Flutter%E6%A8%A1%E5%9D%97/">Flutter~Android原生工程中添加Flutter模块</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/02/16/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~scoped_model%E5%AD%A6%E4%B9%A0/">Flutter~scoped_model学习</a>
+                    <a href="/2022/08/01/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~riverpod%E5%BA%93%E5%AD%A6%E4%B9%A0/">Flutter~riverpod库学习</a>
                 </span>
             </li>
             
@@ -496,31 +502,25 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/11/11/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E8%87%AA%E5%AE%9A%E4%B9%89Dialog(%E5%9F%BA%E6%9C%AC%E7%9A%84%E7%BB%84%E4%BB%B6%E5%B0%81%E8%A3%85)/">Flutter~自定义Dialog(基本的组件封装)</a>
+                    <a href="/2022/09/01/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E5%B8%B8%E7%94%A8%E7%BB%84%E4%BB%B6%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90%E6%A6%82%E8%A7%88/">Flutter~常用组件源码分析概览</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/06/16/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/react-navigation%E5%89%8D%E7%BD%AE%E7%99%BB%E5%BD%95/">react-navigation前置登录</a>
+                    <a href="/2019/05/14/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/RN~React-Native%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/">React-Native使用自定义字体</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/05/16/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/react-navigation%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/">react-navigation的基本使用</a>
+                    <a href="/2018/06/26/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/RN~react-native%E4%B8%83%E7%89%9B%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87/">react-native七牛上传图片</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/07/29/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/redux%E5%92%8Creact-navigation%E7%9A%84%E7%BB%93%E5%90%88%E4%BD%BF%E7%94%A8/">redux和react-navigation的结合使用</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2018/08/11/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/React-Native%3C%E6%94%B6%E8%B5%B7-%E5%B1%95%E5%BC%80%3E%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/">React-Native&#34;收起-展开&#34;功能实现</a>
+                    <a href="/2018/08/17/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/RN~React-Native%E7%B1%BB%E4%BC%BC%E6%94%AF%E4%BB%98%E5%AE%9D%E7%9A%84%E5%BA%94%E7%94%A8%E5%A2%9E%E5%88%A0%E6%A8%A1%E5%9D%97%E7%9A%84%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/">React-Native类似支付宝的应用增删模块的简单实现</a>
                 </span>
             </li>
             
@@ -553,13 +553,13 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/" style="font-size: 13.291477882500747px;" class="tag-cloud-link">其他学习</a>
+    <a href="/tags/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 19.246498701560334px;" class="tag-cloud-link">后端学习</a>
     
-    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 12.843829068174617px;" class="tag-cloud-link">前端学习</a>
+    <a href="/tags/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/" style="font-size: 19.86877717685628px;" class="tag-cloud-link">其他学习</a>
     
-    <a href="/tags/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 17.067499884111648px;" class="tag-cloud-link">后端学习</a>
+    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 9.328963837725041px;" class="tag-cloud-link">前端学习</a>
     
-    <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 14.699308623402022px;" class="tag-cloud-link">移动端学习</a>
+    <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 9.02886813466271px;" class="tag-cloud-link">移动端学习</a>
     
 </div>
                 

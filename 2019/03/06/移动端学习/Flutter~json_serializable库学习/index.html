@@ -155,15 +155,15 @@
                         
                         
                         <li>
+                            <a href="/categories/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/">后端学习</a>
+                        </li>
+                        
+                        <li>
                             <a href="/categories/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/">其他学习</a>
                         </li>
                         
                         <li>
                             <a href="/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/">前端学习</a>
-                        </li>
-                        
-                        <li>
-                            <a href="/categories/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/">后端学习</a>
                         </li>
                         
                         
@@ -189,15 +189,15 @@
                         
                         
                         <li>
+                            <a href="/tags/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/">后端学习</a>
+                        </li>
+                        
+                        <li>
                             <a href="/tags/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/">其他学习</a>
                         </li>
                         
                         <li>
                             <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/">前端学习</a>
-                        </li>
-                        
-                        <li>
-                            <a href="/tags/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/">后端学习</a>
                         </li>
                         
                         
@@ -297,18 +297,18 @@
         <p>今天学习下<code>Flutter</code>中实体类三方库<code>json_serializable</code>.<br>其中,<code>json_serializable: ^2.0.0</code>,<code>json_annotation: ^2.0.0</code>,<code>build_runner: ^1.0.0</code></p>
 <span id="more"></span>
 
-<p>1、首先,新建一个Flutter项目,引入<a target="_blank" rel="noopener" href="https://github.com/flutterchina/dio">dio</a>网络请求库,按照<a target="_blank" rel="noopener" href="https://github.com/dart-lang/json_serializable">json_serializable</a>的说明,<br>分别在<br>dependencies下引入json_annotation,在dev_dependencies下引入json_serializable和build_runner(build_runner是dart团队提供的一个生成dart代码文件的外部包).<br><img src="/2019/03/06/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~json_serializable%E5%BA%93%E5%AD%A6%E4%B9%A0/../../../../../images/json_serializable_引入库.png" alt="json_serializable_引入库"><br>2、在main.dart里面写一个网络请求.</p>
+<p>1、首先,新建一个Flutter项目,引入<a target="_blank" rel="noopener" href="https://github.com/flutterchina/dio">dio</a>网络请求库,按照<a target="_blank" rel="noopener" href="https://github.com/dart-lang/json_serializable">json_serializable</a>的说明,<br>分别在<br>dependencies下引入json_annotation,在dev_dependencies下引入json_serializable和build_runner(build_runner是dart团队提供的一个生成dart代码文件的外部包).<br><img src="/2019/03/06/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~json_serializable%E5%BA%93%E5%AD%A6%E4%B9%A0/../../../../../images/Flutter~json_serializable库学习/json_serializable_引入库.png" alt="json_serializable_引入库"><br>2、在main.dart里面写一个网络请求.</p>
 <h3 id="main-dart"><a href="#main-dart" class="headerlink" title="main.dart"></a>main.dart</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line">import &#x27;package:flutter/material.dart&#x27;;</span><br><span class="line">import &#x27;package:dio/dio.dart&#x27;;</span><br><span class="line">import &#x27;dart:async&#x27;;</span><br><span class="line">import &#x27;package:json_demo/Data.dart&#x27;;</span><br><span class="line"></span><br><span class="line">//  flutter packages pub run build_runner build</span><br><span class="line">void main() =&gt; runApp(MyApp());</span><br><span class="line"></span><br><span class="line">class MyApp extends StatelessWidget &#123;</span><br><span class="line">  // This widget is the root of your application.</span><br><span class="line">  @override</span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    return MaterialApp(</span><br><span class="line">      title: &#x27;Flutter Demo&#x27;,</span><br><span class="line">      theme: ThemeData(</span><br><span class="line">        primarySwatch: Colors.blue,</span><br><span class="line">      ),</span><br><span class="line">      home: DataToModel(),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class DataToModel extends StatefulWidget &#123;</span><br><span class="line">  final Widget child;</span><br><span class="line"></span><br><span class="line">  DataToModel(&#123;Key key, this.child&#125;) : super(key: key);</span><br><span class="line"></span><br><span class="line">  _DataToModelState createState() =&gt; _DataToModelState();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class _DataToModelState extends State&lt;DataToModel&gt; &#123;</span><br><span class="line"></span><br><span class="line">  Future getHomePageContent() async &#123;</span><br><span class="line">  try &#123;</span><br><span class="line">    print(&#x27;开始获取首页数据&#x27;);</span><br><span class="line">    Response response;</span><br><span class="line">    Dio dio = new Dio();</span><br><span class="line">    response = await dio.get(&#x27;http://gank.io/api/data/%E7%A6%8F%E5%88%A9/10/1&#x27;);</span><br><span class="line">    if (response.statusCode == 200) &#123;</span><br><span class="line">      return response.data;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      throw Exception(&#x27;后端接口出现异常&#x27;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; catch (e) &#123;</span><br><span class="line">    print(&#x27;ERROR 发生错误👇&#x27;);</span><br><span class="line">    return print(e);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">  @override</span><br><span class="line">  void initState() &#123;</span><br><span class="line">    super.initState();</span><br><span class="line">    getHomePageContent().then((val) &#123;</span><br><span class="line">        Data dd = Data.fromJson(val);</span><br><span class="line">        print(dd.error);</span><br><span class="line">        // 数组</span><br><span class="line">        print(dd.results);</span><br><span class="line">        // 数组第一个元素:map</span><br><span class="line">        print(dd.results[0].createdAt);</span><br><span class="line">        print(dd.results[0].desc);</span><br><span class="line">        print(dd.results[0].publishedAt);</span><br><span class="line">        print(dd.results[0].source);</span><br><span class="line">        print(dd.results[0].type);</span><br><span class="line">        print(dd.results[0].url);</span><br><span class="line">        print(dd.results[0].used);</span><br><span class="line">        print(dd.results[0].who);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  @override</span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    return Scaffold(</span><br><span class="line">      appBar: AppBar(title: Text(&#x27;json_serializable&#x27;)),</span><br><span class="line">      body: Text(&#x27;json_serializable&#x27;),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这里的接口,网上随意找一个: <a target="_blank" rel="noopener" href="http://gank.io/api/data/%E7%A6%8F%E5%88%A9/10/1">http://gank.io/api/data/%E7%A6%8F%E5%88%A9/10/1</a><br>大致结构如图:<br><img src="/2019/03/06/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~json_serializable%E5%BA%93%E5%AD%A6%E4%B9%A0/../../../../../images/json_serializable_json.png" alt="json_serializable_json"><br>3、然后根据返回数据,书写两个dart文件,<code>Data.dart</code>是外部map,<br><code>Dic.dart</code>是内部的List.</p>
+<p>这里的接口,网上随意找一个: <a target="_blank" rel="noopener" href="http://gank.io/api/data/%E7%A6%8F%E5%88%A9/10/1">http://gank.io/api/data/%E7%A6%8F%E5%88%A9/10/1</a><br>大致结构如图:<br><img src="/2019/03/06/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~json_serializable%E5%BA%93%E5%AD%A6%E4%B9%A0/../../../../../images/Flutter~json_serializable库学习/json_serializable_json.png" alt="json_serializable_json"><br>3、然后根据返回数据,书写两个dart文件,<code>Data.dart</code>是外部map,<br><code>Dic.dart</code>是内部的List.</p>
 <h3 id="Data-dart"><a href="#Data-dart" class="headerlink" title="Data.dart"></a>Data.dart</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">import &#x27;package:json_annotation/json_annotation.dart&#x27;;</span><br><span class="line">import &#x27;package:json_demo/Dic.dart&#x27;;</span><br><span class="line"></span><br><span class="line">part &#x27;Data.g.dart&#x27;;</span><br><span class="line"></span><br><span class="line">@JsonSerializable()</span><br><span class="line">class Data&#123;</span><br><span class="line">  bool error;</span><br><span class="line">  List&lt;Dic&gt; results;</span><br><span class="line">  Data(this.error,this.results);</span><br><span class="line">  //反序列化</span><br><span class="line">  factory Data.fromJson(Map&lt;String, dynamic&gt; json) =&gt; _$DataFromJson(json);</span><br><span class="line">  //序列化</span><br><span class="line">  Map&lt;String, dynamic&gt; toJson() =&gt; _$DataToJson(this);  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="Dic-dart"><a href="#Dic-dart" class="headerlink" title="Dic.dart"></a>Dic.dart</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">import &#x27;package:json_annotation/json_annotation.dart&#x27;;</span><br><span class="line">part &#x27;Dic.g.dart&#x27;;</span><br><span class="line"></span><br><span class="line">@JsonSerializable()</span><br><span class="line">class Dic&#123;</span><br><span class="line">  final String createdAt;</span><br><span class="line">  final String desc;</span><br><span class="line">  final String publishedAt;</span><br><span class="line">  final String source;</span><br><span class="line">  final String type;</span><br><span class="line">  final String url;</span><br><span class="line">  final bool used;</span><br><span class="line">  final String who;</span><br><span class="line"></span><br><span class="line">  Dic(&#123;this.createdAt, this.desc, this.publishedAt, this.source, this.type,</span><br><span class="line">    this.url, this.used, this.who&#125;);</span><br><span class="line"></span><br><span class="line">  //反序列化</span><br><span class="line">  factory Dic.fromJson(Map&lt;String, dynamic&gt; json) =&gt; _$DicFromJson(json);</span><br><span class="line">  //序列化</span><br><span class="line">  Map&lt;String, dynamic&gt; toJson() =&gt; _$DicToJson(this);  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>然后,ide会报几个错误,这个不用管,那是尚未生成解析文件的原因.<br><img src="/2019/03/06/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~json_serializable%E5%BA%93%E5%AD%A6%E4%B9%A0/../../../../../images/json_serializable_开始.png" alt="json_serializable_开始"></p>
+<p>然后,ide会报几个错误,这个不用管,那是尚未生成解析文件的原因.<br><img src="/2019/03/06/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~json_serializable%E5%BA%93%E5%AD%A6%E4%B9%A0/../../../../../images/Flutter~json_serializable库学习/json_serializable_开始.png" alt="json_serializable_开始"></p>
 <p>4、然后,终端 cd 到项目根目录,回车,执行命令<code>flutter packages pub run build_runner build</code>,会生成对应的解析文件.</p>
-<img src="/2019/03/06/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~json_serializable%E5%BA%93%E5%AD%A6%E4%B9%A0/../../../../../images/json_serializable_命令后输出.png" alt="json_serializable_命令后输出.png">
-<img src="/2019/03/06/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~json_serializable%E5%BA%93%E5%AD%A6%E4%B9%A0/../../../../../images/json_serializable_生成文件.png" alt="json_serializable_生成文件">
+<img src="/2019/03/06/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~json_serializable%E5%BA%93%E5%AD%A6%E4%B9%A0/../../../../../images/Flutter~json_serializable库学习/json_serializable_命令后输出.png" alt="json_serializable_命令后输出.png">
+<img src="/2019/03/06/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~json_serializable%E5%BA%93%E5%AD%A6%E4%B9%A0/../../../../../images/Flutter~json_serializable库学习/json_serializable_生成文件.png" alt="json_serializable_生成文件">
 5、ok,撸好之后,输出看一下
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Data dd = Data.fromJson(val);</span><br><span class="line">       print(dd.error);</span><br><span class="line">       // 数组</span><br><span class="line">       print(dd.results);</span><br><span class="line">       // 数组第一个元素:map</span><br><span class="line">       print(dd.results[0].createdAt);</span><br><span class="line">       print(dd.results[0].desc);</span><br><span class="line">       print(dd.results[0].publishedAt);</span><br><span class="line">       print(dd.results[0].source);</span><br><span class="line">       print(dd.results[0].type);</span><br><span class="line">       print(dd.results[0].url);</span><br><span class="line">       print(dd.results[0].used);</span><br><span class="line">       print(dd.results[0].who);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<img src="/2019/03/06/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~json_serializable%E5%BA%93%E5%AD%A6%E4%B9%A0/../../../../../images/json_serializable_result.png" alt="json_serializable_result">
+<img src="/2019/03/06/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~json_serializable%E5%BA%93%E5%AD%A6%E4%B9%A0/../../../../../images/Flutter~json_serializable库学习/json_serializable_result.png" alt="json_serializable_result">
 
 <p>总结:以上就是对flutter中实体类库json_serializable的简单学习,身边大佬有的说很有必要,因为规范点,无规矩不成三角形,有了实体类方便维护,本来原生就是该有model的,这样不容易出现取值错误和其他问题;有的大佬说没啥必要,有点繁琐了.<br>我也不知道谁缩的对,但是学下总没错,就像鲁迅说的那样”人活着什么最重要,肯定是开心辣”.</p>
 <p>网上还有其他的方案:<br>a. android studio 安装插件 dart_json_format<br>b. <a target="_blank" rel="noopener" href="https://github.com/debuggerx01/JSONFormat4Flutter">https://github.com/debuggerx01/JSONFormat4Flutter</a><br>c. 一个在线转换工具:  <a target="_blank" rel="noopener" href="https://javiercbk.github.io/json_to_dart/">https://javiercbk.github.io/json_to_dart/</a>   </p>
@@ -396,6 +396,12 @@
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/2024/01/01/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E6%BB%91%E5%8A%A8%E7%BB%84%E4%BB%B6%E6%8E%A2%E7%B4%A2/">Flutter~滑动组件探索</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2023/02/08/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~PlatformView%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/">Flutter~PlatformView的简单使用</a>
                 </span>
             </li>
@@ -448,12 +454,6 @@
                 </span>
             </li>
             
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/11/11/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E8%87%AA%E5%AE%9A%E4%B9%89Dialog(%E5%9F%BA%E6%9C%AC%E7%9A%84%E7%BB%84%E4%BB%B6%E5%B0%81%E8%A3%85)/">Flutter~自定义Dialog(基本的组件封装)</a>
-                </span>
-            </li>
-            
         </ul>
     </div>
 </aside>
@@ -478,19 +478,25 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/04/22/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Android%E5%92%8CReact-Native%E7%9A%84%E7%AE%80%E5%8D%95%E4%BA%A4%E4%BA%92/">Android和React-Native的简单交互</a>
+                    <a href="/2018/05/17/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/%E7%B2%BE%E7%81%B5%E5%9B%BE%E5%AD%A6%E4%B9%A0/">前端精灵图学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/03/13/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~getx%E5%AD%A6%E4%B9%A0/">Flutter~getx库学习</a>
+                    <a href="/2019/09/07/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~Flare%E5%8A%A8%E7%94%BB%E5%AD%A6%E4%B9%A0/">Flutter~Flare动画学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/03/03/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~provide%E5%AD%A6%E4%B9%A0/">Flutter~provide学习</a>
+                    <a href="/2019/05/29/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~iOS%E5%8E%9F%E7%94%9F%E5%B7%A5%E7%A8%8B%E4%B8%AD%E6%B7%BB%E5%8A%A0Flutter%E6%A8%A1%E5%9D%97/">Flutter~iOS原生工程中添加Flutter模块</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2021/01/06/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~provider%E5%AD%A6%E4%B9%A0/">Flutter~provider学习</a>
                 </span>
             </li>
             
@@ -502,31 +508,25 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2022/09/29/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E5%8F%91%E5%B8%83package%E5%88%B0pub.dev%E5%9B%BE%E6%96%87%E8%AF%A6%E8%A7%A3/">Flutter~发布package到pub.dev图文详解</a>
+                    <a href="/2019/03/30/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E8%B7%AF%E7%94%B1%E7%AE%A1%E7%90%86%E5%BA%93fluro%E5%AD%A6%E4%B9%A0/">Flutter~路由管理库fluro学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/06/11/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E5%9B%BD%E9%99%85%E5%8C%96%E6%95%99%E7%A8%8B%E6%96%B9%E6%A1%88/">Flutter~国际化教程方案</a>
+                    <a href="/2019/04/22/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/RN~React-Native%E4%B8%8EWeb%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BA%A4%E4%BA%92/">React-Native与Web的基本交互</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/09/08/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/React-Native%E6%8E%A8%E9%80%81%E9%80%9A%E7%9F%A5%E8%87%B3RN%E4%B8%94%E6%98%BE%E7%A4%BA%E6%8E%A8%E9%80%81%E5%86%85%E5%AE%B9/">React-Native推送通知至RN且显示推送内容</a>
+                    <a href="/2018/05/16/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/RN~react-navigation%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/">react-navigation的基本使用</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/06/16/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/react-navigation%E5%89%8D%E7%BD%AE%E7%99%BB%E5%BD%95/">react-navigation前置登录</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2018/08/17/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/React-Native%E7%B1%BB%E4%BC%BC%E6%94%AF%E4%BB%98%E5%AE%9D%E7%9A%84%E5%BA%94%E7%94%A8%E5%A2%9E%E5%88%A0%E6%A8%A1%E5%9D%97%E7%9A%84%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/">React-Native类似支付宝的应用增删模块的简单实现</a>
+                    <a href="/2018/07/29/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/RN~redux%E5%92%8Creact-navigation%E7%9A%84%E7%BB%93%E5%90%88%E4%BD%BF%E7%94%A8/">redux和react-navigation的结合使用</a>
                 </span>
             </li>
             
@@ -559,13 +559,13 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/" style="font-size: 10.175315590831762px;" class="tag-cloud-link">其他学习</a>
+    <a href="/tags/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 19.63339533604953px;" class="tag-cloud-link">后端学习</a>
     
-    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 12.398125145678053px;" class="tag-cloud-link">前端学习</a>
+    <a href="/tags/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/" style="font-size: 17.851656143327055px;" class="tag-cloud-link">其他学习</a>
     
-    <a href="/tags/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 19.970314813219133px;" class="tag-cloud-link">后端学习</a>
+    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 18.618910956535558px;" class="tag-cloud-link">前端学习</a>
     
-    <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 18.994028970689072px;" class="tag-cloud-link">移动端学习</a>
+    <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 17.285505719716767px;" class="tag-cloud-link">移动端学习</a>
     
 </div>
                 

@@ -155,15 +155,15 @@
                         
                         
                         <li>
+                            <a href="/categories/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/">后端学习</a>
+                        </li>
+                        
+                        <li>
                             <a href="/categories/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/">其他学习</a>
                         </li>
                         
                         <li>
                             <a href="/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/">前端学习</a>
-                        </li>
-                        
-                        <li>
-                            <a href="/categories/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/">后端学习</a>
                         </li>
                         
                         
@@ -189,15 +189,15 @@
                         
                         
                         <li>
+                            <a href="/tags/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/">后端学习</a>
+                        </li>
+                        
+                        <li>
                             <a href="/tags/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/">其他学习</a>
                         </li>
                         
                         <li>
                             <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/">前端学习</a>
-                        </li>
-                        
-                        <li>
-                            <a href="/tags/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/">后端学习</a>
                         </li>
                         
                         
@@ -296,7 +296,7 @@
     <div class="content-article">
         <p>今天学习下<code>Flutter</code>中state管理的第三方<code>riverpod</code>，该库的作者和<code>provider</code>的作者是同一人，可以说是<code>provider</code>的重构版本。</p>
 <span id="more"></span>
-<p>代码结构如图所示:<br><img src="/2022/08/01/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~riverpod%E5%BA%93%E5%AD%A6%E4%B9%A0/../../../../../images/riverpod代码结构.png" alt="riverpod代码结构"></p>
+<p>代码结构如图所示:<br><img src="/2022/08/01/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~riverpod%E5%BA%93%E5%AD%A6%E4%B9%A0/../../../../../images/Flutter~riverpod库学习/riverpod代码结构.png" alt="riverpod代码结构"></p>
 <h2 id="下面是各文件的源码"><a href="#下面是各文件的源码" class="headerlink" title="下面是各文件的源码."></a>下面是各文件的源码.</h2><h3 id="main-dart"><a href="#main-dart" class="headerlink" title="main.dart"></a>main.dart</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import &#x27;package:flutter/material.dart&#x27;;</span><br><span class="line">import &#x27;package:riverpod_demo/tabbar.dart&#x27;;</span><br><span class="line">import &#x27;package:flutter_riverpod/flutter_riverpod.dart&#x27;;</span><br><span class="line"></span><br><span class="line">void main() &#123;</span><br><span class="line">  runApp(</span><br><span class="line">    const ProviderScope(</span><br><span class="line">      child: MyApp(),</span><br><span class="line">    ),</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class MyApp extends StatelessWidget &#123;</span><br><span class="line">  const MyApp(&#123;Key? key&#125;) : super(key: key);</span><br><span class="line"></span><br><span class="line">  @override</span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    return MaterialApp(</span><br><span class="line">      title: &#x27;Flutter Demo&#x27;,</span><br><span class="line">      theme: ThemeData(</span><br><span class="line">        primarySwatch: Colors.blue,</span><br><span class="line">      ),</span><br><span class="line">      home: const TabBarWidget(),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h3 id="tabbar-dart"><a href="#tabbar-dart" class="headerlink" title="tabbar.dart"></a>tabbar.dart</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line">import &#x27;package:flutter/material.dart&#x27;;</span><br><span class="line">import &#x27;package:riverpod_demo/pages/one_page/one_page.dart&#x27;;</span><br><span class="line">import &#x27;package:riverpod_demo/pages/two_page/two_page.dart&#x27;;</span><br><span class="line"></span><br><span class="line">class TabBarWidget extends StatefulWidget &#123;</span><br><span class="line">  const TabBarWidget(&#123;Key? key&#125;) : super(key: key);</span><br><span class="line"></span><br><span class="line">  @override</span><br><span class="line">  State&lt;StatefulWidget&gt; createState() &#123;</span><br><span class="line">    return MainPageState();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class MainPageState extends State&lt;TabBarWidget&gt; &#123;</span><br><span class="line">  @override</span><br><span class="line">  void initState() &#123;</span><br><span class="line">    super.initState();</span><br><span class="line">    initData();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  int _tabIndex = 0;</span><br><span class="line">  List tabImages = [];</span><br><span class="line">  var appBarTitles = [&#x27;One&#x27;, &#x27;Two&#x27;];</span><br><span class="line">  List _pageList = [];</span><br><span class="line"></span><br><span class="line">  Image getTabIcon(int curIndex) &#123;</span><br><span class="line">    if (curIndex == _tabIndex) &#123;</span><br><span class="line">      return tabImages[curIndex][1];</span><br><span class="line">    &#125;</span><br><span class="line">    return tabImages[curIndex][0];</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  String getTabTitle(int curIndex) &#123;</span><br><span class="line">    if (curIndex == _tabIndex) &#123;</span><br><span class="line">      return appBarTitles[curIndex];</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      return appBarTitles[curIndex];</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  Image getTabImage(path) &#123;</span><br><span class="line">    return Image.asset(path, width: 24.0, height: 24.0);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  void initData() &#123;</span><br><span class="line">    /*</span><br><span class="line">     * 初始化选中和未选中的icon</span><br><span class="line">     */</span><br><span class="line">    tabImages = [</span><br><span class="line">      [getTabImage(&#x27;images/tab/home.png&#x27;), getTabImage(&#x27;images/tab/home_select.png&#x27;)],</span><br><span class="line">      [getTabImage(&#x27;images/tab/show.png&#x27;), getTabImage(&#x27;images/tab/show_select.png&#x27;)],</span><br><span class="line">    ];</span><br><span class="line">    /*</span><br><span class="line">     * 子界面</span><br><span class="line">     */</span><br><span class="line">    _pageList = [</span><br><span class="line">      const OnePage(),</span><br><span class="line">      const TwoPage(),</span><br><span class="line">    ];</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  @override</span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    return Scaffold(</span><br><span class="line">      body: _pageList[_tabIndex],</span><br><span class="line">      bottomNavigationBar: BottomNavigationBar(</span><br><span class="line">        items: &lt;BottomNavigationBarItem&gt;[</span><br><span class="line">          BottomNavigationBarItem(icon: getTabIcon(0), label: getTabTitle(0)),</span><br><span class="line">          BottomNavigationBarItem(icon: getTabIcon(1), label: getTabTitle(1)),</span><br><span class="line">        ],</span><br><span class="line">        type: BottomNavigationBarType.fixed,</span><br><span class="line">        currentIndex: _tabIndex,</span><br><span class="line">        iconSize: 24.0,</span><br><span class="line">        onTap: (index) &#123;</span><br><span class="line">          setState(() &#123;</span><br><span class="line">            _tabIndex = index;</span><br><span class="line">          &#125;);</span><br><span class="line">        &#125;,</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
@@ -308,7 +308,7 @@
 
 <h3 id="one-page-dart"><a href="#one-page-dart" class="headerlink" title="one_page.dart"></a>one_page.dart</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">import &#x27;package:flutter/material.dart&#x27;;</span><br><span class="line">import &#x27;package:riverpod_demo/rstate/counter.dart&#x27;;</span><br><span class="line">import &#x27;package:flutter_riverpod/flutter_riverpod.dart&#x27;;</span><br><span class="line"></span><br><span class="line">class OnePage extends ConsumerWidget &#123;</span><br><span class="line">  const OnePage(&#123;Key? key&#125;) : super(key: key);</span><br><span class="line"></span><br><span class="line">  @override</span><br><span class="line">  Widget build(BuildContext context, WidgetRef ref) &#123;</span><br><span class="line">    return Scaffold(</span><br><span class="line">      appBar: AppBar(</span><br><span class="line">        title: const Text(&#x27;一&#x27;),</span><br><span class="line">      ),</span><br><span class="line">      body: Center(</span><br><span class="line">        child: Column(</span><br><span class="line">          mainAxisAlignment: MainAxisAlignment.center,</span><br><span class="line">          crossAxisAlignment: CrossAxisAlignment.center,</span><br><span class="line">          children: [</span><br><span class="line">            InkWell(</span><br><span class="line">              onTap: () &#123;</span><br><span class="line">                ref.read(counterProvider.notifier).addCounter();</span><br><span class="line">              &#125;,</span><br><span class="line">              child: const Text(</span><br><span class="line">                &#x27;+&#x27;,</span><br><span class="line">                style: TextStyle(fontSize: 40),</span><br><span class="line">              ),</span><br><span class="line">            ),</span><br><span class="line">            const _ColorfulCounterText(),</span><br><span class="line">            InkWell(</span><br><span class="line">              onTap: () &#123;</span><br><span class="line">                ref.read(counterProvider.notifier).subCounter();</span><br><span class="line">              &#125;,</span><br><span class="line">              child: const Text(</span><br><span class="line">                &#x27;-&#x27;,</span><br><span class="line">                style: TextStyle(fontSize: 40),</span><br><span class="line">              ),</span><br><span class="line">            ),</span><br><span class="line">          ],</span><br><span class="line">        ),</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class _ColorfulCounterText extends ConsumerWidget &#123;</span><br><span class="line">  const _ColorfulCounterText();</span><br><span class="line"></span><br><span class="line">  @override</span><br><span class="line">  Widget build(BuildContext context, WidgetRef ref) &#123;</span><br><span class="line">    final counter = ref.watch(counterProvider);</span><br><span class="line">    return Text(</span><br><span class="line">      &#x27;$counter&#x27;,</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h3 id="two-page-dart"><a href="#two-page-dart" class="headerlink" title="two_page.dart"></a>two_page.dart</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">import &#x27;package:flutter/material.dart&#x27;;</span><br><span class="line">import &#x27;package:flutter_riverpod/flutter_riverpod.dart&#x27;;</span><br><span class="line">import &#x27;package:riverpod_demo/rstate/counter.dart&#x27;;</span><br><span class="line">import &#x27;package:riverpod_demo/rstate/color.dart&#x27;;</span><br><span class="line"></span><br><span class="line">class TwoPage extends ConsumerWidget &#123;</span><br><span class="line">  const TwoPage(&#123;Key? key&#125;) : super(key: key);</span><br><span class="line"></span><br><span class="line">  @override</span><br><span class="line">  Widget build(BuildContext context, WidgetRef ref) &#123;</span><br><span class="line">    return Scaffold(</span><br><span class="line">      appBar: AppBar(</span><br><span class="line">        backgroundColor: Colors.pink,</span><br><span class="line">        title: const Text(&#x27;二&#x27;),</span><br><span class="line">      ),</span><br><span class="line">      body: Center(</span><br><span class="line">        child: Column(</span><br><span class="line">          mainAxisAlignment: MainAxisAlignment.center,</span><br><span class="line">          crossAxisAlignment: CrossAxisAlignment.center,</span><br><span class="line">          children: [</span><br><span class="line">            InkWell(</span><br><span class="line">              onTap: () &#123;</span><br><span class="line">                ref.read(counterProvider.notifier).addCounter();</span><br><span class="line">                ref.read(colorProvider.notifier).changeColor();</span><br><span class="line">              &#125;,</span><br><span class="line">              child: const Text(</span><br><span class="line">                &#x27;+&#x27;,</span><br><span class="line">                style: TextStyle(fontSize: 40),</span><br><span class="line">              ),</span><br><span class="line">            ),</span><br><span class="line">            const _ColorfulCounterText(),</span><br><span class="line">            InkWell(</span><br><span class="line">              onTap: () &#123;</span><br><span class="line">                ref.read(counterProvider.notifier).subCounter();</span><br><span class="line">                ref.read(colorProvider.notifier).changeColor();</span><br><span class="line">              &#125;,</span><br><span class="line">              child: const Text(</span><br><span class="line">                &#x27;-&#x27;,</span><br><span class="line">                style: TextStyle(fontSize: 40),</span><br><span class="line">              ),</span><br><span class="line">            ),</span><br><span class="line">          ],</span><br><span class="line">        ),</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class _ColorfulCounterText extends ConsumerWidget &#123;</span><br><span class="line">  const _ColorfulCounterText();</span><br><span class="line"></span><br><span class="line">  @override</span><br><span class="line">  Widget build(BuildContext context, WidgetRef ref) &#123;</span><br><span class="line">    final counter = ref.watch(counterProvider);</span><br><span class="line">    final color = ref.watch(colorProvider);</span><br><span class="line"></span><br><span class="line">    return Text(</span><br><span class="line">      &#x27;$counter&#x27;,</span><br><span class="line">      style: TextStyle(</span><br><span class="line">        color: color,</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>效果图:<br><img src="/2022/08/01/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~riverpod%E5%BA%93%E5%AD%A6%E4%B9%A0/../../../../../images/riverpod_result.gif" alt="riverpod_result"></p>
+<p>效果图:<br><img src="/2022/08/01/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~riverpod%E5%BA%93%E5%AD%A6%E4%B9%A0/../../../../../images/Flutter~riverpod库学习/riverpod_result.gif" alt="riverpod_result"></p>
 <p><a target="_blank" rel="noopener" href="https://github.com/shaoting0730/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/state%E7%AE%A1%E7%90%86/riverpod_demo">文章源码</a></p>
 <p><a href="http://zhoushaoting.com/archives/">另外:其他管理库学习</a></p>
 <p><a target="_blank" rel="noopener" href="https://github.com/shaoting0730/Flutter_learn_demo">另外:Flutter学习demo</a></p>
@@ -395,6 +395,12 @@
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/2024/01/01/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E6%BB%91%E5%8A%A8%E7%BB%84%E4%BB%B6%E6%8E%A2%E7%B4%A2/">Flutter~滑动组件探索</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2023/02/08/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~PlatformView%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/">Flutter~PlatformView的简单使用</a>
                 </span>
             </li>
@@ -447,12 +453,6 @@
                 </span>
             </li>
             
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/11/11/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E8%87%AA%E5%AE%9A%E4%B9%89Dialog(%E5%9F%BA%E6%9C%AC%E7%9A%84%E7%BB%84%E4%BB%B6%E5%B0%81%E8%A3%85)/">Flutter~自定义Dialog(基本的组件封装)</a>
-                </span>
-            </li>
-            
         </ul>
     </div>
 </aside>
@@ -471,13 +471,13 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/06/23/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/MAC%E4%B8%8B%E7%9A%84cocos2d-x%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">MAC下的cocos2d-x环境搭建</a>
+                    <a href="/2018/05/16/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/">后端学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/08/22/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/React%E5%AD%A6%E4%B9%A0~React-Hooks%E5%AD%A6%E4%B9%A0/">React学习:React_Hooks学习</a>
+                    <a href="/2019/05/31/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~Android%E5%8E%9F%E7%94%9F%E5%B7%A5%E7%A8%8B%E4%B8%AD%E6%B7%BB%E5%8A%A0Flutter%E6%A8%A1%E5%9D%97/">Flutter~Android原生工程中添加Flutter模块</a>
                 </span>
             </li>
             
@@ -489,13 +489,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/02/17/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~redux%E5%AD%A6%E4%B9%A0/">Flutter~redux学习</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2022/09/29/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E5%8F%91%E5%B8%83package%E5%88%B0pub.dev%E5%9B%BE%E6%96%87%E8%AF%A6%E8%A7%A3/">Flutter~发布package到pub.dev图文详解</a>
+                    <a href="/2019/03/03/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~provide%E5%AD%A6%E4%B9%A0/">Flutter~provide学习</a>
                 </span>
             </li>
             
@@ -507,25 +501,31 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/01/23/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E8%87%AA%E5%AE%9A%E4%B9%89tabbar%E6%A8%A1%E5%9D%97/">Flutter~自定义tabbar模块</a>
+                    <a href="/2019/02/16/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~scoped_model%E5%AD%A6%E4%B9%A0/">Flutter~scoped_model学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/03/04/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter%E4%B8%AD%E7%9A%84sqflite%E5%BA%93%E5%AD%A6%E4%B9%A0/">Flutter中的sqflite库学习</a>
+                    <a href="/2019/05/14/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/RN~React-Native%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/">React-Native使用自定义字体</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/06/26/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/react-native%E4%B8%83%E7%89%9B%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87/">react-native七牛上传图片</a>
+                    <a href="/2018/05/16/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/RN~react-navigation%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/">react-navigation的基本使用</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/08/17/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/React-Native%E7%B1%BB%E4%BC%BC%E6%94%AF%E4%BB%98%E5%AE%9D%E7%9A%84%E5%BA%94%E7%94%A8%E5%A2%9E%E5%88%A0%E6%A8%A1%E5%9D%97%E7%9A%84%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/">React-Native类似支付宝的应用增删模块的简单实现</a>
+                    <a href="/2018/07/29/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/RN~redux%E5%92%8Creact-navigation%E7%9A%84%E7%BB%93%E5%90%88%E4%BD%BF%E7%94%A8/">redux和react-navigation的结合使用</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/01/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E6%BB%91%E5%8A%A8%E7%BB%84%E4%BB%B6%E6%8E%A2%E7%B4%A2/">Flutter~滑动组件探索</a>
                 </span>
             </li>
             
@@ -558,13 +558,13 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/" style="font-size: 10.853354549352071px;" class="tag-cloud-link">其他学习</a>
+    <a href="/tags/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 16.507209194217594px;" class="tag-cloud-link">后端学习</a>
     
-    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 13.033304224600467px;" class="tag-cloud-link">前端学习</a>
+    <a href="/tags/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/" style="font-size: 18.963173447667614px;" class="tag-cloud-link">其他学习</a>
     
-    <a href="/tags/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 9.720784353321394px;" class="tag-cloud-link">后端学习</a>
+    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 19.516262959786356px;" class="tag-cloud-link">前端学习</a>
     
-    <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 10.009731857340446px;" class="tag-cloud-link">移动端学习</a>
+    <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 13.988739569958213px;" class="tag-cloud-link">移动端学习</a>
     
 </div>
                 

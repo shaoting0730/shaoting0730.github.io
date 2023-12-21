@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="">
+    
+    <meta name="description" content="ʕ•̫͡•ོʔ•̫͡•ཻʕ•̫͡•ʔ•͓͡•ʔ">
+    
+    
+    
+    
+    
+    
+    <title>React-Native推送通知至RN且显示推送内容 | 少停</title>
+    <link href="https://zhoushaoting.com" rel="prefetch" />
+
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/js/jquery.min.js"></script>
+
+    
+<script src="/js/bootstrap.min.js"></script>
+
+    
+<script src="/js/aos.js"></script>
+
+    
+<script src="/js/highslide/highslide-full.min.js"></script>
+
+    
+<link rel="stylesheet" href="/js/highslide/highslide.css">
+
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/xsbg.gif');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <script src="//cdn1.lncld.net/static/js/3.4.2/av-min.js"></script>
+    <script>
+      AV.init({
+        appId: 'npHNPYvfm9QPD0QTUGPpeyHp-gzGzoHsz',
+        appKey: 'To3dnra4TCduaPXz0DNPu1kz'
+      })
+    </script>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/headImg.jpg'
+        var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg,preview5.jpg,preview6.jpg,preview7.jpg,preview8.jpg,preview9.jpg,preview10.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <div class="gal-menu gal-dropdown">
+    <div class="circle" id="gal">
+        <div class="ring">
+            <a href="https://zhoushaoting.com" class="menuItem" style="left: 50%; top: 15%;">首页</a>
+            
+            <a class="menuItem" style="left: 80.3109%; top: 32.5%;">下一页</a>
+            
+            <a href="/archives" class="menuItem" style="left: 80.3109%; top: 67.5%;">归档</a>
+            <a href="/about" class="menuItem" style="left: 50%; top: 85%;">关于</a>
+            <a href="/message" class="menuItem" style="left: 19.6891%; top: 67.5%;">留言板</a>
+
+            
+            <a class="menuItem" style="left: 19.6891%; top: 32.5%;">上一页</a>
+            
+        </div>
+        <audio id="audio" src="/imgs/oni.mp3"></audio>
+    </div>
+</div>
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="https://zhoushaoting.com">
+                
+                <style>
+                    #gal-header .navbar-brand {
+                        height: 54px;
+                        line-height: 24px;
+                        font-size: 28px;
+                        opacity: 1;
+                        background-color: rgba(0,0,0,0);
+                        text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #228DFF,0 0 35px #228DFF,0 0 40px #228DFF,0 0 50px #228DFF,0 0 75px #228DFF;
+                    }
+                </style>
+                <!-- 这里使用文字(navbar_text or config.title) -->
+                <div class="navbar-brand">少停</div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class="">
+                    <a href="/">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/categories/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/">后端学习</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/">其他学习</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/">前端学习</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="/categories">...</a>
+                        </li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/tags/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/">后端学习</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/">其他学习</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/">前端学习</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="/tags">...</a>
+                        </li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/about">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/message">
+                        <i class="fa fa-heart"></i>留言板
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="https://zhoushaoting.com">少停</a>
+        >
+        <span>React-Native推送通知至RN且显示推送内容</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2018/09/08/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/RN~React-Native%E6%8E%A8%E9%80%81%E9%80%9A%E7%9F%A5%E8%87%B3RN%E4%B8%94%E6%98%BE%E7%A4%BA%E6%8E%A8%E9%80%81%E5%86%85%E5%AE%B9/">React-Native推送通知至RN且显示推送内容</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/">移动端学习</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2018-09-08
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-eye"></i>
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2018/09/08/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/RN~React-Native%E6%8E%A8%E9%80%81%E9%80%9A%E7%9F%A5%E8%87%B3RN%E4%B8%94%E6%98%BE%E7%A4%BA%E6%8E%A8%E9%80%81%E5%86%85%E5%AE%B9/">React-Native推送通知至RN且显示推送内容</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2018-09-08
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/">移动端学习</a>
+                
+                
+                
+                <i class="fa fa-eye"></i>
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <p>APP推送是基本的要求,今天记录一下,大致是iOS原生收到推送后直接发通知给RN,RN这边监听着iOS原生的这个通知,以此获取到推送的消息.</p>
+<span id="more"></span>
+<p>效果图:<br><img src="/2018/09/08/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/RN~React-Native%E6%8E%A8%E9%80%81%E9%80%9A%E7%9F%A5%E8%87%B3RN%E4%B8%94%E6%98%BE%E7%A4%BA%E6%8E%A8%E9%80%81%E5%86%85%E5%AE%B9/../../../../../images/RN~React-Native推送通知至RN且显示推送内容/pushRN.gif" alt="pushRN.gif"> <br><br>实现思路 ==&gt;<br>这次采用的友盟推送,至于采用什么推送都是一样的.<br><br>准备工作:iOS 集成推送,编写中间类,用于传值给RN.<br><br>        RN 界面实现监听iOS原生的通知,通过以上获取到推送的内容.<br></p>
+<p>iOS原生准备集成推送: <br><br>…<br><br>iOS写一个中间类传输通知给RN:<br><br><code>CheckInvoice.h</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">//</span><br><span class="line">//  CheckInvoice.h</span><br><span class="line">//  aitepiao</span><br><span class="line">//</span><br><span class="line">//  Created by tc on 2018/8/28.</span><br><span class="line">//  Copyright © 2018年 Facebook. All rights reserved.</span><br><span class="line">//</span><br><span class="line"></span><br><span class="line">#import &lt;Foundation/Foundation.h&gt;</span><br><span class="line">#import &lt;React/RCTBridgeModule.h&gt;</span><br><span class="line">#import &lt;React/RCTEventEmitter.h&gt;</span><br><span class="line"></span><br><span class="line">@interface CheckInvoice : RCTEventEmitter&lt;RCTBridgeModule&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><code>CheckInvoice.m</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">//</span><br><span class="line">//  CheckInvoice.m</span><br><span class="line">//  aitepiao</span><br><span class="line">//</span><br><span class="line">//  Created by tc on 2018/8/28.</span><br><span class="line">//  Copyright © 2018年 Facebook. All rights reserved.</span><br><span class="line">//</span><br><span class="line"></span><br><span class="line">#import &quot;CheckInvoice.h&quot;</span><br><span class="line">#import &lt;React/RCTEventDispatcher.h&gt;</span><br><span class="line">#import &lt;React/RCTBridge.h&gt;</span><br><span class="line"></span><br><span class="line">static CheckInvoice *_manager = nil;</span><br><span class="line"></span><br><span class="line">@implementation CheckInvoice</span><br><span class="line"></span><br><span class="line">RCT_EXPORT_MODULE()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-(instancetype)init&#123;</span><br><span class="line">  </span><br><span class="line">  if (self = [super init]) &#123;</span><br><span class="line">    </span><br><span class="line">      [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(messageDidReceived:) name:@&quot;didReceiveNotification&quot; object:nil];</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  return self;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (NSArray&lt;NSString *&gt; *)supportedEvents</span><br><span class="line">&#123;</span><br><span class="line">  return @[@&quot;didReceiveNotification&quot;, ];//有几个就写几个</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">-(void)messageDidReceived:(NSNotification *)notification&#123;</span><br><span class="line">  </span><br><span class="line">  NSDictionary *body = notification.object;</span><br><span class="line">  [self sendEventWithName:@&quot;didReceiveNotification&quot; body:body];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">+ (BOOL)requiresMainQueueSetup &#123;</span><br><span class="line">  </span><br><span class="line">  return YES;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (dispatch_queue_t)methodQueue</span><br><span class="line">&#123;</span><br><span class="line">  return dispatch_get_main_queue();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>ok.传输类写完.然后在<code>AppDelegate</code>里面直接通过通知传即可:<br>如:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">// iOS 10以上</span><br><span class="line">-(void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler&#123;</span><br><span class="line">  NSDictionary * userInfo = notification.request.content.userInfo;</span><br><span class="line">  NSLog(@&quot;iOS 10以上%@&quot;,userInfo);</span><br><span class="line">  if([notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) &#123;</span><br><span class="line">    //应用处于前台时的远程推送接受</span><br><span class="line">    //关闭U-Push自带的弹出框</span><br><span class="line">    [UMessage setAutoAlert:NO];</span><br><span class="line">    //必须加这句代码</span><br><span class="line">    [UMessage didReceiveRemoteNotification:userInfo];</span><br><span class="line">    </span><br><span class="line">  &#125;else&#123;</span><br><span class="line">    //应用处于前台时的本地推送接受</span><br><span class="line">  &#125;</span><br><span class="line">  //当应用处于前台时提示设置，需要哪个可以设置哪一个</span><br><span class="line">  if (@available(iOS 10.0, *)) &#123;</span><br><span class="line">    completionHandler(UNNotificationPresentationOptionSound|UNNotificationPresentationOptionBadge|UNNotificationPresentationOptionAlert);</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    // Fallback on earlier versions</span><br><span class="line">  &#125;</span><br><span class="line">  [[NSNotificationCenter defaultCenter] postNotificationName:@&quot;didReceiveNotification&quot; object:userInfo];</span><br><span class="line">&#125;</span><br><span class="line">// 收到通知</span><br><span class="line">-(void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler&#123;</span><br><span class="line">  NSDictionary * userInfo = response.notification.request.content.userInfo;</span><br><span class="line">  NSLog(@&quot;iOS外部 %@&quot;,userInfo);</span><br><span class="line">  [[NSNotificationCenter defaultCenter] postNotificationName:@&quot;didReceiveNotification&quot; object:userInfo];</span><br><span class="line">&#125;</span><br><span class="line">- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo&#123;</span><br><span class="line">  NSLog(@&quot;iOS 10以下%@&quot;,userInfo);</span><br><span class="line">  [[NSNotificationCenter defaultCenter] postNotificationName:@&quot;didReceiveNotification&quot; object:userInfo];</span><br><span class="line">&#125;</span><br><span class="line">- (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken</span><br><span class="line">&#123;</span><br><span class="line">  NSLog(@&quot;deviceToken==%@&quot;,[[[[deviceToken description] stringByReplacingOccurrencesOfString: @&quot;&lt;&quot; withString: @&quot;&quot;]</span><br><span class="line">                             stringByReplacingOccurrencesOfString: @&quot;&gt;&quot; withString: @&quot;&quot;]</span><br><span class="line">                            stringByReplacingOccurrencesOfString: @&quot; &quot; withString: @&quot;&quot;]);</span><br><span class="line">  [UMessage registerDeviceToken:deviceToken];</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>ok,iOS原生这边基本完成.剩下RN这边:<br><br>引入<code>NativeModules</code>和<code>NativeEventEmitter</code>组件<br>引入原生中间类<br></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const &#123; CheckInvoice &#125; = NativeModules;</span><br><span class="line">const checkInvoiceEmitter = new NativeEventEmitter(CheckInvoice);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>然后直接在生命周期方法里面监听iOS通知即可.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">componentDidMount() &#123;</span><br><span class="line">    //  监听iOS原生 UM push  监听外部通知</span><br><span class="line">    checkInvoiceEmitter.addListener(</span><br><span class="line">        &#x27;didReceiveNotification&#x27;, (info) =&gt; &#123;</span><br><span class="line">            alert(info.aps.alert.body)</span><br><span class="line">            this.setState(&#123;</span><br><span class="line">                info:info.aps.alert.body</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/shaoting0730/pushRN">源码:只有iOS推送</a> <br><br>Android也如此,集成推送.书写中间类传通知给RN. <br><br>这里就贴一下桥接代码了: <br><br><code>CommModule.java</code> <br></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">package com.eazytec.zqtong.gov.baseapp.RN;</span><br><span class="line">import android.content.Intent;</span><br><span class="line">import android.net.Uri;</span><br><span class="line">import android.util.Log;</span><br><span class="line"></span><br><span class="line">import com.facebook.react.bridge.Callback;</span><br><span class="line">import com.facebook.react.bridge.Promise;</span><br><span class="line">import com.facebook.react.bridge.ReactApplicationContext;</span><br><span class="line">import com.facebook.react.bridge.ReactContextBaseJavaModule;</span><br><span class="line">import com.facebook.react.bridge.ReactMethod;</span><br><span class="line">import com.facebook.react.modules.core.DeviceEventManagerModule;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 通信Module类</span><br><span class="line"> * Created by Song on 2017/2/17.</span><br><span class="line"> */</span><br><span class="line">public class CommModule extends ReactContextBaseJavaModule &#123;</span><br><span class="line"></span><br><span class="line">    private ReactApplicationContext mContext;</span><br><span class="line">    public static final String MODULE_NAME = &quot;commModule&quot;;</span><br><span class="line">    public static final String EVENT_NAME = &quot;EventName&quot;;</span><br><span class="line">    /**</span><br><span class="line">     * 构造方法必须实现</span><br><span class="line">     * @param reactContext</span><br><span class="line">     */</span><br><span class="line">    public CommModule(ReactApplicationContext reactContext) &#123;</span><br><span class="line">        super(reactContext);</span><br><span class="line">        this.mContext = reactContext;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 在rn代码里面是需要这个名字来调用该类的方法</span><br><span class="line">     * @return</span><br><span class="line">     */</span><br><span class="line">    @Override</span><br><span class="line">    public String getName() &#123;</span><br><span class="line">        return MODULE_NAME;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * Native调用RN</span><br><span class="line">     * @param msg</span><br><span class="line">     */</span><br><span class="line">    public void nativeCallRn(String msg) &#123;</span><br><span class="line">        mContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)</span><br><span class="line">                .emit(EVENT_NAME,msg);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><code>CommPackage.java</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">package com.eazytec.zqtong.gov.baseapp.RN;</span><br><span class="line"></span><br><span class="line">import com.facebook.react.ReactPackage;</span><br><span class="line">import com.facebook.react.bridge.JavaScriptModule;</span><br><span class="line">import com.facebook.react.bridge.NativeModule;</span><br><span class="line">import com.facebook.react.bridge.ReactApplicationContext;</span><br><span class="line">import com.facebook.react.uimanager.ViewManager;</span><br><span class="line"></span><br><span class="line">import java.util.ArrayList;</span><br><span class="line">import java.util.Collections;</span><br><span class="line">import java.util.List;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 通信Module类</span><br><span class="line"> * Created by Song on 2017/2/17.</span><br><span class="line"> */</span><br><span class="line">public class CommPackage implements ReactPackage &#123;</span><br><span class="line"></span><br><span class="line">    private static final CommPackage mCommPackage = new CommPackage();</span><br><span class="line">    public CommModule mModule;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 创建Native Module</span><br><span class="line">     * @param reactContext</span><br><span class="line">     * @return</span><br><span class="line">     */</span><br><span class="line">    @Override</span><br><span class="line">    public List&lt;NativeModule&gt; createNativeModules(ReactApplicationContext reactContext) &#123;</span><br><span class="line">        List&lt;NativeModule&gt; modules = new ArrayList&lt;&gt;();</span><br><span class="line">        mModule = new CommModule(reactContext);</span><br><span class="line">        modules.add(mModule);</span><br><span class="line">        return modules;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public List&lt;ViewManager&gt; createViewManagers(ReactApplicationContext reactContext) &#123;</span><br><span class="line">        return Collections.emptyList();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>ok.上面就是桥接文件.然后只需要在返回通知类中发送通知给RN即可.如:</p>
+<p><code>MainActivity.java</code> <br></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br></pre></td><td class="code"><pre><span class="line">package com.eazytec.zqtong.gov.baseapp;</span><br><span class="line"></span><br><span class="line">import android.app.Application;</span><br><span class="line">import android.widget.Toast;</span><br><span class="line">import org.json.JSONObject;</span><br><span class="line"></span><br><span class="line">import com.eazytec.zqtong.gov.baseapp.RN.CommModule;</span><br><span class="line">import com.facebook.react.bridge.ReactContextBaseJavaModule;</span><br><span class="line">import com.google.gson.Gson;</span><br><span class="line"></span><br><span class="line">import android.content.Context;</span><br><span class="line">import android.util.Log;</span><br><span class="line">import com.eazytec.zqtong.gov.baseapp.BuildConfig;</span><br><span class="line">import com.learnium.RNDeviceInfo.RNDeviceInfo;</span><br><span class="line">import com.facebook.react.ReactApplication;</span><br><span class="line">import cn.reactnative.httpcache.HttpCachePackage;</span><br><span class="line">import com.facebook.react.ReactNativeHost;</span><br><span class="line">import com.facebook.react.ReactPackage;</span><br><span class="line">import com.facebook.react.shell.MainReactPackage;</span><br><span class="line">import com.facebook.soloader.SoLoader;</span><br><span class="line">import com.react.rnspinkit.RNSpinkitPackage;</span><br><span class="line">import java.util.Arrays;</span><br><span class="line">import java.util.List;</span><br><span class="line">import com.imagepicker.ImagePickerPackage;</span><br><span class="line">import com.umeng.message.PushAgent;</span><br><span class="line">import com.umeng.commonsdk.UMConfigure;</span><br><span class="line">import com.umeng.message.IUmengRegisterCallback;</span><br><span class="line">import com.umeng.message.MsgConstant;</span><br><span class="line">import com.umeng.message.PushAgent;</span><br><span class="line">import com.umeng.message.UTrack;</span><br><span class="line">import com.umeng.message.UmengMessageHandler;</span><br><span class="line">import com.umeng.message.UmengNotificationClickHandler;</span><br><span class="line">import com.umeng.message.entity.UMessage;</span><br><span class="line">import com.facebook.react.bridge.ReactApplicationContext;</span><br><span class="line"></span><br><span class="line">import android.provider.Settings;</span><br><span class="line">import android.support.annotation.Nullable;</span><br><span class="line"></span><br><span class="line">import com.facebook.react.bridge.Arguments;</span><br><span class="line">import com.facebook.react.bridge.ReactContext;</span><br><span class="line">import com.facebook.react.bridge.WritableMap;</span><br><span class="line">import com.facebook.react.modules.core.DeviceEventManagerModule;</span><br><span class="line">import com.eazytec.zqtong.gov.baseapp.RN.CommPackage;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">import java.util.List;</span><br><span class="line">import android.app.Activity;</span><br><span class="line">import android.app.ActivityManager;</span><br><span class="line">import android.app.ActivityManager.RunningAppProcessInfo;</span><br><span class="line">import android.content.Context;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public class MainApplication extends Application implements ReactApplication &#123;</span><br><span class="line">  //定义上下文对象</span><br><span class="line">  public static ReactContext myContext;</span><br><span class="line">  private static final CommPackage mCommPackage = new CommPackage();</span><br><span class="line"></span><br><span class="line">  private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public boolean getUseDeveloperSupport() &#123;</span><br><span class="line">      return BuildConfig.DEBUG;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private ReactApplicationContext mContext;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    protected List&lt;ReactPackage&gt; getPackages() &#123;</span><br><span class="line">      return Arrays.&lt;ReactPackage&gt;asList(</span><br><span class="line">          new MainReactPackage(),</span><br><span class="line">          new HttpCachePackage(),</span><br><span class="line">          new RNSpinkitPackage(),</span><br><span class="line">          new RNDeviceInfo(),</span><br><span class="line">          new ImagePickerPackage(),</span><br><span class="line">              mCommPackage</span><br><span class="line">      );</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    protected String getJSMainModuleName() &#123;</span><br><span class="line">      return &quot;index&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  @Override</span><br><span class="line">  public ReactNativeHost getReactNativeHost() &#123;</span><br><span class="line">    return mReactNativeHost;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  //定义发送事件的函数</span><br><span class="line">  public  void sendEvent(ReactContext reactContext, String eventName, @Nullable WritableMap params)</span><br><span class="line">  &#123;</span><br><span class="line">    System.out.println(&quot;reactContext=&quot;+reactContext);</span><br><span class="line"></span><br><span class="line">    reactContext</span><br><span class="line">            .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)</span><br><span class="line">            .emit(eventName,params);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  @Override</span><br><span class="line">  public void onCreate() &#123;</span><br><span class="line">    super.onCreate();</span><br><span class="line">    UMConfigure.setLogEnabled(true);</span><br><span class="line">    SoLoader.init(this, /* native exopackage */ false);</span><br><span class="line"></span><br><span class="line">    //友盟 push</span><br><span class="line">    PushAgent mPushAgent = PushAgent.getInstance(this);</span><br><span class="line"></span><br><span class="line">    UmengMessageHandler messageHandler = new UmengMessageHandler() &#123;</span><br><span class="line"></span><br><span class="line">      /**</span><br><span class="line">       * 通知的回调方法（通知送达时会回调）</span><br><span class="line">       */</span><br><span class="line">      @Override</span><br><span class="line">      public void dealWithNotificationMessage(Context context, UMessage msg) &#123;</span><br><span class="line">        //调用super，会展示通知，不调用super，则不展示通知。</span><br><span class="line">        super.dealWithNotificationMessage(context, msg);</span><br><span class="line">        Gson gson = new Gson();</span><br><span class="line">        // 推送的内容</span><br><span class="line">        Log.i(&quot;msg来了内容&quot;, msg.text);</span><br><span class="line">        Log.i(&quot;msg来了头&quot;, msg.title);</span><br><span class="line"></span><br><span class="line">        String jsonStr = gson.toJson(msg);</span><br><span class="line">        Log.i(&quot;完整输出&quot;, jsonStr);</span><br><span class="line"></span><br><span class="line">        mCommPackage.mModule.nativeCallRn(jsonStr);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">    &#125;;</span><br><span class="line">    mPushAgent.setMessageHandler(messageHandler);</span><br><span class="line"></span><br><span class="line">    //注册推送服务，每次调用register方法都会回调该接口</span><br><span class="line">    mPushAgent.register(new IUmengRegisterCallback() &#123;</span><br><span class="line"></span><br><span class="line">      @Override</span><br><span class="line">      public void onSuccess(String deviceToken) &#123;</span><br><span class="line">        //注册成功会返回device token</span><br><span class="line">          Log.i(deviceToken,&quot;deviceToken来了&quot;);</span><br><span class="line">          Log.i(deviceToken,deviceToken);</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      @Override</span><br><span class="line">      public void onFailure(String s, String s1) &#123;</span><br><span class="line">          Log.i(s,s);</span><br><span class="line">          Log.i(s1,s1);</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        /**</span><br><span class="line">         * 程序是否在前台运行</span><br><span class="line">         *</span><br><span class="line">         * @return</span><br><span class="line">         */</span><br><span class="line">        public boolean isAppOnForeground() &#123;</span><br><span class="line">            // Returns a list of application processes that are running on the</span><br><span class="line">            // device</span><br><span class="line"></span><br><span class="line">            ActivityManager activityManager = (ActivityManager) getApplicationContext().getSystemService(Context.ACTIVITY_SERVICE);</span><br><span class="line">            String packageName = getApplicationContext().getPackageName();</span><br><span class="line"></span><br><span class="line">            List&lt;RunningAppProcessInfo&gt; appProcesses = activityManager</span><br><span class="line">                    .getRunningAppProcesses();</span><br><span class="line">            if (appProcesses == null)</span><br><span class="line">                return false;</span><br><span class="line"></span><br><span class="line">            for (RunningAppProcessInfo appProcess : appProcesses) &#123;</span><br><span class="line">                // The name of the process that this object is associated with.</span><br><span class="line">                if (appProcess.processName.equals(packageName)</span><br><span class="line">                        &amp;&amp; appProcess.importance == RunningAppProcessInfo.IMPORTANCE_FOREGROUND) &#123;</span><br><span class="line">                    return true;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            return false;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+    </div>
+</article>
+
+
+<div id="comments-template"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script>
+	if(!window.commentConfig) {
+      window.commentConfig = {}
+      window.commentConfig.title = 'React-Native推送通知至RN且显示推送内容'
+    }
+</script>
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~" autocomplete="off">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="/imgs/headImg.jpg" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description"><p>ʕ•̫͡•ོʔ•̫͡•ཻʕ•̫͡•ʔ•͓͡•ʔ</p>
+</p>
+        </div>
+    </div>
+</aside>
+    
+    <aside id="sidebar-recent_comments">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-comments"></i>
+            最新评论
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    <aside id="sidebar-hot_posts">
+    <div class="panel panel-gal hot hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-fire"></i>
+            最热文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/01/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E6%BB%91%E5%8A%A8%E7%BB%84%E4%BB%B6%E6%8E%A2%E7%B4%A2/">Flutter~滑动组件探索</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/02/08/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~PlatformView%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/">Flutter~PlatformView的简单使用</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2022/09/29/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E5%8F%91%E5%B8%83package%E5%88%B0pub.dev%E5%9B%BE%E6%96%87%E8%AF%A6%E8%A7%A3/">Flutter~发布package到pub.dev图文详解</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2022/09/01/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E5%B8%B8%E7%94%A8%E7%BB%84%E4%BB%B6%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90%E6%A6%82%E8%A7%88/">Flutter~常用组件源码分析概览</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2022/08/01/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~riverpod%E5%BA%93%E5%AD%A6%E4%B9%A0/">Flutter~riverpod库学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2021/08/22/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/React%E5%AD%A6%E4%B9%A0~React-Hooks%E5%AD%A6%E4%B9%A0/">React学习:React_Hooks学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2021/03/13/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~getx%E5%AD%A6%E4%B9%A0/">Flutter~getx库学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2021/01/06/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~provider%E5%AD%A6%E4%B9%A0/">Flutter~provider学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/04/11/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~fish_redux%E5%AD%A6%E4%B9%A0/">Flutter~fish_redux学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/01/23/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E8%87%AA%E5%AE%9A%E4%B9%89tabbar%E6%A8%A1%E5%9D%97/">Flutter~自定义tabbar模块</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2021/08/22/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/React%E5%AD%A6%E4%B9%A0~React-Hooks%E5%AD%A6%E4%B9%A0/">React学习:React_Hooks学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/05/17/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/%E9%A9%AC%E8%B5%9B%E5%85%8B%E5%AD%A6%E4%B9%A0/">前端马赛克学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/02/08/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~PlatformView%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/">Flutter~PlatformView的简单使用</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2021/01/06/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~provider%E5%AD%A6%E4%B9%A0/">Flutter~provider学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/03/04/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~sqflite%E5%BA%93%E5%AD%A6%E4%B9%A0/">Flutter~sqflite库学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2022/09/01/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E5%B8%B8%E7%94%A8%E7%BB%84%E4%BB%B6%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90%E6%A6%82%E8%A7%88/">Flutter~常用组件源码分析概览</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/05/27/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/RN~Mobx%E4%B8%8Ereact-navigation%E7%9A%84%E4%BD%BF%E7%94%A8/">Mobx与react-navigation的结合使用</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/09/08/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/RN~React-Native%E6%8E%A8%E9%80%81%E9%80%9A%E7%9F%A5%E8%87%B3RN%E4%B8%94%E6%98%BE%E7%A4%BA%E6%8E%A8%E9%80%81%E5%86%85%E5%AE%B9/">React-Native推送通知至RN且显示推送内容</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/04/22/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/RN~react-native-router-flux%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/">react-native-router-flux初步认识</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/07/29/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/RN~redux%E5%92%8Creact-navigation%E7%9A%84%E7%BB%93%E5%90%88%E4%BD%BF%E7%94%A8/">redux和react-navigation的结合使用</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+
+                
+                <li>
+                    <a href="/2018/09/08/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/RN~React-Native%E6%8E%A8%E9%80%81%E9%80%9A%E7%9F%A5%E8%87%B3RN%E4%B8%94%E6%98%BE%E7%A4%BA%E6%8E%A8%E9%80%81%E5%86%85%E5%AE%B9/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2018/09/08/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/RN~React-Native%E6%8E%A8%E9%80%81%E9%80%9A%E7%9F%A5%E8%87%B3RN%E4%B8%94%E6%98%BE%E7%A4%BA%E6%8E%A8%E9%80%81%E5%86%85%E5%AE%B9/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2018/09/08/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/RN~React-Native%E6%8E%A8%E9%80%81%E9%80%9A%E7%9F%A5%E8%87%B3RN%E4%B8%94%E6%98%BE%E7%A4%BA%E6%8E%A8%E9%80%81%E5%86%85%E5%AE%B9/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+                
+            </ul>
+            <div class="tab-content">
+                
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+    <a href="/tags/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 14.241563532672473px;" class="tag-cloud-link">后端学习</a>
+    
+    <a href="/tags/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/" style="font-size: 8.575564185699637px;" class="tag-cloud-link">其他学习</a>
+    
+    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 14.375373371229268px;" class="tag-cloud-link">前端学习</a>
+    
+    <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 11.500851833718164px;" class="tag-cloud-link">移动端学习</a>
+    
+</div>
+                
+                
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="https://www.baidu.com/" target="_blank">百度</a>
+    </li>
+    
+    <li>
+        <a href="https://www.google.com/" target="_blank">谷歌</a>
+    </li>
+    
+</div>
+                
+                
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="https://github.com/shaoting0730" target="_blank">Github</a>
+    </li>
+    
+    <li>
+        <a href="http://www.cnblogs.com/shaoting/" target="_blank">旧博客</a>
+    </li>
+    
+</div>
+                
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2018  Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+</footer>
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/koharu.model.json"},"display":{"position":"right","width":100,"height":200},"mobile":{"show":true},"log":false});</script></body>
+
+<script src="/js/activate-power-mode.js"></script>
+
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: '/imgs/slide/background',
+      ext: 'jpg',
+      maxCount: '10'
+    }
+</script>
+
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+
+
+<script src="/js/oni.js"></script>
+
+
+
+<script>
+    window.hot_posts_count = '10'
+    // window.use_leancloud = 'true'
+</script>
+
+<script src="/js/comment/leancloud.js"></script>
+
+
+
+<script>
+    if(window.commentConfig) {
+      window.commentConfig.id = 'Sat Sep 08 2018 00:00:00 GMT+0800'
+      window.commentConfig.owner = 'shaoting0730'
+      window.commentConfig.repo = 'shaoting0730.github.io'
+      window.commentConfig.client_id = 'd8eb3636d568669139ef'
+      window.commentConfig.client_secret = 'a39a08870520a45942c9c28771e091a6d3f147d8'
+      window.commentConfig.redirect_uri = ''
+      window.commentConfig.proxy = 'https://shielded-brushlands-08810.herokuapp.com/https://github.com/login/oauth/access_token'
+    } else {
+      window.commentConfig = {
+      	id: 'Sat Sep 08 2018 00:00:00 GMT+0800',
+        owner: 'shaoting0730',
+        repo: 'shaoting0730.github.io',
+        client_id: 'd8eb3636d568669139ef',
+        client_secret: 'a39a08870520a45942c9c28771e091a6d3f147d8',
+        redirect_uri: '',
+        proxy: 'https://shielded-brushlands-08810.herokuapp.com/https://github.com/login/oauth/access_token'
+      }
+    }
+</script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+    
+<script src="/js/comment/gitalk.js"></script>
+
+  
+
+</html>

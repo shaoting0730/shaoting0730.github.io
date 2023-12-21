@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="">
+    
+    <meta name="description" content="ʕ•̫͡•ོʔ•̫͡•ཻʕ•̫͡•ʔ•͓͡•ʔ">
+    
+    
+    
+    
+    
+    
+    <title>react-native七牛上传图片 | 少停</title>
+    <link href="https://zhoushaoting.com" rel="prefetch" />
+
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/js/jquery.min.js"></script>
+
+    
+<script src="/js/bootstrap.min.js"></script>
+
+    
+<script src="/js/aos.js"></script>
+
+    
+<script src="/js/highslide/highslide-full.min.js"></script>
+
+    
+<link rel="stylesheet" href="/js/highslide/highslide.css">
+
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/xsbg.gif');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <script src="//cdn1.lncld.net/static/js/3.4.2/av-min.js"></script>
+    <script>
+      AV.init({
+        appId: 'npHNPYvfm9QPD0QTUGPpeyHp-gzGzoHsz',
+        appKey: 'To3dnra4TCduaPXz0DNPu1kz'
+      })
+    </script>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/headImg.jpg'
+        var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg,preview5.jpg,preview6.jpg,preview7.jpg,preview8.jpg,preview9.jpg,preview10.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <div class="gal-menu gal-dropdown">
+    <div class="circle" id="gal">
+        <div class="ring">
+            <a href="https://zhoushaoting.com" class="menuItem" style="left: 50%; top: 15%;">首页</a>
+            
+            <a class="menuItem" style="left: 80.3109%; top: 32.5%;">下一页</a>
+            
+            <a href="/archives" class="menuItem" style="left: 80.3109%; top: 67.5%;">归档</a>
+            <a href="/about" class="menuItem" style="left: 50%; top: 85%;">关于</a>
+            <a href="/message" class="menuItem" style="left: 19.6891%; top: 67.5%;">留言板</a>
+
+            
+            <a class="menuItem" style="left: 19.6891%; top: 32.5%;">上一页</a>
+            
+        </div>
+        <audio id="audio" src="/imgs/oni.mp3"></audio>
+    </div>
+</div>
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="https://zhoushaoting.com">
+                
+                <style>
+                    #gal-header .navbar-brand {
+                        height: 54px;
+                        line-height: 24px;
+                        font-size: 28px;
+                        opacity: 1;
+                        background-color: rgba(0,0,0,0);
+                        text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #228DFF,0 0 35px #228DFF,0 0 40px #228DFF,0 0 50px #228DFF,0 0 75px #228DFF;
+                    }
+                </style>
+                <!-- 这里使用文字(navbar_text or config.title) -->
+                <div class="navbar-brand">少停</div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class="">
+                    <a href="/">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/categories/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/">后端学习</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/">其他学习</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/">前端学习</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="/categories">...</a>
+                        </li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/tags/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/">后端学习</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/">其他学习</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/">前端学习</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="/tags">...</a>
+                        </li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/about">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/message">
+                        <i class="fa fa-heart"></i>留言板
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="https://zhoushaoting.com">少停</a>
+        >
+        <span>react-native七牛上传图片</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2018/06/26/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/RN~react-native%E4%B8%83%E7%89%9B%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87/">react-native七牛上传图片</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/">移动端学习</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2018-06-26
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-eye"></i>
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2018/06/26/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/RN~react-native%E4%B8%83%E7%89%9B%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87/">react-native七牛上传图片</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2018-06-26
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/">移动端学习</a>
+                
+                
+                
+                <i class="fa fa-eye"></i>
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <p>今天试一下React Native 七牛上传图片.坑也就随之开始了.以demo为例.<br><code>react-native</code>:”0.55.4”,<code>react-native-qiniu</code>:’’0.3.0”</p>
+<span id="more"></span>
+<p>首先最大的坑就是七牛官方的这个库:<code>react-native-qiniu</code>,好像是该库的创始人离职了,导致了该库已经荒废,无人更新维护.<br>如果你只是单纯按照github的说明导入该库就使用的话,无论你以什么姿势撸.结果都是<code>Rpc.uploadFile</code>的<code>catch</code>输出错误,错误信息为<code>null</code>………..这个错误信息真让我头大.<br>可喜有人在网上做出了更新,更新代码(需要修改库中的两个源文件../react-native-qiniu/core)如下:<br><code>rpc.js</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br></pre></td><td class="code"><pre><span class="line">import conf from &#x27;./conf.js&#x27;;</span><br><span class="line">import Auth from &#x27;./auth&#x27;;</span><br><span class="line"></span><br><span class="line">//发送管理和fop命令,总之就是不上传文件</span><br><span class="line">function post(uri, adminToken, content) &#123;</span><br><span class="line">    var headers = &#123;</span><br><span class="line">        &#x27;Content-Type&#x27;: &#x27;application/x-www-form-urlencoded&#x27;,</span><br><span class="line">    &#125;;</span><br><span class="line">    let payload = &#123;</span><br><span class="line">        headers: headers,</span><br><span class="line">        method: &#x27;POST&#x27;,</span><br><span class="line">        dataType: &#x27;json&#x27;,</span><br><span class="line">        timeout: conf.RPC_TIMEOUT,</span><br><span class="line">    &#125;;</span><br><span class="line">    if (typeof content === &#x27;undefined&#x27;) &#123;</span><br><span class="line">        payload.headers[&#x27;Content-Length&#x27;] = 0;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        //carry data</span><br><span class="line">        payload.body = content;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    if (adminToken) &#123;</span><br><span class="line">        headers[&#x27;Authorization&#x27;] = adminToken;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return fetch(uri, payload);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">* 直传文件</span><br><span class="line">* formInput对象如何配置请参考七牛官方文档“直传文件”一节</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">function uploadFile(dataParams, policy, callbackUpDate = function () &#123; &#125;, callBackMethod = function () &#123; &#125;) &#123;</span><br><span class="line">    let params = getParams(dataParams, policy);</span><br><span class="line">    let uri = params.uri;</span><br><span class="line">    let data = params.data;</span><br><span class="line">    let oloaded = null;</span><br><span class="line">    let responseObj = &#123;&#125;;</span><br><span class="line">    return new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">        if (typeof uri != &#x27;string&#x27; || uri == &#x27;&#x27; || typeof data.key == &#x27;undefined&#x27;) &#123;</span><br><span class="line">            reject &amp;&amp; reject(null);</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line">        if (uri[0] == &#x27;/&#x27;) &#123;</span><br><span class="line">            uri = &quot;file://&quot; + uri;</span><br><span class="line">        &#125;</span><br><span class="line">        //创建xhr并open</span><br><span class="line">        var xhr = new XMLHttpRequest();</span><br><span class="line">        xhr.onreadystatechange = function () &#123;</span><br><span class="line">            responseObj.readyState = xhr.readyState; //状态0-4</span><br><span class="line">            responseObj.data = xhr.response;//返回值</span><br><span class="line">            responseObj.textData = xhr.responseText; //返回值Text</span><br><span class="line">            responseObj.status = xhr.status; //状态码</span><br><span class="line">            // responseObj.message = &quot;&quot;</span><br><span class="line">            switch (xhr.readyState) &#123;</span><br><span class="line">                case 0:</span><br><span class="line">                    callBackMethod(responseObj)</span><br><span class="line">                    break;</span><br><span class="line">                case 1:</span><br><span class="line">                    callBackMethod(responseObj)</span><br><span class="line">                    break;</span><br><span class="line">                case 2:</span><br><span class="line">                    callBackMethod(responseObj)</span><br><span class="line">                    break;</span><br><span class="line">                case 3:</span><br><span class="line">                    callBackMethod(responseObj)</span><br><span class="line">                    break;</span><br><span class="line">                case 4:</span><br><span class="line">                    if ((xhr.status &gt;= 200 &amp;&amp; xhr.status &lt; 300) || xhr.status == 304) &#123;</span><br><span class="line">                        if (xhr.status == 200) &#123;</span><br><span class="line">                            callBackMethod(responseObj)</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125; else &#123;</span><br><span class="line">                        callBackMethod(responseObj)</span><br><span class="line">                    &#125;</span><br><span class="line">                    break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        xhr.open(&#x27;POST&#x27;, conf.UP_HOST);</span><br><span class="line">        xhr.onload = () =&gt; &#123;</span><br><span class="line">            if (xhr.status !== 200) &#123;</span><br><span class="line">                reject &amp;&amp; reject(responseObj);</span><br><span class="line">                return;</span><br><span class="line">            &#125;</span><br><span class="line">            resolve &amp;&amp; resolve(JSON.parse(responseObj.data));</span><br><span class="line">        &#125;;</span><br><span class="line">        xhr.onerror = (evt) =&gt; &#123;</span><br><span class="line">            reject &amp;&amp; reject(evt);</span><br><span class="line">            return;</span><br><span class="line">        &#125;; //请求失败</span><br><span class="line">        xhr.upload.onloadstart = () =&gt; &#123;//上传开始执行方法</span><br><span class="line">            oloaded = 0;//设置上传开始时，以上传的文件大小为0</span><br><span class="line">            console(&quot;上传开始&quot;)</span><br><span class="line">        &#125;;</span><br><span class="line">        xhr.upload.onprogress = (evt) =&gt; &#123;</span><br><span class="line">            oloaded = evt.loaded;//重新赋值已上传文件大小，用以下次计算</span><br><span class="line">            callbackUpDate(Math.round(oloaded / evt.total * 100), oloaded, evt.total)</span><br><span class="line">        &#125;;</span><br><span class="line">        xhr.upload.onloadend = (evt) =&gt; &#123;</span><br><span class="line">            console(&quot;上传结束&quot;)</span><br><span class="line">        &#125;;</span><br><span class="line">        let formdata = creatFormData(params);</span><br><span class="line">        xhr.send(formdata);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//构造上传参数</span><br><span class="line">function getParams(data, policy) &#123;</span><br><span class="line">    let putPolicy = new Auth.Policy(</span><br><span class="line">        policy</span><br><span class="line">    );</span><br><span class="line">    let uptoken = putPolicy.token();</span><br><span class="line">    data.token = uptoken;</span><br><span class="line">    let params = &#123;&#125;;</span><br><span class="line">    params.uri = data.uri;</span><br><span class="line">    delete data.uri;</span><br><span class="line">    params.data = data;</span><br><span class="line">    return params;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">* 创建一个表单对象,用于上传参数</span><br><span class="line">* @param &#123;*&#125; params</span><br><span class="line">*/</span><br><span class="line">function creatFormData(params) &#123;</span><br><span class="line">    let formdata = new FormData();</span><br><span class="line">    let uri = params.uri;</span><br><span class="line">    let formInput = creatFormInput(uri);</span><br><span class="line">    let data = params.data;</span><br><span class="line">    console.log(data)</span><br><span class="line">    for (let key of Object.keys(data)) &#123;</span><br><span class="line">        let value = data[key];</span><br><span class="line">        if (key.charAt(0) === &quot;_&quot;) &#123;</span><br><span class="line">            formdata.append(&quot;x:&quot; + key.substring(1, key.length), value);</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            formdata.append(key, value);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    formdata.append(&quot;file&quot;, &#123; uri: uri, type: formInput.type, name: formInput.name &#125;);</span><br><span class="line">    console.log(formdata)</span><br><span class="line">    return formdata;</span><br><span class="line">&#125;</span><br><span class="line">/**</span><br><span class="line">* 构造表单对象中file对象</span><br><span class="line">* @param &#123;*&#125; params</span><br><span class="line">*/</span><br><span class="line">function creatFormInput(uri) &#123;</span><br><span class="line">    let formInput = &#123;&#125;;</span><br><span class="line">    if (typeof formInput.type == &#x27;undefined&#x27;)</span><br><span class="line">        formInput.type = &#x27;application/octet-stream&#x27;;</span><br><span class="line">    if (typeof formInput.name == &#x27;undefined&#x27;) &#123;</span><br><span class="line">        var filePath = uri.split(&quot;/&quot;);</span><br><span class="line">        if (filePath.length &gt; 0)</span><br><span class="line">            formInput.name = filePath[filePath.length - 1];</span><br><span class="line">        else</span><br><span class="line">            formInput.name = &quot;&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    return formInput;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export default &#123; uploadFile, post &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p><code>auth.js</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br></pre></td><td class="code"><pre><span class="line">import base64 from &#x27;base-64&#x27;;</span><br><span class="line">import CryptoJS from &quot;crypto-js&quot;;</span><br><span class="line">import conf from &quot;./conf.js&quot;;</span><br><span class="line">import parse from &#x27;url-parse&#x27;;</span><br><span class="line"></span><br><span class="line">function urlsafeBase64Encode(jsonFlags) &#123;</span><br><span class="line">    var encoded = base64.encode(jsonFlags);</span><br><span class="line">    return base64ToUrlSafe(encoded);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">function base64ToUrlSafe(v) &#123;</span><br><span class="line">    return v.replace(/\//g, &#x27;_&#x27;).replace(/\+/g, &#x27;-&#x27;);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">function hmacSha1(encodedFlags, secretKey) &#123;</span><br><span class="line">    var encoded = CryptoJS.HmacSHA1(encodedFlags, secretKey).toString(CryptoJS.enc.Base64);</span><br><span class="line">    return encoded;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">function generateAccessToken(url, body) &#123;</span><br><span class="line">    var u = parse(url, true);</span><br><span class="line"></span><br><span class="line">    var path = u.pathname;</span><br><span class="line">    var access = path + &#x27;\n&#x27;;</span><br><span class="line"></span><br><span class="line">    if (body) &#123;</span><br><span class="line">        access += body;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    var digest = hmacSha1(access, conf.SECRET_KEY);</span><br><span class="line">    var safeDigest = base64ToUrlSafe(digest);</span><br><span class="line">    let token = &#x27;QBox &#x27; + conf.ACCESS_KEY + &#x27;:&#x27; + safeDigest;</span><br><span class="line">    //console.log(token);</span><br><span class="line">    return token;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class Policy &#123;</span><br><span class="line">    constructor(policy) &#123;</span><br><span class="line">        if (typeof (policy) == &quot;undefined&quot;) &#123;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            this.policy = policy;</span><br><span class="line">            if (typeof (policy.deadline) == &quot;undefined&quot; || policy.deadline == null) &#123;</span><br><span class="line">                this.policy.deadline = 3600 + Math.floor(Date.now() / 1000);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    _parse2Str(putPolicy) &#123;</span><br><span class="line">        let str = &quot;&#123;&quot;;</span><br><span class="line">        let keys = Object.keys(putPolicy);</span><br><span class="line">        keys.forEach((key, i) =&gt; &#123;</span><br><span class="line">            let value = putPolicy[key];</span><br><span class="line">            if (typeof (value) == &quot;object&quot;) &#123;</span><br><span class="line">                str = `$&#123;str&#125;&quot;$&#123;key&#125;&quot;:`</span><br><span class="line">                str = `$&#123;str&#125;&quot;&#123;`</span><br><span class="line">                Object.keys(value).forEach((key2) =&gt; &#123;</span><br><span class="line">                    let value2 = value[key2];</span><br><span class="line">                    let re = /(\$\(.*?\))/g;</span><br><span class="line">                    if (re.test(value2)) &#123;</span><br><span class="line">                        str = `$&#123;str&#125;\\\&quot;$&#123;key2&#125;\\\&quot;:$&#123;value2&#125;,`</span><br><span class="line">                    &#125; else &#123;</span><br><span class="line">                        str = `$&#123;str&#125;\\\&quot;$&#123;key2&#125;\\\&quot;:&quot;$&#123;value2&#125;&quot;,`</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                &#125;)</span><br><span class="line">                console.log(keys.length + &quot;::&quot; + i)</span><br><span class="line">                if (i &gt;= keys.length) &#123;</span><br><span class="line">                    str = `$&#123;str.substring(0, str.length - 1)&#125;&#125;&quot;`</span><br><span class="line">                &#125; else &#123;</span><br><span class="line">                    str = `$&#123;str.substring(0, str.length - 1)&#125;&#125;&quot;,`</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            else if (typeof (value) == &quot;number&quot;) &#123;</span><br><span class="line">                str = `$&#123;str&#125;&quot;$&#123;key&#125;&quot;:$&#123;value&#125;,`</span><br><span class="line">            &#125;</span><br><span class="line">            else if (typeof (value) == &quot;string&quot;) &#123;</span><br><span class="line">                str = `$&#123;str&#125;&quot;$&#123;key&#125;&quot;:&quot;$&#123;value&#125;&quot;,`</span><br><span class="line">            &#125;</span><br><span class="line">            else &#123;</span><br><span class="line">                str = `$&#123;str&#125;&quot;$&#123;key&#125;&quot;:&quot;$&#123;value&#125;&quot;,`</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">        str = `$&#123;str.substring(0, str.length - 1)&#125;&#125;`;</span><br><span class="line">        return str;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    // _creatStr = (policy) =&gt; &#123;</span><br><span class="line">    //   policy[&#x27;deadline&#x27;] = this.expires + Math.floor(Date.now() / 1000);</span><br><span class="line">    //   let policyStr = JSON.stringify(policy);</span><br><span class="line">    // let re = /(\&quot;\$\(.*?\)\&quot;)/g;</span><br><span class="line">    //   let newStr = policyStr.replace(re, (value) =&gt; &#123;</span><br><span class="line">    //     return value.substring(1, value.length - 1);</span><br><span class="line">    //   &#125;)</span><br><span class="line">    //   return newStr;</span><br><span class="line">    // &#125;</span><br><span class="line"></span><br><span class="line">    token = () =&gt; &#123;</span><br><span class="line">        policStr = this._parse2Str(this.policy);</span><br><span class="line">        console.log(&quot;policStr&quot;, policStr);</span><br><span class="line">        var encodedPutPolicy = this._urlsafeBase64Encode(policStr);</span><br><span class="line">        console.log(&quot;encodedPutPolicy&quot;, encodedPutPolicy);</span><br><span class="line">        var sign = this._hmacSha1(encodedPutPolicy, conf.SECRET_KEY);</span><br><span class="line">        var encodedSign = this._base64ToUrlSafe(sign);</span><br><span class="line">        console.log(&quot;encodedSign&quot;, encodedSign);</span><br><span class="line">        var uploadToken = conf.ACCESS_KEY + &#x27;:&#x27; + encodedSign + &#x27;:&#x27; + encodedPutPolicy;</span><br><span class="line">        console.log(&quot;uploadToken&quot;, uploadToken);</span><br><span class="line">        return uploadToken;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    _urlsafeBase64Encode = (jsonFlags) =&gt; &#123;</span><br><span class="line">        var encoded = base64.encode(jsonFlags);</span><br><span class="line">        return base64ToUrlSafe(encoded);</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    _base64ToUrlSafe = (v) =&gt; &#123;</span><br><span class="line">        return v.replace(/\//g, &#x27;_&#x27;).replace(/\+/g, &#x27;-&#x27;);</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    _hmacSha1 = (encodedFlags, secretKey) =&gt; &#123;</span><br><span class="line">        var encoded = CryptoJS.HmacSHA1(encodedFlags, secretKey).toString(CryptoJS.enc.Base64);</span><br><span class="line">        return encoded;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class GetPolicy &#123;</span><br><span class="line">    constructor(expires) &#123;</span><br><span class="line">        this.expires = expires || 3600;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    makeRequest(baseUrl) &#123;</span><br><span class="line">        var deadline = this.expires + Math.floor(Date.now() / 1000);</span><br><span class="line"></span><br><span class="line">        if (baseUrl.indexOf(&#x27;?&#x27;) &gt;= 0) &#123;</span><br><span class="line">            baseUrl += &#x27;&amp;e=&#x27;;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            baseUrl += &#x27;?e=&#x27;;</span><br><span class="line">        &#125;</span><br><span class="line">        baseUrl += deadline;</span><br><span class="line"></span><br><span class="line">        var signature = hmacSha1(baseUrl, conf.SECRET_KEY);</span><br><span class="line">        var encodedSign = base64ToUrlSafe(signature);</span><br><span class="line">        var downloadToken = conf.ACCESS_KEY + &#x27;:&#x27; + encodedSign;</span><br><span class="line"></span><br><span class="line">        return baseUrl + &#x27;&amp;token=&#x27; + downloadToken;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export default &#123; urlsafeBase64Encode, generateAccessToken, Policy, GetPolicy &#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>ok,改完之后,你就可以愉快的撸自己的业务代码了.至于业务代码我就简单写个例子:<br>其中,Conf.ACCESS_KEY和Conf.SECRET_KEY从七牛账号里面获取,Conf.UP_HOST  从<a target="_blank" rel="noopener" href="https://developer.qiniu.com/kodo/manual/1671/region-endpoint">https://developer.qiniu.com/kodo/manual/1671/region-endpoint</a>   里面获取,其中,<code>scope</code>就是七牛里面你自己建立的存储空间名</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">* Sample React Native App</span><br><span class="line">* https://github.com/facebook/react-native</span><br><span class="line">* @flow</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">import React, &#123; Component &#125; from &#x27;react&#x27;;</span><br><span class="line">import &#123;</span><br><span class="line">    Platform,</span><br><span class="line">    StyleSheet,</span><br><span class="line">    Text,</span><br><span class="line">    View,</span><br><span class="line">    Image</span><br><span class="line">&#125; from &#x27;react-native&#x27;;</span><br><span class="line">import Qiniu, &#123; Auth, ImgOps, Conf, Rs, Rpc &#125; from &#x27;react-native-qiniu&#x27;;</span><br><span class="line">//对于七牛修改文件参考: https://blog.csdn.net/qq_33935895/article/details/78775819</span><br><span class="line">Conf.ACCESS_KEY = &quot;从七牛账号里面获取&quot;;</span><br><span class="line">Conf.SECRET_KEY = &quot;从七牛账号里面获取&quot;;</span><br><span class="line">Conf.UP_HOST = &#x27;从七牛账号里面获取&#x27;;  // https://developer.qiniu.com/kodo/manual/1671/region-endpoint</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">type Props = &#123;&#125;;</span><br><span class="line">export default class App extends Component&lt;Props&gt; &#123;</span><br><span class="line">    // 构造</span><br><span class="line">    constructor(props) &#123;</span><br><span class="line">        super(props);</span><br><span class="line">        // 初始状态</span><br><span class="line">        this.state = &#123;</span><br><span class="line">            img: &#x27;图片url&#x27;</span><br><span class="line"></span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    render() &#123;</span><br><span class="line">        return (</span><br><span class="line">            &lt;View style=&#123;styles.container&#125;&gt;</span><br><span class="line">                &lt;Text style=&#123;styles.instructions&#125; onPress=&#123;() =&gt; this.upload()&#125;&gt;</span><br><span class="line">                    上传</span><br><span class="line">&lt;/Text&gt;</span><br><span class="line">                &lt;Text&gt;&#123;this.state.img&#125;&lt;/Text&gt;</span><br><span class="line">                &lt;Image</span><br><span class="line">                    source=&#123;&#123; uri: this.state.img &#125;&#125;</span><br><span class="line">                    style=&#123;&#123; width: 200, height: 400 &#125;&#125;</span><br><span class="line">                /&gt;</span><br><span class="line">            &lt;/View&gt;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">    * 先上传七牛 获取url</span><br><span class="line">    * */</span><br><span class="line">    upload = () =&gt; &#123;</span><br><span class="line">        var img = &#x27;/Users/shaotingzhou/Desktop/qiniuDemo/uploadImg.jpg&#x27;   //图片路径 如果是从相册获取图片的话,其相册会返回</span><br><span class="line">        var myDate = new Date();</span><br><span class="line">        const key = myDate.getTime() + &#x27;.jpg&#x27;;  //上传成功后该key就是图片的url路径</span><br><span class="line">        //上传参数</span><br><span class="line">        let params = &#123;</span><br><span class="line">            uri: img,//图片路径  可以通过第三方工具 如:ImageCropPicker等获取本地图片路径</span><br><span class="line">            key: key,//要上传的key</span><br><span class="line">        &#125;</span><br><span class="line">        //构建上传策略</span><br><span class="line">        let policy = &#123;</span><br><span class="line">            scope: &quot;demo&quot;,//记得这里如果格式为&lt;bucket&gt;:&lt;key&gt;形式的话,key要与params里的key保持一致,详见七牛上传策略</span><br><span class="line">            returnBody://returnBody 详见上传策略</span><br><span class="line">            &#123;</span><br><span class="line">                name: &quot;$(fname)&quot;,//获取文件名</span><br><span class="line">                size: &quot;$(fsize)&quot;,//获取文件大小</span><br><span class="line">                w: &quot;$(imageInfo.width)&quot;,//...</span><br><span class="line">                h: &quot;$(imageInfo.height)&quot;,//...</span><br><span class="line">                hash: &quot;$(etag)&quot;,//...</span><br><span class="line">            &#125;,</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        //进行文件上传</span><br><span class="line">        Rpc.uploadFile(params, policy).then((data) =&gt; &#123;</span><br><span class="line">            console.log(&#x27;上传成功&#x27;)</span><br><span class="line">            var imgUrl = key   //七牛上的图片URL 就是之前的key + 你公司域名</span><br><span class="line">            this.setState(&#123;</span><br><span class="line">                img: &#x27;http://pax8cso07.bkt.clouddn.com/&#x27; + key</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;).catch((err) =&gt; &#123;</span><br><span class="line">            console.log(err)</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const styles = StyleSheet.create(&#123;</span><br><span class="line">    container: &#123;</span><br><span class="line">        flex: 1,</span><br><span class="line">        justifyContent: &#x27;center&#x27;,</span><br><span class="line">        alignItems: &#x27;center&#x27;,</span><br><span class="line">        backgroundColor: &#x27;#F5FCFF&#x27;,</span><br><span class="line">    &#125;,</span><br><span class="line">    welcome: &#123;</span><br><span class="line">        fontSize: 20,</span><br><span class="line">        textAlign: &#x27;center&#x27;,</span><br><span class="line">        margin: 10,</span><br><span class="line">    &#125;,</span><br><span class="line">    instructions: &#123;</span><br><span class="line">        textAlign: &#x27;center&#x27;,</span><br><span class="line">        color: &#x27;#333333&#x27;,</span><br><span class="line">        marginBottom: 5,</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>ok.下面是七牛里面的key对应图,修改后的输出图,最后的例子展示图:<br><img src="/2018/06/26/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/RN~react-native%E4%B8%83%E7%89%9B%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87/../../../../../images/RN~react-native七牛上传图片/qiniuDemoKey.png" alt="七牛key对应图"><br><img src="/2018/06/26/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/RN~react-native%E4%B8%83%E7%89%9B%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87/../../../../../images/RN~react-native七牛上传图片/qiniuDemoLog.png" alt="七牛输出"><br><img src="/2018/06/26/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/RN~react-native%E4%B8%83%E7%89%9B%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87/../../../../../images/RN~react-native七牛上传图片/qiniu_demo_result.gif" alt="Android与RN交互示意图"><br>下面是源码.其中七牛的修改文件在0.3.0中.<br><a target="_blank" rel="noopener" href="https://github.com/shaoting0730/qiniuDemo">源码</a></p>
+
+    </div>
+</article>
+
+
+<div id="comments-template"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script>
+	if(!window.commentConfig) {
+      window.commentConfig = {}
+      window.commentConfig.title = 'react-native七牛上传图片'
+    }
+</script>
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~" autocomplete="off">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="/imgs/headImg.jpg" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description"><p>ʕ•̫͡•ོʔ•̫͡•ཻʕ•̫͡•ʔ•͓͡•ʔ</p>
+</p>
+        </div>
+    </div>
+</aside>
+    
+    <aside id="sidebar-recent_comments">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-comments"></i>
+            最新评论
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    <aside id="sidebar-hot_posts">
+    <div class="panel panel-gal hot hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-fire"></i>
+            最热文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/01/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E6%BB%91%E5%8A%A8%E7%BB%84%E4%BB%B6%E6%8E%A2%E7%B4%A2/">Flutter~滑动组件探索</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/02/08/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~PlatformView%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/">Flutter~PlatformView的简单使用</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2022/09/29/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E5%8F%91%E5%B8%83package%E5%88%B0pub.dev%E5%9B%BE%E6%96%87%E8%AF%A6%E8%A7%A3/">Flutter~发布package到pub.dev图文详解</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2022/09/01/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E5%B8%B8%E7%94%A8%E7%BB%84%E4%BB%B6%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90%E6%A6%82%E8%A7%88/">Flutter~常用组件源码分析概览</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2022/08/01/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~riverpod%E5%BA%93%E5%AD%A6%E4%B9%A0/">Flutter~riverpod库学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2021/08/22/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/React%E5%AD%A6%E4%B9%A0~React-Hooks%E5%AD%A6%E4%B9%A0/">React学习:React_Hooks学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2021/03/13/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~getx%E5%AD%A6%E4%B9%A0/">Flutter~getx库学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2021/01/06/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~provider%E5%AD%A6%E4%B9%A0/">Flutter~provider学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/04/11/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~fish_redux%E5%AD%A6%E4%B9%A0/">Flutter~fish_redux学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/01/23/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E8%87%AA%E5%AE%9A%E4%B9%89tabbar%E6%A8%A1%E5%9D%97/">Flutter~自定义tabbar模块</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/03/03/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/React%E5%AD%A6%E4%B9%A0~%E7%AE%80%E5%8D%95%E4%B8%AA%E4%BA%BA%E6%B6%88%E8%B4%B9%E8%AE%B0%E8%B4%A6%E7%B3%BB%E7%BB%9F/">React学习:简单个人消费记账系统</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/02/08/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~PlatformView%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/">Flutter~PlatformView的简单使用</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/03/06/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~json_serializable%E5%BA%93%E5%AD%A6%E4%B9%A0/">Flutter~json_serializable库学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2022/08/01/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~riverpod%E5%BA%93%E5%AD%A6%E4%B9%A0/">Flutter~riverpod库学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/02/16/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~scoped_model%E5%AD%A6%E4%B9%A0/">Flutter~scoped_model学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/05/14/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/RN~React-Native%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/">React-Native使用自定义字体</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/09/08/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/RN~React-Native%E6%8E%A8%E9%80%81%E9%80%9A%E7%9F%A5%E8%87%B3RN%E4%B8%94%E6%98%BE%E7%A4%BA%E6%8E%A8%E9%80%81%E5%86%85%E5%AE%B9/">React-Native推送通知至RN且显示推送内容</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/04/22/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/RN~react-native-router-flux%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/">react-native-router-flux初步认识</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/06/26/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/RN~react-native%E4%B8%83%E7%89%9B%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87/">react-native七牛上传图片</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/05/16/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/RN~react-navigation%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/">react-navigation的基本使用</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+
+                
+                <li>
+                    <a href="/2018/06/26/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/RN~react-native%E4%B8%83%E7%89%9B%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2018/06/26/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/RN~react-native%E4%B8%83%E7%89%9B%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2018/06/26/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/RN~react-native%E4%B8%83%E7%89%9B%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+                
+            </ul>
+            <div class="tab-content">
+                
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+    <a href="/tags/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 18.95992293082153px;" class="tag-cloud-link">后端学习</a>
+    
+    <a href="/tags/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/" style="font-size: 16.39677252935643px;" class="tag-cloud-link">其他学习</a>
+    
+    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 13.78040952465657px;" class="tag-cloud-link">前端学习</a>
+    
+    <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 12.521919235739738px;" class="tag-cloud-link">移动端学习</a>
+    
+</div>
+                
+                
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="https://www.baidu.com/" target="_blank">百度</a>
+    </li>
+    
+    <li>
+        <a href="https://www.google.com/" target="_blank">谷歌</a>
+    </li>
+    
+</div>
+                
+                
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="https://github.com/shaoting0730" target="_blank">Github</a>
+    </li>
+    
+    <li>
+        <a href="http://www.cnblogs.com/shaoting/" target="_blank">旧博客</a>
+    </li>
+    
+</div>
+                
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2018  Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+</footer>
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/koharu.model.json"},"display":{"position":"right","width":100,"height":200},"mobile":{"show":true},"log":false});</script></body>
+
+<script src="/js/activate-power-mode.js"></script>
+
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: '/imgs/slide/background',
+      ext: 'jpg',
+      maxCount: '10'
+    }
+</script>
+
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+
+
+<script src="/js/oni.js"></script>
+
+
+
+<script>
+    window.hot_posts_count = '10'
+    // window.use_leancloud = 'true'
+</script>
+
+<script src="/js/comment/leancloud.js"></script>
+
+
+
+<script>
+    if(window.commentConfig) {
+      window.commentConfig.id = 'Tue Jun 26 2018 00:00:00 GMT+0800'
+      window.commentConfig.owner = 'shaoting0730'
+      window.commentConfig.repo = 'shaoting0730.github.io'
+      window.commentConfig.client_id = 'd8eb3636d568669139ef'
+      window.commentConfig.client_secret = 'a39a08870520a45942c9c28771e091a6d3f147d8'
+      window.commentConfig.redirect_uri = ''
+      window.commentConfig.proxy = 'https://shielded-brushlands-08810.herokuapp.com/https://github.com/login/oauth/access_token'
+    } else {
+      window.commentConfig = {
+      	id: 'Tue Jun 26 2018 00:00:00 GMT+0800',
+        owner: 'shaoting0730',
+        repo: 'shaoting0730.github.io',
+        client_id: 'd8eb3636d568669139ef',
+        client_secret: 'a39a08870520a45942c9c28771e091a6d3f147d8',
+        redirect_uri: '',
+        proxy: 'https://shielded-brushlands-08810.herokuapp.com/https://github.com/login/oauth/access_token'
+      }
+    }
+</script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+    
+<script src="/js/comment/gitalk.js"></script>
+
+  
+
+</html>
