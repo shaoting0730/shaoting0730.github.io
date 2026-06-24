@@ -21,7 +21,7 @@
 	var prefix = window.slideConfig.prefix
 	var ext = '.' + window.slideConfig.ext
 	var maxCount = window.slideConfig.maxCount
-	for(var k = 0; k < 6; k++) {
+	for(var k = 0; k < 3; k++) {
 		var n = Math.floor(Math.random() * maxCount) + 1
 		while(slideList.indexOf(n) !== -1) {
 			n = Math.floor(Math.random() * maxCount) + 1
