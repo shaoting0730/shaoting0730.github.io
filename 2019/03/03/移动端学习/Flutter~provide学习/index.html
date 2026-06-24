@@ -296,7 +296,7 @@
 <h3 id="counter-dart"><a href="#counter-dart" class="headerlink" title="counter.dart"></a>counter.dart</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import &#x27;package:flutter/material.dart&#x27;;</span><br><span class="line"></span><br><span class="line">class Counter with ChangeNotifier&#123;</span><br><span class="line">  int value = 0;</span><br><span class="line"></span><br><span class="line">  increment()&#123;</span><br><span class="line">    value++;</span><br><span class="line">    notifyListeners();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="one-dart"><a href="#one-dart" class="headerlink" title="one.dart"></a>one.dart</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">import &#x27;package:flutter/material.dart&#x27;;</span><br><span class="line">import &#x27;package:provide/provide.dart&#x27;;</span><br><span class="line">import &#x27;package:provide_demo/model/counter.dart&#x27;;</span><br><span class="line"></span><br><span class="line">class One extends StatelessWidget &#123;</span><br><span class="line">  @override</span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    return Scaffold(</span><br><span class="line">      appBar: AppBar(title: Text(&#x27;One&#x27;)),</span><br><span class="line">      body: Padding(</span><br><span class="line">        padding: EdgeInsets.only(top: 400.0,left: 200.0),</span><br><span class="line">        child: Column(</span><br><span class="line">          children: &lt;Widget&gt;[</span><br><span class="line">            Provide&lt;Counter&gt;(</span><br><span class="line">              builder: (context, child, counter) &#123;</span><br><span class="line">                return Text(</span><br><span class="line">                  &#x27;$&#123;counter.value&#125;&#x27;,</span><br><span class="line">                );</span><br><span class="line">              &#125;,</span><br><span class="line">            ),</span><br><span class="line">            IconButton(</span><br><span class="line">              icon: Icon(Icons.add),</span><br><span class="line">              onPressed: () &#123;</span><br><span class="line">                Provide.value&lt;Counter&gt;(context).increment();</span><br><span class="line">              &#125;,</span><br><span class="line">            ),</span><br><span class="line">          ],</span><br><span class="line">        ),</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h3 id="two-dart"><a href="#two-dart" class="headerlink" title="two.dart"></a>two.dart</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">import &#x27;package:flutter/material.dart&#x27;;</span><br><span class="line">import &#x27;package:provide/provide.dart&#x27;;</span><br><span class="line">import &#x27;package:provide_demo/model/counter.dart&#x27;;</span><br><span class="line"></span><br><span class="line">class Two extends StatelessWidget &#123;</span><br><span class="line">  @override</span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    return Scaffold(</span><br><span class="line">      appBar: AppBar(title: Text(&#x27;Two&#x27;)),</span><br><span class="line">      body: Center(</span><br><span class="line">        child: Provide&lt;Counter&gt;(</span><br><span class="line">          builder: (context, child, counter) &#123;</span><br><span class="line">            return Text(</span><br><span class="line">              &#x27;$&#123;counter.value&#125;&#x27;,</span><br><span class="line">            );</span><br><span class="line">          &#125;,</span><br><span class="line">        ),</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>效果图:<br><img loading="lazy" decoding="async" src="/2019/03/03/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~provide%E5%AD%A6%E4%B9%A0/../../../../../images/Flutter~provide学习/provide_demo_result.gif" alt="provide_demo_result"></p>
+<p>效果图:<br><img loading="lazy" decoding="async" src="/2019/03/03/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~provide%E5%AD%A6%E4%B9%A0/../../../../../images/Flutter~provide学习/provide_demo_result.webp" alt="provide_demo_result"></p>
 <p><a target="_blank" rel="noopener" href="https://github.com/shaoting0730/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/state%E7%AE%A1%E7%90%86/provide_demo">源码</a></p>
 <p><a href="http://zhoushaoting.com/archives/">另外:其他管理库学习</a></p>
 <p><a target="_blank" rel="noopener" href="https://github.com/shaoting0730/Flutter_learn_demo">另外:Flutter学习demo</a></p>
@@ -459,7 +459,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/09/07/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~Flare%E5%8A%A8%E7%94%BB%E5%AD%A6%E4%B9%A0/">Flutter~Flare动画学习</a>
+                    <a href="/2023/02/08/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~PlatformView%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/">Flutter~PlatformView的简单使用</a>
                 </span>
             </li>
             
@@ -471,7 +471,25 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/03/13/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~getx%E5%AD%A6%E4%B9%A0/">Flutter~getx库学习</a>
+                    <a href="/2019/08/08/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~mobx%E5%BA%93%E5%AD%A6%E4%B9%A0/">Flutter~mobx库学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/03/03/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~provide%E5%AD%A6%E4%B9%A0/">Flutter~provide学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2022/08/01/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~riverpod%E5%BA%93%E5%AD%A6%E4%B9%A0/">Flutter~riverpod库学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/02/17/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~redux%E5%AD%A6%E4%B9%A0/">Flutter~redux学习</a>
                 </span>
             </li>
             
@@ -483,37 +501,19 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/06/11/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E5%9B%BD%E9%99%85%E5%8C%96%E6%95%99%E7%A8%8B%E6%96%B9%E6%A1%88/">Flutter~国际化教程方案</a>
+                    <a href="/2018/06/26/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/RN~react-native%E4%B8%83%E7%89%9B%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87/">react-native七牛上传图片</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/05/27/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/RN~Mobx%E4%B8%8Ereact-navigation%E7%9A%84%E4%BD%BF%E7%94%A8/">Mobx与react-navigation的结合使用</a>
+                    <a href="/2019/04/22/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/RN~react-native-router-flux%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/">react-native-router-flux初步认识</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/08/11/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/RN~React-Native%3C%E6%94%B6%E8%B5%B7-%E5%B1%95%E5%BC%80%3E%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/">React-Native&#34;收起-展开&#34;功能实现</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/04/22/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/RN~React-Native%E4%B8%8EWeb%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BA%A4%E4%BA%92/">React-Native与Web的基本交互</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2018/07/29/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/RN~dva%E5%92%8Creact-navigation%E7%9A%84%E7%BB%93%E5%90%88%E4%BD%BF%E7%94%A8/">dva和react-navigation的结合使用</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2018/05/16/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/RN~react-navigation%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/">react-navigation的基本使用</a>
+                    <a href="/2018/07/29/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/RN~redux%E5%92%8Creact-navigation%E7%9A%84%E7%BB%93%E5%90%88%E4%BD%BF%E7%94%A8/">redux和react-navigation的结合使用</a>
                 </span>
             </li>
             
@@ -546,13 +546,13 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/" style="font-size: 10.631481267344576px;" class="tag-cloud-link">其他学习</a>
+    <a href="/tags/%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0/" style="font-size: 8.488072145445525px;" class="tag-cloud-link">其他学习</a>
     
-    <a href="/tags/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 14.133763525826541px;" class="tag-cloud-link">后端学习</a>
+    <a href="/tags/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 15.810851466708382px;" class="tag-cloud-link">后端学习</a>
     
-    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 18.558883225839942px;" class="tag-cloud-link">前端学习</a>
+    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 19.591781173896614px;" class="tag-cloud-link">前端学习</a>
     
-    <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 15.304911093619317px;" class="tag-cloud-link">移动端学习</a>
+    <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 14.686775501649215px;" class="tag-cloud-link">移动端学习</a>
     
 </div>
                 
