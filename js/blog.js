@@ -31,9 +31,17 @@
 
 	// ------- 处理背景图 --------------
 
+	// 首屏只立即加载第1张背景图, 其余按轮播出场时间(每张延迟6s)错峰加载, 减少首屏带宽
 	var cdSlideShow = $('.cb-slideshow')
 	cdSlideShow.find('span').each(function (i, span) {
-		$(this).css('backgroundImage', 'url(\'' + prefix + slideList[i] + ext + '\')')
+		if (slideList[i] === undefined) return
+		var url = 'url(\'' + prefix + slideList[i] + ext + '\')'
+		if (i === 0) {
+			$(this).css('backgroundImage', url)
+		} else {
+			var $span = $(this)
+			setTimeout(function () { $span.css('backgroundImage', url) }, i * 4000)
+		}
 	})
 
 	// ------- 处理背景图结束 -----------
